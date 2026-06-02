@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f2e9;
+    font-family: 'Playfair Display SC', serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background-color: #2f6d67;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.cart-icon{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top: 30px;
+
+    color:white;
+}
+
+.cart-icon img{
+    width:30px;
+    height:30px;
+}
+
+.cart-icon p{
+    margin:0;
+    font-size:14px;
+}
+
+/* CABEÇALHO */
+
+.logo-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px 80px;
+}
+
+.logo-icon{
+    width:30px;
+    height:auto;
+    margin-bottom:5px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 2rem;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo small{
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.titulo h1{
+    color: #4f746d;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* CARDS */
+
+.cards{
+    width: 90%;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card{
+    background: #d9ded2;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 18px;
+    text-align: center;
+}
+
+.card h3{
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 60px;
+}
+
+.btn{
+    margin-top: 15px;
+    background: #7d958d;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-family: 'Playfair Display SC', serif;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover{
+    background: #2f6d67;
+}
+
+/* RODAPÉ */
+
+
+.footer{
+    margin-top:70px;
+    background:#2c7771;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:40px 60px;
+
+    color:white;
+}
+
+.footer-map img{
+    width:50px;
+    border-radius:8px;
+    
+}
+
+.footer-info h3{
+    margin-bottom:10px;
+    font-size:10px;
+}
+
+.footer-info p{
+    margin-top:5px;
+}
+
+
+.logo-footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-footer img{
+    width:150px;
+    height:auto;
+    object-fit:contain;
+}
+/* RESPONSIVO */
+
+@media (max-width: 1200px){
+
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px){
+
+    .topo{
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .navbar ul{
+        gap: 15px;
+    }
+}
