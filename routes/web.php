@@ -20,5 +20,9 @@ Route::prefix('/home')->group(function(){
 Route::prefix('/procedimento')->group(function(){
 
     Route::get('/index', [App\Http\Controllers\ProcedimentoController::class, 'index'])->name('procedimento.index');
+});
 
+Route::prefix('/vitrine')->group(function(){
+
+    Route::get('/index', [App\Http\Controllers\VitrineController::class, 'index'])->name('vitrine.index');
 });
