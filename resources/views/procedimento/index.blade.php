@@ -24,9 +24,9 @@
 
     <ul>
         <li><a href="#">HOME</a></li>
-        <li><a href="#">PROCEDIMENTOS</a></li>
+        <li><a href="../procedimento/index">PROCEDIMENTOS</a></li>
         <li><a href="#">AGENDAR</a></li>
-        <li><a href="#">LOJA</a></li>
+        <li><a href="../vitrine/index">LOJA</a></li>
         <li><a href="#">BLOG</a></li>
     </ul>
 

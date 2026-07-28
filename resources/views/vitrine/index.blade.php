@@ -15,9 +15,9 @@
 
     <ul>
         <li><a href="#">HOME</a></li>
-        <li><a href="#">PROCEDIMENTOS</a></li>
+        <li><a href="../procedimento/index">PROCEDIMENTOS</a></li>
         <li><a href="#">AGENDAR</a></li>
-        <li><a href="#">LOJA</a></li>
+        <li><a href="../vitrine/index">LOJA</a></li>
         <li><a href="#">BLOG</a></li>
     </ul>
 
@@ -46,39 +46,32 @@
     </div>
 
 </section>
-
 <section class="produtos">
 
-    @for($i = 0; $i < 8; $i++)
+@foreach($produtos as $produto)
 
-    <div class="produto-card">
+<div class="produto-card">
 
-        <img src="{{ asset('imagem/lily.png') }}" alt="Kit Lily">
+    <img src="{{ asset('imagem/'.$produto->imagem) }}" alt="{{ $produto->nome }}">
 
-        <div class="produto-body">
+    <div class="produto-body">
 
-            <h3>KIT LILY</h3>
+        <h3>{{ $produto->nome }}</h3>
 
-            <p>florais intensas e fixação alta</p>
+        <p>{{ $produto->descricao }}</p>
 
-            <h2>R$00,00</h2>
+        <h2>R$ {{ number_format($produto->preco,2,',','.') }}</h2>
 
-            <div class="produto-footer">
+        <div class="produto-footer">
 
-                <img class="sacola"
-                    src="{{ asset('imagem/bolsa.png') }}"
-                    alt="sacola">
-
-                <button>
-                    COMPRAR
-                </button>
-
-            </div>
+            <button>CONTATO</button>
 
         </div>
 
     </div>
 
-    @endfor
+</div>
+
+@endforeach
 
 </section>
