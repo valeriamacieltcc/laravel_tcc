@@ -26,3 +26,8 @@ Route::prefix('/vitrine')->group(function(){
 
     Route::get('/index', [App\Http\Controllers\VitrineController::class, 'index'])->name('vitrine.index');
 });
+
+Route::prefix('/perfil')->group(function(){
+
+    Route::get('/index', [App\Http\Controllers\PerfilController::class, 'index'])->name('perfil.index');
+});

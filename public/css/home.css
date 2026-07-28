@@ -70,11 +70,15 @@ body{
     margin:0;
     font-size:14px;
 }
+
+/* PERFIL */
+
 /* CONTAINER */
 
 .container{
     width:90%;
     margin:auto;
+    
 }
 
 /* LOGO */
@@ -117,6 +121,16 @@ body{
     height:160px;
     border-radius:50%;
     object-fit:cover;
+    
+    
+}
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
 }
 
 .about-text h2{
