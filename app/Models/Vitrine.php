@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VitrineModel extends Model
+class Vitrine extends Model
 {
-    use HasFactory;
+    protected $table = 'vitrine';
+
     protected $fillable = [
         'nome',
         'descricao',

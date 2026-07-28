@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Vitrine;
 
 class VitrineController extends Controller
 {
- use App\Models\Produto;
+    public function index()
+    {
+        $vitrine = Vitrine::all();
 
-public function index()
-{
-    $produtos = Produto::orderBy('nome')->get();
-
-    return view('vitrine.index', compact('produtos'));
-}
+        return view('vitrine.index', compact('vitrine'));
+    }
 }
