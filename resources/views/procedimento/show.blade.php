@@ -19,7 +19,7 @@
 
 <body>
 
-    @include('_partials.navbar&topo')
+    @include('_partials.header')
 
 
     <main class="procedimento-container">

@@ -1,4 +1,6 @@
 
+<header class="header">
+
 <nav class="navbar">
 
 <div class="cart-icon">
@@ -43,3 +45,4 @@
     </div> -->
 
 </section>
+</header>
