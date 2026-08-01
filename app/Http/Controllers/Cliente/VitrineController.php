@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Cliente;
 
-use App\Models\Vitrine;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class VitrineController extends Controller
 {

@@ -39,13 +39,42 @@
 
         </nav>
 
-        <!-- CARRINHO -->
-        <div class="cart-icon">
+      <div class="cart-icon">
+    @auth
+        <a href="{{ route('cliente.perfil.show') }}">
 
-            <img src="{{ asset('imagem/bolsa-de-compras.png') }}" alt="Carrinho">
+            @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
 
-        </div>
+                <img
+                    src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
+                    alt="Meu perfil"
+                    class="foto-navbar"
+                >
 
+            @else
+
+                <img
+                    src="{{ asset('imagem/perfil-padrao.png') }}"
+                    alt="Meu perfil"
+                    class="foto-navbar"
+                >
+
+            @endif
+
+        </a>
+    @else
+
+        <a href="{{ route('login') }}">
+            <img
+                src="{{ asset('imagem/perfil-padrao.png') }}"
+                alt="Entrar"
+                class="foto-navbar"
+            >
+        </a>
+
+    @endauth
+</div>
+</div>
     </header>
 
     <!-- CONTAINER -->
