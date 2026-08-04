@@ -40,6 +40,17 @@
 
         <h2>{{ $cliente->idade }} anos</h2>
 
+        <!-- BOTÃO ADICIONADO -->
+        <button 
+            type="button" 
+            class="btn-editar"
+            data-bs-toggle="modal"
+            data-bs-target="#modalEditarPerfil">
+
+            Editar perfil
+
+        </button>
+
     </div>
 
 </section>
@@ -88,21 +99,12 @@
 
 <section class="bloco-info">
 
-    <div class="titulo-bloco">
-        Ficha de Anamnese
-    </div>
+<a href="{{ route('perfil.anamnese.index') }}" class="titulo-bloco botao-anamnese">
+    Ficha de Anamnese
+</a>
 
     <div class="conteudo-bloco">
 
-        <p><strong>Alergias:</strong> {{ $cliente->anamnese['alergias'] }}</p>
-
-        <p><strong>Medicamentos:</strong> {{ $cliente->anamnese['medicamentos'] }}</p>
-
-        <p><strong>Doenças:</strong> {{ $cliente->anamnese['doencas'] }}</p>
-
-        <p><strong>Observações:</strong> {{ $cliente->anamnese['observacoes'] }}</p>
-
-    </div>
 
 </section>
 
@@ -127,6 +129,135 @@
     </div>
 
 </section>
+
+
+<!-- MODAL PARA EDITAR O PERFIL -->
+
+<div 
+    class="modal fade" 
+    id="modalEditarPerfil" 
+    tabindex="-1"
+    aria-labelledby="tituloModalEditarPerfil"
+    aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 
+                    class="modal-title" 
+                    id="tituloModalEditarPerfil">
+
+                    Editar perfil
+
+                </h5>
+
+                <button 
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
+
+                </button>
+
+            </div>
+
+
+            <form 
+                action="{{ route('perfil.atualizar') }}"
+                method="POST"
+                enctype="multipart/form-data">
+
+                @csrf
+
+                @method('PUT')
+
+
+                <div class="modal-body">
+
+
+                    <!-- CAMPO PARA TROCAR A FOTO -->
+
+                    <div class="mb-3">
+
+                        <label 
+                            for="foto"
+                            class="form-label">
+
+                            Trocar foto de perfil
+
+                        </label>
+
+                        <input 
+                            type="file"
+                            name="foto"
+                            id="foto"
+                            class="form-control"
+                            accept="image/*">
+
+                    </div>
+
+
+                    <!-- CAMPO PARA TROCAR O NOME -->
+
+                    <div class="mb-3">
+
+                        <label 
+                            for="nome"
+                            class="form-label">
+
+                            Nome
+
+                        </label>
+
+                        <input 
+                            type="text"
+                            name="nome"
+                            id="nome"
+                            class="form-control"
+                            value="{{ $cliente->nome }}"
+                            required>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button 
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+
+                    <button 
+                        type="submit"
+                        class="btn-salvar">
+
+                        Salvar alterações
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+
 
 </main>
 

@@ -65,4 +65,34 @@ Route::prefix('/perfil')->group(function () {
     Route::get('/index', [App\Http\Controllers\PerfilController::class, 'index'])
         ->name('perfil.index');
 
+<<<<<<< HEAD
 });
+=======
+    Route::get(
+        '/index',
+        [App\Http\Controllers\PerfilController::class, 'index']
+    )->name('perfil.index');
+
+    Route::get('/perfil/anamnese', [FichaController::class, 'index'])
+    ->name('perfil.anamnese.index');
+
+
+    Route::put(
+        '/atualizar',
+        [App\Http\Controllers\PerfilController::class, 'atualizar']
+    )->name('perfil.atualizar');
+
+});
+use App\Http\Controllers\FichaController;
+
+Route::get(
+    '/ficha',
+    [FichaController::class, 'index']
+)->name('ficha.index');
+
+
+Route::post(
+    '/ficha/salvar',
+    [FichaController::class, 'salvar']
+)->name('ficha.salvar');
+>>>>>>> feaa55329d1dd84fb08bb19560957e66d4a36b71
