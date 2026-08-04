@@ -1,198 +1,171 @@
-/* ====================================
-   RESET
-==================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    
+}
+
+h1{
+    font-family: "Parisienne", cursive !important;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body{
-    background:#f4f1e7 !important;
-    font-family:'Montserrat',sans-serif;
-    color:#2d2d2d;
-    overflow-x:hidden;
+    background:#f6f5e5 !important;
+    font-family:'Montserrat', sans-serif;
+    color:#2b2b2b;
 }
 
-/* ====================================
-   NAVBAR
-==================================== */
+/* NAVBAR */
 
-.top-navbar{
+.navbar{
     background:#2c7771;
-    height:52px;
+    height:60px;
 
     display:flex;
-    align-items:center;
     justify-content:space-between;
-
-    padding:0 20px;
-}
-
-.menu-icon{
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-/* LINKS */
-.top-navbar nav{
-    position:static;
-    margin-left:auto;
-
-    display:flex;
     align-items:center;
-    gap:26px;
+
+    padding:0 30px;
 }
 
-.top-navbar nav a{
+.navbar nav{
+    display:flex;
+    gap:35px;
+}
+
+.navbar nav a{
     text-decoration:none;
     color:white;
-    font-family:"Playfair Display SC", serif;
     font-size:13px;
-    letter-spacing:3px;
+    letter-spacing:1px;
 }
 
-.top-navbar nav a:hover{
-    color:#e7dcc0;
+.menu-icon,
+.cart-icon{
+    color:white;
+    font-size:20px;
+    
+
+
+
 }
 
-/* CARRINHO */
-.top-navbar .cart-icon img{
-    width:22px;
-    height:22px;
-    filter:brightness(0) invert(1);
+.cart-icon{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top: 30px;
+
+    color:white;
 }
 
-/* ====================================
-   CONTAINER
-==================================== */
+.cart-icon img{
+    width:30px;
+    height:30px;
+}
+
+.cart-icon p{
+    margin:0;
+    font-size:14px;
+}
+
+/* PERFIL */
+
+/* CONTAINER */
 
 .container{
-    width:95%;
-    max-width:1250px;
+    width:90%;
     margin:auto;
-    padding-top:18px;
+    
 }
 
-/* ====================================
-   LOGO (🔴 MODIFICADO AQUI)
-==================================== */
+/* LOGO */
 
 .logo-section{
+    margin-top:25px;
     margin-bottom:20px;
-
-    display:flex;
-    justify-content:flex-start;
 }
 
-/* BLOCO DA LOGO */
-.logo{
-    display:flex;
-    flex-direction:column;
-    align-items:center;   /* centraliza tudo */
-    text-align:center;
+.logo-section h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:42px;
+    font-weight:400;
 }
 
-/* FLOR */
-.logo-icon{
-    width:28px;
-    height:28px;
-    margin-bottom:6px;
-    display:block;
+.logo-section span{
+    letter-spacing:4px;
+    font-size:14px;
 }
 
-/* NOME */
-.logo h1{
-    font-family:"Parisienne", cursive !important;
-    font-size:38px;
-    line-height:1;
-    margin:0;
-    color:#4b4b4b;
-}
-
-/* ESTÉTICA */
-.logo small{
-    display:block;
-
-    font-family:"Playfair Display SC", serif;
-    font-size:13px;
-    letter-spacing:3px;
-    color:#444;
-
-    margin-top:2px;
-}
-
-/* ====================================
-   HERO
-==================================== */
-
-.hero{
-    margin-bottom:40px;
-    border-radius:8px;
-    overflow:hidden;
-}
+/* HERO */
 
 .hero img{
     width:100%;
-    height:330px;
-    object-fit:cover;
+    border-radius:8px;
 }
 
-/* ====================================
-   ABOUT
-==================================== */
+/* ABOUT */
 
 .about{
+    margin-top:50px;
+
     display:flex;
-    gap:30px;
-    margin-bottom:50px;
+    align-items:center;
+    gap:40px;
 }
 
 .about-image img{
-    width:130px;
-    height:130px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     object-fit:cover;
-    border:5px solid #d6c5a6;
+    
+    
+}
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
 }
 
 .about-text h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:22px;
-    margin-bottom:12px;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom:15px;
+    font-size:30px;
 }
 
 .about-text p{
-    font-size:13px;
     line-height:1.8;
-    color:#444;
+    font-size:15px;
 }
 
-/* ====================================
-   SERVICES
-==================================== */
+/* SERVICES */
 
 .services{
+    margin-top:60px;
+
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    margin-bottom:60px;
+    gap:25px;
 }
 
 .card{
     position:relative;
     overflow:hidden;
-    border-radius:8px;
+    border-radius:10px;
 }
 
 .card img{
     width:100%;
-    height:420px;
+    height:350px;
     object-fit:cover;
-    filter:brightness(75%);
-    transition:.4s;
+
+    transition:0.4s;
 }
 
 .card:hover img{
@@ -200,187 +173,74 @@ body{
 }
 
 .card h3{
-    
     position:absolute;
+    bottom:20px;
     left:50%;
-    bottom:22px;
+
     transform:translateX(-50%);
 
-    width:100%;          /* 🔥 garante referência de centralização */
-    text-align:center;   /* 🔥 centraliza o texto de verdade */
-
     color:white;
-    font-family:"Playfair Display SC", serif;
-    font-size:13px;
-    letter-spacing:2px;
+    font-size:26px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
 }
 
-
-/* ====================================
-   FOOTER
-==================================== */
+/* FOOTER */
 
 .footer{
+    margin-top:70px;
     background:#2c7771;
-    display:flex;
 
-    justify-content:flex-start; /* 👈 agora tudo começa junto */
+    display:flex;
+    justify-content:space-between;
     align-items:center;
 
-    padding:30px 40px;
-    gap:10px; /* 👈 quase grudado */
+    padding:40px 60px;
 
     color:white;
-    font-family:"Playfair Display SC", serif;
 }
 
-/* MAPA */
-.footer iframe{
-    width:340px;   /* levemente maior */
-    height:180px;
-    border:0;
+.footer-map img{
+    width:220px;
     border-radius:8px;
 }
 
-.footer-info{
-    display:flex;
-    flex-direction:column;
-
-    margin-left:14px; /* um pouco mais afastado do mapa */
-    gap:12px; /* 👈 mais espaço entre linhas */
-}
-
-/* título */
 .footer-info h3{
-    font-size:16px;
-    font-weight:400;
-    margin:0;
-    letter-spacing:1px;
-    line-height:1.4;
+    margin-bottom:10px;
+    font-size:18px;
 }
 
-/* texto */
 .footer-info p{
-    font-size:14px;
-    margin:0;
-    line-height:1.6; /* 👈 respira mais */
+    margin-top:10px;
 }
 
-/* blocos de contato (whats / insta) */
-.footer-info .cart-icon{
-    display:flex;
-    align-items:center;
-    gap:12px; /* 👈 mais espaço entre ícone e texto */
-    margin-top:4px;
+.footer-logo h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:38px;
 }
 
-.footer-info .cart-icon p{
-    font-size:14px;
+.footer-logo span{
+    letter-spacing:4px;
 }
 
-/* ICONES */
-.footer-info .cart-icon{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
+/* RESPONSIVO */
 
-.footer-info .cart-icon img{
-    width:20px;
-    height:20px;
-}
+@media(max-width:1000px){
 
-.footer-logo{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    margin-left:auto;
-    gap:6px;
-}
-
-.footer-logo img{
-    width:120px;   /* 🔥 diminuído */
-    height:auto;
-    object-fit:contain;
-}
-
-/* LINHA E COPYRIGHT */
-
-.footer-copy{
-    background:#2c7771;
-    padding:0 40px 10px;
-}
-
-.footer-copy-line{
-    width:100%;
-    height:1px;
-    background:rgba(255,255,255,0.5);
-    margin-bottom:8px;
-}
-
-.footer-copy p{
-    text-align:center;
-    color:white;
-    font-family:"Playfair Display SC", serif;
-    font-size:10px;
-    letter-spacing:1px;
-    margin:0;
-}
-
-/* TEXTO SOBRE O MAPA */
-
-.footer-map{
-    position:relative;
-}
-
-.footer-map iframe{
-    filter: brightness(50%);
-}
-
-.map-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    z-index:2;
-    width:100%;
-    text-align:center;
-    color:rgb(244, 244, 244);
-
-    pointer-events:none;
-}
-
-.map-text h4{
-    margin:0;
-    font-size:14px;
-    font-weight:400;
-    letter-spacing:2px;
-    color: rgb(130, 233, 212);
-}
-
-.map-text span{
-    font-family:"Parisienne", cursive;
-    font-size:28px;
-}
-
-
-/* ====================================
-   RESPONSIVO
-==================================== */
-
-@media(max-width:992px){
     .services{
         grid-template-columns:repeat(2,1fr);
     }
 
     .footer{
-        grid-template-columns:1fr;
+        flex-direction:column;
+        gap:30px;
         text-align:center;
     }
 }
 
-@media(max-width:768px){
-    .top-navbar nav{
+@media(max-width:700px){
+
+    .navbar nav{
         display:none;
     }
 
@@ -392,14 +252,14 @@ body{
     .services{
         grid-template-columns:1fr;
     }
+
 }
 
-@media(max-width:480px){
-    .hero img{
-        height:180px;
-    }
-
-    .logo h1{
-        font-size:30px;
-    }
+.foto-navbar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    cursor:pointer;
+    border:2px solid white;
 }
