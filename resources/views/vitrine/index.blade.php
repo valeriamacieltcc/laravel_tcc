@@ -1,5 +1,5 @@
 <title>vitrine</title>
-<link rel="stylesheet" href="{{ asset('css/procedimento.css') }}">
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
         <small>ESTÉTICA</small>
     </div>
 
-    <div class="titulo">
+    <div class="titulo-vitrine">
         <h1>NOSSOS PRODUTOS</h1>
     </div>
 

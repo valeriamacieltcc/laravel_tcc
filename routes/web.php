@@ -65,9 +65,7 @@ Route::prefix('/perfil')->group(function () {
     Route::get('/index', [App\Http\Controllers\PerfilController::class, 'index'])
         ->name('perfil.index');
 
-<<<<<<< HEAD
-});
-=======
+
     Route::get(
         '/index',
         [App\Http\Controllers\PerfilController::class, 'index']
@@ -95,4 +93,4 @@ Route::post(
     '/ficha/salvar',
     [FichaController::class, 'salvar']
 )->name('ficha.salvar');
->>>>>>> feaa55329d1dd84fb08bb19560957e66d4a36b71
+

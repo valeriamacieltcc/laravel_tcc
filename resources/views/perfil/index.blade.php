@@ -7,19 +7,20 @@
     <title>Perfil da Cliente</title>
 
 
-<link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+
 
 
 </head>
 <body>
-
-
+    
+@include('_partials.header')
 
 <main class="perfil-container">
 
@@ -55,11 +56,11 @@
 
 </section>
 
-<section class="galeria">
+<section class="galeria-perfil">
 
     <h3>Histórico dos Antes & Depois</h3>
 
-    <div class="galeria-grid">
+    <div class="galeria-perfil-grid">
 
         @foreach($cliente->antes_depois as $foto)
 
@@ -81,7 +82,7 @@
 
         @foreach($cliente->procedimentos as $procedimento)
 
-            <div class="procedimento">
+            <div class="procedimento-perfil">
 
                 <h4>{{ $procedimento['nome'] }}</h4>
 
@@ -260,6 +261,9 @@
 
 
 </main>
+
+
+@include('_partials.footer')
 
 
 

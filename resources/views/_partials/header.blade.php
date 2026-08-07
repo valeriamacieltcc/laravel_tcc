@@ -22,7 +22,6 @@
 
 </nav>
 
-<!-- TOPO -->
 <section class="logo-section">
 
     <div class="logo">

@@ -104,22 +104,22 @@
         <!-- SERVIÇOS -->
         <section class="services">
 
-            <div class="card">
+            <div class="card-home">
                 <img src="https://i.pinimg.com/1200x/bb/0d/ff/bb0dff7adbd80c5ae3322f070bc562ed.jpg" alt="Corpo">
                 <h3>CORPO</h3>
             </div>
 
-            <div class="card">
+            <div class="card-home">
                 <img src="https://i.pinimg.com/736x/3b/93/99/3b93992768d7266d2de4d6fe7054fe63.jpg" alt="Face">
                 <h3>FACE</h3>
             </div>
 
-            <div class="card">
+            <div class="card-home">
                 <img src="https://i.pinimg.com/736x/85/54/39/85543969a0ca3ff9040745386c4418e9.jpg" alt="Cabelo">
                 <h3>CABELO</h3>
             </div>
 
-            <div class="card">
+            <div class="card-home">
                 <img src="https://i.pinimg.com/736x/c6/12/e6/c612e651df488d64a48ce23eda24ce18.jpg" alt="Unha">
                 <h3>UNHA</h3>
             </div>
