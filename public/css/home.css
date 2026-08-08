@@ -704,158 +704,1374 @@ body{
 
 
 /* PAGINA PERFIL CSS */
+/* =========================================================
+   PÁGINA DE PERFIL
+   PADRÃO DO RESTANTE DO SITE
+   ========================================================= */
 
-.perfil-container {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.perfil-container{
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 40px 0 80px;
 }
 
-.perfil-topo {
+
+/* =========================================================
+   TOPO DO PERFIL
+   ========================================================= */
+
+.perfil-topo{
     display: flex;
+
     align-items: center;
+
     gap: 50px;
-    margin-bottom: 60px;
+
+    margin-bottom: 70px;
 }
 
-.foto-perfil {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #6FA58B;
-    background: #fff;
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.foto-perfil{
+    width: 190px;
+    height: 190px;
+
     flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 5px solid #d6c5a6;
+
+    background: transparent;
+
+    padding: 0;
 }
 
-.foto-perfil img {
+
+.foto-perfil img{
     width: 100%;
     height: 100%;
+
+    display: block;
+
     object-fit: cover;
+
+    border-radius: 50%;
 }
 
-.info-perfil .usuario {
-    font-size: 24px;
-    color: #2E614D;
-    margin-bottom: 10px;
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.info-perfil{
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
 }
 
-.info-perfil h1 {
-    font-family: 'Parisienne', cursive;
-    font-size: 72px;
-    color: #2E614D;
-    margin-bottom: 10px;
+
+/* NOME DO CLIENTE */
+
+.info-perfil h1{
+    margin: 0 0 8px;
+
+    color: #3e746d;
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 65px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    text-transform: none;
 }
 
-.info-perfil h2 {
-    font-size: 28px;
-    color: #2E614D;
-    font-weight: 600;
+
+/* IDADE */
+
+.info-perfil h2{
+    margin: 0 0 22px;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
-.galeria-perfil {
+
+/* =========================================================
+   BOTÃO EDITAR
+   MESMO PADRÃO DO VER MAIS
+   ========================================================= */
+
+.btn-editar{
+    display: inline-block;
+
+    min-width: 125px;
+
+    padding: 10px 25px;
+
+    margin: 0;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.btn-editar:hover{
+    background: #2f6d67;
+
+    color: white;
+}
+
+
+/* =========================================================
+   GALERIA
+   ========================================================= */
+
+.galeria-perfil{
+    margin-bottom: 70px;
+
+    text-align: center;
+}
+
+
+/* TÍTULO */
+
+.galeria-perfil h3{
+    margin: 0 0 40px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GRID DE FOTOS
+   ========================================================= */
+
+.galeria-perfil-grid{
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+
+.galeria-perfil-grid img{
+    width: 100%;
+    height: 220px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+
+.galeria-perfil-grid img:hover{
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   BLOCOS
+   ========================================================= */
+
+.bloco-info{
     margin-bottom: 50px;
 }
 
-.galeria-perfil h3 {
-    text-align: center;
-    font-size: 34px;
-    color: #2E614D;
-    margin-bottom: 30px;
+
+/* =========================================================
+   TÍTULO DOS BLOCOS
+   MESMA LINGUAGEM DOS TÍTULOS DE PROCEDIMENTOS
+   ========================================================= */
+
+.titulo-bloco{
+    padding: 0;
+
+    margin-bottom: 25px;
+
+    background: transparent;
+
+    color: #3e746d;
+
+    text-align: left;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+    border-radius: 0;
 }
 
-.galeria-perfil-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
 
-.galeria-perfil-grid img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
 
-.bloco-info {
-    margin-bottom: 40px;
-}
-
-.titulo-bloco {
-    background: #2E614D;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: 600;
-    border-radius: 8px 8px 0 0;
-}
-
-.conteudo-bloco {
-    background: #fff;
+.conteudo-bloco{
     padding: 25px;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+
+    box-shadow: none;
 }
+
+
+/* =========================================================
+   PROCEDIMENTOS
+   ========================================================= */
 
 .procedimento-perfil{
-    border-bottom: 1px solid #d9d9d9;
-    padding-bottom: 15px;
+    padding: 18px 20px;
+
     margin-bottom: 15px;
+
+    background: #f5f2e9;
+
+    border-radius: 6px;
+
+    border: none;
 }
 
-.procedimento-perfil:last-child {
-    border-bottom: none;
+
+.procedimento-perfil:last-child{
     margin-bottom: 0;
-    padding-bottom: 0;
 }
 
-.procedimento-perfil h4 {
-    color: #2E614D;
-    margin-bottom: 5px;
+
+/* NOME */
+
+.procedimento-perfil h4{
+    margin: 0 0 8px;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
 }
 
-.procedimento-perfil small {
-    color: #777;
+
+/* DATA */
+
+.procedimento-perfil small{
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
 }
 
-.procedimento-perfil p {
-    margin-top: 10px;
-}
 
-.conteudo-bloco p {
-    margin-bottom: 15px;
+/* OBSERVAÇÃO */
+
+.procedimento-perfil p{
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
     line-height: 1.6;
 }
 
-.conteudo-bloco ul {
-    padding-left: 20px;
+
+/* =========================================================
+   FAVORITOS
+   ========================================================= */
+
+.conteudo-bloco ul{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
 }
 
-.conteudo-bloco li {
-    margin-bottom: 10px;
+
+.conteudo-bloco li{
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 52px;
+
+    padding: 12px 18px 12px 42px;
+
+    background: #f5f2e9;
+
+    border-radius: 6px;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    transition: .3s;
 }
 
 
-.botao-anamnese {
+.conteudo-bloco li::before{
+    content: "♡";
+
+    position: absolute;
+
+    left: 15px;
+
+    color: #4f746d;
+
+    font-size: 18px;
+}
+
+
+.conteudo-bloco li:hover{
+    transform: translateY(-3px);
+
+    background: #e8e8dd;
+}
+
+
+/* =========================================================
+   BOTÃO ANAMNESE
+   ========================================================= */
+
+.botao-anamnese{
     display: block;
-    background: #2E614D;
-    color: #fff;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px 25px;
+
+    background: #7d958d;
+
+    color: white;
+
     text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: 600;
-    border-radius: 8px 8px 0 0;
+
     text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    border-radius: 0;
+
+    transition: .3s;
+}
+
+
+.botao-anamnese:hover{
+    background: #2f6d67;
+
+    color: white;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-content{
+    border: none;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   HEADER MODAL
+   ========================================================= */
+
+.modal-header{
+    padding: 18px 25px;
+
+    background: #2f6d67;
+
+    color: white;
+
+    border: none;
+}
+
+
+.modal-title{
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.modal-header .btn-close{
+    filter: brightness(0) invert(1);
+}
+
+
+/* =========================================================
+   CORPO MODAL
+   ========================================================= */
+
+.modal-body{
+    padding: 28px;
+
+    background: #f5f2e9;
+}
+
+
+.form-label{
+    margin-bottom: 7px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.form-control{
+    width: 100%;
+
+    padding: 10px 12px;
+
+    background: white;
+
+    border: 1px solid #d3d6cf;
+
+    border-radius: 5px;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+}
+
+
+.form-control:focus{
+    outline: none;
+
+    border-color: #7d958d;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   FOOTER MODAL
+   ========================================================= */
+
+.modal-footer{
+    padding: 15px 25px;
+
+    background: #f5f2e9;
+
+    border-top: 1px solid #d3d6cf;
+}
+
+
+/* CANCELAR */
+
+.modal-footer .btn-secondary{
+    padding: 10px 20px;
+
+    border: 1px solid #7d958d;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+
+.modal-footer .btn-secondary:hover{
+    background: #7d958d;
+
+    color: white;
+}
+
+
+/* SALVAR */
+
+.btn-salvar{
+    min-width: 125px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.btn-salvar:hover{
+    background: #2f6d67;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media(max-width:992px){
+
+    .perfil-container{
+        width: 90%;
+    }
+
+    .galeria-perfil-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .perfil-topo{
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .info-perfil{
+        align-items: center;
+    }
+
+    .info-perfil h1{
+        font-size: 55px;
+    }
+
+    .galeria-perfil h3{
+        font-size: 35px;
+    }
+
+    .titulo-bloco{
+        font-size: 30px;
+    }
+
+    .conteudo-bloco ul{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .perfil-container{
+        width: 90%;
+
+        padding-top: 25px;
+    }
+
+    .foto-perfil{
+        width: 150px;
+        height: 150px;
+    }
+
+    .info-perfil h1{
+        font-size: 45px;
+    }
+
+    .galeria-perfil h3{
+        font-size: 28px;
+    }
+
+    .titulo-bloco{
+        font-size: 25px;
+    }
+
+    .galeria-perfil-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-perfil-grid img{
+        height: 230px;
+    }
+
+    .conteudo-bloco{
+        padding: 18px;
+    }
+
+}
+
+
+
+
+/* =========================================================
+FICHA DE ANAMNESE
+PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+========================================================= */
+
+.anamnese-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 45px 80px;
+
+    background-color: #f5f2e9;
+    color: #2f2f2f;
+
+    font-family: "Playfair Display SC", serif;
+}
+
+/* =========================================================
+CABEÇALHO
+========================================================= */
+
+.anamnese-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.anamnese-subtitle {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.anamnese-header h1 {
+    margin: 0 0 16px;
+
+    color: #2f6d67;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 38px;
+    font-weight: 400;
+
+    letter-spacing: 3px;
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+.anamnese-header p {
+    max-width: 720px;
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.8;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+ALERTAS
+========================================================= */
+
+.anamnese-alert {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 16px 20px;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    line-height: 1.6;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.anamnese-alert.sucesso {
+    background-color: #dfe8e1;
+
+    border-left: 4px solid #2f6d67;
+
+    color: #2f6d67;
+
+    font-weight: 400;
+}
+
+.anamnese-alert.erro {
+    background-color: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+}
+
+.anamnese-alert strong {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.anamnese-alert ul {
+    margin: 8px 0 0 18px;
+    padding: 0;
+}
+
+/* =========================================================
+SEÇÕES / CARDS
+========================================================= */
+
+.anamnese-section {
+    width: 100%;
+
+    margin-bottom: 38px;
+    padding: 34px 38px 38px;
+
+    background-color: #e9ebe3;
+
+    /* BORDA REMOVIDA */
+    border: none;
+    border-radius: 8px;
+
+    box-shadow: none;
+}
+
+/* =========================================================
+TÍTULOS DAS SEÇÕES
+========================================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 32px;
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, 0.25);
+}
+
+.section-title > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    background-color: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.section-title small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    color: #2f6d67;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 22px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px 26px;
+
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+/* =========================================================
+LABELS
+========================================================= */
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+INPUTS
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    background-color: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+    height: 46px;
+
+    padding: 0 14px;
+}
+
+.form-group textarea {
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+FOCO
+========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background-color: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, 0.08);
+}
+
+/* =========================================================
+TEXTO DOS CAMPOS
+========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+SELECT
+========================================================= */
+
+.form-group select {
     cursor: pointer;
 }
 
-.botao-anamnese:hover {
-    background: #24503f;
-    transform: translateY(-2px);
+/* =========================================================
+PERGUNTAS
+========================================================= */
+
+.question-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px 18px;
+
+    width: 100%;
 }
 
-.botao-anamnese:active {
-    transform: translateY(0);
+.question-item {
+    padding: 18px 20px;
+
+    background-color: #f5f5ee;
+
+    /* BORDA REMOVIDA */
+    border: none;
+    border-radius: 4px;
+}
+
+.question-item p {
+    margin: 0 0 13px;
+
+    color: #3d4542;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+
+    text-transform: uppercase;
+}
+
+.question-item label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-right: 20px;
+
+    color: #666b68;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.question-item input[type="radio"] {
+    width: 14px;
+    height: 14px;
+
+    accent-color: #2f6d67;
+
+    cursor: pointer;
+}
+
+/* =========================================================
+OBSERVAÇÕES
+========================================================= */
+
+.textarea-group {
+    margin-top: 25px;
+}
+
+/* =========================================================
+CHECKBOX - AVALIAÇÃO DA PELE
+========================================================= */
+
+.check-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 11px 13px;
+
+    background-color: #f5f5ee;
+
+    /* BORDA REMOVIDA */
+    border: none;
+    border-radius: 4px;
+
+    color: #5c625f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    accent-color: #2f6d67;
+
+    cursor: pointer;
+}
+
+.check-item span {
+    line-height: 1.5;
+}
+
+/* =========================================================
+TERMO DE RESPONSABILIDADE
+========================================================= */
+
+.termo-section {
+    background-color: #e9ebe3;
+}
+
+.termo-texto {
+    margin-bottom: 28px;
+    padding: 19px 22px;
+
+    background-color: #f5f5ee;
+
+    border-left: 3px solid #2f6d67;
+}
+
+.termo-texto p {
+    margin: 0;
+
+    color: #696b66;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.7px;
+    line-height: 1.8;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+BOTÃO
+PADRÃO DOS BOTÕES DE PROCEDIMENTOS
+========================================================= */
+
+.anamnese-actions {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+.btn-salvar-ficha {
+    min-width: 200px;
+
+    padding: 14px 28px;
+
+    background-color: #819d96;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-salvar-ficha:hover {
+    background-color: #2f6d67;
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .anamnese-container {
+        padding: 45px 25px 60px;
+    }
+
+    .anamnese-section {
+        padding: 30px 25px;
+    }
+
+    .question-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .check-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .anamnese-container {
+        padding: 35px 15px 50px;
+    }
+
+    .anamnese-header h1 {
+        font-size: 30px;
+    }
+
+    .anamnese-header p {
+        font-size: 9px;
+    }
+
+    .anamnese-section {
+        padding: 25px 18px 30px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: auto;
+    }
+
+    .check-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-salvar-ficha {
+        width: 100%;
+    }
 }
