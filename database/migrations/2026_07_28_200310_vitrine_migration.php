@@ -15,7 +15,8 @@ return new class extends Migration
             $table->decimal('preco', 10, 2);
             $table->string('imagem');
             $table->string('marca');
-            $table->integer('estoque')->default(0);
+            $table->boolean('disponivel')->default(true);
+            $table->string('link_contato')->nullable();
             $table->timestamps();
         });
     }

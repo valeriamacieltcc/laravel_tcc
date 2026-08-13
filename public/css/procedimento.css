@@ -1,0 +1,488 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f2e9;
+    font-family: 'Playfair Display SC', serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background-color: #2f6d67;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.cart-icon{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top: 10px;
+
+    color:white;
+}
+
+.cart-icon img{
+    width:30px;
+    height:30px;
+    
+}
+
+.cart-icon p{
+    margin:0;
+    font-size:14px;
+}
+
+/* CABEÇALHO */
+
+.logo-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px 80px;
+}
+
+.logo-icon{
+    width:30px;
+    height:auto;
+    margin-bottom:5px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 2rem;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo small{
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.titulo h1{
+    color: #4f746d;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* CARDS */
+
+.cards{
+    width: 90%;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card{
+    background: #d9ded2;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 18px;
+    text-align: center;
+}
+
+.card h3{
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 60px;
+}
+
+.btn{
+    margin-top: 15px;
+    background: #7d958d;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-family: 'Playfair Display SC', serif;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover{
+    background: #2f6d67;
+}
+
+.footer{
+    background:#2c7771;
+    display:flex;
+
+    justify-content:flex-start; /* 👈 agora tudo começa junto */
+    align-items:center;
+
+    padding:30px 40px;
+    gap:10px; /* 👈 quase grudado */
+
+    color:white;
+    font-family:"Playfair Display SC", serif;
+}
+
+/* MAPA */
+.footer iframe{
+    width:340px;   /* levemente maior */
+    height:180px;
+    border:0;
+    border-radius:8px;
+}
+
+.footer-info{
+    display:flex;
+    flex-direction:column;
+
+    margin-left:14px; /* um pouco mais afastado do mapa */
+    gap:12px; /* 👈 mais espaço entre linhas */
+}
+
+/* título */
+.footer-info h3{
+    font-size:16px;
+    font-weight:400;
+    margin:0;
+    letter-spacing:1px;
+    line-height:1.4;
+}
+
+/* texto */
+.footer-info p{
+    font-size:14px;
+    margin:0;
+    line-height:1.6; /* 👈 respira mais */
+}
+
+/* blocos de contato (whats / insta) */
+.footer-info .cart-icon{
+    display:flex;
+    align-items:center;
+    gap:12px; /* 👈 mais espaço entre ícone e texto */
+    margin-top:4px;
+}
+
+.footer-info .cart-icon p{
+    font-size:14px;
+}
+
+/* ICONES */
+.footer-info .cart-icon{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.footer-info .cart-icon img{
+    width:20px;
+    height:20px;
+}
+
+.footer-logo{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    margin-left:auto;
+    gap:6px;
+}
+
+.footer-logo img{
+    width:120px;   /* 🔥 diminuído */
+    height:auto;
+    object-fit:contain;
+}
+
+/* LINHA E COPYRIGHT */
+
+.footer-copy{
+    background:#2c7771;
+    padding:0 40px 10px;
+}
+
+.footer-copy-line{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,0.5);
+    margin-bottom:8px;
+}
+
+.footer-copy p{
+    text-align:center;
+    color:white;
+    font-family:"Playfair Display SC", serif;
+    font-size:10px;
+    letter-spacing:1px;
+    margin:0;
+}
+
+/* TEXTO SOBRE O MAPA */
+
+.footer-map{
+    position:relative;
+}
+
+.footer-map iframe{
+    filter: brightness(50%);
+}
+
+.map-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:2;
+    width:100%;
+    text-align:center;
+    color:rgb(244, 244, 244);
+
+    pointer-events:none;
+}
+
+.map-text h4{
+    margin:0;
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:2px;
+    color: rgb(130, 233, 212);
+}
+
+.map-text span{
+    font-family:"Parisienne", cursive;
+    font-size:28px;
+}
+
+
+/* ====================================
+   RESPONSIVO
+==================================== */
+
+@media(max-width:992px){
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+}
+
+@media(max-width:768px){
+    .top-navbar nav{
+        display:none;
+    }
+
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:480px){
+    .hero img{
+        height:180px;
+    }
+
+    .logo h1{
+        font-size:30px;
+    }
+}
+
+/* vitrine */
+
+body{
+    background:#f5f2e9;
+    font-family:'Playfair Display SC', serif;
+}
+
+/* título */
+
+.titulo h1{
+    color:#3e746d;
+    font-size:55px;
+    font-weight:400;
+}
+
+/* GRID */
+
+.produtos{
+
+    width:90%;
+    margin:40px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+/* CARD */
+
+.produto-card{
+
+    background:#d8e1da;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+
+    transition:.3s;
+}
+
+.produto-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.produto-card img{
+
+    width:100%;
+
+    height:170px;
+
+    object-fit:contain;
+
+    background:white;
+
+}
+
+/* corpo */
+
+.produto-body{
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+.produto-body h3{
+
+    font-size:25px;
+
+    color:#444;
+
+    margin-bottom:8px;
+
+}
+
+.produto-body p{
+
+    font-size:14px;
+
+    color:#555;
+
+    margin-bottom:8px;
+
+}
+
+.produto-body h2{
+
+    color:#4d847c;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+/* botão */
+
+.produto-footer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.sacola{
+
+    width:22px !important;
+
+    height:22px !important;
+
+    background:none !important;
+
+}
+
+.produto-footer button{
+
+    background:#7c9890;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 20px;
+
+    cursor:pointer;
+
+    font-family:'Playfair Display SC', serif;
+
+    transition:.3s;
+
+}
+
+.produto-footer button:hover{
+
+    background:#2f6d67;
+
+}

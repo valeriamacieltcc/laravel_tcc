@@ -127,6 +127,22 @@ body{
     width:20px;
     height:20px;
 }
+.about-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    
+    
+}
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
+}
 
 .footer-logo{
     display:flex;
