@@ -32,6 +32,6 @@ class HomeController extends Controller
             ]
         ];
 
-        return view('home', compact('home'));
+        return view('home.index');
     }
 }
