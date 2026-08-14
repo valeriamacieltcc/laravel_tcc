@@ -237,6 +237,70 @@
                     </div>
 
                 </div>
+                          <div class="form-group">
+                                <label for="sexo">Sexo</label>
+                                <select id="sexo" name="sexo">
+                                    <option value="">Selecione</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Masculino">Masculino</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nacionalidade">Nacionalidade</label>
+                                <input type="text" id="nacionalidade" name="nacionalidade">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cor">Cor</label>
+                                <input type="text" id="cor" name="cor">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone_residencial">Telefone Residencial</label>
+                                <input type="text" id="telefone_residencial" name="telefone_residencial">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone_comercial">Telefone Comercial</label>
+                                <input type="text" id="telefone_comercial" name="telefone_comercial">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="indicacao">Indicação</label>
+                                <input type="text" id="indicacao" name="indicacao">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="motivo_visita">Motivo da Visita</label>
+                                <input type="text" id="motivo_visita" name="motivo_visita">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="emergencia_nome">Em caso de emergência avisar</label>
+                                <input type="text" id="emergencia_nome" name="emergencia_nome">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emergencia_telefone">Telefone de Emergência</label>
+                                <input type="text" id="emergencia_telefone" name="emergencia_telefone">
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="como_conheceu">Como conheceu nosso trabalho?</label>
+                                <select id="como_conheceu" name="como_conheceu">
+                                    <option value="">Selecione</option>
+                                    <option value="Indicação">Indicação</option>
+                                    <option value="Folder">Folder</option>
+                                    <option value="Site">Site</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+</div>
 
             </section>
 
@@ -508,6 +572,256 @@
                     >{{ old('observacoes', $anamnese['observacoes'] ?? '') }}</textarea>
                 </div>
 
+                <div class="question-item">
+                            <p>Costuma permanecer muito tempo sentada?</p>
+                            <label><input type="radio" name="muito_tempo_sentada" value="sim"> Sim</label>
+                            <label><input type="radio" name="muito_tempo_sentada" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>Antecedentes cirúrgicos?</p>
+                            <label><input type="radio" name="antecedentes_cirurgicos" value="sim"> Sim</label>
+                            <label><input type="radio" name="antecedentes_cirurgicos" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="antecedentes_cirurgicos_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Tratamento estético anterior?</p>
+                            <label><input type="radio" name="tratamento_estetico_anterior" value="sim"> Sim</label>
+                            <label><input type="radio" name="tratamento_estetico_anterior" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="tratamento_estetico_anterior_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Antecedentes alérgicos?</p>
+                            <label><input type="radio" name="antecedentes_alergicos" value="sim"> Sim</label>
+                            <label><input type="radio" name="antecedentes_alergicos" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="antecedentes_alergicos_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Funcionamento intestinal regular?</p>
+                            <label><input type="radio" name="funcionamento_intestinal_regular" value="sim"> Sim</label>
+                            <label><input type="radio" name="funcionamento_intestinal_regular" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Observações</label>
+                            <input type="text" name="funcionamento_intestinal_obs">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Pratica esportes?</p>
+                            <label><input type="radio" name="pratica_esportes" value="sim"> Sim</label>
+                            <label><input type="radio" name="pratica_esportes" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="pratica_esportes_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>É fumante?</p>
+                            <label><input type="radio" name="fumante" value="sim"> Sim</label>
+                            <label><input type="radio" name="fumante" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>Alimentação balanceada?</p>
+                            <label><input type="radio" name="alimentacao_balanceada" value="sim"> Sim</label>
+                            <label><input type="radio" name="alimentacao_balanceada" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Tipo?</label>
+                            <input type="text" name="alimentacao_tipo">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Ingere no mínimo 8 copos de água por dia?</p>
+                            <label><input type="radio" name="agua_8_copos" value="sim"> Sim</label>
+                            <label><input type="radio" name="agua_8_copos" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>É gestante?</p>
+                            <label><input type="radio" name="gestante_corporal" value="sim"> Sim</label>
+                            <label><input type="radio" name="gestante_corporal" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Filhos?</label>
+                            <select name="filhos">
+                                <option value="">Selecione</option>
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Quantos?</label>
+                            <input type="number" name="filhos_quantos">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Tem algum problema ortopédico?</p>
+                            <label><input type="radio" name="problema_ortopedico" value="sim"> Sim</label>
+                            <label><input type="radio" name="problema_ortopedico" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="problema_ortopedico_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Faz algum tratamento médico?</p>
+                            <label><input type="radio" name="faz_tratamento_medico" value="sim"> Sim</label>
+                            <label><input type="radio" name="faz_tratamento_medico" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="faz_tratamento_medico_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Usa ou já usou ácidos na pele?</p>
+                            <label><input type="radio" name="acidos_na_pele" value="sim"> Sim</label>
+                            <label><input type="radio" name="acidos_na_pele" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="acidos_na_pele_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Já fez algum tratamento ortomolecular?</p>
+                            <label><input type="radio" name="tratamento_ortomolecular" value="sim"> Sim</label>
+                            <label><input type="radio" name="tratamento_ortomolecular" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="tratamento_ortomolecular_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Cuidados diários e produtos em uso?</p>
+                            <label><input type="radio" name="cuidados_diarios" value="sim"> Sim</label>
+                            <label><input type="radio" name="cuidados_diarios" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="cuidados_diarios_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Portador de marca-passo?</p>
+                            <label><input type="radio" name="portador_marcapasso" value="sim"> Sim</label>
+                            <label><input type="radio" name="portador_marcapasso" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="portador_marcapasso_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Presença de metais?</p>
+                            <label><input type="radio" name="presenca_metais" value="sim"> Sim</label>
+                            <label><input type="radio" name="presenca_metais" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Local?</label>
+                            <input type="text" name="presenca_metais_local">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Antecedentes oncológicos?</p>
+                            <label><input type="radio" name="antecedentes_oncologicos" value="sim"> Sim</label>
+                            <label><input type="radio" name="antecedentes_oncologicos" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="antecedentes_oncologicos_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Cirurgia ou fraturas recentes?</p>
+                            <label><input type="radio" name="cirurgia_fratura_recente" value="sim"> Sim</label>
+                            <label><input type="radio" name="cirurgia_fratura_recente" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="cirurgia_fratura_recente_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Ciclo menstrual regular?</p>
+                            <label><input type="radio" name="ciclo_menstrual_regular" value="sim"> Sim</label>
+                            <label><input type="radio" name="ciclo_menstrual_regular" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Observações</label>
+                            <input type="text" name="ciclo_menstrual_obs">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Usa método anticoncepcional?</p>
+                            <label><input type="radio" name="metodo_anticoncepcional" value="sim"> Sim</label>
+                            <label><input type="radio" name="metodo_anticoncepcional" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Qual?</label>
+                            <input type="text" name="metodo_anticoncepcional_qual">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Varizes?</p>
+                            <label><input type="radio" name="varizes" value="sim"> Sim</label>
+                            <label><input type="radio" name="varizes" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Grau</label>
+                            <input type="text" name="varizes_grau">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Lesões?</p>
+                            <label><input type="radio" name="lesoes" value="sim"> Sim</label>
+                            <label><input type="radio" name="lesoes" value="nao"> Não</label>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label>Quais?</label>
+                            <input type="text" name="lesoes_quais">
+                        </div>
+
+                        <div class="question-item">
+                            <p>Hipertensão?</p>
+                            <label><input type="radio" name="hipertensao_corporal" value="sim"> Sim</label>
+                            <label><input type="radio" name="hipertensao_corporal" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>Hipotensão?</p>
+                            <label><input type="radio" name="hipotensao" value="sim"> Sim</label>
+                            <label><input type="radio" name="hipotensao" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>Diabetes?</p>
+                            <label><input type="radio" name="diabetes_corporal" value="sim"> Sim</label>
+                            <label><input type="radio" name="diabetes_corporal" value="nao"> Não</label>
+                        </div>
+
+                        <div class="question-item">
+                            <p>Epilepsia?</p>
+                            <label><input type="radio" name="epilepsia_corporal" value="sim"> Sim</label>
+                            <label><input type="radio" name="epilepsia_corporal" value="nao"> Não</label>
+                        </div>
+
             </section>
 
 
@@ -578,7 +892,102 @@
                     @endforeach
 
                 </div>
+                <div class="form-group form-group-full">
+                            <label for="tipo_pele_avaliacao">Classificação do tipo cutâneo</label>
+                            <select id="tipo_pele_avaliacao" name="tipo_pele_avaliacao">
+                                <option value="">Selecione</option>
+                                <option value="Desidratada">Desidratada</option>
+                                <option value="Lipídica">Lipídica</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Seborreica">Seborreica</option>
+                            </select>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="grau_oleosidade">Quanto ao grau de oleosidade</label>
+                            <select id="grau_oleosidade" name="grau_oleosidade">
+                                <option value="">Selecione</option>
+                                <option value="Alípica">Alípica</option>
+                                <option value="Normal">Normal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="espessura_pele">Quanto à espessura</label>
+                            <select id="espessura_pele" name="espessura_pele">
+                                <option value="">Selecione</option>
+                                <option value="Espessa">Espessa</option>
+                                <option value="Fina">Fina</option>
+                                <option value="Muito fina">Muito fina</option>
+                            </select>
+                        </div>
+
+                        <h3>Manchas pigmentares relacionadas à melanina</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="acromia" value="sim"> Acromia</label>
+                            <label class="check-item"><input type="checkbox" name="cloasma" value="sim"> Cloasma</label>
+                            <label class="check-item"><input type="checkbox" name="efelides" value="sim"> Efélides</label>
+                            <label class="check-item"><input type="checkbox" name="hipercromia" value="sim"> Hipercromia</label>
+                            <label class="check-item"><input type="checkbox" name="hipocromia" value="sim"> Hipocromia</label>
+                        </div>
+
+                        <h3>Manchas por alterações vasculares</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="angioma" value="sim"> Angioma</label>
+                            <label class="check-item"><input type="checkbox" name="cianose" value="sim"> Cianose</label>
+                            <label class="check-item"><input type="checkbox" name="eritema" value="sim"> Eritema</label>
+                            <label class="check-item"><input type="checkbox" name="hematoma" value="sim"> Hematoma</label>
+                            <label class="check-item"><input type="checkbox" name="petequias" value="sim"> Petéquias</label>
+                            <label class="check-item"><input type="checkbox" name="telangectasias" value="sim"> Telangectasias</label>
+                        </div>
+
+                        <h3>Formações sólidas</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="ceratose" value="sim"> Ceratose</label>
+                            <label class="check-item"><input type="checkbox" name="nodulos" value="sim"> Nódulos</label>
+                            <label class="check-item"><input type="checkbox" name="papulas" value="sim"> Pápulas</label>
+                            <label class="check-item"><input type="checkbox" name="comedio" value="sim"> Comedão</label>
+                            <label class="check-item"><input type="checkbox" name="verrugas" value="sim"> Verrugas</label>
+                            <label class="check-item"><input type="checkbox" name="milium" value="sim"> Milium</label>
+                            <label class="check-item"><input type="checkbox" name="necrose" value="sim"> Necrose</label>
+                        </div>
+
+                        <h3>Formações com conteúdo líquido</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="bolha" value="sim"> Bolha</label>
+                            <label class="check-item"><input type="checkbox" name="pustula" value="sim"> Pústula</label>
+                            <label class="check-item"><input type="checkbox" name="vesicula" value="sim"> Vesícula</label>
+                        </div>
+
+                        <h3>Lesões de pele</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="crosta" value="sim"> Crosta</label>
+                            <label class="check-item"><input type="checkbox" name="escara" value="sim"> Escara</label>
+                            <label class="check-item"><input type="checkbox" name="escoriacao" value="sim"> Escoriação</label>
+                            <label class="check-item"><input type="checkbox" name="fissura" value="sim"> Fissura</label>
+                            <label class="check-item"><input type="checkbox" name="fistula" value="sim"> Fístula</label>
+                            <label class="check-item"><input type="checkbox" name="ulceracao" value="sim"> Ulceração</label>
+                        </div>
+
+                        <h3>Sequelas</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="atrofia" value="sim"> Atrofia</label>
+                            <label class="check-item"><input type="checkbox" name="cicatriz" value="sim"> Cicatriz</label>
+                            <label class="check-item"><input type="checkbox" name="hipertricose" value="sim"> Hipertricose</label>
+                            <label class="check-item"><input type="checkbox" name="hirsutismo" value="sim"> Hirsutismo</label>
+                        </div>
+
+                        <h3>Alterações de queratinização</h3>
+                        <div class="check-grid">
+                            <label class="check-item"><input type="checkbox" name="eczema" value="sim"> Eczema</label>
+                            <label class="check-item"><input type="checkbox" name="hiperqueratose" value="sim"> Hiperqueratose</label>
+                            <label class="check-item"><input type="checkbox" name="psoriase" value="sim"> Psoríase</label>
+                        </div>
+
+                        <div class="form-group textarea-group">
+                            <label for="relatorio_pele">Relatório</label>
+                            <textarea id="relatorio_pele" name="relatorio_pele" rows="6"></textarea>
+                        </div>
             </section>
 
 
@@ -672,6 +1081,68 @@
                         rows="5"
                     >{{ old('obs_design', $anamnese['obs_design'] ?? '') }}</textarea>
                 </div>
+                <div class="form-grid">
+                        <div class="form-group">
+                            <label for="to">TO (Tamanho do olho)</label>
+                            <input type="number" step="0.01" id="to" name="to">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pc">PC (TO / 2)</label>
+                            <input type="number" step="0.01" id="pc" name="pc">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura_inicial">Altura Inicial (PC)</label>
+                            <input type="number" step="0.01" id="altura_inicial" name="altura_inicial">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="posicao_pma">Posição do PMA (TO + PC)</label>
+                            <input type="number" step="0.01" id="posicao_pma" name="posicao_pma">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura_pma">Altura do PMA (PC + 1,00)</label>
+                            <input type="number" step="0.01" id="altura_pma" name="altura_pma">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tb">TB (Tamanho da boca)</label>
+                            <input type="number" step="0.01" id="tb" name="tb">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="altura_final">Altura Final (PC + 0,50)</label>
+                            <input type="number" step="0.01" id="altura_final" name="altura_final">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="espessura_inicial">Espessura Inicial (Arco do cupido)</label>
+                            <input type="number" step="0.01" id="espessura_inicial" name="espessura_inicial">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="espessura_pma">Espessura PMA (Espessura inicial / 2)</label>
+                            <input type="number" step="0.01" id="espessura_pma" name="espessura_pma">
+                        </div>
+                    </div>
+
+                    <div class="form-group textarea-group">
+                        <label for="dicas_sobrancelhas">Observações do Design</label>
+                        <textarea id="dicas_sobrancelhas" name="dicas_sobrancelhas" rows="5"></textarea>
+                    </div>
+
+                    <div class="termo-texto">
+                        <p><strong>Dicas:</strong></p>
+                        <ul>
+                            <li>Olhos juntos – sobrancelhas mais afastadas.</li>
+                            <li>Olhos separados – sobrancelhas mais juntas.</li>
+                            <li>Aba nasal larga – sobrancelhas mais juntas.</li>
+                            <li>Aba nasal fina – sobrancelhas mais separadas.</li>
+                            <li>Limite de boca: mínimo de 4,5 e máximo de 5,5.</li>
+                        </ul>
+</div>
 
             </section>
 
@@ -699,30 +1170,125 @@
                 </div>
 
                 <div class="form-grid">
-
-                    <div class="form-group">
-                        <label for="data">Data</label>
-
-                        <input
-                            type="date"
-                            id="data"
-                            name="data"
-                            value="{{ old('data', $anamnese['data'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="assinatura">Assinatura do Cliente</label>
-
-                        <input
-                            type="text"
-                            id="assinatura"
-                            name="assinatura"
-                            value="{{ old('assinatura', $anamnese['assinatura'] ?? '') }}"
-                        >
-                    </div>
-
                 </div>
+                                    <div class="termo-texto">
+                        <p>
+                            Declaro que todas as informações fornecidas nesta ficha de anamnese são verdadeiras
+                            e completas, assumindo total responsabilidade pela veracidade dos dados apresentados.
+                        </p>
+
+                        <p>
+                            Estou ciente de que a omissão de informações sobre meu estado de saúde, uso de
+                            medicamentos, alergias, gestação ou qualquer outra condição relevante poderá
+                            comprometer os resultados do tratamento estético e minha segurança durante os
+                            procedimentos.
+                        </p>
+
+                        <p>
+                            Declaro ainda que fui orientada pela profissional responsável sobre os cuidados
+                            necessários antes, durante e após o tratamento, comprometendo-me a seguir o protocolo
+                            sugerido para manutenção em casa e assumindo os riscos caso não siga corretamente
+                            as orientações fornecidas.
+                        </p>
+
+                        <p>
+                            Autorizo a realização da avaliação estética e dos procedimentos propostos, bem como
+                            o registro das informações desta ficha para fins de acompanhamento do tratamento.
+                        </p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="local_data">Local e Data</label>
+                            <input type="text" id="local_data" name="local_data">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assinatura_cliente">Assinatura do Cliente</label>
+                            <input type="text" id="assinatura_cliente" name="assinatura_cliente">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assinatura_profissional">Assinatura da Profissional</label>
+                            <input type="text" id="assinatura_profissional" name="assinatura_profissional">
+                        </div>
+                    </div>
+
+                    <h3>Autorização do responsável (caso o cliente seja menor de idade)</h3>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome_mae">Mãe</label>
+                            <input type="text" id="nome_mae" name="nome_mae">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nome_pai">Pai</label>
+                            <input type="text" id="nome_pai" name="nome_pai">
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="responsavel">Responsável</label>
+                            <input type="text" id="responsavel" name="responsavel">
+                        </div>
+                    </div>
+
+                    <h3>Dados do Tratamento</h3>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="data_avaliacao">Data da Avaliação</label>
+                            <input type="date" id="data_avaliacao" name="data_avaliacao">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="valor_tratamento">Valor do Tratamento (R$)</label>
+                            <input type="number" step="0.01" id="valor_tratamento" name="valor_tratamento">
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="forma_pagamento">Forma de Pagamento</label>
+                            <select id="forma_pagamento" name="forma_pagamento">
+                                <option value="">Selecione</option>
+                                <option value="À vista">À vista</option>
+                                <option value="Parcelado">Parcelado</option>
+                                <option value="Cartão">Cartão</option>
+                                <option value="Cheque">Cheque</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="objetivo_tratamento">Objetivo do Tratamento</label>
+                            <textarea id="objetivo_tratamento" name="objetivo_tratamento" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="tratamento_proposto">Tratamento Proposto</label>
+                            <textarea id="tratamento_proposto" name="tratamento_proposto" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numero_sessoes">Número de Sessões</label>
+                            <input type="number" id="numero_sessoes" name="numero_sessoes">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="regularidade">Regularidade</label>
+                            <select id="regularidade" name="regularidade">
+                                <option value="">Selecione</option>
+                                <option value="Uma vez">Uma vez</option>
+                                <option value="Duas vezes">Duas vezes</option>
+                                <option value="Três vezes">Três vezes</option>
+                                <option value="Quatro vezes">Quatro vezes</option>
+                                <option value="Todos os dias">Todos os dias</option>
+                            </select>
+                        </div>
+
+    <div class="form-group form-group-full">
+        <label for="homecare">Homecare</label>
+        <textarea id="homecare" name="homecare" rows="3"></textarea>
+    </div>
+</div>
 
             </section>
 

@@ -1852,6 +1852,8 @@ LABELS
     letter-spacing: 1.8px;
 
     text-transform: uppercase;
+
+  
 }
 
 /* =========================================================
@@ -2152,6 +2154,257 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
     background-color: #2f6d67;
 
     transform: translateY(-1px);
+}
+/* =========================
+   AJUSTES DA FICHA DE ANAMNESE
+   ========================= */
+
+   .anamnese-page {
+    background: #ECEBDD;
+    padding: 40px 20px;
+}
+
+.anamnese-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.anamnese-section {
+    margin-bottom: 45px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.section-title span {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2E614D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.section-title small {
+    color: #777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    margin: 4px 0 0;
+    color: #2E614D;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2E614D;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #C9DBB4;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #fff;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3AC2A4;
+    box-shadow: 0 0 0 3px rgba(58,194,164,0.15);
+}
+
+.textarea-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.question-item {
+    border: 1px solid #E1F4BE;
+    border-radius: 12px;
+    padding: 16px;
+    background: #F6F5E5;
+}
+
+.question-item p {
+    margin: 0 0 12px;
+    font-weight: 600;
+    color: #2E614D;
+}
+
+.question-item label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 18px;
+    margin-bottom: 8px;
+}
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F6F5E5;
+    border: 1px solid #E1F4BE;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.anamnese-section h3 {
+    margin: 26px 0 12px;
+    color: #2E614D;
+    font-size: 18px;
+}
+
+.termo-texto {
+    background: #F6F5E5;
+    border: 1px solid #E1F4BE;
+    border-radius: 12px;
+    padding: 18px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 22px;
+}
+
+.termo-texto ul {
+    margin: 10px 0 0 18px;
+}
+
+.anamnese-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-salvar-ficha {
+    background: #2E614D;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, transform .15s ease;
+}
+
+.btn-salvar-ficha:hover {
+    background: #255241;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .anamnese-container {
+        padding: 22px;
+    }
+
+    .question-grid,
+    .check-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        align-items: flex-start;
+    }
+}
+
+/* =========================================================
+AJUSTE DE ESPAÇAMENTO ENTRE LABEL E INPUT
+========================================================= */
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px; /* valor ideal para manter harmonia */
+    color: #52635f;
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+/* Para garantir consistência em todo o formulário */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    margin-top: 0; /* remove espaçamento extra entre campos */
+}
+
+
+
+/* =========================================================
+   ESPAÇAMENTO ENTRE PERGUNTAS
+   ========================================================= */
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    column-gap: 18px;
+    row-gap: 18px;
+}
+
+
+/* ESPAÇO ENTRE OBSERVAÇÕES E A PRÓXIMA PERGUNTA */
+.textarea-group {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* GARANTE ESPAÇO ENTRE OS BLOCOS DE PERGUNTAS */
+.question-item {
+    margin-bottom: 0;
 }
 
 /* =========================================================
