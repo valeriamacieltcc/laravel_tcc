@@ -388,8 +388,7 @@
 
                 <div class="campo campo-completo">
                     <button type="submit"class="botao-perfil">
-                        <a href="{{ route('cliente.perfil.update
-                        ') }}">
+                        <a href="{{ route('cliente.perfil.update') }}">
                         </a>
                         Salvar alterações
                     </button>

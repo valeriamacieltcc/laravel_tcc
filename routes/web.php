@@ -141,28 +141,28 @@ Route::prefix('/vitrine')->group(function () {
 */
 
 
-Route::prefix('/perfil')->group(function () {
+// Route::prefix('/perfil')->group(function () {
 
-    Route::get('/index', [PerfilController::class, 'index'])
-        ->name('perfil.index');
+//     Route::get('/index', [PerfilController::class, 'index'])
+//         ->name('perfil.index');
 
-    Route::get('/anamnese', [FichaController::class, 'index'])
-        ->name('perfil.anamnese.index');
+//     Route::get('/anamnese', [FichaController::class, 'index'])
+//         ->name('perfil.anamnese.index');
 
-    Route::post('/anamnese/salvar', [FichaController::class, 'salvar'])
-        ->name('perfil.anamnese.salvar');
 
-    Route::put('/atualizar', [PerfilController::class, 'atualizar'])
-        ->name('perfil.atualizar');
 
-});
+//     Route::put('/atualizar', [PerfilController::class, 'atualizar'])
+//         ->name('perfil.atualizar');
+
+// });
 Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
 
         Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
         Route::get('/perfil/editar', [ClientePerfilController::class,'edit'])->name('perfil.edit');
         Route::put('/perfil', [ClientePerfilController::class,'update'])->name('perfil.update');
         Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');
-    
+        Route::post('perfil/anamnese/salvar', [FichaController::class, 'salvar'])->name('perfil.anamnese.salvar');
+        Route::get('/perfil/anamnese', function () {return view('perfil.anamnese.index');})->name('perfil.anamnese.index');
         Route::get('/agendamentos/horarios-disponiveis', [AgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
         Route::get('/agendamentos', [AgendamentoController::class,'index'])->name('agendamentos.index');
         Route::get('/agendamentos/criar', [AgendamentoController::class,'create'])->name('agendamentos.create');

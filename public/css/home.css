@@ -259,14 +259,12 @@ body{
     
     
 }
-.foto-perfil{
-    width:160px;
-    height:160px;
-    border-radius:50%;
-    object-fit:cover;
-   
-    
-}
+ .foto-perfil img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
 .footer-logo{
     display:flex;
@@ -2467,4 +2465,61 @@ RESPONSIVIDADE
     .btn-salvar-ficha {
         width: 100%;
     }
+}
+
+/* ---- */
+.acoes-perfil {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.botao-editar {
+    display: inline-block;
+    background: #2c7771;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.botao-editar:hover {
+    background: #245f5a;
+    color: white;
+}
+
+.dados-pessoais p {
+    margin-bottom: 8px;
+}
+
+
+.mensagem-sucesso {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 14px;
+    border-radius: 7px;
+    background: #d4edda;
+    color: #155724;
+}
+
+.sem-dados {
+    color: #777;
+}
+.acoes-perfil form {
+margin: 0;
+}
+
+.botao-sair {
+border: none;
+background: #a94442;
+color: white;
+padding: 11px 20px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.botao-sair:hover {
+background: #873836;
 }

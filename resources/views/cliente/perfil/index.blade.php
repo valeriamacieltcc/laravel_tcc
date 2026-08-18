@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +9,6 @@
     >
 
     <title>Perfil da Cliente</title>
-
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/perfil.css') }}"
-    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -34,155 +28,86 @@
         rel="stylesheet"
     >
 
-    <style>
-        .acoes-perfil {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-top: 18px;
-        }
+    <!-- CSS DO CÓDIGO 1 -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
-        .botao-editar {
-            display: inline-block;
-            background: #2c7771;
-            color: white;
-            padding: 11px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-        }
-
-        .botao-editar:hover {
-            background: #245f5a;
-            color: white;
-        }
-
-        .dados-pessoais p {
-            margin-bottom: 8px;
-        }
-
-        .foto-perfil img {
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .mensagem-sucesso {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 14px;
-            border-radius: 7px;
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .sem-dados {
-            color: #777;
-        }
-        .acoes-perfil form {
-    margin: 0;
-}
-
-.botao-sair {
-    border: none;
-    background: #a94442;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.botao-sair:hover {
-    background: #873836;
-}
-    </style>
 </head>
 
 <body>
 
+@include('_partials.header')
+
+
 @if(session('sucesso'))
-    <div class="mensagem-sucesso">
+
+    <div class="alert alert-success container mt-3">
+
         {{ session('sucesso') }}
+
     </div>
+
 @endif
 
+
 <main class="perfil-container">
+
+
+    <!-- PERFIL -->
 
     <section class="perfil-topo">
 
         <div class="foto-perfil">
 
             @if($cliente->foto_perfil)
+
                 <img
                     src="{{ asset('storage/' . $cliente->foto_perfil) }}"
                     alt="{{ $user->name }}"
                 >
+
             @else
+
                 <img
                     src="{{ asset('imagem/perfil-padrao.png') }}"
                     alt="{{ $user->name }}"
                 >
+
             @endif
 
         </div>
 
+
         <div class="info-perfil">
 
-            <h1>{{ $user->name }}</h1>
+            <h1>
+                {{ $user->name }}
+            </h1>
+
 
             @if($cliente->data_nascimento)
+
                 <h2>
                     {{ $cliente->data_nascimento->age }} anos
                 </h2>
+
             @endif
 
-            <div class="dados-pessoais">
-                <p>
-                    <strong>E-mail:</strong>
-                    {{ $user->email }}
-                </p>
 
-                <p>
-                    <strong>Telefone:</strong>
-                    {{ $cliente->telefone }}
-                </p>
+            <!-- EDITAR PERFIL -->
+            <a
+                href="{{ route('cliente.perfil.edit') }}"
+                class="btn-editar"
+            >
+                Editar perfil
+            </a>
 
-                <p>
-                    <strong>CPF:</strong>
-                    {{ $cliente->cpf ?? 'Não informado' }}
-                </p>
+        </div>
 
-                <p>
-                    <strong>Endereço:</strong>
+    </section>
 
-                    @if($cliente->logradouro)
-                        {{ $cliente->logradouro }},
-                        {{ $cliente->numero ?? 's/n' }}
-
-                        @if($cliente->complemento)
-                            - {{ $cliente->complemento }}
-                        @endif
-
-                        <br>
-
-                        {{ $cliente->bairro }}
-
-                        @if($cliente->cidade)
-                            - {{ $cliente->cidade }}
-                        @endif
-
-                        @if($cliente->estado)
-                            / {{ $cliente->estado }}
-                        @endif
-                    @else
-                        Não informado
-                    @endif
-                </p>
-            </div>
-
-            <div class="acoes-perfil">
-               
     <a
         href="{{ route('cliente.perfil.edit') }}"
         class="botao-editar"
@@ -219,25 +144,46 @@
 </a>
     </form>
 </div>
-            
+
+    <!-- ANTES E DEPOIS -->
+
+    <section class="galeria-perfil">
+
+        <h3>
+            Histórico dos Antes & Depois
+        </h3>
+
+
+        <div class="galeria-perfil-grid">
+
+            @if(
+                isset($cliente->antes_depois)
+                && count($cliente->antes_depois) > 0
+            )
+
+                @foreach($cliente->antes_depois as $foto)
+
+                    <img
+                        src="{{ asset($foto) }}"
+                        alt="Antes e Depois"
+                    >
+
+                @endforeach
+
+            @else
+
+                <p>
+                    Nenhuma foto cadastrada ainda.
+                </p>
+
+            @endif
 
         </div>
 
     </section>
 
-    <section class="galeria">
 
-        <h3>Histórico dos Antes & Depois</h3>
-
-        <div class="galeria-grid">
-
-            <p class="sem-dados">
-                Nenhuma foto cadastrada ainda.
-            </p>
-
-        </div>
-
-    </section>
+    <!-- HISTÓRICO DOS PROCEDIMENTOS -->
 
     <section class="bloco-info">
 
@@ -245,31 +191,82 @@
             Histórico dos Procedimentos
         </div>
 
+
         <div class="conteudo-bloco">
 
-            <p class="sem-dados">
-                Nenhum procedimento realizado ainda.
-            </p>
+            @if(
+                isset($cliente->procedimentos)
+                && count($cliente->procedimentos) > 0
+            )
+
+                @foreach($cliente->procedimentos as $procedimento)
+
+                    <div class="procedimento-perfil">
+
+                        <h4>
+
+                            {{ is_array($procedimento)
+                                ? $procedimento['nome']
+                                : $procedimento->nome }}
+
+                        </h4>
+
+
+                        @if(is_array($procedimento))
+
+                            <small>
+                                {{ $procedimento['data'] ?? '' }}
+                            </small>
+
+                            <p>
+                                {{ $procedimento['observacao'] ?? '' }}
+                            </p>
+
+                        @endif
+
+                    </div>
+
+                @endforeach
+
+            @else
+
+                <p>
+                    Nenhum procedimento realizado ainda.
+                </p>
+
+            @endif
 
         </div>
 
+        
+
     </section>
+
+
+    <!-- ANAMNESE -->
 
     <section class="bloco-info">
 
-        <div class="titulo-bloco">
+        <a
+            href="{{ route('cliente.perfil.anamnese.index') }}"
+            class="titulo-bloco botao-anamnese"
+        >
             Ficha de Anamnese
-        </div>
+        </a>
+
 
         <div class="conteudo-bloco">
 
-            <p class="sem-dados">
-                A ficha de anamnese ainda não foi preenchida.
+            <p>
+                Acesse sua ficha de anamnese.
             </p>
 
         </div>
 
     </section>
+
+
+    <!-- FAVORITOS -->
 
     <section class="bloco-info">
 
@@ -277,17 +274,48 @@
             Favoritos
         </div>
 
+
         <div class="conteudo-bloco">
 
-            <p class="sem-dados">
-                Nenhum produto favoritado ainda.
-            </p>
+            @if(
+                isset($cliente->favoritos)
+                && count($cliente->favoritos) > 0
+            )
+
+                <ul>
+
+                    @foreach($cliente->favoritos as $favorito)
+
+                        <li>
+
+                            {{ is_object($favorito)
+                                ? ($favorito->nome ?? '')
+                                : $favorito }}
+
+                        </li>
+
+                    @endforeach
+
+                </ul>
+
+            @else
+
+                <p>
+                    Nenhum produto favoritado ainda.
+                </p>
+
+            @endif
 
         </div>
 
     </section>
 
+
 </main>
+
+
+@include('_partials.footer')
+
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
