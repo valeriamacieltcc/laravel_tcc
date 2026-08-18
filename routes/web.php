@@ -1,68 +1,13 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Middleware\LogAcessoMiddleware;
-
-// Route::prefix('/home')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])
-//         ->name('home.index');
-
-// });
-
-// Route::prefix('/procedimento')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\ProcedimentoController::class, 'index'])
-//         ->name('procedimento.index');
-
-//     Route::get('/{slug}', [App\Http\Controllers\ProcedimentoController::class, 'show'])
-//         ->name('procedimentos.show');
-
-// });
-
-// Route::prefix('/vitrine')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\VitrineController::class, 'index'])
-//         ->name('vitrine.index');
-
-// });
-
-// Route::prefix('/perfil')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\PerfilController::class, 'index'])
-//         ->name('perfil.index');
-
-
-//     Route::get(
-//         '/index',
-//         [App\Http\Controllers\PerfilController::class, 'index']
-//     )->name('perfil.index');
-
-//     Route::get('/perfil/anamnese', [FichaController::class, 'index'])
-//     ->name('perfil.anamnese.index');
-
-
-//     Route::put(
-//         '/atualizar',
-//         [App\Http\Controllers\PerfilController::class, 'atualizar']
-//     )->name('perfil.atualizar');
-
-// });
-// use App\Http\Controllers\FichaController;
-
-// Route::get(
-//     '/ficha',
-//     [FichaController::class, 'index']
-// )->name('ficha.index');
-
-
-// Route::post(
-//     '/ficha/salvar',
-//     [FichaController::class, 'salvar']
-// )->name('ficha.salvar');
-
-
 use Illuminate\Support\Facades\Route;
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLERS PRINCIPAIS
+|--------------------------------------------------------------------------
+*/
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProcedimentoController;
@@ -70,23 +15,36 @@ use App\Http\Controllers\VitrineController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\FichaController;
 
-use App\Http\Middleware\LogAcessoMiddleware;
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLERS ADMIN
+|--------------------------------------------------------------------------
+*/
+
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLERS AUTH
+|--------------------------------------------------------------------------
+*/
+
 use App\Http\Controllers\Auth\CadastroController;
 use App\Http\Controllers\Auth\LoginController;
+
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLERS CLIENTE
+|--------------------------------------------------------------------------
+*/
+
 use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
 use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController;
-
-Route::prefix('/home')->group(function () {
-    Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-});
-
-Route::get('/procedimento/index', [ClienteProcedimentoController::class,'index'])->name('procedimento.index');
-
-Route::prefix('/vitrine')->group(function () {
-    Route::get('/index', [ClienteVitrineController::class,'index'])->name('vitrine.index');});
 
 
 /*
@@ -95,7 +53,7 @@ Route::prefix('/vitrine')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('/home')->group(function () {
+Route::prefix('home')->group(function () {
 
     Route::get('/index', [HomeController::class, 'index'])
         ->name('home.index');
@@ -105,33 +63,32 @@ Route::prefix('/home')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| PROCEDIMENTOS
+| PROCEDIMENTOS - CLIENTE
 |--------------------------------------------------------------------------
+|
+| Página pública de procedimentos.
+|
 */
 
-Route::prefix('/procedimento')->group(function () {
-
-    Route::get('/index', [ProcedimentoController::class, 'index'])
-        ->name('procedimento.index');
-
-    Route::get('/{slug}', [ProcedimentoController::class, 'show'])
-        ->name('procedimentos.show');
-
-});
+Route::get(
+    '/procedimento/index',
+    [ClienteProcedimentoController::class, 'index']
+)->name('procedimento.index');
 
 
 /*
 |--------------------------------------------------------------------------
-| VITRINE
+| VITRINE - CLIENTE
 |--------------------------------------------------------------------------
+|
+| Página pública da vitrine.
+|
 */
 
-Route::prefix('/vitrine')->group(function () {
-
-    Route::get('/index', [VitrineController::class, 'index'])
-        ->name('vitrine.index');
-
-});
+Route::get(
+    '/vitrine/index',
+    [ClienteVitrineController::class, 'index']
+)->name('vitrine.index');
 
 
 /*
@@ -140,51 +97,190 @@ Route::prefix('/vitrine')->group(function () {
 |--------------------------------------------------------------------------
 */
 
+Route::prefix('perfil')->group(function () {
 
-Route::prefix('/perfil')->group(function () {
+    Route::get(
+        '/index',
+        [PerfilController::class, 'index']
+    )->name('perfil.index');
 
-    Route::get('/index', [PerfilController::class, 'index'])
-        ->name('perfil.index');
 
-    Route::get('/anamnese', [FichaController::class, 'index'])
-        ->name('perfil.anamnese.index');
+    /*
+    | Anamnese
+    */
 
-    Route::post('/anamnese/salvar', [FichaController::class, 'salvar'])
-        ->name('perfil.anamnese.salvar');
+    Route::get(
+        '/anamnese',
+        [FichaController::class, 'index']
+    )->name('perfil.anamnese.index');
 
-    Route::put('/atualizar', [PerfilController::class, 'atualizar'])
-        ->name('perfil.atualizar');
+
+    Route::post(
+        '/anamnese/salvar',
+        [FichaController::class, 'salvar']
+    )->name('perfil.anamnese.salvar');
+
+
+    /*
+    | Atualizar perfil
+    */
+
+    Route::put(
+        '/atualizar',
+        [PerfilController::class, 'atualizar']
+    )->name('perfil.atualizar');
 
 });
-Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
 
-        Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
-        Route::get('/perfil/editar', [ClientePerfilController::class,'edit'])->name('perfil.edit');
-        Route::put('/perfil', [ClientePerfilController::class,'update'])->name('perfil.update');
-        Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');
-    
-        Route::get('/agendamentos/horarios-disponiveis', [AgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
-        Route::get('/agendamentos', [AgendamentoController::class,'index'])->name('agendamentos.index');
-        Route::get('/agendamentos/criar', [AgendamentoController::class,'create'])->name('agendamentos.create');
-        Route::post('/agendamentos', [AgendamentoController::class,'store'])->name('agendamentos.store');
-        Route::patch('/agendamentos/{agendamento}/cancelar', [AgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
+
+/*
+|--------------------------------------------------------------------------
+| ÁREA DO CLIENTE
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth')
+    ->prefix('cliente')
+    ->name('cliente.')
+    ->group(function () {
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | PERFIL DO CLIENTE
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get(
+            '/perfil',
+            [ClientePerfilController::class, 'show']
+        )->name('perfil.show');
+
+
+        Route::get(
+            '/perfil/editar',
+            [ClientePerfilController::class, 'edit']
+        )->name('perfil.edit');
+
+
+        Route::put(
+            '/perfil',
+            [ClientePerfilController::class, 'update']
+        )->name('perfil.update');
+
+
+        Route::put(
+            '/perfil/senha',
+            [ClientePerfilController::class, 'updatePassword']
+        )->name('perfil.password');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | AGENDAMENTOS
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get(
+            '/agendamentos/horarios-disponiveis',
+            [AgendamentoController::class, 'horariosDisponiveis']
+        )->name('agendamentos.horarios');
+
+
+        Route::get(
+            '/agendamentos',
+            [AgendamentoController::class, 'index']
+        )->name('agendamentos.index');
+
+
+        Route::get(
+            '/agendamentos/criar',
+            [AgendamentoController::class, 'create']
+        )->name('agendamentos.create');
+
+
+        Route::post(
+            '/agendamentos',
+            [AgendamentoController::class, 'store']
+        )->name('agendamentos.store');
+
+
+        Route::patch(
+            '/agendamentos/{agendamento}/cancelar',
+            [AgendamentoController::class, 'cancelar']
+        )->name('agendamentos.cancelar');
 
     });
 
-      
-// Procedimentos(admin)
-Route::prefix('admin')->name('admin.')->group(function () {
-        Route::resource('procedimentos',AdminProcedimentoController::class);
+
+/*
+|--------------------------------------------------------------------------
+| ADMIN - PROCEDIMENTOS
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+
+        Route::resource(
+            'procedimentos',
+            AdminProcedimentoController::class
+        );
+
     });
 
-// cadastro e login
+
+/*
+|--------------------------------------------------------------------------
+| CADASTRO E LOGIN
+|--------------------------------------------------------------------------
+*/
+
 Route::middleware('guest')->group(function () {
-Route::get('/cadastro', [CadastroController::class,'create'])->name('cadastro');
-Route::post('/cadastro', [CadastroController::class,'store'])->name('cadastro.store');
-Route::get('/login', [ LoginController::class,'create'])->name('login');
-Route::post('/login', [LoginController::class,'store'])->name('login.store');
+
+
+    /*
+    | Cadastro
+    */
+
+    Route::get(
+        '/cadastro',
+        [CadastroController::class, 'create']
+    )->name('cadastro');
+
+
+    Route::post(
+        '/cadastro',
+        [CadastroController::class, 'store']
+    )->name('cadastro.store');
+
+
+    /*
+    | Login
+    */
+
+    Route::get(
+        '/login',
+        [LoginController::class, 'create']
+    )->name('login');
+
+
+    Route::post(
+        '/login',
+        [LoginController::class, 'store']
+    )->name('login.store');
+
 });
 
-// logout
-Route::post('/logout', [LoginController::class,'destroy'])->middleware('auth')->name('logout');
 
+/*
+|--------------------------------------------------------------------------
+| LOGOUT
+|--------------------------------------------------------------------------
+*/
+
+Route::post(
+    '/logout',
+    [LoginController::class, 'destroy']
+)->middleware('auth')->name('logout');
