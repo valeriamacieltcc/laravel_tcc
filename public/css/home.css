@@ -259,12 +259,14 @@ body{
     
     
 }
- .foto-perfil img {
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
+}
 
 .footer-logo{
     display:flex;
@@ -841,11 +843,19 @@ body{
 }
 
 
-/* PAGINA PERFIL CSS */
 /* =========================================================
-   PÁGINA DE PERFIL
-   PADRÃO DO RESTANTE DO SITE
+   PERFIL DA CLIENTE
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
    ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+   *{
+    box-sizing: border-box;
+}
 
 
 /* =========================================================
@@ -853,12 +863,76 @@ body{
    ========================================================= */
 
 .perfil-container{
+
     width: 90%;
+
     max-width: 1250px;
 
     margin: 0 auto;
 
     padding: 40px 0 80px;
+
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+   ========================================================= */
+
+.mensagem-sucesso{
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 20px auto;
+
+    padding: 14px 20px;
+
+    background: #d9ded2;
+
+    border-left: 4px solid #3e746d;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    letter-spacing: .5px;
+
+}
+
+
+.mensagem-erro{
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 20px auto;
+
+    padding: 16px 20px;
+
+    background: #f3dddd;
+
+    border-left: 4px solid #a94442;
+
+    color: #873836;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+}
+
+
+.mensagem-erro ul{
+
+    margin: 8px 0 0;
+
+    padding-left: 20px;
+
 }
 
 
@@ -867,6 +941,7 @@ body{
    ========================================================= */
 
 .perfil-topo{
+
     display: flex;
 
     align-items: center;
@@ -874,6 +949,7 @@ body{
     gap: 50px;
 
     margin-bottom: 70px;
+
 }
 
 
@@ -882,7 +958,9 @@ body{
    ========================================================= */
 
 .foto-perfil{
+
     width: 190px;
+
     height: 190px;
 
     flex-shrink: 0;
@@ -896,11 +974,14 @@ body{
     background: transparent;
 
     padding: 0;
+
 }
 
 
 .foto-perfil img{
+
     width: 100%;
+
     height: 100%;
 
     display: block;
@@ -908,6 +989,7 @@ body{
     object-fit: cover;
 
     border-radius: 50%;
+
 }
 
 
@@ -916,17 +998,22 @@ body{
    ========================================================= */
 
 .info-perfil{
+
     display: flex;
 
     flex-direction: column;
 
     align-items: flex-start;
+
 }
 
 
-/* NOME DO CLIENTE */
+/* =========================================================
+   NOME
+   ========================================================= */
 
 .info-perfil h1{
+
     margin: 0 0 8px;
 
     color: #3e746d;
@@ -940,12 +1027,16 @@ body{
     line-height: 1;
 
     text-transform: none;
+
 }
 
 
-/* IDADE */
+/* =========================================================
+   IDADE
+   ========================================================= */
 
 .info-perfil h2{
+
     margin: 0 0 22px;
 
     color: #666;
@@ -959,22 +1050,23 @@ body{
     letter-spacing: 1.5px;
 
     text-transform: uppercase;
+
 }
 
 
 /* =========================================================
    BOTÃO EDITAR
-   MESMO PADRÃO DO VER MAIS
    ========================================================= */
 
 .btn-editar{
+
     display: inline-block;
 
     min-width: 125px;
 
     padding: 10px 25px;
 
-    margin: 0;
+    margin: 0 0 25px;
 
     border: none;
 
@@ -990,22 +1082,196 @@ body{
 
     font-weight: 400;
 
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
 
     text-align: center;
+
+    text-decoration: none;
 
     text-transform: uppercase;
 
     cursor: pointer;
 
     transition: .3s;
+
 }
 
 
 .btn-editar:hover{
+
     background: #2f6d67;
 
     color: white;
+
+}
+
+
+/* =========================================================
+   DADOS PESSOAIS
+   ========================================================= */
+
+.dados-perfil-topo{
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+
+    gap: 12px 35px;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.dados-perfil-topo div{
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.dados-perfil-topo strong{
+
+    margin-bottom: 4px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.dados-perfil-topo span{
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+.dados-perfil-topo .endereco-perfil{
+
+    grid-column: span 2;
+
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.acoes-perfil{
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.btn-acao{
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .6px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition: .3s;
+
+}
+
+
+.btn-acao:hover{
+
+    background: #2f6d67;
+
+    color: white;
+
+}
+
+
+.form-logout{
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+.btn-sair{
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: #a94442;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .6px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.btn-sair:hover{
+
+    background: #873836;
+
 }
 
 
@@ -1014,15 +1280,16 @@ body{
    ========================================================= */
 
 .galeria-perfil{
+
     margin-bottom: 70px;
 
     text-align: center;
+
 }
 
 
-/* TÍTULO */
-
 .galeria-perfil h3{
+
     margin: 0 0 40px;
 
     color: #3e746d;
@@ -1038,24 +1305,29 @@ body{
     line-height: 1.2;
 
     text-transform: uppercase;
+
 }
 
 
 /* =========================================================
-   GRID DE FOTOS
+   GRID DA GALERIA
    ========================================================= */
 
 .galeria-perfil-grid{
+
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 30px;
+
 }
 
 
 .galeria-perfil-grid img{
+
     width: 100%;
+
     height: 220px;
 
     display: block;
@@ -1065,11 +1337,67 @@ body{
     border-radius: 8px;
 
     transition: .3s;
+
 }
 
 
 .galeria-perfil-grid img:hover{
+
     transform: translateY(-5px);
+
+}
+
+
+/* =========================================================
+   SEM FOTOS
+   ========================================================= */
+
+.sem-dados-galeria{
+
+    grid-column: 1 / -1;
+
+    min-height: 160px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+
+}
+
+
+.sem-dados-galeria span{
+
+    color: #4f746d;
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.sem-dados-galeria p{
+
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
 }
 
 
@@ -1078,16 +1406,18 @@ body{
    ========================================================= */
 
 .bloco-info{
+
     margin-bottom: 50px;
+
 }
 
 
 /* =========================================================
    TÍTULO DOS BLOCOS
-   MESMA LINGUAGEM DOS TÍTULOS DE PROCEDIMENTOS
    ========================================================= */
 
 .titulo-bloco{
+
     padding: 0;
 
     margin-bottom: 25px;
@@ -1111,6 +1441,7 @@ body{
     text-transform: uppercase;
 
     border-radius: 0;
+
 }
 
 
@@ -1119,6 +1450,7 @@ body{
    ========================================================= */
 
 .conteudo-bloco{
+
     padding: 25px;
 
     background: #d9ded2;
@@ -1126,6 +1458,7 @@ body{
     border-radius: 10px;
 
     box-shadow: none;
+
 }
 
 
@@ -1134,6 +1467,7 @@ body{
    ========================================================= */
 
 .procedimento-perfil{
+
     padding: 18px 20px;
 
     margin-bottom: 15px;
@@ -1143,17 +1477,19 @@ body{
     border-radius: 6px;
 
     border: none;
+
 }
 
 
 .procedimento-perfil:last-child{
+
     margin-bottom: 0;
+
 }
 
 
-/* NOME */
-
 .procedimento-perfil h4{
+
     margin: 0 0 8px;
 
     color: #444;
@@ -1169,12 +1505,12 @@ body{
     line-height: 1.3;
 
     text-transform: uppercase;
+
 }
 
 
-/* DATA */
-
 .procedimento-perfil small{
+
     display: block;
 
     margin-bottom: 8px;
@@ -1190,12 +1526,12 @@ body{
     letter-spacing: 1px;
 
     text-transform: uppercase;
+
 }
 
 
-/* OBSERVAÇÃO */
-
 .procedimento-perfil p{
+
     margin: 0;
 
     color: #666;
@@ -1207,84 +1543,39 @@ body{
     font-weight: 400;
 
     line-height: 1.6;
+
 }
 
 
 /* =========================================================
-   FAVORITOS
+   SEM DADOS
    ========================================================= */
 
-.conteudo-bloco ul{
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px;
-
-    padding: 0;
+.sem-dados{
 
     margin: 0;
 
-    list-style: none;
-}
-
-
-.conteudo-bloco li{
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    min-height: 52px;
-
-    padding: 12px 18px 12px 42px;
-
-    background: #f5f2e9;
-
-    border-radius: 6px;
-
-    color: #444;
+    color: #666;
 
     font-family: "Playfair Display SC", serif;
 
     font-size: 13px;
 
-    font-weight: 400;
-
-    letter-spacing: 0.7px;
+    letter-spacing: .7px;
 
     text-transform: uppercase;
 
-    transition: .3s;
-}
+    text-align: center;
 
-
-.conteudo-bloco li::before{
-    content: "♡";
-
-    position: absolute;
-
-    left: 15px;
-
-    color: #4f746d;
-
-    font-size: 18px;
-}
-
-
-.conteudo-bloco li:hover{
-    transform: translateY(-3px);
-
-    background: #e8e8dd;
 }
 
 
 /* =========================================================
-   BOTÃO ANAMNESE
+   ANAMNESE
    ========================================================= */
 
 .botao-anamnese{
+
     display: block;
 
     width: 100%;
@@ -1314,200 +1605,118 @@ body{
     border-radius: 0;
 
     transition: .3s;
+
 }
 
 
 .botao-anamnese:hover{
-    background: #2f6d67;
-
-    color: white;
-}
-
-
-/* =========================================================
-   MODAL
-   ========================================================= */
-
-.modal-content{
-    border: none;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,.15);
-}
-
-
-/* =========================================================
-   HEADER MODAL
-   ========================================================= */
-
-.modal-header{
-    padding: 18px 25px;
 
     background: #2f6d67;
 
     color: white;
 
-    border: none;
 }
 
 
-.modal-title{
-    color: white;
+.anamnese-resumo{
+
+    padding: 20px 25px;
+
+}
+
+
+.anamnese-resumo p{
+
+    margin: 0;
+
+    color: #666;
 
     font-family: "Playfair Display SC", serif;
 
-    font-size: 18px;
+    font-size: 13px;
 
-    font-weight: 400;
+    line-height: 1.6;
 
-    letter-spacing: 1px;
+    text-align: center;
 
-    text-transform: uppercase;
-}
-
-
-.modal-header .btn-close{
-    filter: brightness(0) invert(1);
 }
 
 
 /* =========================================================
-   CORPO MODAL
+   FAVORITOS
    ========================================================= */
 
-.modal-body{
-    padding: 28px;
+.lista-favoritos{
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+
+}
+
+
+.lista-favoritos li{
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 52px;
+
+    padding: 12px 18px 12px 42px;
 
     background: #f5f2e9;
-}
 
-
-.form-label{
-    margin-bottom: 7px;
-
-    color: #3e746d;
-
-    font-family: "Playfair Display SC", serif;
-
-    font-size: 12px;
-
-    font-weight: 400;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-
-.form-control{
-    width: 100%;
-
-    padding: 10px 12px;
-
-    background: white;
-
-    border: 1px solid #d3d6cf;
-
-    border-radius: 5px;
+    border-radius: 6px;
 
     color: #444;
 
     font-family: "Playfair Display SC", serif;
 
     font-size: 13px;
+
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+
+    transition: .3s;
+
 }
 
 
-.form-control:focus{
-    outline: none;
+.lista-favoritos li::before{
 
-    border-color: #7d958d;
+    content: "♡";
 
-    box-shadow: none;
-}
+    position: absolute;
 
-
-/* =========================================================
-   FOOTER MODAL
-   ========================================================= */
-
-.modal-footer{
-    padding: 15px 25px;
-
-    background: #f5f2e9;
-
-    border-top: 1px solid #d3d6cf;
-}
-
-
-/* CANCELAR */
-
-.modal-footer .btn-secondary{
-    padding: 10px 20px;
-
-    border: 1px solid #7d958d;
-
-    border-radius: 0;
-
-    background: transparent;
+    left: 15px;
 
     color: #4f746d;
 
-    font-family: "Playfair Display SC", serif;
+    font-size: 18px;
 
-    font-size: 11px;
-
-    font-weight: 400;
-
-    text-transform: uppercase;
 }
 
 
-.modal-footer .btn-secondary:hover{
-    background: #7d958d;
+.lista-favoritos li:hover{
 
-    color: white;
-}
+    transform: translateY(-3px);
 
+    background: #e8e8dd;
 
-/* SALVAR */
-
-.btn-salvar{
-    min-width: 125px;
-
-    padding: 10px 20px;
-
-    border: none;
-
-    border-radius: 0;
-
-    background: #7d958d;
-
-    color: white;
-
-    font-family: "Playfair Display SC", serif;
-
-    font-size: 11px;
-
-    font-weight: 400;
-
-    letter-spacing: .5px;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-
-.btn-salvar:hover{
-    background: #2f6d67;
-
-    color: white;
 }
 
 
@@ -1515,89 +1724,192 @@ body{
    RESPONSIVO
    ========================================================= */
 
-@media(max-width:992px){
+@media(max-width: 992px){
 
     .perfil-container{
+
         width: 90%;
+
     }
 
+
     .galeria-perfil-grid{
+
         grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .dados-perfil-topo{
+
+        max-width: 100%;
+
     }
 
 }
 
 
-@media(max-width:768px){
+@media(max-width: 768px){
 
     .perfil-topo{
+
         flex-direction: column;
 
         text-align: center;
+
     }
+
 
     .info-perfil{
+
         align-items: center;
+
+        width: 100%;
+
     }
+
 
     .info-perfil h1{
+
         font-size: 55px;
+
     }
+
+
+    .dados-perfil-topo{
+
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        text-align: left;
+
+    }
+
+
+    .dados-perfil-topo .endereco-perfil{
+
+        grid-column: span 1;
+
+    }
+
+
+    .acoes-perfil{
+
+        justify-content: center;
+
+    }
+
 
     .galeria-perfil h3{
+
         font-size: 35px;
+
     }
+
 
     .titulo-bloco{
+
         font-size: 30px;
+
     }
 
-    .conteudo-bloco ul{
+
+    .lista-favoritos{
+
         grid-template-columns: 1fr;
+
     }
 
 }
 
 
-@media(max-width:480px){
+@media(max-width: 480px){
 
     .perfil-container{
+
         width: 90%;
 
         padding-top: 25px;
+
     }
+
 
     .foto-perfil{
+
         width: 150px;
+
         height: 150px;
+
     }
+
 
     .info-perfil h1{
+
         font-size: 45px;
+
     }
+
 
     .galeria-perfil h3{
+
         font-size: 28px;
+
     }
+
 
     .titulo-bloco{
+
         font-size: 25px;
+
     }
+
 
     .galeria-perfil-grid{
+
         grid-template-columns: 1fr;
+
     }
+
 
     .galeria-perfil-grid img{
+
         height: 230px;
+
     }
 
+
     .conteudo-bloco{
+
         padding: 18px;
+
+    }
+
+
+    .acoes-perfil{
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    .btn-acao,
+    .btn-sair{
+
+        width: 100%;
+
+    }
+
+
+    .form-logout{
+
+        width: 100%;
+
     }
 
 }
-
 
 
 
@@ -2156,7 +2468,67 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
 /* =========================
    AJUSTES DA FICHA DE ANAMNESE
    ========================= */
+/* =========================================================
+   CORREÇÃO FINAL DOS ESPAÇAMENTOS
+   ========================================================= */
 
+/* ESPAÇO ENTRE LABEL E INPUT / SELECT / TEXTAREA */
+.anamnese-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.anamnese-container .form-group label {
+    margin-bottom: 0;
+}
+
+
+/* ESPAÇO ENTRE AS PERGUNTAS FORA DO GRID */
+.anamnese-section > .question-item {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇO ENTRE OBSERVAÇÕES E A PRÓXIMA PERGUNTA */
+.anamnese-section > .textarea-group {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇO ENTRE OS CAMPOS */
+.anamnese-section > .form-group {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇAMENTO DAS PERGUNTAS QUE ESTÃO NO GRID */
+.anamnese-container .question-grid {
+    column-gap: 18px;
+    row-gap: 18px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .anamnese-container {
+        padding: 22px;
+    }
+
+    .question-grid,
+    .check-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        align-items: flex-start;
+    }
+}
    .anamnese-page {
     background: #ECEBDD;
     padding: 40px 20px;
@@ -2466,23 +2838,31 @@ RESPONSIVIDADE
         width: 100%;
     }
 }
+/* =========================================================
+   DADOS PESSOAIS - FONTE UNIFORME
+   ========================================================= */
 
-/* ---- */
-.acoes-perfil {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 18px;
+   .anamnese-container .form-group label {
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+    text-transform: none !important;
+    color: #52635f !important;
 }
 
-.botao-editar {
-    display: inline-block;
-    background: #2c7771;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 6px;
-    text-decoration: none;
+.anamnese-container .form-group input,
+.anamnese-container .form-group select,
+.anamnese-container .form-group textarea {
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important;
 }
+/* =========================================================
+   CORREÇÃO DEFINITIVA - AVALIAÇÃO DA PELE
+   ========================================================= */
 
 .botao-editar:hover {
     background: #245f5a;
@@ -2523,3 +2903,392 @@ font-size: 16px;
 .botao-sair:hover {
 background: #873836;
 }
+
+/* =========================================================
+   FORMULÁRIO DE EDIÇÃO DO PERFIL
+   ========================================================= */
+
+   .form-perfil {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 35px;
+
+    row-gap: 24px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   GRUPO DO CAMPO
+   ========================================================= */
+
+.form-perfil-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.form-perfil-group label {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.form-perfil-group input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* =========================================================
+   INPUT FILE
+   ========================================================= */
+
+.form-perfil-group input[type="file"] {
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.form-perfil-group input:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.form-perfil-group input::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.erro-campo {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   CAMPO DA FOTO
+   ========================================================= */
+
+.form-foto {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   ÁREA DOS BOTÕES
+   ========================================================= */
+
+.form-perfil-actions {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR / ALTERAR
+   ========================================================= */
+
+.form-perfil-actions .btn-acao {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 190px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.form-perfil-actions .btn-acao:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO DE SENHA
+   ========================================================= */
+
+.form-senha {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+
+
+.form-senha .form-perfil-group:nth-child(3) {
+
+    grid-column: 1 / 2;
+
+}
+
+
+/* =========================================================
+   ESPAÇAMENTO DO CONTEÚDO
+   ========================================================= */
+
+.bloco-info .conteudo-bloco {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   AJUSTE DO TÍTULO
+   ========================================================= */
+
+.bloco-info .titulo-bloco {
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .form-perfil {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .form-foto {
+
+        grid-column: auto;
+
+    }
+
+
+    .form-perfil-actions {
+
+        grid-column: auto;
+
+        justify-content: center;
+
+    }
+
+
+    .form-perfil-actions .btn-acao {
+
+        width: 100%;
+
+    }
+
+
+    .form-senha {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-senha .form-perfil-group:nth-child(3) {
+
+        grid-column: auto;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .form-perfil-group input {
+
+        height: 44px;
+
+        font-size: 11px;
+
+    }
+
+
+    .form-perfil-actions {
+
+        padding-top: 20px;
+
+    }
+
+
+    .form-perfil-actions .btn-acao {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+}
+   .anamnese-container .check-item,
+   .anamnese-container .check-item span,
+   .anamnese-container .check-item label {
+       font-family: "Playfair Display SC", serif !important;
+       font-weight: 400 !important;
+   }
