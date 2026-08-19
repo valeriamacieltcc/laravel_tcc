@@ -1008,7 +1008,7 @@
                             <label class="check-item"><input type="checkbox" name="hipocromia" value="sim"> Hipocromia</label>
                         </div>
 
-                        <label for="espessura_pele">Manchas por alterações vasculares</label>
+                        <label for="manchas_vasculares">Manchas por alterações vasculares</label>
                         
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="angioma" value="sim"> Angioma</label>
@@ -1019,7 +1019,8 @@
                             <label class="check-item"><input type="checkbox" name="telangectasias" value="sim"> Telangectasias</label>
                         </div>
 
-                        <h3>Formações sólidas</h3>
+                        <label for="formacoes_solidas">Formações sólidas</label>
+                        
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="ceratose" value="sim"> Ceratose</label>
                             <label class="check-item"><input type="checkbox" name="nodulos" value="sim"> Nódulos</label>
@@ -1030,14 +1031,16 @@
                             <label class="check-item"><input type="checkbox" name="necrose" value="sim"> Necrose</label>
                         </div>
 
-                        <h3>Formações com conteúdo líquido</h3>
+                        <label for="formacoes_liquido">Formações com conteúdo líquido</label>
+                        
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="bolha" value="sim"> Bolha</label>
                             <label class="check-item"><input type="checkbox" name="pustula" value="sim"> Pústula</label>
                             <label class="check-item"><input type="checkbox" name="vesicula" value="sim"> Vesícula</label>
                         </div>
 
-                        <h3>Lesões de pele</h3>
+                        <label for="lesoes_pele">Lesões de pele</label>
+                       
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="crosta" value="sim"> Crosta</label>
                             <label class="check-item"><input type="checkbox" name="escara" value="sim"> Escara</label>
@@ -1047,7 +1050,8 @@
                             <label class="check-item"><input type="checkbox" name="ulceracao" value="sim"> Ulceração</label>
                         </div>
 
-                        <h3>Sequelas</h3>
+                        <label for="sequelas">Sequelas</label>
+                       
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="atrofia" value="sim"> Atrofia</label>
                             <label class="check-item"><input type="checkbox" name="cicatriz" value="sim"> Cicatriz</label>
@@ -1055,7 +1059,8 @@
                             <label class="check-item"><input type="checkbox" name="hirsutismo" value="sim"> Hirsutismo</label>
                         </div>
 
-                        <h3>Alterações de queratinização</h3>
+                        <label for="alteracoes_queratinizacao">Alterações de queratinização</label>
+                        <h3></h3>
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="eczema" value="sim"> Eczema</label>
                             <label class="check-item"><input type="checkbox" name="hiperqueratose" value="sim"> Hiperqueratose</label>
