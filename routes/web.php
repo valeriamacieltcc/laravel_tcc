@@ -1,66 +1,5 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
-// use App\Http\Middleware\LogAcessoMiddleware;
-
-// Route::prefix('/home')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])
-//         ->name('home.index');
-
-// });
-
-// Route::prefix('/procedimento')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\ProcedimentoController::class, 'index'])
-//         ->name('procedimento.index');
-
-//     Route::get('/{slug}', [App\Http\Controllers\ProcedimentoController::class, 'show'])
-//         ->name('procedimentos.show');
-
-// });
-
-// Route::prefix('/vitrine')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\VitrineController::class, 'index'])
-//         ->name('vitrine.index');
-
-// });
-
-// Route::prefix('/perfil')->group(function () {
-
-//     Route::get('/index', [App\Http\Controllers\PerfilController::class, 'index'])
-//         ->name('perfil.index');
-
-
-//     Route::get(
-//         '/index',
-//         [App\Http\Controllers\PerfilController::class, 'index']
-//     )->name('perfil.index');
-
-//     Route::get('/perfil/anamnese', [FichaController::class, 'index'])
-//     ->name('perfil.anamnese.index');
-
-
-//     Route::put(
-//         '/atualizar',
-//         [App\Http\Controllers\PerfilController::class, 'atualizar']
-//     )->name('perfil.atualizar');
-
-// });
-// use App\Http\Controllers\FichaController;
-
-// Route::get(
-//     '/ficha',
-//     [FichaController::class, 'index']
-// )->name('ficha.index');
-
-
-// Route::post(
-//     '/ficha/salvar',
-//     [FichaController::class, 'salvar']
-// )->name('ficha.salvar');
-
 
 use Illuminate\Support\Facades\Route;
 
@@ -160,9 +99,12 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
         Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
         Route::get('/perfil/editar', [ClientePerfilController::class,'edit'])->name('perfil.edit');
         Route::put('/perfil', [ClientePerfilController::class,'update'])->name('perfil.update');
-        Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');
-        Route::post('perfil/anamnese/salvar', [FichaController::class, 'salvar'])->name('perfil.anamnese.salvar');
-        Route::get('/perfil/anamnese', function () {return view('perfil.anamnese.index');})->name('perfil.anamnese.index');
+        Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');  
+    Route::get('/cliente/perfil/anamnese',[FichaController::class, 'index'])->name('cliente.perfil.anamnese.index');
+Route::post('/cliente/perfil/anamnese',[FichaController::class, 'store'])->name('cliente.perfil.anamnese.store');
+    Route::put('/cliente/perfil/anamnese',[FichaController::class, 'update'])->name('cliente.perfil.anamnese.update');
+     Route::delete('/cliente/perfil/anamnese',[FichaController::class, 'destroy'])->name('cliente.perfil.anamnese.destroy');
+        Route::get('/perfil/anamnese', function () {return view('cliente.perfil.anamnese.ficha');})->name('perfil.anamnese.index');
         Route::get('/agendamentos/horarios-disponiveis', [AgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
         Route::get('/agendamentos', [AgendamentoController::class,'index'])->name('agendamentos.index');
         Route::get('/agendamentos/criar', [AgendamentoController::class,'create'])->name('agendamentos.create');

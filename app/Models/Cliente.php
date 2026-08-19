@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Anamnese;
 
 class Cliente extends Model
 {
@@ -37,4 +38,10 @@ class Cliente extends Model
     {
         return $this->hasMany(Agendamento::class);
     }
+
+    public function anamnese()
+{
+    return $this->hasOne(Anamnese::class);
+}
+
 }
