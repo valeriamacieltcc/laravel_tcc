@@ -12,6 +12,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
 
@@ -51,259 +57,329 @@
             </div>
         @endif
 
-        <!-- <form
-            action="{{ route('cliente.perfil.anamnese') }}"
+        <form
+            action="{{ route('perfil.anamnese.salvar') }}"
             method="POST"
             class="anamnese-form"
-        >  verificar o SALVAR-->
+        >
 
             @csrf
 
-            <!-- SEÇÃO: DADOS PESSOAIS -->
+         <!-- SEÇÃO: DADOS PESSOAIS -->
 
-            <section class="anamnese-section">
+<section class="anamnese-section">
 
-                <div class="section-title">
-                    <span>01</span>
-                    <div>
-                        <small>INFORMAÇÕES</small>
-                        <h2>Dados Pessoais</h2>
-                    </div>
-                </div>
-
-                <div class="form-grid">
-
-                    <div class="form-group form-group-full">
-                        <label for="nome">Nome</label>
-
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            value="{{ old('nome', $anamnese['nome'] ?? '') }}"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-group form-group-full">
-                        <label for="endereco">Endereço</label>
-
-                        <input
-                            type="text"
-                            id="endereco"
-                            name="endereco"
-                            value="{{ old('endereco', $anamnese['endereco'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bairro">Bairro</label>
-
-                        <input
-                            type="text"
-                            id="bairro"
-                            name="bairro"
-                            value="{{ old('bairro', $anamnese['bairro'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cidade">Cidade</label>
-
-                        <input
-                            type="text"
-                            id="cidade"
-                            name="cidade"
-                            value="{{ old('cidade', $anamnese['cidade'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="estado">Estado</label>
-
-                        <input
-                            type="text"
-                            id="estado"
-                            name="estado"
-                            maxlength="2"
-                            value="{{ old('estado', $anamnese['estado'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cep">CEP</label>
-
-                        <input
-                            type="text"
-                            id="cep"
-                            name="cep"
-                            value="{{ old('cep', $anamnese['cep'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-
-                        <input
-                            type="text"
-                            id="telefone"
-                            name="telefone"
-                            value="{{ old('telefone', $anamnese['telefone'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="celular">Celular</label>
-
-                        <input
-                            type="text"
-                            id="celular"
-                            name="celular"
-                            value="{{ old('celular', $anamnese['celular'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="data_nascimento">Data de Nascimento</label>
-
-                        <input
-                            type="date"
-                            id="data_nascimento"
-                            name="data_nascimento"
-                            value="{{ old('data_nascimento', $anamnese['data_nascimento'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="idade">Idade</label>
-
-                        <input
-                            type="number"
-                            id="idade"
-                            name="idade"
-                            min="0"
-                            max="150"
-                            value="{{ old('idade', $anamnese['idade'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="profissao">Profissão</label>
-
-                        <input
-                            type="text"
-                            id="profissao"
-                            name="profissao"
-                            value="{{ old('profissao', $anamnese['profissao'] ?? '') }}"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="estado_civil">Estado Civil</label>
-
-                        <select id="estado_civil" name="estado_civil">
-
-                            <option value="">Selecione</option>
-
-                            <option
-                                value="Solteiro(a)"
-                                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Solteiro(a)' ? 'selected' : '' }}
-                            >
-                                Solteiro(a)
-                            </option>
-
-                            <option
-                                value="Casado(a)"
-                                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Casado(a)' ? 'selected' : '' }}
-                            >
-                                Casado(a)
-                            </option>
-
-                            <option
-                                value="Divorciado(a)"
-                                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Divorciado(a)' ? 'selected' : '' }}
-                            >
-                                Divorciado(a)
-                            </option>
-
-                            <option
-                                value="Viúvo(a)"
-                                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Viúvo(a)' ? 'selected' : '' }}
-                            >
-                                Viúvo(a)
-                            </option>
-
-                        </select>
-                    </div>
-
-                </div>
-                          <div class="form-group">
-                                <label for="sexo">Sexo</label>
-                                <select id="sexo" name="sexo">
-                                    <option value="">Selecione</option>
-                                    <option value="Feminino">Feminino</option>
-                                    <option value="Masculino">Masculino</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="nacionalidade">Nacionalidade</label>
-                                <input type="text" id="nacionalidade" name="nacionalidade">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="cor">Cor</label>
-                                <input type="text" id="cor" name="cor">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="telefone_residencial">Telefone Residencial</label>
-                                <input type="text" id="telefone_residencial" name="telefone_residencial">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="telefone_comercial">Telefone Comercial</label>
-                                <input type="text" id="telefone_comercial" name="telefone_comercial">
-                            </div>
-
-                            <div class="form-group form-group-full">
-                                <label for="indicacao">Indicação</label>
-                                <input type="text" id="indicacao" name="indicacao">
-                            </div>
-
-                            <div class="form-group form-group-full">
-                                <label for="motivo_visita">Motivo da Visita</label>
-                                <input type="text" id="motivo_visita" name="motivo_visita">
-                            </div>
-
-                            <div class="form-group form-group-full">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-
-                            <div class="form-group form-group-full">
-                                <label for="emergencia_nome">Em caso de emergência avisar</label>
-                                <input type="text" id="emergencia_nome" name="emergencia_nome">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="emergencia_telefone">Telefone de Emergência</label>
-                                <input type="text" id="emergencia_telefone" name="emergencia_telefone">
-                            </div>
-
-                            <div class="form-group form-group-full">
-                                <label for="como_conheceu">Como conheceu nosso trabalho?</label>
-                                <select id="como_conheceu" name="como_conheceu">
-                                    <option value="">Selecione</option>
-                                    <option value="Indicação">Indicação</option>
-                                    <option value="Folder">Folder</option>
-                                    <option value="Site">Site</option>
-                                    <option value="Outros">Outros</option>
-                                </select>
+<div class="section-title">
+    <span>01</span>
+    <div>
+        <small>INFORMAÇÕES</small>
+        <h2>Dados Pessoais</h2>
+    </div>
 </div>
 
-            </section>
+<div class="form-grid">
 
+    <!-- NOME -->
+    <div class="form-group form-group-full">
+        <label for="nome">Nome</label>
+        <input
+            type="text"
+            id="nome"
+            name="nome"
+            value="{{ old('nome', $anamnese['nome'] ?? '') }}"
+            required
+        >
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="form-group form-group-full">
+        <label for="endereco">Endereço</label>
+        <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            value="{{ old('endereco', $anamnese['endereco'] ?? '') }}"
+        >
+    </div>
+
+    <!-- BAIRRO -->
+    <div class="form-group">
+        <label for="bairro">Bairro</label>
+        <input
+            type="text"
+            id="bairro"
+            name="bairro"
+            value="{{ old('bairro', $anamnese['bairro'] ?? '') }}"
+        >
+    </div>
+
+    <!-- CIDADE -->
+    <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            value="{{ old('cidade', $anamnese['cidade'] ?? '') }}"
+        >
+    </div>
+
+    <!-- ESTADO -->
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input
+            type="text"
+            id="estado"
+            name="estado"
+            maxlength="2"
+            value="{{ old('estado', $anamnese['estado'] ?? '') }}"
+        >
+    </div>
+
+    <!-- CEP -->
+    <div class="form-group">
+        <label for="cep">CEP</label>
+        <input
+            type="text"
+            id="cep"
+            name="cep"
+            value="{{ old('cep', $anamnese['cep'] ?? '') }}"
+        >
+    </div>
+
+    <!-- TELEFONE -->
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            value="{{ old('telefone', $anamnese['telefone'] ?? '') }}"
+        >
+    </div>
+
+    <!-- CELULAR -->
+    <div class="form-group">
+        <label for="celular">Celular</label>
+        <input
+            type="text"
+            id="celular"
+            name="celular"
+            value="{{ old('celular', $anamnese['celular'] ?? '') }}"
+        >
+    </div>
+
+    <!-- DATA DE NASCIMENTO -->
+    <div class="form-group">
+        <label for="data_nascimento">Data de Nascimento</label>
+        <input
+            type="date"
+            id="data_nascimento"
+            name="data_nascimento"
+            value="{{ old('data_nascimento', $anamnese['data_nascimento'] ?? '') }}"
+        >
+    </div>
+
+    <!-- IDADE -->
+    <div class="form-group">
+        <label for="idade">Idade</label>
+        <input
+            type="number"
+            id="idade"
+            name="idade"
+            min="0"
+            max="150"
+            value="{{ old('idade', $anamnese['idade'] ?? '') }}"
+        >
+    </div>
+
+    <!-- PROFISSÃO -->
+    <div class="form-group">
+        <label for="profissao">Profissão</label>
+        <input
+            type="text"
+            id="profissao"
+            name="profissao"
+            value="{{ old('profissao', $anamnese['profissao'] ?? '') }}"
+        >
+    </div>
+
+    <!-- ESTADO CIVIL -->
+    <div class="form-group">
+        <label for="estado_civil">Estado Civil</label>
+        <select id="estado_civil" name="estado_civil">
+            <option value="">Selecione</option>
+
+            <option value="Solteiro(a)"
+                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Solteiro(a)' ? 'selected' : '' }}>
+                Solteiro(a)
+            </option>
+
+            <option value="Casado(a)"
+                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Casado(a)' ? 'selected' : '' }}>
+                Casado(a)
+            </option>
+
+            <option value="Divorciado(a)"
+                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'Divorciado(a)' ? 'selected' : '' }}>
+                Divorciado(a)
+            </option>
+
+            <option value="Viúvo(a)"
+                {{ old('estado_civil', $anamnese['estado_civil'] ?? '') == 'selected' }}>
+                Viúvo(a)
+            </option>
+        </select>
+    </div>
+
+    <!-- SEXO -->
+    <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <select id="sexo" name="sexo">
+            <option value="">Selecione</option>
+
+            <option value="Feminino"
+                {{ old('sexo', $anamnese['sexo'] ?? '') == 'Feminino' ? 'selected' : '' }}>
+                Feminino
+            </option>
+
+            <option value="Masculino"
+                {{ old('sexo', $anamnese['sexo'] ?? '') == 'Masculino' ? 'selected' : '' }}>
+                Masculino
+            </option>
+        </select>
+    </div>
+
+    <!-- NACIONALIDADE -->
+    <div class="form-group">
+        <label for="nacionalidade">Nacionalidade</label>
+        <input
+            type="text"
+            id="nacionalidade"
+            name="nacionalidade"
+            value="{{ old('nacionalidade', $anamnese['nacionalidade'] ?? '') }}"
+        >
+    </div>
+
+    <!-- COR -->
+    <div class="form-group">
+        <label for="cor">Cor</label>
+        <input
+            type="text"
+            id="cor"
+            name="cor"
+            value="{{ old('cor', $anamnese['cor'] ?? '') }}"
+        >
+    </div>
+
+    <!-- TELEFONE RESIDENCIAL -->
+    <div class="form-group">
+        <label for="telefone_residencial">Telefone Residencial</label>
+        <input
+            type="text"
+            id="telefone_residencial"
+            name="telefone_residencial"
+            value="{{ old('telefone_residencial', $anamnese['telefone_residencial'] ?? '') }}"
+        >
+    </div>
+
+    <!-- TELEFONE COMERCIAL -->
+    <div class="form-group">
+        <label for="telefone_comercial">Telefone Comercial</label>
+        <input
+            type="text"
+            id="telefone_comercial"
+            name="telefone_comercial"
+            value="{{ old('telefone_comercial', $anamnese['telefone_comercial'] ?? '') }}"
+        >
+    </div>
+
+    <!-- INDICAÇÃO -->
+    <div class="form-group form-group-full">
+        <label for="indicacao">Indicação</label>
+        <input
+            type="text"
+            id="indicacao"
+            name="indicacao"
+            value="{{ old('indicacao', $anamnese['indicacao'] ?? '') }}"
+        >
+    </div>
+
+    <!-- MOTIVO DA VISITA -->
+    <div class="form-group form-group-full">
+        <label for="motivo_visita">Motivo da Visita</label>
+        <input
+            type="text"
+            id="motivo_visita"
+            name="motivo_visita"
+            value="{{ old('motivo_visita', $anamnese['motivo_visita'] ?? '') }}"
+        >
+    </div>
+
+    <!-- E-MAIL -->
+    <div class="form-group form-group-full">
+        <label for="email">E-mail</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{ old('email', $anamnese['email'] ?? '') }}"
+        >
+    </div>
+
+    <!-- EM CASO DE EMERGÊNCIA -->
+    <div class="form-group form-group-full">
+        <label for="emergencia_nome">Em caso de emergência avisar</label>
+        <input
+            type="text"
+            id="emergencia_nome"
+            name="emergencia_nome"
+            value="{{ old('emergencia_nome', $anamnese['emergencia_nome'] ?? '') }}"
+        >
+    </div>
+
+    <!-- TELEFONE DE EMERGÊNCIA -->
+    <div class="form-group form-group-full">
+        <label for="emergencia_telefone">Telefone de Emergência</label>
+        <input
+            type="text"
+            id="emergencia_telefone"
+            name="emergencia_telefone"
+            value="{{ old('emergencia_telefone', $anamnese['emergencia_telefone'] ?? '') }}"
+        >
+    </div>
+
+    <!-- COMO CONHECEU -->
+    <div class="form-group form-group-full">
+        <label for="como_conheceu">Como conheceu nosso trabalho?</label>
+        <select id="como_conheceu" name="como_conheceu">
+            <option value="">Selecione</option>
+
+            <option value="Indicação"
+                {{ old('como_conheceu', $anamnese['como_conheceu'] ?? '') == 'Indicação' ? 'selected' : '' }}>
+                Indicação
+            </option>
+
+            <option value="Folder"
+                {{ old('como_conheceu', $anamnese['como_conheceu'] ?? '') == 'Folder' ? 'selected' : '' }}>
+                Folder
+            </option>
+
+            <option value="Site"
+                {{ old('como_conheceu', $anamnese['como_conheceu'] ?? '') == 'Site' ? 'selected' : '' }}>
+                Site
+            </option>
+
+            <option value="Outros"
+                {{ old('como_conheceu', $anamnese['como_conheceu'] ?? '') == 'Outros' ? 'selected' : '' }}>
+                Outros
+            </option>
+        </select>
+    </div>
+
+</div>
+
+</section>
 
             <!-- HISTÓRICO -->
 
@@ -922,7 +998,8 @@
                             </select>
                         </div>
 
-                        <h3>Manchas pigmentares relacionadas à melanina</h3>
+                        <label for="espessura_pele">Manchas pigmentares relacionadas à melanina</label>
+                        
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="acromia" value="sim"> Acromia</label>
                             <label class="check-item"><input type="checkbox" name="cloasma" value="sim"> Cloasma</label>
@@ -931,7 +1008,8 @@
                             <label class="check-item"><input type="checkbox" name="hipocromia" value="sim"> Hipocromia</label>
                         </div>
 
-                        <h3>Manchas por alterações vasculares</h3>
+                        <label for="espessura_pele">Manchas por alterações vasculares</label>
+                        
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="angioma" value="sim"> Angioma</label>
                             <label class="check-item"><input type="checkbox" name="cianose" value="sim"> Cianose</label>
