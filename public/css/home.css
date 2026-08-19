@@ -259,12 +259,14 @@ body{
     
     
 }
- .foto-perfil img {
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
+}
 
 .footer-logo{
     display:flex;
@@ -2156,7 +2158,67 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
 /* =========================
    AJUSTES DA FICHA DE ANAMNESE
    ========================= */
+/* =========================================================
+   CORREÇÃO FINAL DOS ESPAÇAMENTOS
+   ========================================================= */
 
+/* ESPAÇO ENTRE LABEL E INPUT / SELECT / TEXTAREA */
+.anamnese-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.anamnese-container .form-group label {
+    margin-bottom: 0;
+}
+
+
+/* ESPAÇO ENTRE AS PERGUNTAS FORA DO GRID */
+.anamnese-section > .question-item {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇO ENTRE OBSERVAÇÕES E A PRÓXIMA PERGUNTA */
+.anamnese-section > .textarea-group {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇO ENTRE OS CAMPOS */
+.anamnese-section > .form-group {
+    margin-bottom: 18px;
+}
+
+
+/* ESPAÇAMENTO DAS PERGUNTAS QUE ESTÃO NO GRID */
+.anamnese-container .question-grid {
+    column-gap: 18px;
+    row-gap: 18px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .anamnese-container {
+        padding: 22px;
+    }
+
+    .question-grid,
+    .check-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        align-items: flex-start;
+    }
+}
    .anamnese-page {
     background: #ECEBDD;
     padding: 40px 20px;
@@ -2466,60 +2528,35 @@ RESPONSIVIDADE
         width: 100%;
     }
 }
+/* =========================================================
+   DADOS PESSOAIS - FONTE UNIFORME
+   ========================================================= */
 
-/* ---- */
-.acoes-perfil {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 18px;
+   .anamnese-container .form-group label {
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+    text-transform: none !important;
+    color: #52635f !important;
 }
 
-.botao-editar {
-    display: inline-block;
-    background: #2c7771;
-    color: white;
-    padding: 11px 20px;
-    border-radius: 6px;
-    text-decoration: none;
+.anamnese-container .form-group input,
+.anamnese-container .form-group select,
+.anamnese-container .form-group textarea {
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: none !important;
 }
+/* =========================================================
+   CORREÇÃO DEFINITIVA - AVALIAÇÃO DA PELE
+   ========================================================= */
 
-.botao-editar:hover {
-    background: #245f5a;
-    color: white;
-}
-
-.dados-pessoais p {
-    margin-bottom: 8px;
-}
-
-
-.mensagem-sucesso {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 14px;
-    border-radius: 7px;
-    background: #d4edda;
-    color: #155724;
-}
-
-.sem-dados {
-    color: #777;
-}
-.acoes-perfil form {
-margin: 0;
-}
-
-.botao-sair {
-border: none;
-background: #a94442;
-color: white;
-padding: 11px 20px;
-border-radius: 6px;
-cursor: pointer;
-font-size: 16px;
-}
-
-.botao-sair:hover {
-background: #873836;
-}
+   .anamnese-container .check-item,
+   .anamnese-container .check-item span,
+   .anamnese-container .check-item label {
+       font-family: "Playfair Display SC", serif !important;
+       font-weight: 400 !important;
+   }
