@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,25 +12,22 @@
 
     <title>Perfil da Cliente</title>
 
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display+SC:wght@400;500;600&display=swap"
         rel="stylesheet"
     >
 
+    <!-- BOOTSTRAP -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- CSS DO CÓDIGO 1 -->
+    <!-- CSS DO PERFIL -->
     <link
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
@@ -36,16 +35,51 @@
 
 </head>
 
+
 <body>
+
+
+{{-- =========================================================
+     HEADER
+     ========================================================= --}}
 
 @include('_partials.header')
 
 
+{{-- =========================================================
+     MENSAGEM DE SUCESSO
+     ========================================================= --}}
+
 @if(session('sucesso'))
 
-    <div class="alert alert-success container mt-3">
+    <div class="mensagem-sucesso">
 
         {{ session('sucesso') }}
+
+    </div>
+
+@endif
+
+
+{{-- =========================================================
+     ERROS DE VALIDAÇÃO
+     ========================================================= --}}
+
+@if($errors->any())
+
+    <div class="mensagem-erro">
+
+        <strong>Verifique os seguintes campos:</strong>
+
+        <ul>
+
+            @foreach($errors->all() as $erro)
+
+                <li>{{ $erro }}</li>
+
+            @endforeach
+
+        </ul>
 
     </div>
 
@@ -55,9 +89,14 @@
 <main class="perfil-container">
 
 
-    <!-- PERFIL -->
+    {{-- =====================================================
+         TOPO DO PERFIL
+         ===================================================== --}}
 
     <section class="perfil-topo">
+
+
+        {{-- FOTO --}}
 
         <div class="foto-perfil">
 
@@ -80,12 +119,19 @@
         </div>
 
 
+        {{-- INFORMAÇÕES --}}
+
         <div class="info-perfil">
+
+
+            {{-- NOME --}}
 
             <h1>
                 {{ $user->name }}
             </h1>
 
+
+            {{-- IDADE --}}
 
             @if($cliente->data_nascimento)
 
@@ -96,7 +142,8 @@
             @endif
 
 
-            <!-- EDITAR PERFIL -->
+            {{-- BOTÃO EDITAR --}}
+
             <a
                 href="{{ route('cliente.perfil.edit') }}"
                 class="btn-editar"
@@ -104,50 +151,142 @@
                 Editar perfil
             </a>
 
+
+            {{-- DADOS COMPLEMENTARES --}}
+
+            <div class="dados-perfil-topo">
+
+                <div>
+                    <strong>E-mail</strong>
+
+                    <span>
+                        {{ $user->email }}
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>Telefone</strong>
+
+                    <span>
+                        {{ $cliente->telefone ?? 'Não informado' }}
+                    </span>
+                </div>
+
+
+                <div>
+                    <strong>CPF</strong>
+
+                    <span>
+                        {{ $cliente->cpf ?? 'Não informado' }}
+                    </span>
+                </div>
+
+
+                <div class="endereco-perfil">
+
+                    <strong>Endereço</strong>
+
+                    @if($cliente->logradouro)
+
+                        <span>
+
+                            {{ $cliente->logradouro }},
+                            {{ $cliente->numero ?? 's/n' }}
+
+                            @if($cliente->complemento)
+                                - {{ $cliente->complemento }}
+                            @endif
+
+                            <br>
+
+                            {{ $cliente->bairro }}
+
+                            @if($cliente->cidade)
+                                - {{ $cliente->cidade }}
+                            @endif
+
+                            @if($cliente->estado)
+                                / {{ $cliente->estado }}
+                            @endif
+
+                        </span>
+
+                    @else
+
+                        <span>
+                            Não informado
+                        </span>
+
+                    @endif
+
+                </div>
+
+            </div>
+
+
+            {{-- AÇÕES --}}
+
+            <div class="acoes-perfil">
+
+
+                <a
+                    href="{{ route('home.index') }}"
+                    class="btn-acao"
+                >
+                    Voltar para Home
+                </a>
+
+
+                <a
+                    href="{{ route('cliente.agendamentos.create') }}"
+                    class="btn-acao"
+                >
+                    Agendar procedimento
+                </a>
+
+
+                <a
+                    href="{{ route('cliente.agendamentos.index') }}"
+                    class="btn-acao"
+                >
+                    Meus agendamentos
+                </a>
+
+
+                <form
+                    action="{{ route('logout') }}"
+                    method="POST"
+                    class="form-logout"
+                >
+
+                    @csrf
+
+                    <button
+                        type="submit"
+                        class="btn-sair"
+                    >
+                        Sair
+                    </button>
+
+                </form>
+
+
+            </div>
+
+
         </div>
 
     </section>
 
-    <a
-        href="{{ route('cliente.perfil.edit') }}"
-        class="botao-editar"
-    >
-        Editar perfil
-    </a>
 
-    <a
-        href="{{ route('home.index') }}"
-        class="botao-editar"
-    >
-        Voltar para Home
-    </a>
 
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-
-        <button type="submit" class="botao-sair">
-            Sair
-        </button>
-
-        <a
-    href="{{ route('cliente.agendamentos.create') }}"
-    class="botao-editar"
->
-    Agendar procedimento
-</a>
-
-<a
-    href="{{ route('cliente.agendamentos.index') }}"
-    class="botao-editar"
->
-    Meus agendamentos
-</a>
-    </form>
-</div>
-
-    <!-- ANTES E DEPOIS -->
+    {{-- =====================================================
+         GALERIA ANTES E DEPOIS
+         ===================================================== --}}
 
     <section class="galeria-perfil">
+
 
         <h3>
             Histórico dos Antes & Depois
@@ -156,10 +295,14 @@
 
         <div class="galeria-perfil-grid">
 
+
+            {{-- MESMA LÓGICA DO CÓDIGO DELA --}}
+
             @if(
                 isset($cliente->antes_depois)
                 && count($cliente->antes_depois) > 0
             )
+
 
                 @foreach($cliente->antes_depois as $foto)
 
@@ -170,22 +313,36 @@
 
                 @endforeach
 
+
             @else
 
-                <p>
-                    Nenhuma foto cadastrada ainda.
-                </p>
+
+                <div class="sem-dados-galeria">
+
+                    <span>♡</span>
+
+                    <p>
+                        Nenhuma foto cadastrada ainda.
+                    </p>
+
+                </div>
+
 
             @endif
+
 
         </div>
 
     </section>
 
 
-    <!-- HISTÓRICO DOS PROCEDIMENTOS -->
+
+    {{-- =====================================================
+         HISTÓRICO DOS PROCEDIMENTOS
+         ===================================================== --}}
 
     <section class="bloco-info">
+
 
         <div class="titulo-bloco">
             Histórico dos Procedimentos
@@ -194,14 +351,20 @@
 
         <div class="conteudo-bloco">
 
+
+            {{-- MESMA VERIFICAÇÃO DO CÓDIGO DELA --}}
+
             @if(
                 isset($cliente->procedimentos)
                 && count($cliente->procedimentos) > 0
             )
 
+
                 @foreach($cliente->procedimentos as $procedimento)
 
+
                     <div class="procedimento-perfil">
+
 
                         <h4>
 
@@ -212,11 +375,14 @@
                         </h4>
 
 
+                        {{-- DADOS EXATAMENTE NO FORMATO DELA --}}
+
                         @if(is_array($procedimento))
 
                             <small>
                                 {{ $procedimento['data'] ?? '' }}
                             </small>
+
 
                             <p>
                                 {{ $procedimento['observacao'] ?? '' }}
@@ -224,28 +390,40 @@
 
                         @endif
 
+
                     </div>
+
 
                 @endforeach
 
+
             @else
 
-                <p>
+
+                <div class="sem-dados">
+
                     Nenhum procedimento realizado ainda.
-                </p>
+
+                </div>
+
 
             @endif
 
-        </div>
 
-        
+        </div>
 
     </section>
 
 
-    <!-- ANAMNESE -->
+
+    {{-- =====================================================
+         FICHA DE ANAMNESE
+         ===================================================== --}}
 
     <section class="bloco-info">
+
+
+        {{-- ROTA EXATAMENTE COMO NO CÓDIGO DELA --}}
 
         <a
             href="{{ route('cliente.perfil.anamnese.index') }}"
@@ -255,20 +433,26 @@
         </a>
 
 
-        <div class="conteudo-bloco">
+        <div class="conteudo-bloco anamnese-resumo">
 
             <p>
-                Acesse sua ficha de anamnese.
+                Acesse sua ficha de anamnese para visualizar
+                ou preencher suas informações.
             </p>
 
         </div>
 
+
     </section>
 
 
-    <!-- FAVORITOS -->
+
+    {{-- =====================================================
+         FAVORITOS
+         ===================================================== --}}
 
     <section class="bloco-info">
+
 
         <div class="titulo-bloco">
             Favoritos
@@ -277,14 +461,20 @@
 
         <div class="conteudo-bloco">
 
+
+            {{-- MESMA LÓGICA DO CÓDIGO DELA --}}
+
             @if(
                 isset($cliente->favoritos)
                 && count($cliente->favoritos) > 0
             )
 
-                <ul>
+
+                <ul class="lista-favoritos">
+
 
                     @foreach($cliente->favoritos as $favorito)
+
 
                         <li>
 
@@ -294,17 +484,25 @@
 
                         </li>
 
+
                     @endforeach
+
 
                 </ul>
 
+
             @else
 
-                <p>
+
+                <div class="sem-dados">
+
                     Nenhum produto favoritado ainda.
-                </p>
+
+                </div>
+
 
             @endif
+
 
         </div>
 
@@ -314,6 +512,11 @@
 </main>
 
 
+
+{{-- =========================================================
+     FOOTER
+     ========================================================= --}}
+
 @include('_partials.footer')
 
 
@@ -321,5 +524,7 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 ></script>
 
+
 </body>
+
 </html>

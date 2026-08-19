@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,11 +11,6 @@
     >
 
     <title>Perfil da Cliente</title>
-
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/perfil.css') }}"
-    >
 
     <link
         rel="preconnect"
@@ -28,7 +24,7 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display+SC:wght@400;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -37,142 +33,131 @@
         rel="stylesheet"
     >
 
-    <style>
-        .mensagem-sucesso {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 15px;
-            border-radius: 8px;
-            background: #d4edda;
-            color: #155724;
-        }
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
-        .formulario-perfil {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .campo {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .campo-completo {
-            grid-column: 1 / -1;
-        }
-
-        .campo input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-        }
-
-        .erro {
-            color: #b00020;
-            font-size: 14px;
-        }
-
-        .botao-perfil {
-            border: none;
-            background: #2c7771;
-            color: white;
-            padding: 11px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .foto-atual {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .sem-dados {
-            color: #777;
-        }
-
-        @media (max-width: 700px) {
-            .formulario-perfil {
-                grid-template-columns: 1fr;
-            }
-
-            .campo-completo {
-                grid-column: auto;
-            }
-        }
-    </style>
 </head>
+
 
 <body>
 
+
+{{-- =====================================================
+     HEADER / NAVBAR
+     ===================================================== --}}
+
+@include('_partials.header')
+
+
+
 @if(session('sucesso'))
+
     <div class="mensagem-sucesso">
+
         {{ session('sucesso') }}
+
     </div>
+
 @endif
+
+
 
 <main class="perfil-container">
 
+
+    <!-- =====================================================
+         TOPO DO PERFIL
+         ===================================================== -->
+
     <section class="perfil-topo">
+
 
         <div class="foto-perfil">
 
             @if($cliente->foto_perfil)
+
                 <img
                     src="{{ asset('storage/' . $cliente->foto_perfil) }}"
                     alt="{{ $user->name }}"
-                    class="foto-atual"
                 >
+
             @else
+
                 <img
                     src="{{ asset('imagem/perfil-padrao.png') }}"
                     alt="{{ $user->name }}"
-                    class="foto-atual"
                 >
+
             @endif
 
         </div>
+
 
         <div class="info-perfil">
 
-            <h1>{{ $user->name }}</h1>
+            <h1>
+                {{ $user->name }}
+            </h1>
+
 
             @if($cliente->data_nascimento)
+
                 <h2>
                     {{ $cliente->data_nascimento->age }} anos
                 </h2>
+
             @endif
 
-            <p>{{ $user->email }}</p>
 
-            <p>{{ $cliente->telefone }}</p>
+            <p>
+                {{ $user->email }}
+            </p>
+
+
+            <p>
+                {{ $cliente->telefone }}
+            </p>
 
         </div>
 
+
     </section>
 
+
+
+    <!-- =====================================================
+         EDITAR MEUS DADOS
+         ===================================================== -->
+
     <section class="bloco-info">
+
 
         <div class="titulo-bloco">
             Editar meus dados
         </div>
 
+
         <div class="conteudo-bloco">
 
+
             <form
+                class="form-perfil"
                 action="{{ route('cliente.perfil.update') }}"
                 method="POST"
                 enctype="multipart/form-data"
-                class="formulario-perfil"
             >
+
                 @csrf
+
                 @method('PUT')
 
-                <div class="campo">
+
+                <!-- NOME -->
+
+                <div class="form-perfil-group">
+
                     <label for="name">
                         Nome completo
                     </label>
@@ -186,13 +171,21 @@
                     >
 
                     @error('name')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- E-MAIL -->
+
+                <div class="form-perfil-group">
+
                     <label for="email">
                         E-mail
                     </label>
@@ -206,13 +199,21 @@
                     >
 
                     @error('email')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- TELEFONE -->
+
+                <div class="form-perfil-group">
+
                     <label for="telefone">
                         Telefone
                     </label>
@@ -226,13 +227,21 @@
                     >
 
                     @error('telefone')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- DATA DE NASCIMENTO -->
+
+                <div class="form-perfil-group">
+
                     <label for="data_nascimento">
                         Data de nascimento
                     </label>
@@ -249,13 +258,21 @@
                     >
 
                     @error('data_nascimento')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- CPF -->
+
+                <div class="form-perfil-group">
+
                     <label for="cpf">
                         CPF
                     </label>
@@ -268,13 +285,21 @@
                     >
 
                     @error('cpf')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- CEP -->
+
+                <div class="form-perfil-group">
+
                     <label for="cep">
                         CEP
                     </label>
@@ -285,9 +310,23 @@
                         name="cep"
                         value="{{ old('cep', $cliente->cep) }}"
                     >
+
+                    @error('cep')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo campo-completo">
+
+
+                <!-- ENDEREÇO -->
+
+                <div class="form-perfil-group">
+
                     <label for="logradouro">
                         Endereço
                     </label>
@@ -298,9 +337,23 @@
                         name="logradouro"
                         value="{{ old('logradouro', $cliente->logradouro) }}"
                     >
+
+                    @error('logradouro')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- NÚMERO -->
+
+                <div class="form-perfil-group">
+
                     <label for="numero">
                         Número
                     </label>
@@ -311,9 +364,23 @@
                         name="numero"
                         value="{{ old('numero', $cliente->numero) }}"
                     >
+
+                    @error('numero')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- COMPLEMENTO -->
+
+                <div class="form-perfil-group">
+
                     <label for="complemento">
                         Complemento
                     </label>
@@ -324,9 +391,23 @@
                         name="complemento"
                         value="{{ old('complemento', $cliente->complemento) }}"
                     >
+
+                    @error('complemento')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- BAIRRO -->
+
+                <div class="form-perfil-group">
+
                     <label for="bairro">
                         Bairro
                     </label>
@@ -337,9 +418,23 @@
                         name="bairro"
                         value="{{ old('bairro', $cliente->bairro) }}"
                     >
+
+                    @error('bairro')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- CIDADE -->
+
+                <div class="form-perfil-group">
+
                     <label for="cidade">
                         Cidade
                     </label>
@@ -350,9 +445,23 @@
                         name="cidade"
                         value="{{ old('cidade', $cliente->cidade) }}"
                     >
+
+                    @error('cidade')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- ESTADO -->
+
+                <div class="form-perfil-group">
+
                     <label for="estado">
                         Estado
                     </label>
@@ -365,9 +474,23 @@
                         value="{{ old('estado', $cliente->estado) }}"
                         placeholder="SP"
                     >
+
+                    @error('estado')
+
+                        <span class="erro-campo">
+                            {{ $message }}
+                        </span>
+
+                    @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- FOTO DE PERFIL -->
+
+                <div class="form-perfil-group form-foto">
+
                     <label for="foto_perfil">
                         Foto de perfil
                     </label>
@@ -380,33 +503,54 @@
                     >
 
                     @error('foto_perfil')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo campo-completo">
-                    <button type="submit"class="botao-perfil">
-                        <a href="{{ route('cliente.perfil.update') }}">
-                        </a>
+
+
+                <!-- SALVAR -->
+
+                <div class="form-perfil-actions">
+
+                    <button
+                        type="submit"
+                        class="btn-acao"
+                    >
                         Salvar alterações
                     </button>
+
                 </div>
 
+
             </form>
+
 
         </div>
 
     </section>
 
-    <section class="galeria">
 
-        <h3>Histórico dos Antes & Depois</h3>
 
-        <div class="galeria-grid">
+    <!-- =====================================================
+         GALERIA ANTES E DEPOIS
+         ===================================================== -->
 
-            <p class="sem-dados">
+    <section class="galeria-perfil">
+
+        <h3>
+            Histórico dos Antes & Depois
+        </h3>
+
+
+        <div class="sem-dados-galeria">
+
+            <p>
                 Nenhuma foto cadastrada ainda.
             </p>
 
@@ -414,11 +558,18 @@
 
     </section>
 
+
+
+    <!-- =====================================================
+         HISTÓRICO DOS PROCEDIMENTOS
+         ===================================================== -->
+
     <section class="bloco-info">
 
         <div class="titulo-bloco">
             Histórico dos Procedimentos
         </div>
+
 
         <div class="conteudo-bloco">
 
@@ -430,11 +581,18 @@
 
     </section>
 
+
+
+    <!-- =====================================================
+         FICHA DE ANAMNESE
+         ===================================================== -->
+
     <section class="bloco-info">
 
         <div class="titulo-bloco">
             Ficha de Anamnese
         </div>
+
 
         <div class="conteudo-bloco">
 
@@ -446,11 +604,18 @@
 
     </section>
 
+
+
+    <!-- =====================================================
+         FAVORITOS
+         ===================================================== -->
+
     <section class="bloco-info">
 
         <div class="titulo-bloco">
             Favoritos
         </div>
+
 
         <div class="conteudo-bloco">
 
@@ -462,23 +627,37 @@
 
     </section>
 
+
+
+    <!-- =====================================================
+         ALTERAR SENHA
+         ===================================================== -->
+
     <section class="bloco-info">
 
         <div class="titulo-bloco">
             Alterar senha
         </div>
 
+
         <div class="conteudo-bloco">
 
+
             <form
+                class="form-perfil form-senha"
                 action="{{ route('cliente.perfil.password') }}"
                 method="POST"
-                class="formulario-perfil"
             >
+
                 @csrf
+
                 @method('PUT')
 
-                <div class="campo campo-completo">
+
+                <!-- SENHA ATUAL -->
+
+                <div class="form-perfil-group">
+
                     <label for="senha_atual">
                         Senha atual
                     </label>
@@ -491,13 +670,21 @@
                     >
 
                     @error('senha_atual')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- NOVA SENHA -->
+
+                <div class="form-perfil-group">
+
                     <label for="password">
                         Nova senha
                     </label>
@@ -511,13 +698,21 @@
                     >
 
                     @error('password')
-                        <span class="erro">
+
+                        <span class="erro-campo">
                             {{ $message }}
                         </span>
+
                     @enderror
+
                 </div>
 
-                <div class="campo">
+
+
+                <!-- CONFIRMAR SENHA -->
+
+                <div class="form-perfil-group">
+
                     <label for="password_confirmation">
                         Confirmar nova senha
                     </label>
@@ -529,30 +724,50 @@
                         minlength="8"
                         required
                     >
+
                 </div>
 
-                <div class="campo campo-completo">
+
+
+                <!-- ALTERAR SENHA -->
+
+                <div class="form-perfil-actions">
+
                     <button
                         type="submit"
-                        class="botao-perfil"
+                        class="btn-acao"
                     >
                         Alterar senha
                     </button>
+
                 </div>
-<a href="{{ route('cliente.perfil.update') }}">
-    Cancelar e voltar
-</a>
+
+
             </form>
+
 
         </div>
 
     </section>
 
+
 </main>
+
+
+
+{{-- =====================================================
+     FOOTER
+     ===================================================== --}}
+
+@include('_partials.footer')
+
+
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 ></script>
 
+
 </body>
+
 </html>
