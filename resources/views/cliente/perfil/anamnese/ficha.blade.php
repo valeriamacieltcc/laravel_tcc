@@ -58,7 +58,7 @@
         @endif
 
         <form
-            action="{{ route('perfil.anamnese.salvar') }}"
+            
             method="POST"
             class="anamnese-form"
         >
@@ -968,6 +968,7 @@
                     @endforeach
 
                 </div>
+                <br>
                 <div class="form-group form-group-full">
                             <label for="tipo_pele_avaliacao">Classificação do tipo cutâneo</label>
                             <select id="tipo_pele_avaliacao" name="tipo_pele_avaliacao">
@@ -998,6 +999,7 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
                         <label for="espessura_pele">Manchas pigmentares relacionadas à melanina</label>
                         
                         <div class="check-grid">
@@ -1060,7 +1062,6 @@
                         </div>
 
                         <label for="alteracoes_queratinizacao">Alterações de queratinização</label>
-                        <h3></h3>
                         <div class="check-grid">
                             <label class="check-item"><input type="checkbox" name="eczema" value="sim"> Eczema</label>
                             <label class="check-item"><input type="checkbox" name="hiperqueratose" value="sim"> Hiperqueratose</label>
