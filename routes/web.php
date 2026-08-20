@@ -15,6 +15,7 @@ Route::prefix('/home')->group(function () {
 });
 
 Route::get('/procedimento/index', [ClienteProcedimentoController::class,'index'])->name('procedimento.index');
+Route::get('/procedimento/{id}', [ClienteProcedimentoController::class,'detalhe'])->name('procedimento.detalhe');
 
 Route::prefix('/vitrine')->group(function () {
     Route::get('/index', [ClienteVitrineController::class,'index'])->name('vitrine.index');});
