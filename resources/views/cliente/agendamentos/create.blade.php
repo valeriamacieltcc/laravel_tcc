@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -8,331 +10,517 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Novo Agendamento</title>
+    <title>Novo Agendamento - Valéria Maciel</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-        body {
-            margin: 0;
-            padding: 30px 15px;
-            background: #f6f5e5;
-            font-family: Arial, sans-serif;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
 
-        .container {
-            max-width: 700px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
 
-        h1 {
-            color: #2c7771;
-        }
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        .campo {
-            margin-bottom: 18px;
-        }
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/agendamento.css') }}"
+    >
 
-        select,
-        input,
-        textarea {
-            width: 100%;
-            padding: 11px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-        }
-
-        textarea {
-            min-height: 100px;
-        }
-
-        .botao {
-            border: none;
-            background: #2c7771;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .erro {
-            color: #b00020;
-            margin-top: 5px;
-        }
-    </style>
 </head>
 
 <body>
 
-<div class="container">
+    {{-- HEADER PADRÃO DO SITE --}}
+    @include('_partials.header')
 
-    <h1>Novo agendamento</h1>
 
-    <form
-        action="{{ route('cliente.agendamentos.store') }}"
-        method="POST"
-    >
-        @csrf
+    <main class="vm-agendamento-page">
 
-        <div class="campo">
-            <label for="procedimento_id">
-                Procedimento
-            </label>
+        <div class="vm-agendamento-container">
 
-            <select
-                id="procedimento_id"
-                name="procedimento_id"
-                required
+            <header class="vm-agendamento-header">
+
+                <span class="vm-agendamento-subtitle">
+                    Valéria Maciel Estética
+                </span>
+
+                <h1 class="vm-agendamento-title">
+                    Novo Agendamento
+                </h1>
+
+                <p class="vm-agendamento-description">
+                    Escolha o procedimento, a data e o horário
+                    desejados para realizar seu atendimento.
+                </p>
+
+            </header>
+
+
+            <form
+                action="{{ route('cliente.agendamentos.store') }}"
+                method="POST"
+                class="vm-agendamento-form"
             >
-                <option value="">
-                    Selecione
-                </option>
 
-                @foreach($procedimentos as $procedimento)
-                    <option
-                        value="{{ $procedimento->id }}"
-                        @selected(
-                            old('procedimento_id')
-                            == $procedimento->id
-                        )
+                @csrf
+
+
+                {{-- PROCEDIMENTO --}}
+
+                <section class="vm-agendamento-section">
+
+                    <div class="vm-agendamento-section-title">
+
+                        <span class="vm-agendamento-number">
+                            01
+                        </span>
+
+                        <div class="vm-agendamento-section-info">
+
+                            <small>
+                                Atendimento
+                            </small>
+
+                            <h2>
+                                Procedimento
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vm-agendamento-field">
+
+                        <label for="procedimento_id">
+                            Procedimento
+                        </label>
+
+                        <select
+                            id="procedimento_id"
+                            name="procedimento_id"
+                            required
+                        >
+
+                            <option value="">
+                                Selecione o procedimento
+                            </option>
+
+                            @foreach($procedimentos as $procedimento)
+
+                                <option
+                                    value="{{ $procedimento->id }}"
+                                    @selected(
+                                        old('procedimento_id')
+                                        == $procedimento->id
+                                    )
+                                >
+
+                                    {{ $procedimento->nome }}
+
+                                    @if($procedimento->preco)
+
+                                        -
+                                        R$
+                                        {{ number_format(
+                                            $procedimento->preco,
+                                            2,
+                                            ',',
+                                            '.'
+                                        ) }}
+
+                                    @endif
+
+                                </option>
+
+                            @endforeach
+
+                        </select>
+
+
+                        @error('procedimento_id')
+
+                            <span class="vm-agendamento-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+                </section>
+
+
+
+                {{-- DATA E HORÁRIO --}}
+
+                <section class="vm-agendamento-section">
+
+                    <div class="vm-agendamento-section-title">
+
+                        <span class="vm-agendamento-number">
+                            02
+                        </span>
+
+                        <div class="vm-agendamento-section-info">
+
+                            <small>
+                                Disponibilidade
+                            </small>
+
+                            <h2>
+                                Data e horário
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vm-agendamento-grid">
+
+                        {{-- DATA --}}
+
+                        <div class="vm-agendamento-field">
+
+                            <label for="data_agendamento">
+                                Data
+                            </label>
+
+                            <input
+                                type="date"
+                                id="data_agendamento"
+                                name="data_agendamento"
+                                value="{{ old('data_agendamento') }}"
+                                min="{{ now()->format('Y-m-d') }}"
+                                required
+                            >
+
+
+                            @error('data_agendamento')
+
+                                <span class="vm-agendamento-error">
+                                    {{ $message }}
+                                </span>
+
+                            @enderror
+
+                        </div>
+
+
+                        {{-- HORÁRIO --}}
+
+                        <div class="vm-agendamento-field">
+
+                            <label for="hora_agendamento">
+                                Horário disponível
+                            </label>
+
+                            <select
+                                id="hora_agendamento"
+                                name="hora_agendamento"
+                                required
+                                disabled
+                            >
+
+                                <option value="">
+                                    Escolha primeiro o procedimento e a data
+                                </option>
+
+                            </select>
+
+
+                            <small
+                                id="informacao-duracao"
+                                class="vm-agendamento-duration"
+                            ></small>
+
+
+                            <div
+                                id="mensagem-horarios"
+                                class="vm-agendamento-error"
+                            ></div>
+
+
+                            @error('hora_agendamento')
+
+                                <span class="vm-agendamento-error">
+                                    {{ $message }}
+                                </span>
+
+                            @enderror
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                {{-- OBSERVAÇÕES --}}
+
+                <section class="vm-agendamento-section">
+
+                    <div class="vm-agendamento-section-title">
+
+                        <span class="vm-agendamento-number">
+                            03
+                        </span>
+
+                        <div class="vm-agendamento-section-info">
+
+                            <small>
+                                Informações adicionais
+                            </small>
+
+                            <h2>
+                                Observações
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="vm-agendamento-field">
+
+                        <label for="observacoes_cliente">
+                            Observações
+                        </label>
+
+                        <textarea
+                            id="observacoes_cliente"
+                            name="observacoes_cliente"
+                            placeholder="Digite alguma informação que gostaria de comunicar..."
+                        >{{ old('observacoes_cliente') }}</textarea>
+
+                    </div>
+
+                </section>
+
+
+
+                {{-- BOTÕES --}}
+
+                <div class="vm-agendamento-actions">
+
+                    <a
+                        href="{{ route('cliente.perfil.show') }}"
+                        class="vm-agendamento-back"
                     >
-                        {{ $procedimento->nome }}
+                        Voltar
+                    </a>
 
-                        @if($procedimento->preco)
-                            -
-                            R$
-                            {{ number_format(
-                                $procedimento->preco,
-                                2,
-                                ',',
-                                '.'
-                            ) }}
-                        @endif
-                    </option>
-                @endforeach
-            </select>
 
-            @error('procedimento_id')
-                <div class="erro">
-                    {{ $message }}
+                    <button
+                        type="submit"
+                        class="vm-agendamento-confirm"
+                    >
+                        Confirmar agendamento
+                    </button>
+
                 </div>
-            @enderror
+
+            </form>
+
         </div>
 
-        <div class="campo">
-            <label for="data_agendamento">
-                Data
-            </label>
+    </main>
 
-            <input
-                type="date"
-                id="data_agendamento"
-                name="data_agendamento"
-                value="{{ old('data_agendamento') }}"
-                min="{{ now()->format('Y-m-d') }}"
-                required
-            >
 
-            @error('data_agendamento')
-                <div class="erro">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+    {{-- FOOTER PADRÃO DO SITE --}}
+    @include('_partials.footer')
 
-        <div class="campo">
-            <label for="hora_agendamento">
-                Horário
-            </label>
 
-            <div class="campo">
-    <label for="hora_agendamento">
-        Horário disponível
-    </label>
+    <script>
 
-    <select
-        id="hora_agendamento"
-        name="hora_agendamento"
-        required
-        disabled
-    >
-        <option value="">
-            Escolha primeiro o procedimento e a data
-        </option>
-    </select>
+        const procedimentoSelect =
+            document.getElementById('procedimento_id');
 
-    <small id="informacao-duracao"></small>
+        const dataInput =
+            document.getElementById('data_agendamento');
 
-    <div
-        id="mensagem-horarios"
-        class="erro"
-    ></div>
+        const horarioSelect =
+            document.getElementById('hora_agendamento');
 
-    @error('hora_agendamento')
-        <div class="erro">
-            {{ $message }}
-        </div>
-    @enderror
-</div>
+        const mensagemHorarios =
+            document.getElementById('mensagem-horarios');
 
-            @error('hora_agendamento')
-                <div class="erro">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+        const informacaoDuracao =
+            document.getElementById('informacao-duracao');
 
-        <div class="campo">
-            <label for="observacoes_cliente">
-                Observações
-            </label>
 
-            <textarea
-                id="observacoes_cliente"
-                name="observacoes_cliente"
-            >{{ old('observacoes_cliente') }}</textarea>
-        </div>
+        async function carregarHorarios() {
 
-        <button type="submit" class="botao">
-            Confirmar agendamento
-        </button>
+            const procedimentoId =
+                procedimentoSelect.value;
 
-        <a href="{{ route('cliente.perfil.show') }}">
-            Voltar
-        </a>
+            const data =
+                dataInput.value;
 
-    </form>
 
-</div>
-<script>
-    const procedimentoSelect =
-        document.getElementById('procedimento_id');
-
-    const dataInput =
-        document.getElementById('data_agendamento');
-
-    const horarioSelect =
-        document.getElementById('hora_agendamento');
-
-    const mensagemHorarios =
-        document.getElementById('mensagem-horarios');
-
-    const informacaoDuracao =
-        document.getElementById('informacao-duracao');
-
-    async function carregarHorarios() {
-        const procedimentoId = procedimentoSelect.value;
-        const data = dataInput.value;
-
-        horarioSelect.innerHTML =
-            '<option value="">Carregando horários...</option>';
-
-        horarioSelect.disabled = true;
-        mensagemHorarios.textContent = '';
-        informacaoDuracao.textContent = '';
-
-        if (!procedimentoId || !data) {
             horarioSelect.innerHTML =
-                '<option value="">' +
-                'Escolha primeiro o procedimento e a data' +
-                '</option>';
+                '<option value="">Carregando horários...</option>';
 
-            return;
-        }
+            horarioSelect.disabled = true;
 
-        try {
-            const endereco = new URL(
-                "{{ route('cliente.agendamentos.horarios') }}"
-            );
+            mensagemHorarios.textContent = '';
 
-            endereco.searchParams.append(
-                'procedimento_id',
-                procedimentoId
-            );
+            informacaoDuracao.textContent = '';
 
-            endereco.searchParams.append(
-                'data',
-                data
-            );
 
-            const resposta = await fetch(endereco);
+            if (!procedimentoId || !data) {
 
-            if (!resposta.ok) {
-                throw new Error(
-                    'Não foi possível buscar os horários.'
-                );
-            }
-
-            const resultado = await resposta.json();
-
-            horarioSelect.innerHTML = '';
-
-            if (
-                !resultado.horarios ||
-                resultado.horarios.length === 0
-            ) {
                 horarioSelect.innerHTML =
                     '<option value="">' +
-                    'Nenhum horário disponível' +
+                    'Escolha primeiro o procedimento e a data' +
                     '</option>';
 
-                mensagemHorarios.textContent =
-                    resultado.mensagem ??
-                    'Não existem horários disponíveis para essa data.';
-
                 return;
+
             }
 
-            horarioSelect.innerHTML =
-                '<option value="">Selecione um horário</option>';
 
-            resultado.horarios.forEach(function (horario) {
-                const opcao =
-                    document.createElement('option');
+            try {
 
-                opcao.value = horario;
-                opcao.textContent = horario;
+                const endereco = new URL(
+                    "{{ route('cliente.agendamentos.horarios') }}"
+                );
 
-                horarioSelect.appendChild(opcao);
-            });
 
-            horarioSelect.disabled = false;
+                endereco.searchParams.append(
+                    'procedimento_id',
+                    procedimentoId
+                );
 
-            informacaoDuracao.textContent =
-                'Duração aproximada: ' +
-                resultado.duracao +
-                ' minutos.';
 
-        } catch (erro) {
-            horarioSelect.innerHTML =
-                '<option value="">Erro ao buscar horários</option>';
+                endereco.searchParams.append(
+                    'data',
+                    data
+                );
 
-            mensagemHorarios.textContent =
-                'Não foi possível carregar os horários.';
+
+                const resposta =
+                    await fetch(endereco);
+
+
+                if (!resposta.ok) {
+
+                    throw new Error(
+                        'Não foi possível buscar os horários.'
+                    );
+
+                }
+
+
+                const resultado =
+                    await resposta.json();
+
+
+                horarioSelect.innerHTML = '';
+
+
+                if (
+                    !resultado.horarios ||
+                    resultado.horarios.length === 0
+                ) {
+
+                    horarioSelect.innerHTML =
+                        '<option value="">' +
+                        'Nenhum horário disponível' +
+                        '</option>';
+
+
+                    mensagemHorarios.textContent =
+                        resultado.mensagem ??
+                        'Não existem horários disponíveis para essa data.';
+
+                    return;
+
+                }
+
+
+                horarioSelect.innerHTML =
+                    '<option value="">Selecione um horário</option>';
+
+
+                resultado.horarios.forEach(function (horario) {
+
+                    const opcao =
+                        document.createElement('option');
+
+                    opcao.value =
+                        horario;
+
+                    opcao.textContent =
+                        horario;
+
+                    horarioSelect.appendChild(opcao);
+
+                });
+
+
+                horarioSelect.disabled = false;
+
+
+                informacaoDuracao.textContent =
+                    'Duração aproximada: ' +
+                    resultado.duracao +
+                    ' minutos.';
+
+
+            } catch (erro) {
+
+                console.error(erro);
+
+                horarioSelect.innerHTML =
+                    '<option value="">Erro ao buscar horários</option>';
+
+
+                mensagemHorarios.textContent =
+                    'Não foi possível carregar os horários.';
+
+            }
+
         }
-    }
 
-    procedimentoSelect.addEventListener(
-        'change',
-        carregarHorarios
-    );
 
-    dataInput.addEventListener(
-        'change',
-        carregarHorarios
-    );
-</script>
+        procedimentoSelect.addEventListener(
+            'change',
+            carregarHorarios
+        );
+
+
+        dataInput.addEventListener(
+            'change',
+            carregarHorarios
+        );
+
+    </script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+></script>
+
 </body>
+
 </html>
-<!-- ultimo commit -->
