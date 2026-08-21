@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProcedimentoController;
 use App\Http\Controllers\VitrineController;
-use App\Http\Controllers\PerfilController;
-use App\Http\Controllers\FichaController;
+
+
 
 use App\Http\Middleware\LogAcessoMiddleware;
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\CadastroController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
 use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
+use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController;
 
@@ -98,11 +99,11 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
         Route::get('/perfil/editar', [ClientePerfilController::class,'edit'])->name('perfil.edit');
         Route::put('/perfil', [ClientePerfilController::class,'update'])->name('perfil.update');
         Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');  
-    Route::get('/cliente/perfil/anamnese',[FichaController::class, 'index'])->name('cliente.perfil.anamnese.index');
-Route::post('/cliente/perfil/anamnese',[FichaController::class, 'store'])->name('cliente.perfil.anamnese.store');
-    Route::put('/cliente/perfil/anamnese',[FichaController::class, 'update'])->name('cliente.perfil.anamnese.update');
-     Route::delete('/cliente/perfil/anamnese',[FichaController::class, 'destroy'])->name('cliente.perfil.anamnese.destroy');
-        Route::get('/perfil/anamnese', function () {return view('cliente.perfil.anamnese.ficha');})->name('perfil.anamnese.index');
+        Route::get('/perfil/anamnese',[FichaController::class, 'index'])->name('perfil.anamnese.index');
+        Route::post('/perfil/anamnese',[FichaController::class, 'store'])->name('perfil.anamnese.store');
+        Route::put('/perfil/anamnese',[FichaController::class, 'update'])->name('perfil.anamnese.update');
+        Route::get('/perfil/anamnese/editar',[FichaController::class, 'edit'])->name('perfil.anamnese.edit');
+        Route::delete('/perfil/anamnese',[FichaController::class, 'destroy'])->name('perfil.anamnese.destroy');
         Route::get('/agendamentos/horarios-disponiveis', [AgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
         Route::get('/agendamentos', [AgendamentoController::class,'index'])->name('agendamentos.index');
         Route::get('/agendamentos/criar', [AgendamentoController::class,'create'])->name('agendamentos.create');

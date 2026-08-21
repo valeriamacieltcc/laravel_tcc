@@ -18,14 +18,13 @@ class FichaController extends Controller
     public function index()
     {
         $user = Auth::user();
-
         $cliente = $user->cliente;
-
+    
         $anamnese = Anamnese::where(
             'cliente_id',
             $cliente->id
         )->first();
-
+    
         return view(
             'cliente.perfil.anamnese.ficha',
             compact(
@@ -65,11 +64,8 @@ class FichaController extends Controller
         Anamnese::create($dados);
 
         return redirect()
-            ->route('cliente.perfil.anamnese.index')
-            ->with(
-                'sucesso',
-                'Ficha de anamnese cadastrada com sucesso!'
-            );
+        ->route('cliente.perfil.show')
+        ->with('sucesso', 'Ficha de anamnese salva com sucesso!');
     }
 
 
@@ -98,11 +94,8 @@ class FichaController extends Controller
         $anamnese->update($dados);
 
         return redirect()
-            ->route('cliente.perfil.anamnese.index')
-            ->with(
-                'sucesso',
-                'Ficha de anamnese atualizada com sucesso!'
-            );
+        ->route('cliente.perfil.show')
+        ->with('sucesso', 'Ficha de anamnese atualizada com sucesso!');
     }
 
 
@@ -133,6 +126,18 @@ class FichaController extends Controller
             );
     }
 
+    public function edit(){
+    $user = Auth::user();
+ $cliente = $user->cliente;
+
+    $anamnese = Anamnese::where('cliente_id',$cliente->id)->first();
+
+    return view(
+        'cliente.perfil.anamnese.edit',
+        compact('user','cliente','anamnese')
+    );
+
+    }
 
     /*
     |--------------------------------------------------------------------------
