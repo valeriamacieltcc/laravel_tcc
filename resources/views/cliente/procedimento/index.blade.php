@@ -66,7 +66,7 @@
 
     <div class="card">
 
-        <img src="{{ $procedimento->imagem }}">
+    <img src="{{ asset('storage/' . $procedimento->imagem) }}">
 
         <div class="card-body">
 
