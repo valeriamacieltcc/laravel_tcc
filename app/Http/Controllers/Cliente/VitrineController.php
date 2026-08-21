@@ -1,8 +1,9 @@
 <?php
+namespace App\Http\Controllers\Cliente;
 
-namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use App\Models\Vitrine;
+
 
 class VitrineController extends Controller
 {
@@ -13,7 +14,7 @@ class VitrineController extends Controller
             ->get();
 
         return view(
-            'vitrine.loja',
+            'cliente.vitrine.loja',
             compact('vitrine')
         );
     }

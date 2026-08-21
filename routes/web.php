@@ -3,9 +3,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProcedimentoController;
-
-
-
 use App\Http\Middleware\LogAcessoMiddleware;
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
 use App\Http\Controllers\Auth\CadastroController;
