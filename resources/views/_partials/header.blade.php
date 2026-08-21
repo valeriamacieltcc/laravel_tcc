@@ -71,7 +71,7 @@
         </li>
 
         <li>
-            <a href="../vitrine/index">
+            <a href="../vitrine">
                 LOJA
             </a>
         </li>

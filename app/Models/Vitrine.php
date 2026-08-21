@@ -14,6 +14,12 @@ class Vitrine extends Model
         'preco',
         'imagem',
         'marca',
-        'estoque'
+        'disponivel',
+        'link_contato',
+    ];
+
+    protected $casts = [
+        'preco' => 'decimal:2',
+        'disponivel' => 'boolean',
     ];
 }

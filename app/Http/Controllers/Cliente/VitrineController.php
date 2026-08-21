@@ -1,16 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Cliente;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Vitrine;
 
 class VitrineController extends Controller
 {
     public function index()
     {
-        $vitrine = Vitrine::all();
+        $vitrine = Vitrine::where('disponivel', true)
+            ->orderBy('nome')
+            ->get();
 
-        return view('vitrine.index', compact('vitrine'));
+        return view(
+            'vitrine.loja',
+            compact('vitrine')
+        );
     }
 }

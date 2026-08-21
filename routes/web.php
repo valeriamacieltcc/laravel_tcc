@@ -3,7 +3,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProcedimentoController;
-use App\Http\Controllers\VitrineController;
 
 
 
@@ -12,10 +11,11 @@ use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoContro
 use App\Http\Controllers\Auth\CadastroController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
-use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController;
+use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
+use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
 
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
@@ -23,15 +23,9 @@ Route::prefix('/home')->group(function () {
 
 Route::get('/procedimento/index', [ClienteProcedimentoController::class,'index'])->name('procedimento.index');
 
-Route::prefix('/vitrine')->group(function () {
-    Route::get('/index', [ClienteVitrineController::class,'index'])->name('vitrine.index');});
 
 
-/*
-|--------------------------------------------------------------------------
-| HOME
-|--------------------------------------------------------------------------
-*/
+
 
 Route::prefix('/home')->group(function () {
 
@@ -58,41 +52,8 @@ Route::prefix('/procedimento')->group(function () {
 });
 
 
-/*
-|--------------------------------------------------------------------------
-| VITRINE
-|--------------------------------------------------------------------------
-*/
+Route::get('/vitrine',[ClienteVitrineController::class, 'index'])->name('vitrine.index');
 
-Route::prefix('/vitrine')->group(function () {
-
-    Route::get('/index', [VitrineController::class, 'index'])
-        ->name('vitrine.index');
-
-});
-
-
-/*
-|--------------------------------------------------------------------------
-| PERFIL
-|--------------------------------------------------------------------------
-*/
-
-
-// Route::prefix('/perfil')->group(function () {
-
-//     Route::get('/index', [PerfilController::class, 'index'])
-//         ->name('perfil.index');
-
-//     Route::get('/anamnese', [FichaController::class, 'index'])
-//         ->name('perfil.anamnese.index');
-
-
-
-//     Route::put('/atualizar', [PerfilController::class, 'atualizar'])
-//         ->name('perfil.atualizar');
-
-// });
 Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
 
         Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
@@ -116,6 +77,7 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
 // Procedimentos(admin)
 Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('procedimentos',AdminProcedimentoController::class);
+        Route::resource('vitrine',AdminVitrineController::class);
     });
 
 // cadastro e login
