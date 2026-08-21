@@ -58,10 +58,6 @@
 
             <header class="vm-agendamento-header">
 
-                <span class="vm-agendamento-subtitle">
-                    Valéria Maciel Estética
-                </span>
-
                 <h1 class="vm-agendamento-title">
                     Novo Agendamento
                 </h1>

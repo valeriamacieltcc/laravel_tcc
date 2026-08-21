@@ -3306,432 +3306,589 @@ background: #873836;
 ========================================================== */
 
 
-.vm-agendamento-page {
+/* =========================================================
+   AGENDAMENTO
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   RESET DA PÁGINA
+   ========================================================= */
+
+   .vm-agendamento-page {
     width: 100%;
-    min-height: 100vh;
-
-    background-color: #f5f2e9;
-
-    padding: 65px 20px 80px;
+    background: #f5f2e9;
+    padding: 40px 0 80px;
 }
 
 
-.vm-agendamento-container {
-    width: 100%;
-    max-width: 1050px;
+/* =========================================================
+   CONTAINER
+   MESMA PROPORÇÃO DO PERFIL
+   ========================================================= */
 
+.vm-agendamento-container {
+    width: 90%;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
 
-/* ==========================================================
-   TÍTULO
-========================================================== */
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
 
 .vm-agendamento-header {
-    width: 100%;
-
-    text-align: center;
-
     margin-bottom: 55px;
+    text-align: center;
 }
 
+
+/* SUBTÍTULO */
 
 .vm-agendamento-subtitle {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
-    font-family: 'Parisienne', cursive;
-    font-size: 27px;
-    font-weight: 400;
+    color: #819d96;
 
-    color: #2f6d67;
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
+
+/* TÍTULO */
 
 .vm-agendamento-title {
-    margin: 0 0 14px;
+    margin: 0 0 16px;
 
-    font-family: 'Playfair Display SC', serif;
-    font-size: 38px;
-    font-weight: 600;
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 42px;
+    font-weight: 400;
+
     letter-spacing: 2px;
+    line-height: 1.2;
 
-    color: #2f6d67;
+    text-transform: uppercase;
 }
 
 
+/* DESCRIÇÃO */
+
 .vm-agendamento-description {
-    max-width: 620px;
+    max-width: 650px;
 
     margin: 0 auto;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    line-height: 1.5;
-    font-weight: 500;
+    color: #77766f;
 
-    color: #5d5a52;
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .8px;
+    line-height: 1.7;
 }
 
 
-/* ==========================================================
+/* =========================================================
    FORMULÁRIO
-========================================================== */
+   ========================================================= */
 
 .vm-agendamento-form {
     width: 100%;
 }
 
 
-/* ==========================================================
+/* =========================================================
    SEÇÕES
-========================================================== */
+   ========================================================= */
 
 .vm-agendamento-section {
     width: 100%;
 
-    margin-bottom: 25px;
-    padding: 35px 40px;
+    margin-bottom: 45px;
+    padding: 30px 35px 35px;
 
-    background-color: #ffffff;
+    background: #d9ded2;
 
-    border: 1px solid rgba(47, 109, 103, 0.12);
-    border-radius: 4px;
-
-    box-shadow:
-        0 5px 20px rgba(47, 109, 103, 0.06);
+    border-radius: 10px;
 }
 
 
-/* ==========================================================
-   TÍTULO DAS SEÇÕES
-========================================================== */
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
 
 .vm-agendamento-section-title {
     display: flex;
-
     align-items: center;
 
     gap: 18px;
 
     margin-bottom: 30px;
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
 }
 
 
+/* NÚMERO */
+
 .vm-agendamento-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 42px;
     height: 42px;
 
     flex-shrink: 0;
 
-    display: flex;
+    background: #2f6d67;
 
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #2f6d67;
     border-radius: 50%;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
     font-weight: 600;
 
-    color: #2f6d67;
+    letter-spacing: 1px;
 }
 
+
+/* INFORMAÇÕES DO TÍTULO */
+
+.vm-agendamento-section-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* PEQUENO TÍTULO */
 
 .vm-agendamento-section-info small {
     display: block;
 
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    font-weight: 500;
+    color: #819d96;
 
-    color: #8b877d;
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
+
+/* TÍTULO PRINCIPAL */
 
 .vm-agendamento-section-info h2 {
     margin: 0;
 
-    font-family: 'Playfair Display SC', serif;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    color: #3e746d;
 
-    color: #2f6d67;
+    font-family: "Playfair Display SC", serif;
+    font-size: 23px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
 
-/* ==========================================================
-   CAMPOS
-========================================================== */
+/* =========================================================
+   GRID DATA / HORÁRIO
+   ========================================================= */
 
-.vm-agendamento-field {
+.vm-agendamento-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
     width: 100%;
 }
 
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.vm-agendamento-field {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
 
 .vm-agendamento-field label {
     display: block;
 
-    margin-bottom: 9px;
+    margin: 0 0 9px;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
     font-weight: 600;
 
-    color: #3f3d37;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+
+    text-transform: uppercase;
 }
 
 
-.vm-agendamento-field select,
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
 .vm-agendamento-field input,
+.vm-agendamento-field select,
 .vm-agendamento-field textarea {
+
     width: 100%;
 
-    padding: 13px 15px;
+    background: #f8f7f1;
 
-    border: 1px solid #d8d4c9;
+    border: 1px solid #c7cec8;
     border-radius: 3px;
 
-    background-color: #ffffff;
+    color: #414744;
 
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
-    font-weight: 500;
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
 
-    color: #3f3d37;
+    letter-spacing: .5px;
 
     outline: none;
 
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
 }
 
 
+/* INPUT E SELECT */
+
+.vm-agendamento-field input,
 .vm-agendamento-field select {
-    cursor: pointer;
+
+    height: 46px;
+
+    padding: 0 14px;
 }
 
 
-.vm-agendamento-field select:focus,
+/* TEXTAREA */
+
+.vm-agendamento-field textarea {
+
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
 .vm-agendamento-field input:focus,
+.vm-agendamento-field select:focus,
 .vm-agendamento-field textarea:focus {
+
+    background: #ffffff;
+
     border-color: #2f6d67;
 
-    box-shadow:
-        0 0 0 2px rgba(47, 109, 103, 0.10);
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
 }
 
 
-.vm-agendamento-field select:disabled {
-    background-color: #f4f2ed;
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
 
-    color: #99958b;
+.vm-agendamento-field input::placeholder,
+.vm-agendamento-field textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   SELECT DESABILITADO
+   ========================================================= */
+
+.vm-agendamento-field select:disabled {
+
+    background-color: #ecece5;
+
+    color: #999;
 
     cursor: not-allowed;
 }
 
 
-.vm-agendamento-field textarea {
-    min-height: 135px;
+/* =========================================================
+   DURAÇÃO
+   ========================================================= */
 
-    resize: vertical;
+.vm-agendamento-duration {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   MENSAGENS DE ERRO
+   ========================================================= */
+
+.vm-agendamento-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
 
     line-height: 1.5;
 }
 
 
-.vm-agendamento-field textarea::placeholder {
-    color: #aaa69d;
-
-    opacity: 1;
-}
-
-
-/* ==========================================================
-   DATA + HORÁRIO
-========================================================== */
-
-.vm-agendamento-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-}
-
-
-/* ==========================================================
-   ERROS
-========================================================== */
-
-.vm-agendamento-error {
-    display: block;
-
-    margin-top: 7px;
-
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    font-weight: 600;
-
-    color: #a34d4d;
-}
-
-
-.vm-agendamento-duration {
-    display: block;
-
-    margin-top: 7px;
-
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    font-weight: 500;
-
-    color: #2f6d67;
-}
-
-
-#mensagem-horarios.vm-agendamento-error:empty {
-    display: none;
-}
-
-
-/* ==========================================================
-   BOTÕES
-========================================================== */
+/* =========================================================
+   AÇÕES
+   ========================================================= */
 
 .vm-agendamento-actions {
+
     display: flex;
 
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-between;
 
-    gap: 20px;
+    gap: 12px;
 
-    margin-top: 35px;
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
 }
 
 
-.vm-agendamento-back,
-.vm-agendamento-confirm {
-    min-height: 48px;
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
+
+.vm-agendamento-back {
 
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    padding: 12px 28px;
+    min-width: 110px;
+    min-height: 45px;
 
-    border-radius: 3px;
+    padding: 12px 22px;
 
-    font-family: 'Playfair Display SC', serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    background: transparent;
 
+    border: 1px solid #7d958d;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
     text-decoration: none;
 
-    cursor: pointer;
+    text-transform: uppercase;
 
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.vm-agendamento-back {
-    border: 1px solid #2f6d67;
-
-    background-color: transparent;
-
-    color: #2f6d67;
+        background-color .25s ease,
+        color .25s ease;
 }
 
 
 .vm-agendamento-back:hover {
-    background-color: #2f6d67;
 
-    color: #ffffff;
+    background: #7d958d;
 
-    transform: translateY(-1px);
+    color: white;
 }
 
 
+/* =========================================================
+   BOTÃO CONFIRMAR
+   MESMO PADRÃO DOS BOTÕES DO PERFIL
+   ========================================================= */
+
 .vm-agendamento-confirm {
-    border: 1px solid #2f6d67;
 
-    background-color: #2f6d67;
+    display: inline-flex;
 
-    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 210px;
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
 }
 
 
 .vm-agendamento-confirm:hover {
-    border-color: #245b56;
 
-    background-color: #245b56;
+    background: #2f6d67;
 
-    transform: translateY(-1px);
+    color: white;
+
+    transform: translateY(-2px);
 }
 
 
-/* ==========================================================
+/* =========================================================
    RESPONSIVO
-========================================================== */
+   ========================================================= */
 
 @media (max-width: 768px) {
 
     .vm-agendamento-page {
-        padding: 45px 15px 60px;
+
+        padding: 30px 0 60px;
     }
 
 
-    .vm-agendamento-header {
-        margin-bottom: 40px;
-    }
+    .vm-agendamento-container {
 
-
-    .vm-agendamento-subtitle {
-        font-size: 24px;
+        width: 90%;
     }
 
 
     .vm-agendamento-title {
-        font-size: 30px;
 
-        letter-spacing: 1px;
+        font-size: 34px;
     }
 
 
     .vm-agendamento-description {
-        font-size: 17px;
+
+        font-size: 10px;
     }
 
 
     .vm-agendamento-section {
-        padding: 28px 22px;
+
+        padding: 25px 20px 30px;
     }
 
 
     .vm-agendamento-grid {
+
         grid-template-columns: 1fr;
 
-        gap: 22px;
+        gap: 20px;
+    }
+
+
+    .vm-agendamento-section-title {
+
+        align-items: flex-start;
+    }
+
+
+    .vm-agendamento-section-info h2 {
+
+        font-size: 19px;
     }
 
 
     .vm-agendamento-actions {
-        flex-direction: column-reverse;
+
+        flex-direction: column;
 
         align-items: stretch;
     }
@@ -3739,43 +3896,74 @@ background: #873836;
 
     .vm-agendamento-back,
     .vm-agendamento-confirm {
+
         width: 100%;
     }
 
 }
 
 
-/* ==========================================================
-   CELULAR PEQUENO
-========================================================== */
+/* =========================================================
+   CELULAR
+   ========================================================= */
 
 @media (max-width: 480px) {
 
+    .vm-agendamento-page {
+
+        padding-top: 25px;
+    }
+
+
     .vm-agendamento-title {
-        font-size: 26px;
+
+        font-size: 28px;
+
+        letter-spacing: 1px;
     }
 
 
     .vm-agendamento-section {
-        padding: 24px 18px;
-    }
 
-
-    .vm-agendamento-section-title {
-        gap: 12px;
+        padding: 22px 16px 25px;
     }
 
 
     .vm-agendamento-number {
+
         width: 36px;
         height: 36px;
 
-        font-size: 15px;
+        font-size: 10px;
+    }
+
+
+    .vm-agendamento-section-info small {
+
+        font-size: 8px;
     }
 
 
     .vm-agendamento-section-info h2 {
-        font-size: 19px;
+
+        font-size: 17px;
+    }
+
+
+    .vm-agendamento-field input,
+    .vm-agendamento-field select {
+
+        height: 44px;
+
+        font-size: 11px;
+    }
+
+
+    .vm-agendamento-field textarea {
+
+        font-size: 11px;
     }
 
 }
+
+
