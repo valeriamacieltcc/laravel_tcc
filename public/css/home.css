@@ -2044,7 +2044,6 @@ SEÇÕES / CARDS
 
     background-color: #e9ebe3;
 
-    /* BORDA REMOVIDA */
     border: none;
     border-radius: 8px;
 
@@ -2124,7 +2123,7 @@ TÍTULOS DAS SEÇÕES
 /* =========================================================
 GRID
 ========================================================= */
-
+/* 
 .form-grid {
     display: grid;
 
@@ -2133,7 +2132,7 @@ GRID
     gap: 22px 26px;
 
     width: 100%;
-}
+} */
 
 .form-group {
     display: flex;
@@ -2151,7 +2150,7 @@ GRID
 LABELS
 ========================================================= */
 
-.form-group label {
+/* .form-group label {
     margin-bottom: 8px;
 
     color: #52635f;
@@ -2164,7 +2163,7 @@ LABELS
     text-transform: uppercase;
 
   
-}
+} */
 
 /* =========================================================
 INPUTS
@@ -2271,7 +2270,7 @@ PERGUNTAS
 
     background-color: #f5f5ee;
 
-    /* BORDA REMOVIDA */
+   
     border: none;
     border-radius: 4px;
 }
@@ -2534,27 +2533,27 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
     padding: 40px 20px;
 }
 
-.anamnese-container {
+/* .anamnese-container {
     max-width: 1100px;
     margin: 0 auto;
     background: #fff;
     border-radius: 18px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
+} */
 
-.anamnese-section {
+/* .anamnese-section {
     margin-bottom: 45px;
     padding-bottom: 30px;
     border-bottom: 1px solid #e5e5e5;
-}
+} */
 
-.section-title {
+/* .section-title {
     display: flex;
     align-items: center;
     gap: 18px;
     margin-bottom: 25px;
-}
+} */
 
 .section-title span {
     width: 50px;
@@ -2584,21 +2583,21 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 18px;
 }
-
+/* 
 .form-group {
     display: flex;
     flex-direction: column;
-}
+} */
 
 .form-group-full {
     grid-column: 1 / -1;
 }
 
-.form-group label {
+/* .form-group label {
     margin-bottom: 6px;
     font-weight: 600;
     color: #2E614D;
-}
+} */
 
 .form-group input,
 .form-group select,
@@ -2632,12 +2631,12 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
     gap: 18px;
 }
 
-.question-item {
+/* .question-item {
     border: 1px solid #E1F4BE;
     border-radius: 12px;
     padding: 16px;
     background: #F6F5E5;
-}
+} */
 
 .question-item p {
     margin: 0 0 12px;
@@ -2736,23 +2735,23 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
 AJUSTE DE ESPAÇAMENTO ENTRE LABEL E INPUT
 ========================================================= */
 
-.form-group label {
+/* .form-group label {
     display: block;
-    margin-bottom: 6px; /* valor ideal para manter harmonia */
+    margin-bottom: 6px; 
     color: #52635f;
     font-family: "Playfair Display SC", serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
-}
+} */
 
 /* Para garantir consistência em todo o formulário */
-.form-group input,
+/* .form-group input,
 .form-group select,
 .form-group textarea {
-    margin-top: 0; /* remove espaçamento extra entre campos */
-}
+    margin-top: 0; 
+} */
 
 
 
@@ -2760,13 +2759,13 @@ AJUSTE DE ESPAÇAMENTO ENTRE LABEL E INPUT
    ESPAÇAMENTO ENTRE PERGUNTAS
    ========================================================= */
 
-.question-grid {
+/* .question-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
     column-gap: 18px;
     row-gap: 18px;
-}
+} */
 
 
 /* ESPAÇO ENTRE OBSERVAÇÕES E A PRÓXIMA PERGUNTA */
