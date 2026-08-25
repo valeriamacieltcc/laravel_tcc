@@ -141,12 +141,7 @@
             Novo procedimento
         </a>
 
-        <a
-            href="{{ route('admin.home.index') }}"
-            class="botao"
-        >
-            Home
-        </a>
+    
     </div>
 
     @if(session('sucesso'))
