@@ -2,12 +2,16 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+
 use App\Http\Controllers\ProcedimentoController;
-use App\Http\Middleware\LogAcessoMiddleware;
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
+use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
+use App\Http\Middleware\LogAcessoMiddleware;
+
 use App\Http\Controllers\Auth\CadastroController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
+
 use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController;
@@ -73,6 +77,8 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
       
 // Procedimentos(admin)
 Route::prefix('admin')->name('admin.')->group(function () {
+    
+         Route::get('/home', [AdminHomeController::class, 'index'])->name('home');
         Route::resource('procedimentos',AdminProcedimentoController::class);
         Route::resource('vitrine',AdminVitrineController::class);
     });

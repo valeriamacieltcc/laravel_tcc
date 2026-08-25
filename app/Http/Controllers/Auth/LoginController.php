@@ -47,7 +47,7 @@ class LoginController extends Controller
 
         if ($user->isAdmin()) {
             return redirect()
-                ->route('admin.procedimentos.index');
+                ->route('admin.home');
         }
 
         return redirect()

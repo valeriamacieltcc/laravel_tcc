@@ -85,6 +85,49 @@
     </style>
 </head>
 <body>
+<nav class="navbar">
+
+    <!-- BOTÃO MENU -->
+    <button
+        class="menu-button"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#menuLateral"
+        aria-controls="menuLateral">
+
+        <img src="{{ asset('imagem/menu.png') }}" alt="Menu">
+
+    </button>
+
+
+    <!-- LINKS PRINCIPAIS -->
+    <ul>
+        <li><a href="{{ route('admin.home') }}">HOME</a></li>
+
+        <li>
+            <a href="{{ route('admin.procedimentos.index') }}">
+                PROCEDIMENTOS
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                AGENDAR
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ route('admin.vitrine.index') }}">
+                LOJA
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                BLOG
+            </a>
+        </li>
+    </ul>
 
 <div class="container">
 
@@ -96,6 +139,13 @@
             class="botao"
         >
             Novo procedimento
+        </a>
+
+        <a
+            href="{{ route('admin.home.index') }}"
+            class="botao"
+        >
+            Home
         </a>
     </div>
 
