@@ -33,6 +33,7 @@ class Cliente extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
 
     public function agendamentos()
     {
@@ -42,6 +43,11 @@ class Cliente extends Model
     public function anamnese()
 {
     return $this->hasOne(Anamnese::class);
+}
+
+public function fotosAcompanhamento()
+{
+    return $this->hasMany(FotoAcompanhamento::class);
 }
 
 }

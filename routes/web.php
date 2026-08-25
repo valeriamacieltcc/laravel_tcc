@@ -15,8 +15,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController;
+use App\Http\Controllers\Admin\AgendaController;
 use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
+use App\Http\Controllers\Admin\ClienteController;
+use App\Http\Controllers\Admin\AnamneseController;
 
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
@@ -81,7 +84,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
          Route::get('/home', [AdminHomeController::class, 'index'])->name('home');
         Route::resource('procedimentos',AdminProcedimentoController::class);
         Route::resource('vitrine',AdminVitrineController::class);
-    });
+        Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda.index');
+        Route::get('/agenda/eventos',[AgendaController::class, 'eventos'])->name('agenda.eventos');
+        Route::post('/agenda/compromissos',[AgendaController::class, 'store'])->name('agenda.store');
+        Route::delete('/agenda/compromissos/{compromisso}',[AgendaController::class, 'destroy'])->name('agenda.destroy');
+
+    Route::get('/clientes',[ClienteController::class, 'index'])->name('clientes.index');
+
+    Route::get('/clientes/{cliente}',[ClienteController::class, 'show'])->name('clientes.show');
+    Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class,'edit'] )->name('clientes.anamnese.edit');
+    Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
+});
 
 // cadastro e login
 Route::middleware('guest')->group(function () {

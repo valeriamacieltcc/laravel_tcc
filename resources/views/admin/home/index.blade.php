@@ -39,9 +39,9 @@
         </li>
 
         <li>
-            <a href="#">
-                AGENDAR
-            </a>
+        <a href="{{ route('admin.agenda.index') }}">
+    AGENDA
+</a>
         </li>
 
         <li>
@@ -145,17 +145,17 @@
                 Criar Procedimento
             </a>
 
-            <a href="#">
-                agendamentos
-            </a>
+            <a href="{{ route('admin.agenda.index') }}">
+    Agenda
+</a>
 
             <a href="{{ route('admin.vitrine.index') }}">
             Criar Produtos
             </a>
 
-            <a href="#">
-                Clientes
-            </a>
+            <a href="{{ route('admin.clientes.index') }}">
+    CLIENTES
+</a>
 
         </div>
 
