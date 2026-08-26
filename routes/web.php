@@ -20,6 +20,7 @@ use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\AnamneseController;
+use App\Http\Controllers\Admin\FotoAcompanhamentoController;
 
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
@@ -94,6 +95,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/clientes/{cliente}',[ClienteController::class, 'show'])->name('clientes.show');
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class,'edit'] )->name('clientes.anamnese.edit');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
+    Route::get('/clientes/{cliente}/fotos/create',[FotoAcompanhamentoController::class, 'create'])->name('clientes.fotos.create');
+    Route::post('/clientes/{cliente}/fotos',[FotoAcompanhamentoController::class, 'store'])->name('clientes.fotos.store');
+    Route::delete('/clientes/fotos/{foto}',[FotoAcompanhamentoController::class, 'destroy'])->name('clientes.fotos.destroy');
 });
 
 // cadastro e login
