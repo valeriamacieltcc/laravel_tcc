@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -9,241 +12,364 @@
 
     <title>Cadastro | Valéria Maciel Estética</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 15px;
-        }
+    <!-- FONTES -->
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-        h1 {
-            margin-top: 0;
-            text-align: center;
-            color: #2c7771;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-        .subtitulo {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
 
-        .campo {
-            margin-bottom: 17px;
-        }
 
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-            color: #333;
-        }
+    <!-- BOOTSTRAP -->
 
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 15px;
-        }
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        input:focus {
-            outline: 2px solid #2c7771;
-            border-color: transparent;
-        }
 
-        .erro {
-            color: #b00020;
-            font-size: 14px;
-            margin-top: 5px;
-        }
+    <!-- CSS PRINCIPAL DO SITE -->
 
-        .botao {
-            width: 100%;
-            border: none;
-            border-radius: 6px;
-            padding: 13px;
-            background: #2c7771;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
-        .botao:hover {
-            background: #24645f;
-        }
-
-        .login {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .login a {
-            color: #2c7771;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
-<body>
 
-<div class="container">
-    <h1>Criar conta</h1>
+<body class="cadastro-body">
 
-    <p class="subtitulo">
-        Cadastre-se para acessar os serviços da clínica.
-    </p>
 
-    <form
-        action="{{ route('cadastro.store') }}"
-        method="POST"
-    >
-        @csrf
+    {{-- =====================================================
+         HEADER PADRÃO DO SITE
+         ===================================================== --}}
 
-        <div class="campo">
-            <label for="name">Nome completo</label>
+    @include('_partials.header')
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value="{{ old('name') }}"
-                required
-            >
 
-            @error('name')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
+    {{-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== --}}
 
-        <div class="campo">
-            <label for="email">E-mail</label>
+    <main class="cadastro-main">
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                value="{{ old('email') }}"
-                required
-            >
 
-            @error('email')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
+        <section class="cadastro-section">
 
-        <div class="campo">
-            <label for="telefone">Telefone</label>
 
-            <input
-                type="text"
-                id="telefone"
-                name="telefone"
-                value="{{ old('telefone') }}"
-                placeholder="(15) 99999-9999"
-                required
-            >
+            <div class="cadastro-wrapper">
 
-            @error('telefone')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
 
-        <div class="campo">
-            <label for="data_nascimento">
-                Data de nascimento
-            </label>
+                {{-- =================================================
+                     CABEÇALHO DO CADASTRO
+                     ================================================= --}}
 
-            <input
-                type="date"
-                id="data_nascimento"
-                name="data_nascimento"
-                value="{{ old('data_nascimento') }}"
-                required
-            >
+                <header class="cadastro-heading">
 
-            @error('data_nascimento')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
+                    <h1 class="cadastro-heading-title">
+                        Criar conta
+                    </h1>
 
-        <div class="campo">
-            <label for="cpf">CPF</label>
+                    <p class="cadastro-heading-text">
+                        Cadastre-se para acessar os serviços da clínica.
+                    </p>
 
-            <input
-                type="text"
-                id="cpf"
-                name="cpf"
-                value="{{ old('cpf') }}"
-                placeholder="000.000.000-00"
-            >
+                </header>
 
-            @error('cpf')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
 
-        <div class="campo">
-            <label for="password">Senha</label>
+                {{-- =================================================
+                     FORMULÁRIO
+                     ================================================= --}}
 
-            <input
-                type="password"
-                id="password"
-                name="password"
-                minlength="8"
-                required
-            >
+                <form
+                    action="{{ route('cadastro.store') }}"
+                    method="POST"
+                    class="cadastro-form"
+                >
 
-            @error('password')
-                <div class="erro">{{ $message }}</div>
-            @enderror
-        </div>
+                    @csrf
 
-        <div class="campo">
-            <label for="password_confirmation">
-                Confirmar senha
-            </label>
 
-            <input
-                type="password"
-                id="password_confirmation"
-                name="password_confirmation"
-                minlength="8"
-                required
-            >
-        </div>
+                    {{-- NOME COMPLETO --}}
 
-        <button type="submit" class="botao">
-            Criar conta
-        </button>
-    </form>
+                    <div class="cadastro-form-group">
 
-    <div class="login">
-        Já possui uma conta?
+                        <label
+                            for="name"
+                            class="cadastro-form-label"
+                        >
+                            Nome completo
+                        </label>
 
-        <a href="{{ route('login') }}">
-            Entrar
-        </a>
-    </div>
-</div>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value="{{ old('name') }}"
+                            class="cadastro-form-input"
+                            required
+                        >
+
+                        @error('name')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- E-MAIL --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="email"
+                            class="cadastro-form-label"
+                        >
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            class="cadastro-form-input"
+                            required
+                        >
+
+                        @error('email')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- TELEFONE --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="telefone"
+                            class="cadastro-form-label"
+                        >
+                            Telefone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="telefone"
+                            name="telefone"
+                            value="{{ old('telefone') }}"
+                            class="cadastro-form-input"
+                            placeholder="(15) 99999-9999"
+                            required
+                        >
+
+                        @error('telefone')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- DATA DE NASCIMENTO --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="data_nascimento"
+                            class="cadastro-form-label"
+                        >
+                            Data de nascimento
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data_nascimento"
+                            name="data_nascimento"
+                            value="{{ old('data_nascimento') }}"
+                            class="cadastro-form-input"
+                            required
+                        >
+
+                        @error('data_nascimento')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- CPF --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="cpf"
+                            class="cadastro-form-label"
+                        >
+                            CPF
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cpf"
+                            name="cpf"
+                            value="{{ old('cpf') }}"
+                            class="cadastro-form-input"
+                            placeholder="000.000.000-00"
+                        >
+
+                        @error('cpf')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- SENHA --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="password"
+                            class="cadastro-form-label"
+                        >
+                            Senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="cadastro-form-input"
+                            minlength="8"
+                            required
+                        >
+
+                        @error('password')
+
+                            <span class="cadastro-form-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    {{-- CONFIRMAR SENHA --}}
+
+                    <div class="cadastro-form-group">
+
+                        <label
+                            for="password_confirmation"
+                            class="cadastro-form-label"
+                        >
+                            Confirmar senha
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password_confirmation"
+                            name="password_confirmation"
+                            class="cadastro-form-input"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+
+                    {{-- BOTÃO --}}
+
+                    <div class="cadastro-button-area">
+
+                        <button
+                            type="submit"
+                            class="cadastro-submit"
+                        >
+                            Criar conta
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+
+                {{-- =================================================
+                     ÁREA DE LOGIN
+                     ================================================= --}}
+
+                <div class="cadastro-existing-account">
+
+                    <span class="cadastro-existing-text">
+                        Já possui uma conta?
+                    </span>
+
+                    <a
+                        href="{{ route('login') }}"
+                        class="cadastro-existing-link"
+                    >
+                        Entrar
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    {{-- =====================================================
+         FOOTER PADRÃO DO SITE
+         ===================================================== --}}
+
+    @include('_partials.footer')
+
+
+    <!-- BOOTSTRAP JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
+
 </html>
