@@ -24,7 +24,7 @@
                 AGENDAR PROCEDIMENTO
             </a>
 
-<img src="{{ $procedimento->imagem }}" alt="{{ $procedimento->nome }}">
+            <img src="{{ asset('storage/' . $procedimento->imagem) }}">
 
 <h3>Cuidados</h3>
 <p>{{ $procedimento->cuidados }}</p>
