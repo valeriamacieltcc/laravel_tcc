@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Procedimentos & Cuidados</title>
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/procedimento.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
 
     </div>
 
-    <div class="titulo-procedimento">
+    <div class="titulo">
         <h1>PROCEDIMENTOS &<br> CUIDADOS</h1>
     </div>
 
@@ -62,79 +62,27 @@
 <!-- CARDS -->
 
 <section class="cards">
+    @foreach($procedimentos as $procedimento)
 
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/1200x/e9/30/1b/e9301b3c37268ae7afd20085e2e05d5f.jpg">
+    <div class="card">
+
+    <img src="{{ asset('storage/' . $procedimento->imagem) }}">
+
         <div class="card-body">
-            <h3>LIMPEZA DE PELE</h3>
-            <p>Remoção de impurezas e revitalização da pele.</p>
-            <button class="btn-procedimento">VER MAIS</button>
+
+            <h3>{{ $procedimento->nome }}</h3>
+
+            <p>{{ $procedimento->descricao }}</p> 
+
+            <a class="btn" href="http://localhost:8000/procedimento/{{ $procedimento->id }}">
+                VER MAIS
+            </a>
+
         </div>
+
     </div>
 
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/736x/21/2d/bd/212dbda496abfdd8d0dbc524ac76fe12.jpg">
-        <div class="card-body">
-            <h3>DESIGN DE SOBRANCELHA</h3>
-            <p>Realce natural.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/1200x/15/c3/d3/15c3d3f16b94702002465150f19f9434.jpg">
-        <div class="card-body">
-            <h3>DEPILAÇÃO A CERA</h3>
-            <p>Pelos mais finos e menos frequentes.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/736x/ef/ee/05/efee051a55b3fa90bd0144aa6ae16ff1.jpg">
-        <div class="card-body">
-            <h3>MASSAGEM</h3>
-            <p>Relaxamento e alívio das dores.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/736x/8b/16/ce/8b16ce6e0c96ffe6d6a5b61f3124313e.jpg">
-        <div class="card-body">
-            <h3>MANICURE</h3>
-            <p>Beleza das unhas das mãos.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/736x/5a/5a/fa/5a5afa11729ae62a86a9a372c016123c.jpg">
-        <div class="card-body">
-            <h3>PEDICURE</h3>
-            <p>Beleza das unhas dos pés.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/736x/4f/42/73/4f4273d07b2d94f30792c1286868ab2c.jpg">
-        <div class="card-body">
-            <h3>TRATAMENTOS CAPILARES</h3>
-            <p>Práticas terapêuticas e estéticas.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
-    <div class="card-procedimento">
-        <img src="https://i.pinimg.com/1200x/e5/ab/fc/e5abfc3138b55ba615f8d32c8478e5dd.jpg">
-        <div class="card-body">
-            <h3>TINTURAS</h3>
-            <p>Práticas terapêuticas e estéticas.</p>
-            <button class="btn-procedimento">VER MAIS</button>
-        </div>
-    </div>
-
+    @endforeach
 </section>
 
   <!-- FOOTER -->
