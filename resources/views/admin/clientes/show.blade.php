@@ -108,14 +108,14 @@
         </p>
 
         <a
-            href="{{ route(
-                'admin.clientes.anamnese.edit',
-                $cliente
-            ) }}"
-            class="btn btn-success"
-        >
-            Ver / Editar Anamnese
-        </a>
+    href="{{ route(
+        'admin.clientes.show',
+        $cliente
+    ) }}"
+    class="btn btn-success"
+>
+    Ver Ficha de Anamnese
+</a>
 
     @else
 
@@ -125,7 +125,7 @@
 
         <a
             href="{{ route(
-                'admin.clientes.anamnese.edit',
+                'admin.clientes.edit_anamnese',
                 $cliente
             ) }}"
             class="btn btn-success"

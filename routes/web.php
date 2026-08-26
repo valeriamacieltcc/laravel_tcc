@@ -100,6 +100,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/clientes/{cliente}/fotos/create',[FotoAcompanhamentoController::class, 'create'])->name('clientes.fotos.create');
     Route::post('/clientes/{cliente}/fotos',[FotoAcompanhamentoController::class, 'store'])->name('clientes.fotos.store');
     Route::delete('/clientes/fotos/{foto}',[FotoAcompanhamentoController::class, 'destroy'])->name('clientes.fotos.destroy');
+    Route::get(
+        '/clientes/{cliente}/anamnese',
+        [AnamneseController::class, 'show']
+    )->name('clientes.anamnese.show');
+    
+    
+    Route::get(
+        '/clientes/{cliente}/anamnese/editar',
+        [AnamneseController::class, 'edit']
+    )->name('clientes.anamnese.edit');
+    
+    
+    Route::put(
+        '/clientes/{cliente}/anamnese',
+        [AnamneseController::class, 'update']
+    )->name('clientes.anamnese.update');
 });
 
 // cadastro e login

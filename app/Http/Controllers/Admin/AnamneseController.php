@@ -9,8 +9,16 @@ use Illuminate\Http\Request;
 
 class AnamneseController extends Controller
 {
-    public function edit(Cliente $cliente)
+    /*
+    |--------------------------------------------------------------------------
+    | VISUALIZAR FICHA
+    |--------------------------------------------------------------------------
+    */
+
+    public function show(Cliente $cliente)
     {
+        $cliente->load('user');
+
         $anamnese = $cliente->anamnese;
 
         return view(
@@ -23,61 +31,61 @@ class AnamneseController extends Controller
     }
 
 
+    /*
+    |--------------------------------------------------------------------------
+    | EDITAR
+    |--------------------------------------------------------------------------
+    */
+
+    public function edit(Cliente $cliente)
+    {
+        $cliente->load('user');
+
+        $anamnese = $cliente->anamnese;
+
+        return view(
+            'admin.clientes.anamnese-edit',
+            compact(
+                'cliente',
+                'anamnese'
+            )
+        );
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | ATUALIZAR
+    |--------------------------------------------------------------------------
+    */
+
     public function update(
         Request $request,
         Cliente $cliente
-    ) {
-
-        $dados = $request->validate([
-
-            'alergias' =>
-                'nullable|string',
-
-            'medicamentos' =>
-                'nullable|string',
-
-            'doencas' =>
-                'nullable|string',
-
-            'cirurgias' =>
-                'nullable|string',
-
-            'observacoes' =>
-                'nullable|string',
-
+    )
+    {
+        $dados = $request->except([
+            '_token',
+            '_method'
         ]);
 
 
-        $dados['gestante'] =
-            $request->boolean('gestante');
-
-        $dados['pressao_alta'] =
-            $request->boolean('pressao_alta');
-
-        $dados['diabetes'] =
-            $request->boolean('diabetes');
-
-
         Anamnese::updateOrCreate(
-
             [
-                'cliente_id' =>
-                    $cliente->id
+                'cliente_id' => $cliente->id
             ],
-
             $dados
-
         );
 
 
         return redirect()
             ->route(
-                'admin.clientes.show',
+                'admin.clientes.anamnese.show',
                 $cliente
             )
             ->with(
                 'sucesso',
-                'Ficha de anamnese atualizada!'
+                'Ficha atualizada com sucesso!'
             );
     }
 }
