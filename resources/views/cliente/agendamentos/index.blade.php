@@ -12,9 +12,6 @@
 
     <title>Meus Agendamentos - Valéria Maciel</title>
 
-
-    <!-- GOOGLE FONTS -->
-
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -22,25 +19,20 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
         rel="stylesheet"
     >
 
-
     <!-- BOOTSTRAP -->
-
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
-
-    <!-- CSS PRINCIPAL -->
 
     <link
         rel="stylesheet"
@@ -48,7 +40,6 @@
     >
 
 </head>
-
 
 <body>
 
@@ -58,7 +49,6 @@
          ===================================================== --}}
 
     @include('_partials.header')
-
 
 
     {{-- =====================================================
@@ -94,15 +84,9 @@
                 </div>
 
 
-                <a
-                    href="{{ route('cliente.agendamentos.create') }}"
-                    class="meus-agendamentos-new"
-                >
-                    Novo agendamento
-                </a>
+            
 
             </div>
-
 
 
             {{-- =================================================
@@ -120,7 +104,6 @@
             @endif
 
 
-
             {{-- =================================================
                  MENSAGEM DE ERRO
                  ================================================= --}}
@@ -134,7 +117,6 @@
                 </div>
 
             @endif
-
 
 
             {{-- =================================================
@@ -178,7 +160,6 @@
                         </div>
 
 
-
                         {{-- INFORMAÇÕES --}}
 
                         <div class="meus-agendamentos-info-grid">
@@ -197,7 +178,6 @@
                             </div>
 
 
-
                             <div class="meus-agendamentos-info">
 
                                 <span class="meus-agendamentos-info-label">
@@ -212,7 +192,6 @@
 
 
                         </div>
-
 
 
                         {{-- OBSERVAÇÕES --}}
@@ -232,7 +211,6 @@
                             </div>
 
                         @endif
-
 
 
                         {{-- AÇÕES --}}
@@ -261,7 +239,7 @@
 
                                     <button
                                         type="submit"
-                                        class="meus-agendamentos-cancel btn-sair"
+                                        class="meus-agendamentos-cancel"
                                     >
                                         Cancelar agendamento
                                     </button>
@@ -323,7 +301,6 @@
             </div>
 
 
-
             {{-- =================================================
                  VOLTAR PARA HOME
                  ================================================= --}}
@@ -332,7 +309,7 @@
 
                 <a
                     href="{{ route('home.index') }}"
-                    class="meus-agendamentos-back btn-acao"
+                    class="meus-agendamentos-back"
                 >
                     Voltar para Home
                 </a>
@@ -345,13 +322,11 @@
     </main>
 
 
-
     {{-- =====================================================
          FOOTER PADRÃO DO SITE
          ===================================================== --}}
 
     @include('_partials.footer')
-
 
 
     <!-- BOOTSTRAP JS -->

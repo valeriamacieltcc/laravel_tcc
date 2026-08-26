@@ -376,6 +376,8 @@ body{
 
 
 
+
+
 /* PAGINA HOME CSS  */
 
 
@@ -3965,4 +3967,1445 @@ background: #873836;
 
 }
 
+/* =========================================================
+   PÁGINA — MEUS AGENDAMENTOS
+   PADRÃO VISUAL — VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
 
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .meus-agendamentos-page {
+    width: 100%;
+    min-height: 500px;
+    background-color: #f5f2e9;
+    padding: 45px 0 80px;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.meus-agendamentos-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.meus-agendamentos-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+
+.meus-agendamentos-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* PEQUENO TEXTO */
+
+.meus-agendamentos-header-info small {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* TÍTULO */
+
+.meus-agendamentos-title {
+    margin: 0 0 14px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 42px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* DESCRIÇÃO */
+
+.meus-agendamentos-description {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÃO — NOVO AGENDAMENTO
+   ========================================================= */
+
+.meus-agendamentos-new {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 190px;
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    flex-shrink: 0;
+
+    background-color: #7d958d;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+.meus-agendamentos-new:hover {
+    background-color: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MENSAGENS
+   ========================================================= */
+
+.meus-agendamentos-message-success,
+.meus-agendamentos-message-error {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 15px 20px;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    letter-spacing: .7px;
+    line-height: 1.6;
+
+    text-transform: uppercase;
+}
+
+
+/* SUCESSO */
+
+.meus-agendamentos-message-success {
+    background-color: #dfe8e1;
+
+    border-left: 4px solid #2f6d67;
+
+    color: #2f6d67;
+}
+
+
+/* ERRO */
+
+.meus-agendamentos-message-error {
+    background-color: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.meus-agendamentos-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.meus-agendamentos-card {
+    width: 100%;
+
+    padding: 30px 35px;
+
+    background-color: #d9ded2;
+
+    border-radius: 10px;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CARD
+   ========================================================= */
+
+.meus-agendamentos-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+}
+
+
+/* PEQUENO TEXTO */
+
+.meus-agendamentos-card-header small {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* NOME DO PROCEDIMENTO */
+
+.meus-agendamentos-procedure {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 23px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.meus-agendamentos-status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+
+    padding: 8px 15px;
+
+    flex-shrink: 0;
+
+    background-color: #819d96;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GRID DE INFORMAÇÕES
+   ========================================================= */
+
+.meus-agendamentos-info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO
+   ========================================================= */
+
+.meus-agendamentos-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 18px 20px;
+
+    background-color: #f5f2e9;
+
+    border-radius: 5px;
+}
+
+
+/* LABEL */
+
+.meus-agendamentos-info-label {
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* VALOR */
+
+.meus-agendamentos-info strong {
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   OBSERVAÇÕES
+   ========================================================= */
+
+.meus-agendamentos-observacoes {
+    width: 100%;
+
+    margin-top: 5px;
+    margin-bottom: 25px;
+
+    padding: 18px 20px;
+
+    background-color: #f5f2e9;
+
+    border-left: 3px solid #819d96;
+}
+
+
+/* TÍTULO */
+
+.meus-agendamentos-observacoes > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* TEXTO */
+
+.meus-agendamentos-observacoes p {
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .4px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AÇÕES DO CARD
+   ========================================================= */
+
+.meus-agendamentos-actions {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+}
+
+
+.meus-agendamentos-cancel-form {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BOTÃO CANCELAR
+   NÃO USA .btn-sair
+   ========================================================= */
+
+.meus-agendamentos-cancel {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 190px;
+    min-height: 42px;
+
+    padding: 10px 20px;
+
+    background-color: #a94442;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+.meus-agendamentos-cancel:hover {
+    background-color: #873836;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.meus-agendamentos-empty {
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: 100%;
+
+    padding: 35px;
+
+    background-color: #d9ded2;
+
+    border-radius: 10px;
+}
+
+
+/* NÚMERO */
+
+.meus-agendamentos-empty-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    background-color: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* PEQUENO TEXTO */
+
+.meus-agendamentos-empty small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* TÍTULO */
+
+.meus-agendamentos-empty h2 {
+    margin: 0 0 7px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 22px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* DESCRIÇÃO */
+
+.meus-agendamentos-empty p {
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+
+    letter-spacing: .4px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTÃO DO ESTADO VAZIO
+   ========================================================= */
+
+.meus-agendamentos-empty-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 165px;
+    min-height: 42px;
+
+    padding: 10px 20px;
+
+    background-color: #7d958d;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+.meus-agendamentos-empty-button:hover {
+    background-color: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ÁREA — VOLTAR PARA HOME
+   ========================================================= */
+
+.meus-agendamentos-back-area {
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+   NÃO USA .btn-acao
+   ========================================================= */
+
+.meus-agendamentos-back {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 160px;
+    min-height: 42px;
+
+    padding: 10px 22px;
+
+    background-color: transparent;
+
+    border: 1px solid #7d958d;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+
+.meus-agendamentos-back:hover {
+    background-color: #7d958d;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .meus-agendamentos-header {
+        align-items: flex-start;
+    }
+
+
+    .meus-agendamentos-empty {
+        grid-template-columns: auto 1fr;
+
+        gap: 25px;
+    }
+
+
+    .meus-agendamentos-empty-button {
+        grid-column: 1 / -1;
+
+        justify-self: start;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .meus-agendamentos-page {
+        padding: 30px 0 60px;
+    }
+
+
+    .meus-agendamentos-container {
+        width: 90%;
+    }
+
+
+    .meus-agendamentos-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 25px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .meus-agendamentos-title {
+        font-size: 34px;
+    }
+
+
+    .meus-agendamentos-description {
+        font-size: 10px;
+    }
+
+
+    .meus-agendamentos-new {
+        width: 100%;
+    }
+
+
+    .meus-agendamentos-card {
+        padding: 25px 20px;
+    }
+
+
+    .meus-agendamentos-card-header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .meus-agendamentos-procedure {
+        font-size: 20px;
+    }
+
+
+    .meus-agendamentos-status {
+        min-width: 0;
+    }
+
+
+    .meus-agendamentos-info-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .meus-agendamentos-actions {
+        justify-content: stretch;
+    }
+
+
+    .meus-agendamentos-cancel {
+        width: 100%;
+    }
+
+
+    .meus-agendamentos-empty {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding: 30px 20px;
+    }
+
+
+    .meus-agendamentos-empty-button {
+        width: 100%;
+    }
+
+
+    .meus-agendamentos-back {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .meus-agendamentos-page {
+        padding-top: 25px;
+    }
+
+
+    .meus-agendamentos-title {
+        font-size: 28px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .meus-agendamentos-card {
+        padding: 22px 16px;
+    }
+
+
+    .meus-agendamentos-procedure {
+        font-size: 18px;
+    }
+
+
+    .meus-agendamentos-info {
+        padding: 15px;
+    }
+
+
+    .meus-agendamentos-empty {
+        padding: 25px 16px;
+    }
+
+
+    .meus-agendamentos-empty h2 {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================================================
+     PÁGINA DE CADASTRO
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+.cadastro-body {
+    background-color: #f5f2e9;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.cadastro-main {
+    width: 100%;
+    background-color: #f5f2e9;
+    padding: 45px 0 80px;
+}
+
+
+/* =========================================================
+   SEÇÃO
+   ========================================================= */
+
+.cadastro-section {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CONTAINER
+   MESMO PADRÃO DAS OUTRAS PÁGINAS
+   ========================================================= */
+
+.cadastro-wrapper {
+    width: 90%;
+    max-width: 620px;
+    margin: 0 auto;
+
+    padding: 40px 45px 35px;
+
+    background-color: #d9ded2;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cadastro-heading {
+    margin-bottom: 38px;
+    text-align: center;
+}
+
+
+/* NOME DA CLÍNICA */
+
+.cadastro-brand {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3e746d;
+
+    font-family: "Parisienne", cursive;
+    font-size: 42px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* TÍTULO */
+
+.cadastro-heading-title {
+    margin: 0 0 14px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 34px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* DESCRIÇÃO */
+
+.cadastro-heading-text {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.cadastro-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   GRUPO DO CAMPO
+   ========================================================= */
+
+.cadastro-form-group {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   LABEL
+   MESMO PADRÃO DO AGENDAMENTO / PERFIL
+   ========================================================= */
+
+.cadastro-form-label {
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.cadastro-form-input {
+
+    width: 100%;
+    height: 46px;
+
+    padding: 0 14px;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.cadastro-form-input::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.cadastro-form-input:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
+}
+
+
+/* =========================================================
+   DATA
+   ========================================================= */
+
+.cadastro-form-input[type="date"] {
+
+    color: #414744;
+
+}
+
+
+/* =========================================================
+   ERROS
+   ========================================================= */
+
+.cadastro-form-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ÁREA DO BOTÃO
+   ========================================================= */
+
+.cadastro-button-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+
+/* =========================================================
+   BOTÃO CRIAR CONTA
+   MESMO PADRÃO DOS BOTÕES DO SITE
+   ========================================================= */
+
+.cadastro-submit {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 200px;
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    background: #7d958d;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+/* HOVER */
+
+.cadastro-submit:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   ÁREA — JÁ POSSUI CONTA
+   ========================================================= */
+
+.cadastro-existing-account {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+
+/* TEXTO */
+
+.cadastro-existing-text {
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .6px;
+
+}
+
+
+/* LINK */
+
+.cadastro-existing-link {
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .7px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition: color .2s ease;
+
+}
+
+
+/* HOVER LINK */
+
+.cadastro-existing-link:hover {
+
+    color: #2f6d67;
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .cadastro-main {
+
+        padding: 30px 0 60px;
+
+    }
+
+
+    .cadastro-wrapper {
+
+        width: 90%;
+
+        padding: 35px 30px 30px;
+
+    }
+
+
+    .cadastro-brand {
+
+        font-size: 38px;
+
+    }
+
+
+    .cadastro-heading-title {
+
+        font-size: 30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .cadastro-main {
+
+        padding-top: 25px;
+
+    }
+
+
+    .cadastro-wrapper {
+
+        width: 90%;
+
+        padding: 28px 20px 25px;
+
+    }
+
+
+    .cadastro-heading {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .cadastro-brand {
+
+        font-size: 34px;
+
+    }
+
+
+    .cadastro-heading-title {
+
+        font-size: 25px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .cadastro-heading-text {
+
+        font-size: 10px;
+
+    }
+
+
+    .cadastro-form-group {
+
+        margin-bottom: 19px;
+
+    }
+
+
+    .cadastro-form-label {
+
+        font-size: 10px;
+
+    }
+
+
+    .cadastro-form-input {
+
+        height: 44px;
+
+        font-size: 11px;
+
+    }
+
+
+    .cadastro-button-area {
+
+        margin-top: 25px;
+
+        padding-top: 20px;
+
+    }
+
+
+    .cadastro-submit {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .cadastro-existing-account {
+
+        flex-wrap: wrap;
+
+        margin-top: 22px;
+
+        padding-top: 18px;
+
+    }
+
+}
