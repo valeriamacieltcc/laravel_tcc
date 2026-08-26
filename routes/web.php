@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
-use App\Http\Controllers\ProcedimentoController;
+
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
-use App\Http\Controllers\Cliente\ProcedimentoController as ClienteProcedimentoController;
+use App\Http\Controllers\Cliente\ProcedimentoController;
 use App\Http\Middleware\LogAcessoMiddleware;
 
 use App\Http\Controllers\Auth\CadastroController;
@@ -20,12 +20,13 @@ use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\AnamneseController;
+use App\Http\Controllers\Admin\FotoAcompanhamentoController;
 
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 });
 
-Route::get('/procedimento/index', [ClienteProcedimentoController::class,'index'])->name('procedimento.index');
+Route::get('/procedimento/index', [ProcedimentoController::class,'index'])->name('procedimento.index');
 
 
 
@@ -52,6 +53,8 @@ Route::prefix('/procedimento')->group(function () {
 
     Route::get('/{slug}', [ProcedimentoController::class, 'show'])
         ->name('procedimentos.show');
+
+        Route::get('/procedimento/{id}', [ProcedimentoController::class,'detalhe'])->name('procedimento.detalhe');
 
 });
 
@@ -94,6 +97,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/clientes/{cliente}',[ClienteController::class, 'show'])->name('clientes.show');
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class,'edit'] )->name('clientes.anamnese.edit');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
+    Route::get('/clientes/{cliente}/fotos/create',[FotoAcompanhamentoController::class, 'create'])->name('clientes.fotos.create');
+    Route::post('/clientes/{cliente}/fotos',[FotoAcompanhamentoController::class, 'store'])->name('clientes.fotos.store');
+    Route::delete('/clientes/fotos/{foto}',[FotoAcompanhamentoController::class, 'destroy'])->name('clientes.fotos.destroy');
 });
 
 // cadastro e login
