@@ -108,10 +108,8 @@
         </p>
 
         <a
-    href="{{ route(
-        'admin.clientes.show',
-        $cliente
-    ) }}"
+        
+    href="{{ route('admin.clientes.anamnese.index', $cliente) }}"
     class="btn btn-success"
 >
     Ver Ficha de Anamnese

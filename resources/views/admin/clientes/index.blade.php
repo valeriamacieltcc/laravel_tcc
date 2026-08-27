@@ -78,7 +78,7 @@
 
     <div class="cart-icon">
     @auth
-        <a href="{{ route('cliente.perfil.show') }}">
+        <a href="{{ route('clientes.perfil.show') }}">
 
             @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
 

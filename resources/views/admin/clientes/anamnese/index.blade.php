@@ -1571,26 +1571,19 @@
 
             <div class="anamnese-actions">
 
-                <a
-                    href="{{ route(
-                        'admin.clientes.show',
-                        $cliente
-                    ) }}"
-                    class="btn-voltar-ficha"
-                >
-                    VOLTAR PARA CLIENTE
-                </a>
-
+            <a
+    href="{{ route('admin.clientes.show', $cliente) }}"
+    class="btn-voltar-ficha"
+>
+    VOLTAR PARA CLIENTE
+</a>
 
                 <a
-                    href="{{ route(
-                        'admin.clientes.anamnese.edit',
-                        $cliente
-                    ) }}"
-                    class="btn-salvar-ficha"
-                >
-                    EDITAR FICHA
-                </a>
+    href="{{ route('admin.clientes.anamnese.edit', $cliente) }}"
+    class="btn-salvar-ficha"
+>
+    EDITAR FICHA
+</a>
 
             </div>
 
