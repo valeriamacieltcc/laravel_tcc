@@ -15,13 +15,7 @@ class ProcedimentoController extends Controller
         return view('cliente.procedimento.index', ['procedimentos'=>$procedimentos::all()]);
     }
 
-    public function detalhe(int $id) {
-        $procedimento = \App\Models\Procedimento::where('id', $id)->first();
-
-        return view('cliente.procedimento.detalhe', [
-            'procedimento' => $procedimento
-        ]);
-    }
+  
     public function show($id)
     {
         $procedimento = \App\Models\Procedimento::findOrFail($id);

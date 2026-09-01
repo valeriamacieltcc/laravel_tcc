@@ -1,258 +1,294 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Procedimentos</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            margin: 0;
-            padding: 30px;
-        }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+    <title>Procedimentos | Admin</title>
 
-        .topo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .botao {
-            background: #2c7771;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet"
+    >
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            margin-top: 20px;
-        }
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
 
-        th {
-            background: #2c7771;
-            color: white;
-        }
-
-        .imagem {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 8px;
-        }
-
-        .editar {
-            background: #d9a441;
-        }
-
-        .excluir {
-            background: #b94a48;
-        }
-
-        .mensagem {
-            padding: 12px;
-            margin: 15px 0;
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .erro {
-            background: #f8d7da;
-            color: #721c24;
-        }
-    </style>
 </head>
-<body>
-<nav class="navbar">
 
-    <!-- BOTÃO MENU -->
-    <button
-        class="menu-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-        aria-controls="menuLateral">
+<body class="admin-procedimentos-body">
 
-        <img src="{{ asset('imagem/menu.png') }}" alt="Menu">
-
-    </button>
+    @include('_partials.header')
 
 
-    <!-- LINKS PRINCIPAIS -->
-    <ul>
-        <li><a href="{{ route('admin.home') }}">HOME</a></li>
+    <main class="admin-procedimentos">
 
-        <li>
-            <a href="{{ route('admin.procedimentos.index') }}">
-                PROCEDIMENTOS
-            </a>
-        </li>
+        <div class="admin-procedimentos-container">
 
-        <li>
-            <a href="#">
-                AGENDAR
-            </a>
-        </li>
+            <!-- TOPO DA PÁGINA -->
 
-        <li>
-            <a href="{{ route('admin.vitrine.index') }}">
-                LOJA
-            </a>
-        </li>
+            <div class="admin-procedimentos-topo">
 
-        <li>
-            <a href="#">
-                BLOG
-            </a>
-        </li>
-    </ul>
+                <h1 class="admin-procedimentos-titulo">
+                    Procedimentos
+                </h1>
 
-<div class="container">
+                <a
+                    href="{{ route('admin.procedimentos.create') }}"
+                    class="admin-procedimentos-botao admin-procedimentos-botao-novo"
+                >
+                    Novo procedimento
+                </a>
 
-    <div class="topo">
-        <h1>Procedimentos</h1>
+            </div>
 
-        <a
-            href="{{ route('admin.procedimentos.create') }}"
-            class="botao"
-        >
-            Novo procedimento
-        </a>
 
-    
-    </div>
+            <!-- MENSAGENS -->
 
-    @if(session('sucesso'))
-        <div class="mensagem">
-            {{ session('sucesso') }}
-        </div>
-    @endif
+            @if(session('sucesso'))
 
-    @if(session('erro'))
-        <div class="mensagem erro">
-            {{ session('erro') }}
-        </div>
-    @endif
+                <div class="admin-procedimentos-mensagem">
+                    {{ session('sucesso') }}
+                </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Imagem</th>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Preço</th>
-                <th>Duração</th>
-                <th>Status</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
+            @endif
 
-        <tbody>
-            @forelse($procedimentos as $procedimento)
-                <tr>
-                    <td>
-                        @if($procedimento->imagem)
-                            <img
-                                src="{{ asset('storage/' . $procedimento->imagem) }}"
-                                class="imagem"
-                                alt="{{ $procedimento->nome }}"
-                            >
-                        @else
-                            Sem imagem
-                        @endif
-                    </td>
 
-                    <td>{{ $procedimento->nome }}</td>
+            @if(session('erro'))
 
-                    <td>
-                        {{ $procedimento->categoria?->nome ?? 'Sem categoria' }}
-                    </td>
+                <div class="admin-procedimentos-mensagem admin-procedimentos-mensagem-erro">
+                    {{ session('erro') }}
+                </div>
 
-                    <td>
-                        @if($procedimento->preco)
-                            R$ {{ number_format($procedimento->preco, 2, ',', '.') }}
-                        @else
-                            Consultar
-                        @endif
-                    </td>
+            @endif
 
-                    <td>
-                        {{ $procedimento->duracao_minutos }} minutos
-                    </td>
 
-                    <td>
-                        {{ $procedimento->ativo ? 'Ativo' : 'Inativo' }}
-                    </td>
+            <!-- TABELA -->
 
-                    <td>
-                        <div class="acoes">
-                            <a
-                                href="{{ route('admin.procedimentos.show', $procedimento) }}"
-                                class="botao"
-                            >
-                                Ver
-                            </a>
+            <div class="admin-procedimentos-tabela-wrapper">
 
-                            <a
-                                href="{{ route('admin.procedimentos.edit', $procedimento) }}"
-                                class="botao editar"
-                            >
-                                Editar
-                            </a>
+                <table class="admin-procedimentos-tabela">
 
-                            <form
-                                action="{{ route('admin.procedimentos.destroy', $procedimento) }}"
-                                method="POST"
-                                onsubmit="return confirm('Deseja excluir este procedimento?')"
-                            >
-                                @csrf
-                                @method('DELETE')
+                    <thead>
 
-                                <button
-                                    type="submit"
-                                    class="botao excluir"
+                        <tr>
+
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Duração</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        @forelse($procedimentos as $procedimento)
+
+                            <tr>
+
+                                <!-- IMAGEM -->
+
+                                <td>
+
+                                    @if($procedimento->imagem)
+
+                                        <img
+                                            src="{{ asset('storage/' . $procedimento->imagem) }}"
+                                            class="admin-procedimentos-imagem"
+                                            alt="{{ $procedimento->nome }}"
+                                        >
+
+                                    @else
+
+                                        <span class="admin-procedimentos-sem-imagem">
+                                            Sem imagem
+                                        </span>
+
+                                    @endif
+
+                                </td>
+
+
+                                <!-- NOME -->
+
+                                <td>
+                                    {{ $procedimento->nome }}
+                                </td>
+
+
+                                <!-- CATEGORIA -->
+
+                                <td>
+
+                                    {{ $procedimento->categoria?->nome ?? 'Sem categoria' }}
+
+                                </td>
+
+
+                                <!-- PREÇO -->
+
+                                <td>
+
+                                    @if($procedimento->preco)
+
+                                        R$ {{ number_format($procedimento->preco, 2, ',', '.') }}
+
+                                    @else
+
+                                        Consultar
+
+                                    @endif
+
+                                </td>
+
+
+                                <!-- DURAÇÃO -->
+
+                                <td>
+
+                                    {{ $procedimento->duracao_minutos }} minutos
+
+                                </td>
+
+
+                                <!-- STATUS -->
+
+                                <td>
+
+                                    @if($procedimento->ativo)
+
+                                        <span class="admin-procedimentos-status admin-procedimentos-status-ativo">
+                                            Ativo
+                                        </span>
+
+                                    @else
+
+                                        <span class="admin-procedimentos-status admin-procedimentos-status-inativo">
+                                            Inativo
+                                        </span>
+
+                                    @endif
+
+                                </td>
+
+
+                                <!-- AÇÕES -->
+
+                                <td>
+
+                                    <div class="admin-procedimentos-acoes">
+
+                                        <a
+                                            href="{{ route('admin.procedimentos.show', $procedimento) }}"
+                                            class="admin-procedimentos-botao admin-procedimentos-botao-ver"
+                                        >
+                                            Ver
+                                        </a>
+
+
+                                        <a
+                                            href="{{ route('admin.procedimentos.edit', $procedimento) }}"
+                                            class="admin-procedimentos-botao admin-procedimentos-botao-editar"
+                                        >
+                                            Editar
+                                        </a>
+
+
+                                        <form
+                                            action="{{ route('admin.procedimentos.destroy', $procedimento) }}"
+                                            method="POST"
+                                            onsubmit="return confirm('Deseja excluir este procedimento?')"
+                                        >
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button
+                                                type="submit"
+                                                class="admin-procedimentos-botao admin-procedimentos-botao-excluir"
+                                            >
+                                                Excluir
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        @empty
+
+                            <tr>
+
+                                <td
+                                    colspan="7"
+                                    class="admin-procedimentos-vazio"
                                 >
-                                    Excluir
-                                </button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            @empty
-                <tr>
-                    <td colspan="7">
-                        Nenhum procedimento cadastrado.
-                    </td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+                                    Nenhum procedimento cadastrado.
+                                </td>
 
-    {{ $procedimentos->links() }}
+                            </tr>
 
-</div>
+                        @endforelse
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- PAGINAÇÃO -->
+
+            <div class="admin-procedimentos-paginacao">
+
+                {{ $procedimentos->links() }}
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    @include('_partials.footer')
+
+
+    <!-- BOOTSTRAP JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
+
 </html>
+

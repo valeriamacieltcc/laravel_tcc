@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,119 +12,71 @@
 
     <title>Login | Valéria Maciel Estética</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: #f6f5e5;
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC:wght@400&display=swap"
+        rel="stylesheet"
+    >
 
-        .container {
-            width: 100%;
-            max-width: 450px;
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
-        }
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        h1 {
-            color: #2c7771;
-            text-align: center;
-            margin-top: 0;
-        }
+    <!-- CSS PRINCIPAL -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
-        .campo {
-            margin-bottom: 18px;
-        }
+    <!-- CSS DO LOGIN -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/login.css') }}"
+    >
 
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 15px;
-        }
-
-        .lembrar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 18px;
-        }
-
-        .botao {
-            width: 100%;
-            padding: 13px;
-            border: none;
-            border-radius: 6px;
-            background: #2c7771;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .erro {
-            color: #b00020;
-            font-size: 14px;
-            margin-top: 6px;
-        }
-
-        .sucesso {
-            background: #d4edda;
-            color: #155724;
-            padding: 12px;
-            margin-bottom: 18px;
-            border-radius: 6px;
-        }
-
-        .cadastro {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        a {
-            color: #2c7771;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
-<body>
+<body class="login-body">
 
-<div class="container">
-    <h1>Entrar</h1>
+    @include('_partials.header')
+
+    <main class="login-page">
+
+    <h1 class="login-titulo">Entrar</h1>
+
+    <p class="login-subtitulo">
+        Seja bem-vindo de volta!
+    </p>
+
+<div class="login-container">
 
     @if(session('sucesso'))
-        <div class="sucesso">
+
+        <div class="login-sucesso">
             {{ session('sucesso') }}
         </div>
+
     @endif
 
     <form
         action="{{ route('login.store') }}"
         method="POST"
     >
+
         @csrf
 
-        <div class="campo">
-            <label for="email">E-mail</label>
+        <!-- E-MAIL -->
+
+        <div class="login-campo">
+
+            <label for="email">
+                E-mail
+            </label>
 
             <input
                 type="email"
@@ -134,12 +88,21 @@
             >
 
             @error('email')
-                <div class="erro">{{ $message }}</div>
+                <div class="login-erro">
+                    {{ $message }}
+                </div>
             @enderror
+
         </div>
 
-        <div class="campo">
-            <label for="password">Senha</label>
+
+        <!-- SENHA -->
+
+        <div class="login-campo">
+
+            <label for="password">
+                Senha
+            </label>
 
             <input
                 type="password"
@@ -149,33 +112,60 @@
             >
 
             @error('password')
-                <div class="erro">{{ $message }}</div>
+                <div class="login-erro">
+                    {{ $message }}
+                </div>
             @enderror
+
         </div>
 
-        <label class="lembrar">
+
+        <!-- LEMBRAR -->
+
+        <label class="login-lembrar">
+
             <input
                 type="checkbox"
                 name="remember"
                 value="1"
             >
 
-            Lembrar de mim
+            <span>
+                Lembrar de mim
+            </span>
+
         </label>
 
-        <button type="submit" class="botao">
+
+        <!-- BOTÃO -->
+
+        <button
+            type="submit"
+            class="login-botao"
+        >
             Entrar
         </button>
+
     </form>
 
-    <div class="cadastro">
+
+    <!-- CADASTRO -->
+
+    <div class="login-cadastro">
+
         Ainda não possui uma conta?
 
         <a href="{{ route('cadastro') }}">
             Cadastre-se
         </a>
+
     </div>
+
 </div>
+
+</main>
+    @include('_partials.footer')
+
 
 </body>
 </html>
