@@ -486,189 +486,633 @@ body{
     background:#2f6d67;
 
 }
+/* =========================================================
+   PÁGINA DE DETALHES DO PROCEDIMENTO
+   ========================================================= */
 
-/* pagina ver mais */
+/* TÍTULO */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #f5f2e9;
-    font-family: 'Playfair Display SC', serif;
-}
-
-/* NAVBAR */
-
-.navbar{
-    background-color: #2f6d67;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-}
-
-.navbar ul{
-    list-style: none;
-    display: flex;
-    gap: 35px;
-}
-
-.navbar a{
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.cart-icon{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top: 10px;
-
-    color:white;
-}
-
-.cart-icon img{
-    width:30px;
-    height:30px;
-    
-}
-
-.cart-icon p{
-    margin:0;
-    font-size:14px;
-}
-
-/* CABEÇALHO */
-
-.logo-section{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:40px 80px;
-}
-
-.logo-icon{
-    width:30px;
-    height:auto;
-    margin-bottom:5px;
-}
-
-.logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #666;
-    font-size: 2rem;
-    font-family: "Parisienne", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.logo small{
-    font-size: 1rem;
-    letter-spacing: 4px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.titulo h1{
-    color: #4f746d;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 1.2;
-}
-
-/* CARDS */
-
-.cards{
+body > h1{
     width: 90%;
-    margin: 0 auto 80px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
+    max-width: 1100px;
 
-.card{
-    background: #d9ded2;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: .3s;
-}
+    margin: 55px auto 25px;
 
-.card:hover{
-    transform: translateY(-5px);
-}
-
-.card img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.card-body{
-    padding: 18px;
     text-align: center;
+
+    font-family: 'Playfair Display SC', serif !important;
+    font-size: 58px !important;
+    font-weight: 400 !important;
+
+    color: #2c7771 !important;
 }
 
-.card h3{
-    color: #444;
-    font-size: 18px;
-    margin-bottom: 10px;
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+body > h1 + p{
+    width: 75%;
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+
+    font-family: 'Playfair Display SC', serif !important;
+    font-size: 16px;
+    line-height: 1.9;
+
+    color: #3b3b3b;
 }
 
-.card p{
-    color: #666;
-    font-size: 13px;
-    line-height: 1.5;
-    min-height: 60px;
+
+/* =========================================================
+   PREÇO E DURAÇÃO
+   ========================================================= */
+
+body > h1 + p + p,
+body > h1 + p + p + p{
+
+    width: 90%;
+    max-width: 650px;
+
+    margin: 12px auto;
+
+    padding: 18px 25px;
+
+    background: #eeedda;
+
+    border-left: 4px solid #2c7771;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-family: 'Playfair Display SC', serif !important;
+    font-size: 16px;
+
+    color: #3b3b3b;
 }
 
-.btn{
-    margin-top: 15px;
-    background: #7d958d;
-    color: white;
+
+/* espaço depois da duração */
+
+body > h1 + p + p + p{
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+body > img{
+
+    display: block;
+
+    width: 90%;
+    max-width: 900px;
+
+    height: 430px;
+
+    margin: 40px auto 60px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   CUIDADOS E CONTRAINDICAÇÕES
+   ========================================================= */
+
+   body > h3 {
+    width: 85%;
+    max-width: 950px;
+
+    margin: 45px auto 15px;
+
+    padding-bottom: 10px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: #2c7771;
+
+    border-bottom: 1px solid #d7d5bd;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media(max-width: 900px){
+
+    body > h1{
+        width: 88%;
+        font-size: 50px !important;
+    }
+
+    body > h1 + p{
+        width: 85%;
+    }
+
+    body > img{
+        width: 88%;
+        height: 380px;
+    }
+
+    body > h3,
+    body > h3 + p{
+        width: 88%;
+    }
+}
+
+
+@media(max-width: 600px){
+
+    body > h1{
+        width: 88%;
+        margin-top: 35px;
+        font-size: 43px !important;
+    }
+
+    body > h1 + p{
+        width: 88%;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    body > h1 + p + p,
+    body > h1 + p + p + p{
+
+        width: 88%;
+
+        padding: 16px 18px;
+
+        font-size: 14px;
+    }
+
+    body > img{
+
+        width: 88%;
+        height: 280px;
+
+        margin: 35px auto 45px;
+    }
+
+    body > h3{
+
+        width: 88%;
+
+        font-size: 28px !important;
+
+        margin-top: 35px;
+    }
+
+    body > h3 + p{
+
+        width: 88%;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+}
+/* =========================================================
+   AJUSTE DE POSIÇÃO - PROCEDIMENTO
+   ========================================================= */
+
+   @media (min-width: 901px){
+
+    /* IMAGEM */
+    body > img{
+        width: 360px !important;
+        height: 360px !important;
+
+        object-fit: cover;
+
+        margin-top: 35px !important;
+        margin-left: 10% !important;
+        margin-right: 0 !important;
+
+        border-radius: 10px;
+    }
+
+
+    /* CUIDADOS */
+    body > h3:first-of-type{
+        width: 43% !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: -390px !important;
+        margin-bottom: 12px !important;
+
+        padding-bottom: 8px;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+
+        color: #2c7771 !important;
+
+        border-bottom: 1px solid #d7d5bd;
+    }
+
+
+    /* TEXTO DOS CUIDADOS */
+    body > h3:first-of-type + p{
+        width: 43% !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-bottom: 25px !important;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 15px;
+
+        line-height: 1.8;
+
+        color: #3b3b3b;
+    }
+
+
+    /* CONTRAINDICAÇÕES */
+    body > h3:last-of-type{
+        width: 43% !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+
+        padding-bottom: 8px;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 29px !important;
+        font-weight: 600 !important;
+
+        color: #2c7771 !important;
+
+        border-bottom: 1px solid #d7d5bd;
+    }
+
+
+    /* TEXTO DAS CONTRAINDICAÇÕES */
+    body > h3:last-of-type + p{
+        width: 43% !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-bottom: 60px !important;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 15px;
+
+        line-height: 1.8;
+
+        color: #3b3b3b;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px){
+
+    body > img{
+        width: 330px !important;
+        height: 330px !important;
+
+        margin: 35px auto 40px !important;
+
+        object-fit: cover;
+    }
+
+    body > h3:first-of-type,
+    body > h3:last-of-type{
+        width: 85% !important;
+
+        margin: 30px auto 12px !important;
+    }
+
+    body > h3:first-of-type + p,
+    body > h3:last-of-type + p{
+        width: 85% !important;
+
+        margin: 0 auto 30px !important;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px){
+
+    body > img{
+        width: 270px !important;
+        height: 270px !important;
+
+        margin: 30px auto 35px !important;
+    }
+
+    body > h3:first-of-type,
+    body > h3:last-of-type{
+        width: 88% !important;
+
+        font-size: 27px !important;
+
+        margin: 25px auto 12px !important;
+    }
+
+    body > h3:first-of-type + p,
+    body > h3:last-of-type + p{
+        width: 88% !important;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        margin: 0 auto 30px !important;
+    }
+}
+/* BOTÃO AGENDAR PROCEDIMENTO */
+
+.vm-agendamento-confirm {
+
+    display: flex;
+    width: fit-content;
+    margin: 25px auto;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 210px;
+    min-height: 45px;
+
+    padding: 20px 40px;
+
     border: none;
-    padding: 10px 25px;
-    font-family: 'Playfair Display SC', serif;
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
     cursor: pointer;
-    transition: .3s;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
 }
 
-.btn:hover{
+
+.vm-agendamento-confirm:hover {
+
     background: #2f6d67;
+
+    color: white;
+
+    transform: translateY(-2px);
 }
 
-.footer{
-    background:#2c7771;
-    display:flex;
+/* =========================================================
+   BOTÃO MENU
+========================================================= */
 
-    justify-content:flex-start; /* 👈 agora tudo começa junto */
-    align-items:center;
+.menu-button {
+    background: none;
+    border: none;
+    padding: 0;
 
-    padding:30px 40px;
-    gap:10px; /* 👈 quase grudado */
+    cursor: pointer;
 
-    color:white;
-    font-family:"Playfair Display SC", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* MAPA */
-.footer iframe{
-    width:340px;   /* levemente maior */
-    height:180px;
-    border:0;
-    border-radius:8px;
+.menu-button img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
 }
 
-.footer-info{
-    display:flex;
-    flex-direction:column;
+.menu-button:hover img {
+    transform: scale(1.08);
+}
 
-    margin-left:14px; /* um pouco mais afastado do mapa */
-    gap:12px; /* 👈 mais espaço entre linhas */
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.menu-lateral {
+    width: 330px !important;
+
+    background-color: #f5f2e9;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO MENU
+========================================================= */
+
+.menu-lateral .offcanvas-header {
+
+    padding: 30px;
+
+    border-bottom: 1px solid #ddd6c7;
+}
+
+
+.menu-lateral .offcanvas-title {
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    color: #2f6d67;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.menu-lateral .btn-close {
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.menu-links {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.menu-links a {
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    color: #2f6d67;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #ddd6c7;
+
+    transition: all 0.25s ease;
+}
+
+
+.menu-links a:hover {
+
+    color: #2f6d67;
+
+    padding-left: 15px;
+
+    background-color: rgba(47, 109, 103, 0.05);
+}
+
+/* =========================================================
+   AJUSTE FINAL DAS FONTES E TÍTULOS
+   ========================================================= */
+
+/* TÍTULOS GERAIS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+
+/* TÍTULO DA VITRINE */
+
+.titulo h1 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400 !important;
+}
+
+
+/* TÍTULOS DOS CARDS */
+
+.card h3,
+.produto-body h3 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400 !important;
+}
+
+
+/* PREÇO DOS PRODUTOS */
+
+.produto-body h2 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   TÍTULO DA PÁGINA DE PROCEDIMENTO
+   ========================================================= */
+
+body > h1 {
+    font-family: 'Playfair Display SC', serif !important;
+    font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   CUIDADOS E CONTRAINDICAÇÕES
+   ========================================================= */
+
+body > h3,
+body > h3:first-of-type,
+body > h3:last-of-type {
+    font-family: 'Playfair Display SC', serif !important;
+    font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   TEXTO DO RODAPÉ
+   ========================================================= */
+
+.footer-info h3 {
+    font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   MENU LATERAL
+   ========================================================= */
+
+.menu-lateral .offcanvas-title {
+    font-weight: 400 !important;
+}
+
+.menu-links a {
+    font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn,
+.produto-footer button,
+.vm-agendamento-confirm {
+    font-weight: 400 !important;
+}
+body > img {
+    margin-bottom: 120px !important;
 }

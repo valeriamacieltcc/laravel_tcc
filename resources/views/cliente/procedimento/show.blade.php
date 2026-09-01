@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Procedimentos & Cuidados</title>
-<link rel="stylesheet" href="{{ asset('css/home.css') }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-</head>
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detalhes do Procedimento - Valéria Maciel</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/procedimento.css') }}"
+    >
+
+</head>
 <body>
 
-    @include('_partials.header')
+
+        @include('_partials.header')
+
+  <h1>{{ $procedimento->nome }}</h1>
+
+<p>{{ $procedimento->descricao }}</p>
+
+<p>Preço: R$ {{ $procedimento->preco }}</p>
+
+<p>Duração: {{ $procedimento->duracao_minutos }} minutos</p>
+
+<a
+    href="{{ route('cliente.agendamentos.index') }}"
+    class="vm-agendamento-confirm"
+>
+    Agendar Procedimento
+</a>
+
+            <img src="{{ asset('storage/' . $procedimento->imagem) }}">
+
+<h3>Cuidados</h3>
+<p>{{ $procedimento->cuidados }}</p>
+
+<h3>Contraindicações</h3>
+<p>{{ $procedimento->contraindicacoes }}</p>  
 
 
-    <main class="procedimento-container">
+@include('_partials.footer')
 
-<section class="procedimento-conteudo">
-
-    <h1 class="procedimento-titulo">
-
-        {{ $procedimento['titulo'] }}
-
-    </h1>
-
-    <p class="procedimento-texto">
-
-        {{ $procedimento['descricao'] }}
-
-    </p>
-
-    <a href="#" class="btn-agendar">
-
-        AGENDAR PROCEDIMENTO
-
-    </a>
-
-</section>
-
-<section class="galeria">
-
-    <h2>
-
-        ANTES E DEPOIS DO PROCEDIMENTO
-
-    </h2>
-
-    <div class="galeria-imagens">
-
-        <img src="{{ asset($procedimento['imagem1']) }}">
-
-        <img src="{{ asset($procedimento['imagem2']) }}">
-
-        <img src="{{ asset($procedimento['imagem3']) }}">
-
-    </div>
-
-</section>
-
-</main>
-
-    @include('_partials.footer')
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+></script>
 
 </body>
 
