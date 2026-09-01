@@ -13,7 +13,9 @@
     <title>Cadastro | Valéria Maciel Estética</title>
 
 
-    <!-- FONTES -->
+    <!-- =====================================================
+         FONTES
+         ===================================================== -->
 
     <link
         rel="preconnect"
@@ -32,7 +34,9 @@
     >
 
 
-    <!-- BOOTSTRAP -->
+    <!-- =====================================================
+         BOOTSTRAP
+         ===================================================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -40,11 +44,19 @@
     >
 
 
-    <!-- CSS PRINCIPAL DO SITE -->
+    <!-- =====================================================
+         CSS PRINCIPAL
+         ===================================================== -->
 
     <link
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
+    >
+
+    <!-- CSS exclusivo desta página -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/cadastro.css') }}"
     >
 
 </head>
@@ -66,28 +78,32 @@
 
     <main class="cadastro-main">
 
-
         <section class="cadastro-section">
 
 
+            {{-- =================================================
+                 CABEÇALHO
+                 FICA FORA DO FORMULÁRIO
+                 ================================================= --}}
+
+            <header class="cadastro-heading">
+
+                <h1 class="cadastro-heading-title">
+                    Criar conta
+                </h1>
+
+                <p class="cadastro-heading-text">
+                    Cadastre-se para acessar os serviços da clínica.
+                </p>
+
+            </header>
+
+
+            {{-- =================================================
+                 CARD DO FORMULÁRIO
+                 ================================================= --}}
+
             <div class="cadastro-wrapper">
-
-
-                {{-- =================================================
-                     CABEÇALHO DO CADASTRO
-                     ================================================= --}}
-
-                <header class="cadastro-heading">
-
-                    <h1 class="cadastro-heading-title">
-                        Criar conta
-                    </h1>
-
-                    <p class="cadastro-heading-text">
-                        Cadastre-se para acessar os serviços da clínica.
-                    </p>
-
-                </header>
 
 
                 {{-- =================================================
@@ -103,7 +119,9 @@
                     @csrf
 
 
-                    {{-- NOME COMPLETO --}}
+                    {{-- =================================================
+                         NOME COMPLETO
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -120,6 +138,7 @@
                             name="name"
                             value="{{ old('name') }}"
                             class="cadastro-form-input"
+                            autocomplete="name"
                             required
                         >
 
@@ -134,7 +153,9 @@
                     </div>
 
 
-                    {{-- E-MAIL --}}
+                    {{-- =================================================
+                         E-MAIL
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -151,6 +172,7 @@
                             name="email"
                             value="{{ old('email') }}"
                             class="cadastro-form-input"
+                            autocomplete="email"
                             required
                         >
 
@@ -165,7 +187,9 @@
                     </div>
 
 
-                    {{-- TELEFONE --}}
+                    {{-- =================================================
+                         TELEFONE
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -183,6 +207,7 @@
                             value="{{ old('telefone') }}"
                             class="cadastro-form-input"
                             placeholder="(15) 99999-9999"
+                            autocomplete="tel"
                             required
                         >
 
@@ -197,7 +222,9 @@
                     </div>
 
 
-                    {{-- DATA DE NASCIMENTO --}}
+                    {{-- =================================================
+                         DATA DE NASCIMENTO
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -214,6 +241,7 @@
                             name="data_nascimento"
                             value="{{ old('data_nascimento') }}"
                             class="cadastro-form-input"
+                            autocomplete="bday"
                             required
                         >
 
@@ -228,7 +256,9 @@
                     </div>
 
 
-                    {{-- CPF --}}
+                    {{-- =================================================
+                         CPF
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -246,6 +276,7 @@
                             value="{{ old('cpf') }}"
                             class="cadastro-form-input"
                             placeholder="000.000.000-00"
+                            autocomplete="off"
                         >
 
                         @error('cpf')
@@ -259,7 +290,9 @@
                     </div>
 
 
-                    {{-- SENHA --}}
+                    {{-- =================================================
+                         SENHA
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -276,6 +309,7 @@
                             name="password"
                             class="cadastro-form-input"
                             minlength="8"
+                            autocomplete="new-password"
                             required
                         >
 
@@ -290,7 +324,9 @@
                     </div>
 
 
-                    {{-- CONFIRMAR SENHA --}}
+                    {{-- =================================================
+                         CONFIRMAR SENHA
+                         ================================================= --}}
 
                     <div class="cadastro-form-group">
 
@@ -307,13 +343,16 @@
                             name="password_confirmation"
                             class="cadastro-form-input"
                             minlength="8"
+                            autocomplete="new-password"
                             required
                         >
 
                     </div>
 
 
-                    {{-- BOTÃO --}}
+                    {{-- =================================================
+                         BOTÃO
+                         ================================================= --}}
 
                     <div class="cadastro-button-area">
 
@@ -326,12 +365,11 @@
 
                     </div>
 
-
                 </form>
 
 
                 {{-- =================================================
-                     ÁREA DE LOGIN
+                     LOGIN
                      ================================================= --}}
 
                 <div class="cadastro-existing-account">
@@ -364,7 +402,9 @@
     @include('_partials.footer')
 
 
-    <!-- BOOTSTRAP JS -->
+    <!-- =====================================================
+         BOOTSTRAP JS
+         ===================================================== -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

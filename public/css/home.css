@@ -878,6 +878,58 @@ body{
 
 
 /* =========================================================
+   BOTÃO VOLTAR - PERFIL
+   ========================================================= */
+
+.btn-voltar-perfil {
+    
+    display: inline-block;
+
+    min-width: 125px;
+
+    padding: 10px 25px;
+
+    margin: 0 0 25px;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: white;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.btn-voltar-perfil:hover {
+    background-color: #2f6d67;
+    color: #ffffff;
+}
+
+
+
+
+
+
+/* =========================================================
    MENSAGEM DE SUCESSO
    ========================================================= */
 
@@ -2910,7 +2962,7 @@ background: #873836;
 }
 
 /* =========================================================
-   FORMULÁRIO DE EDIÇÃO DO PERFIL
+   FORMULÁRIO DE EDIÇÃO - EDITAR DO PERFIL
    ========================================================= */
 
    .form-perfil {
@@ -2926,6 +2978,8 @@ background: #873836;
     width: 100%;
 
 }
+
+
 
 
 /* =========================================================
@@ -3076,6 +3130,8 @@ background: #873836;
 }
 
 
+
+
 /* =========================================================
    CAMPO DA FOTO
    ========================================================= */
@@ -3110,6 +3166,7 @@ background: #873836;
     border-top: 1px solid rgba(47, 109, 103, .15);
 
 }
+
 
 
 /* =========================================================
@@ -3207,6 +3264,66 @@ background: #873836;
 
     margin-bottom: 25px;
 
+}
+
+.info-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+
+/* NOME */
+
+.info-perfil h1 {
+    margin: 0 0 3px;
+
+    color: #3e746d;
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+
+/* IDADE */
+
+.info-perfil h2 {
+    margin: 0 0 4px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* E-MAIL E TELEFONE */
+
+.info-perfil p {
+    margin: 0;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
 }
 
 
@@ -4862,112 +4979,679 @@ background: #873836;
 
 }
 
+
 /* =========================================================
-     PÁGINA DE CADASTRO
-   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
-   ========================================================= */
+PÁGINA DE CADASTRO
+PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+========================================================= */
+
+/* =========================================================
+PÁGINA
+========================================================= */
 
 .cadastro-body {
     background-color: #f5f2e9;
-}
-
-
-/* =========================================================
-   CONTEÚDO PRINCIPAL
-   ========================================================= */
-
-.cadastro-main {
+    }
+    
+    /* =========================================================
+    CONTEÚDO PRINCIPAL
+    ========================================================= */
+    
+    .cadastro-main {
     width: 100%;
     background-color: #f5f2e9;
     padding: 45px 0 80px;
-}
-
-
-/* =========================================================
-   SEÇÃO
-   ========================================================= */
-
-.cadastro-section {
+    }
+    
+    /* =========================================================
+    SEÇÃO
+    ========================================================= */
+    
+    .cadastro-section {
     width: 100%;
-}
-
-
-/* =========================================================
-   CONTAINER
-   MESMO PADRÃO DAS OUTRAS PÁGINAS
-   ========================================================= */
-
-.cadastro-wrapper {
+    }
+    
+    /* =========================================================
+    CABEÇALHO
+    FICA FORA DO CARD
+    ========================================================= */
+    
+    .cadastro-heading {
     width: 90%;
     max-width: 620px;
-    margin: 0 auto;
-
-    padding: 40px 45px 35px;
-
-    background-color: #d9ded2;
-}
-
-
-/* =========================================================
-   CABEÇALHO
-   ========================================================= */
-
-.cadastro-heading {
-    margin-bottom: 38px;
+    
+   
+    margin: 0 auto 35px;
+    
     text-align: center;
-}
-
-
-/* NOME DA CLÍNICA */
-
-.cadastro-brand {
+   
+    
+    }
+    
+    /* =========================================================
+    NOME DA CLÍNICA
+    ========================================================= */
+    
+    .cadastro-brand {
     display: block;
-
+    
+ 
     margin-bottom: 8px;
-
+    
     color: #3e746d;
-
+    
     font-family: "Parisienne", cursive;
     font-size: 42px;
     font-weight: 400;
-
+    
     line-height: 1;
+  
+    
+    }
+    
+    /* =========================================================
+    TÍTULO
+    ========================================================= */
+    
+    .cadastro-heading-title {
+    margin: 0 0 14px;
+    
+   
+    color: #3e746d;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 42px;
+    font-weight: 400;
+    
+    letter-spacing: 2px;
+    line-height: 1.2;
+    
+    text-transform: uppercase;
+    
+    
+    }
+    
+    /* =========================================================
+    DESCRIÇÃO
+    ========================================================= */
+    
+    .cadastro-heading-text {
+    max-width: 600px;
+    
+  
+    margin: 0 auto;
+    
+    color: #77766f;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+    
+    letter-spacing: .7px;
+    line-height: 1.7;
+   
+    
+    }
+    
+    /* =========================================================
+    CARD DO FORMULÁRIO
+    ========================================================= */
+    
+    .cadastro-wrapper {
+    width: 90%;
+    max-width: 620px;
+
+    margin: 0 auto;
+    
+    padding: 35px 45px 30px;
+    
+    background-color: #d9ded2;
+    
+    border-radius: 10px;
+   
+    
+    }
+    
+    /* =========================================================
+    FORMULÁRIO
+    ========================================================= */
+    
+    .cadastro-form {
+    width: 100%;
+    }
+    
+    /* =========================================================
+    GRUPO DO CAMPO
+    ========================================================= */
+    
+    .cadastro-form-group {
+    display: flex;
+    flex-direction: column;
+   
+    width: 100%;
+    
+    margin-bottom: 22px;
+   
+    
+    }
+    
+    /* =========================================================
+    LABEL
+    MESMO PADRÃO DO AGENDAMENTO E PERFIL
+    ========================================================= */
+    
+    .cadastro-form-label {
+    display: block;
+   
+    margin: 0 0 9px;
+    
+    color: #52635f;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 600;
+    
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    
+    text-transform: uppercase;
+   
+    
+    }
+    
+    /* =========================================================
+    INPUT
+    ========================================================= */
+    
+    .cadastro-form-input {
+    width: 100%;
+    height: 46px;
+  
+    padding: 0 14px;
+    
+    background-color: #f8f7f1;
+    
+    border: 1px solid #c7cec8;
+    border-radius: 3px;
+    
+    color: #414744;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+    
+    letter-spacing: .5px;
+    
+    outline: none;
+    
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+  
+    
+    }
+    
+    /* =========================================================
+    PLACEHOLDER
+    ========================================================= */
+    
+    .cadastro-form-input::placeholder {
+    color: #999891;
+   
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    
+    letter-spacing: .5px;
+  
+    
+    }
+    
+    /* =========================================================
+    FOCO
+    ========================================================= */
+    
+    .cadastro-form-input:focus {
+    background-color: #ffffff;
+    
+ 
+    border-color: #2f6d67;
+    
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+   
+    
+    }
+    
+    /* =========================================================
+    DATA
+    ========================================================= */
+    
+    .cadastro-form-input[type="date"] {
+    color: #414744;
+    }
+    
+    /* =========================================================
+    ERROS
+    ========================================================= */
+    
+    .cadastro-form-error {
+    display: block;
+    
+   
+    margin-top: 7px;
+    
+    color: #a94442;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+    
+    letter-spacing: .5px;
+    line-height: 1.5;
+   
+    
+    }
+    
+    /* =========================================================
+    ÁREA DO BOTÃO
+    ========================================================= */
+    
+    .cadastro-button-area {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    
+    margin-top: 28px;
+    padding-top: 25px;
+    
+    border-top: 1px solid rgba(47, 109, 103, .15);
+    
+    
+    }
+    
+    /* =========================================================
+    BOTÃO CRIAR CONTA
+    MESMO PADRÃO DOS BOTÕES DO SITE
+    ========================================================= */
+    
+    .cadastro-submit {
+    display: inline-flex;
+    
+    
+    align-items: center;
+    justify-content: center;
+    
+    min-width: 210px;
+    min-height: 45px;
+    
+    padding: 12px 25px;
+    
+    background-color: #7d958d;
+    
+    border: none;
+    border-radius: 0;
+    
+    color: #ffffff;
+    
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+    
+    letter-spacing: 1px;
+    
+    text-align: center;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+    
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+    
+    }
+    
+    /* =========================================================
+    HOVER DO BOTÃO
+    ========================================================= */
+    
+    .cadastro-submit:hover {
+    background-color: #2f6d67;
+    
+
+    color: #ffffff;
+    
+    transform: translateY(-2px);
+   
+    
+    }
+    
+    /* =========================================================
+    FOCO DO BOTÃO
+    ========================================================= */
+    
+    .cadastro-submit:focus {
+    outline: none;
+    }
+    
+    .cadastro-submit:focus-visible {
+    outline: 2px solid #2f6d67;
+    outline-offset: 3px;
+    }
+    
+    /* =========================================================
+    JÁ POSSUI CONTA
+    ========================================================= */
+    
+    .cadastro-existing-account {
+    display: flex;
+    
+ 
+    justify-content: center;
+    align-items: center;
+    
+    gap: 7px;
+    
+    margin-top: 22px;
+    padding-top: 20px;
+    
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+    
+    }
+    
+    /* =========================================================
+    TEXTO
+    ========================================================= */
+    
+    .cadastro-existing-text {
+    color: #666;
+    
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+    
+    letter-spacing: .6px;
+ 
+    
+    }
+    
+    /* =========================================================
+    LINK
+    ========================================================= */
+    
+    .cadastro-existing-link {
+    color: #4f746d;
+    
+ 
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 600;
+    
+    letter-spacing: .7px;
+    
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    transition: color .2s ease;
+  
+    
+    }
+    
+    /* =========================================================
+    HOVER LINK
+    ========================================================= */
+    
+    .cadastro-existing-link:hover {
+    color: #2f6d67;
+
+    text-decoration: underline;
+ 
+    
+    }
+    
+    /* =========================================================
+    RESPONSIVO — TABLET
+    ========================================================= */
+    
+    @media (max-width: 768px) {
+ 
+    .cadastro-main {
+        padding: 30px 0 60px;
+    }
+    
+    .cadastro-heading {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    
+    .cadastro-wrapper {
+        width: 90%;
+        padding: 30px 30px 28px;
+    }
+    
+    .cadastro-brand {
+        font-size: 38px;
+    }
+    
+    .cadastro-heading-title {
+        font-size: 34px;
+    }
+    
+    
+    }
+    
+    /* =========================================================
+    RESPONSIVO — CELULAR
+    ========================================================= */
+    
+    @media (max-width: 480px) {
+    
+    
+    .cadastro-main {
+        padding-top: 25px;
+    }
+    
+    .cadastro-heading {
+        width: 90%;
+        margin-bottom: 25px;
+    }
+    
+    .cadastro-brand {
+        font-size: 34px;
+    }
+    
+    .cadastro-heading-title {
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+    
+    .cadastro-heading-text {
+        font-size: 10px;
+    }
+    
+    .cadastro-wrapper {
+        width: 90%;
+        padding: 25px 20px;
+    }
+    
+    .cadastro-form-group {
+        margin-bottom: 19px;
+    }
+    
+    .cadastro-form-label {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        font-family: 'Playfair Display SC', serif;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #3e746d;
+    }
+    
+    .cadastro-form-input {
+        height: 44px;
+        font-size: 11px;
+    }
+    
+    .cadastro-button-area {
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+    
+    .cadastro-submit {
+        width: 100%;
+        min-width: 0;
+    }
+    
+    .cadastro-existing-account {
+        flex-wrap: wrap;
+    
+        margin-top: 20px;
+        padding-top: 18px;
+    }
+}
+
+/* =========================================================
+   PÁGINA DE LOGIN
+   PADRÃO VISUAL DO SITE — VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+   .login-body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #f5f2e9;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
 }
 
 
-/* TÍTULO */
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
 
-.cadastro-heading-title {
-    margin: 0 0 14px;
+.login-page {
+    width: 100%;
+
+    background-color: #f5f2e9;
+
+    padding: 45px 0 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TÍTULO
+   FORA DO CONTAINER
+   ========================================================= */
+
+/* =========================================================
+   TÍTULO — FORA DO CONTAINER
+   ========================================================= */
+
+   .login-titulo {
+    width: 90%;
+    max-width: 620px;
+
+    margin: 0 auto 25px;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 34px;
+    font-size: 42px;
     font-weight: 400;
 
     letter-spacing: 2px;
     line-height: 1.2;
 
+    text-align: center;
     text-transform: uppercase;
+
+    box-sizing: border-box;
 }
 
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
 
-/* DESCRIÇÃO */
+  
+.login-subtitulo {
+    width: 90%;
+    max-width: 620px;
 
-.cadastro-heading-text {
-    max-width: 500px;
+    margin: -15px auto 25px;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+/* =========================================================
+   CONTAINER DO FORMULÁRIO
+   ========================================================= */
+
+.login-container {
+    width: 90%;
+    max-width: 620px;
 
     margin: 0 auto;
 
-    color: #77766f;
+    padding: 35px 45px 30px;
+
+    background-color: #d9ded2;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+   ========================================================= */
+
+.login-sucesso {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    padding: 12px 14px;
+
+    background-color: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+    border-radius: 3px;
+
+    color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
     font-size: 11px;
     font-weight: 400;
 
-    letter-spacing: .7px;
-    line-height: 1.7;
+    letter-spacing: .5px;
+    line-height: 1.5;
+
+    text-align: center;
+
+    box-sizing: border-box;
 }
 
 
@@ -4975,16 +5659,18 @@ background: #873836;
    FORMULÁRIO
    ========================================================= */
 
-.cadastro-form {
+.login-container form {
     width: 100%;
+
+    margin: 0;
 }
 
 
 /* =========================================================
-   GRUPO DO CAMPO
+   CAMPOS
    ========================================================= */
 
-.cadastro-form-group {
+.login-campo {
     display: flex;
     flex-direction: column;
 
@@ -4996,10 +5682,9 @@ background: #873836;
 
 /* =========================================================
    LABEL
-   MESMO PADRÃO DO AGENDAMENTO / PERFIL
    ========================================================= */
 
-.cadastro-form-label {
+.login-campo label {
     display: block;
 
     margin: 0 0 9px;
@@ -5021,17 +5706,18 @@ background: #873836;
    INPUT
    ========================================================= */
 
-.cadastro-form-input {
-
+.login-campo input {
     width: 100%;
     height: 46px;
 
     padding: 0 14px;
 
-    background: #f8f7f1;
+    background-color: #f8f7f1;
 
     border: 1px solid #c7cec8;
     border-radius: 3px;
+
+    outline: none;
 
     color: #414744;
 
@@ -5041,7 +5727,7 @@ background: #873836;
 
     letter-spacing: .5px;
 
-    outline: none;
+    box-sizing: border-box;
 
     transition:
         border-color .2s ease,
@@ -5051,45 +5737,29 @@ background: #873836;
 
 
 /* =========================================================
-   PLACEHOLDER
+   INPUT — FOCO
    ========================================================= */
 
-.cadastro-form-input::placeholder {
-
-    color: #999891;
-
-    font-family: "Playfair Display SC", serif;
-
-    font-size: 11px;
-
-    letter-spacing: .5px;
-
-}
-
-
-/* =========================================================
-   FOCO
-   ========================================================= */
-
-.cadastro-form-input:focus {
-
-    background: #ffffff;
+.login-campo input:focus {
+    background-color: #ffffff;
 
     border-color: #2f6d67;
 
     box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
-
 }
 
 
 /* =========================================================
-   DATA
+   PLACEHOLDER
    ========================================================= */
 
-.cadastro-form-input[type="date"] {
+.login-campo input::placeholder {
+    color: #999891;
 
-    color: #414744;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
 
+    letter-spacing: .5px;
 }
 
 
@@ -5097,8 +5767,7 @@ background: #873836;
    ERROS
    ========================================================= */
 
-.cadastro-form-error {
-
+.login-erro {
     display: block;
 
     margin-top: 7px;
@@ -5106,57 +5775,71 @@ background: #873836;
     color: #a94442;
 
     font-family: "Playfair Display SC", serif;
-
     font-size: 10px;
-
     font-weight: 400;
 
     letter-spacing: .5px;
-
     line-height: 1.5;
-
 }
 
 
 /* =========================================================
-   ÁREA DO BOTÃO
+   LEMBRAR DE MIM
    ========================================================= */
 
-.cadastro-button-area {
-
+.login-lembrar {
     display: flex;
+    align-items: center;
 
-    justify-content: center;
+    gap: 8px;
 
-    width: 100%;
+    margin: 2px 0 25px;
 
-    margin-top: 30px;
+    color: #52635f;
 
-    padding-top: 25px;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
 
-    border-top: 1px solid rgba(47, 109, 103, .15);
+    letter-spacing: .7px;
+    line-height: 1.4;
 
+    cursor: pointer;
 }
 
 
 /* =========================================================
-   BOTÃO CRIAR CONTA
-   MESMO PADRÃO DOS BOTÕES DO SITE
+   CHECKBOX
    ========================================================= */
 
-.cadastro-submit {
+.login-lembrar input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
 
-    display: inline-flex;
+    margin: 0;
 
+    accent-color: #3e746d;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTÃO
+   ========================================================= */
+
+.login-botao {
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    min-width: 200px;
+    width: 210px;
     min-height: 45px;
 
+    margin: 28px auto 0;
     padding: 12px 25px;
 
-    background: #7d958d;
+    background-color: #7d958d;
 
     border: none;
     border-radius: 0;
@@ -5164,106 +5847,110 @@ background: #873836;
     color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
-
     font-size: 11px;
     font-weight: 400;
 
     letter-spacing: 1px;
+    line-height: 1.2;
 
     text-align: center;
-
     text-transform: uppercase;
 
     cursor: pointer;
 
+    box-sizing: border-box;
+
     transition:
         background-color .25s ease,
         transform .2s ease;
-
-}
-
-
-/* HOVER */
-
-.cadastro-submit:hover {
-
-    background: #2f6d67;
-
-    color: #ffffff;
-
-    transform: translateY(-2px);
-
 }
 
 
 /* =========================================================
-   ÁREA — JÁ POSSUI CONTA
+   BOTÃO — HOVER
    ========================================================= */
 
-.cadastro-existing-account {
+.login-botao:hover {
+    background-color: #2f6d67;
 
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOCO DO BOTÃO
+   ========================================================= */
+
+.login-botao:focus {
+    outline: none;
+}
+
+
+.login-botao:focus-visible {
+    outline: 2px solid #2f6d67;
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   ÁREA DE CADASTRO
+   ========================================================= */
+
+.login-cadastro {
     display: flex;
-
     justify-content: center;
     align-items: center;
 
     gap: 7px;
 
-    margin-top: 25px;
-
-    padding-top: 22px;
+    margin-top: 22px;
+    padding-top: 20px;
 
     border-top: 1px solid rgba(47, 109, 103, .15);
 
-}
-
-
-/* TEXTO */
-
-.cadastro-existing-text {
-
-    color: #666;
+    color: #77766f;
 
     font-family: "Playfair Display SC", serif;
-
     font-size: 11px;
     font-weight: 400;
 
-    letter-spacing: .6px;
+    letter-spacing: .7px;
+    line-height: 1.5;
 
+    text-align: center;
 }
 
 
-/* LINK */
+/* =========================================================
+   LINK CADASTRE-SE
+   ========================================================= */
 
-.cadastro-existing-link {
-
-    color: #4f746d;
+.login-cadastro a {
+    color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-
     font-size: 11px;
     font-weight: 600;
 
-    letter-spacing: .7px;
+    letter-spacing: .8px;
 
     text-decoration: none;
 
-    text-transform: uppercase;
-
     transition: color .2s ease;
-
 }
 
 
-/* HOVER LINK */
+/* =========================================================
+   HOVER LINK
+   ========================================================= */
 
-.cadastro-existing-link:hover {
-
+.login-cadastro a:hover {
     color: #2f6d67;
 
     text-decoration: underline;
-
 }
 
 
@@ -5273,35 +5960,25 @@ background: #873836;
 
 @media (max-width: 768px) {
 
-    .cadastro-main {
-
+    .login-page {
         padding: 30px 0 60px;
-
     }
 
 
-    .cadastro-wrapper {
-
+    .login-titulo {
         width: 90%;
 
-        padding: 35px 30px 30px;
+        margin-bottom: 22px;
 
+        font-size: 34px;
     }
 
 
-    .cadastro-brand {
+    .login-container {
+        width: 90%;
 
-        font-size: 38px;
-
+        padding: 30px 30px 28px;
     }
-
-
-    .cadastro-heading-title {
-
-        font-size: 30px;
-
-    }
-
 }
 
 
@@ -5311,101 +5988,67 @@ background: #873836;
 
 @media (max-width: 480px) {
 
-    .cadastro-main {
-
-        padding-top: 25px;
-
+    .login-page {
+        padding: 25px 0 50px;
     }
 
 
-    .cadastro-wrapper {
-
+    .login-titulo {
         width: 90%;
 
-        padding: 28px 20px 25px;
+        margin-bottom: 18px;
 
-    }
-
-
-    .cadastro-heading {
-
-        margin-bottom: 30px;
-
-    }
-
-
-    .cadastro-brand {
-
-        font-size: 34px;
-
-    }
-
-
-    .cadastro-heading-title {
-
-        font-size: 25px;
+        font-size: 28px;
 
         letter-spacing: 1px;
-
     }
 
 
-    .cadastro-heading-text {
+    .login-container {
+        width: 90%;
 
-        font-size: 10px;
-
+        padding: 25px 20px;
     }
 
 
-    .cadastro-form-group {
-
+    .login-campo {
         margin-bottom: 19px;
-
     }
 
 
-    .cadastro-form-label {
+    .login-campo label {
+        font-size: 13px;
+        font-weight: 400;
 
-        font-size: 10px;
+        letter-spacing: 2px;
 
+        color: #3e746d;
     }
 
 
-    .cadastro-form-input {
-
+    .login-campo input {
         height: 44px;
 
         font-size: 11px;
-
     }
 
 
-    .cadastro-button-area {
-
-        margin-top: 25px;
-
-        padding-top: 20px;
-
+    .login-lembrar {
+        margin-bottom: 24px;
     }
 
 
-    .cadastro-submit {
-
+    .login-botao {
         width: 100%;
-
         min-width: 0;
-
     }
 
 
-    .cadastro-existing-account {
-
+    .login-cadastro {
         flex-wrap: wrap;
 
-        margin-top: 22px;
-
+        margin-top: 20px;
         padding-top: 18px;
-
     }
-
 }
+

@@ -67,63 +67,73 @@
 <main class="perfil-container">
 
 
-    <!-- =====================================================
-         TOPO DO PERFIL
-         ===================================================== -->
+<!-- =====================================================
+     TOPO DO PERFIL
+     ===================================================== -->
 
-    <section class="perfil-topo">
+<section class="perfil-topo">
 
+    <div class="foto-perfil">
 
-        <div class="foto-perfil">
+        @if($cliente->foto_perfil)
 
-            @if($cliente->foto_perfil)
+            <img
+                src="{{ asset('storage/' . $cliente->foto_perfil) }}"
+                alt="{{ $user->name }}"
+            >
 
-                <img
-                    src="{{ asset('storage/' . $cliente->foto_perfil) }}"
-                    alt="{{ $user->name }}"
-                >
+        @else
 
-            @else
+            <img
+                src="{{ asset('imagem/perfil-padrao.png') }}"
+                alt="{{ $user->name }}"
+            >
 
-                <img
-                    src="{{ asset('imagem/perfil-padrao.png') }}"
-                    alt="{{ $user->name }}"
-                >
+        @endif
 
-            @endif
-
-        </div>
-
-
-        <div class="info-perfil">
-
-            <h1>
-                {{ $user->name }}
-            </h1>
+    </div>
 
 
-            @if($cliente->data_nascimento)
+    <div class="info-perfil">
 
-                <h2>
-                    {{ $cliente->data_nascimento->age }} anos
-                </h2>
-
-            @endif
+        <h1>
+            {{ $user->name }}
+        </h1>
 
 
-            <p>
-                {{ $user->email }}
-            </p>
+        @if($cliente->data_nascimento)
+
+            <h2>
+                {{ $cliente->data_nascimento->age }} anos
+            </h2>
+
+        @endif
 
 
-            <p>
-                {{ $cliente->telefone }}
-            </p>
-
-        </div>
+        <p>
+            {{ $user->email }}
+        </p>
 
 
-    </section>
+        <p>
+            {{ $cliente->telefone }}
+        </p>
+
+
+        <!-- =====================================================
+             BOTÃO VOLTAR
+             ===================================================== -->
+
+        <a
+            href="{{ route('cliente.perfil.show') }}"
+            class="btn-voltar-perfil"
+        >
+            VOLTAR
+        </a>
+
+    </div>
+
+</section>
 
 
 

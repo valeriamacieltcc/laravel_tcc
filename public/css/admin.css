@@ -1,0 +1,905 @@
+/* CSS GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f2e9;
+    font-family: 'Playfair Display SC', serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background-color: #2f6d67;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.navbar ul{
+    list-style: none;
+
+    display: flex;
+
+    gap: 35px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.cart-icon{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top: 10px;
+
+    color:white;
+}
+
+.cart-icon img{
+    width:30px;
+    height:30px;
+    
+}
+
+.cart-icon p{
+    margin:0;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   BOTÃO MENU
+========================================================= */
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   MENU LATERAL
+========================================================= */
+
+.menu-lateral {
+    width: 330px !important;
+
+    background-color: #f5f2e9;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO MENU
+========================================================= */
+
+.menu-lateral .offcanvas-header {
+
+    padding: 30px;
+
+    border-bottom: 1px solid #ddd6c7;
+}
+
+
+.menu-lateral .offcanvas-title {
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    color: #2f6d67;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.menu-lateral .btn-close {
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.menu-links {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.menu-links a {
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    color: #2f6d67;
+
+    padding: 20px 5px;
+
+    border-bottom: 1px solid #ddd6c7;
+
+    transition: all 0.25s ease;
+}
+
+
+.menu-links a:hover {
+
+    color: #2f6d67;
+
+    padding-left: 15px;
+
+    background-color: rgba(47, 109, 103, 0.05);
+}
+
+
+
+/* ====================================
+   FOOTER
+==================================== */
+
+.footer{
+    background:#2c7771;
+    display:flex;
+
+    justify-content:flex-start; /* 👈 agora tudo começa junto */
+    align-items:center;
+
+    padding:30px 40px;
+    gap:10px; /* 👈 quase grudado */
+
+    color:white;
+    font-family:"Playfair Display SC", serif;
+}
+
+/* MAPA */
+.footer iframe{
+    width:340px;   /* levemente maior */
+    height:180px;
+    border:0;
+    border-radius:8px;
+}
+
+.footer-info{
+    display:flex;
+    flex-direction:column;
+
+    margin-left:14px; /* um pouco mais afastado do mapa */
+    gap:12px; /* 👈 mais espaço entre linhas */
+}
+
+/* título */
+.footer-info h3{
+    font-size:16px;
+    font-weight:400;
+    margin:0;
+    letter-spacing:1px;
+    line-height:1.4;
+}
+
+/* texto */
+.footer-info p{
+    font-size:14px;
+    margin:0;
+    line-height:1.6; /* 👈 respira mais */
+}
+
+/* blocos de contato (whats / insta) */
+.footer-info .cart-icon{
+    display:flex;
+    align-items:center;
+    gap:12px; /* 👈 mais espaço entre ícone e texto */
+    margin-top:4px;
+}
+
+.footer-info .cart-icon p{
+    font-size:14px;
+}
+
+/* ICONES */
+.footer-info .cart-icon{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.footer-info .cart-icon img{
+    width:20px;
+    height:20px;
+}
+.about-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    
+    
+}
+.foto-perfil{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+   
+    
+}
+
+.footer-logo{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    margin-left:auto;
+    gap:6px;
+}
+
+.footer-logo img{
+    width:120px;   /* 🔥 diminuído */
+    height:auto;
+    object-fit:contain;
+}
+
+/* LINHA E COPYRIGHT */
+
+.footer-copy{
+    background:#2c7771;
+    padding:0 40px 10px;
+}
+
+.footer-copy-line{
+    width:100%;
+    height:1px;
+    background:rgba(255,255,255,0.5);
+    margin-bottom:8px;
+}
+
+.footer-copy p{
+    text-align:center;
+    color:white;
+    font-family:"Playfair Display SC", serif;
+    font-size:10px;
+    letter-spacing:1px;
+    margin:0;
+}
+
+/* TEXTO SOBRE O MAPA */
+
+.footer-map{
+    position:relative;
+}
+
+.footer-map iframe{
+    filter: brightness(50%);
+}
+
+.map-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:2;
+    width:100%;
+    text-align:center;
+    color:rgb(244, 244, 244);
+
+    pointer-events:none;
+}
+
+.map-text h4{
+    margin:0;
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:2px;
+    color: rgb(130, 233, 212);
+}
+
+.map-text span{
+    font-family:"Parisienne", cursive;
+    font-size:28px;
+}
+
+
+/* LOGO VALERIA MACIEL */
+
+.logo-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px 80px;
+}
+
+.logo-icon{
+    width:30px;
+    height:auto;
+    margin-bottom:5px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 2rem;
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo small{
+    font-size: 1rem;
+    letter-spacing: 4px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+/* =========================================================
+   ADMIN - PROCEDIMENTOS
+   PADRÃO VISUAL VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.admin-procedimentos-body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #f5f2e9;
+
+    color: #4a5b57;
+
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.admin-procedimentos {
+    width: 100%;
+    min-height: 600px;
+
+    padding: 55px 40px 80px;
+}
+
+
+.admin-procedimentos-container {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOPO
+   ========================================================= */
+
+.admin-procedimentos-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+
+.admin-procedimentos-titulo {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: 'Parisienne', cursive;
+    font-size: 48px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO PROCEDIMENTO
+   ========================================================= */
+
+.admin-procedimentos-botao-novo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 10px 23px;
+
+    background-color: #2f6d67;
+
+    border: 1px solid #2f6d67;
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+
+.admin-procedimentos-botao-novo:hover {
+    background-color: #245a55;
+
+    border-color: #245a55;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MENSAGENS
+   ========================================================= */
+
+.admin-procedimentos-mensagem {
+    width: 100%;
+
+    margin-bottom: 25px;
+    padding: 13px 18px;
+
+    background-color: #d9ded2;
+
+    border-left: 4px solid #2f6d67;
+    border-radius: 3px;
+
+    color: #3e746d;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+}
+
+
+.admin-procedimentos-mensagem-erro {
+    background-color: #ead6d4;
+
+    border-left-color: #a65c58;
+
+    color: #8b4744;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.admin-procedimentos-tabela-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dedfd7;
+    border-radius: 7px;
+
+    box-shadow: 0 5px 18px rgba(47, 109, 103, 0.07);
+}
+
+
+.admin-procedimentos-tabela {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+
+    background-color: #ffffff;
+
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA TABELA
+   ========================================================= */
+
+.admin-procedimentos-tabela thead {
+    background-color: #2f6d67;
+}
+
+
+.admin-procedimentos-tabela th {
+    padding: 16px 15px;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 1.2px;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CORPO DA TABELA
+   ========================================================= */
+
+.admin-procedimentos-tabela td {
+    padding: 16px 15px;
+
+    border-bottom: 1px solid #e8e9e3;
+
+    color: #53635f;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+
+    vertical-align: middle;
+}
+
+
+.admin-procedimentos-tabela tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+
+.admin-procedimentos-tabela tbody tr:hover {
+    background-color: #fafaf6;
+}
+
+
+.admin-procedimentos-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   NOME DO PROCEDIMENTO
+   ========================================================= */
+
+.admin-procedimentos-tabela td:nth-child(2) {
+    color: #3e746d;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.admin-procedimentos-imagem {
+    display: block;
+
+    width: 68px;
+    height: 68px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    border: 1px solid #d9ded2;
+}
+
+
+.admin-procedimentos-sem-imagem {
+    color: #8b928f;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.admin-procedimentos-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 62px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+.admin-procedimentos-status-ativo {
+    background-color: #dce4d8;
+
+    color: #3e746d;
+}
+
+
+.admin-procedimentos-status-inativo {
+    background-color: #ead8d6;
+
+    color: #8b4c49;
+}
+
+
+/* =========================================================
+   ÁREA DE AÇÕES
+   ========================================================= */
+
+.admin-procedimentos-acoes {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+
+.admin-procedimentos-acoes form {
+    display: inline-block;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   BOTÕES DAS AÇÕES
+   ========================================================= */
+
+.admin-procedimentos-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+/* VER */
+
+.admin-procedimentos-botao-ver {
+    background-color: #7d958d;
+}
+
+
+.admin-procedimentos-botao-ver:hover {
+    background-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+/* EDITAR */
+
+.admin-procedimentos-botao-editar {
+    background-color: #b99a5b;
+}
+
+
+.admin-procedimentos-botao-editar:hover {
+    background-color: #967a43;
+
+    color: #ffffff;
+}
+
+
+/* EXCLUIR */
+
+.admin-procedimentos-botao-excluir {
+    background-color: #b86d69;
+}
+
+
+.admin-procedimentos-botao-excluir:hover {
+    background-color: #974c48;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+   ========================================================= */
+
+.admin-procedimentos-vazio {
+    padding: 45px 20px !important;
+
+    color: #8a918e !important;
+
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 18px !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+
+.admin-procedimentos-paginacao {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+
+.admin-procedimentos-paginacao .pagination {
+    margin: 0;
+}
+
+
+.admin-procedimentos-paginacao .page-link {
+    padding: 7px 12px;
+
+    background-color: transparent;
+
+    border: 1px solid #d9ded2;
+
+    color: #2f6d67;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+}
+
+
+.admin-procedimentos-paginacao .page-link:hover {
+    background-color: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+.admin-procedimentos-paginacao .page-item.active .page-link {
+    background-color: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .admin-procedimentos {
+        padding: 45px 25px 65px;
+    }
+
+    .admin-procedimentos-topo {
+        gap: 20px;
+    }
+
+    .admin-procedimentos-titulo {
+        font-size: 43px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-procedimentos {
+        padding: 35px 15px 55px;
+    }
+
+    .admin-procedimentos-topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-procedimentos-titulo {
+        font-size: 40px;
+    }
+
+    .admin-procedimentos-botao-novo {
+        width: 100%;
+    }
+
+    .admin-procedimentos-tabela {
+        min-width: 900px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .admin-procedimentos {
+        padding: 30px 10px 45px;
+    }
+
+    .admin-procedimentos-titulo {
+        font-size: 36px;
+    }
+
+}
+
