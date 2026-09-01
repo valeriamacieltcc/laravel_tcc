@@ -1,0 +1,1195 @@
+/* ================================
+   ADMIN - CLIENTES
+================================ */
+
+.admin-clientes {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* TÍTULO */
+.admin-clientes h1 {
+    color: #2c7771;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* CAIXA DA LISTA */
+.lista-clientes {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* TABELA */
+.tabela-clientes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* CABEÇALHO */
+.tabela-clientes th {
+    background-color: #2c7771;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* DADOS */
+.tabela-clientes td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.tabela-clientes tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* FOTO DO CLIENTE */
+.foto-cliente-admin {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* BOTÃO VER CLIENTE */
+.btn-ver-cliente {
+    display: inline-block;
+    background-color: #2c7771;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-ver-cliente:hover {
+    background-color: #225e59;
+    color: white;
+}
+
+/* QUANDO NÃO TEM CLIENTES */
+.sem-clientes {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+
+    .admin-clientes {
+        width: 95%;
+    }
+
+    .lista-clientes {
+        overflow-x: auto;
+    }
+
+    .tabela-clientes {
+        min-width: 650px;
+    }
+}
+
+/* ================================
+   ÁREA DO CLIENTE
+================================ */
+
+.cliente-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* TÍTULO */
+.cliente-container h1,
+.cliente-container h2 {
+    color: #2c7771;
+}
+
+/* BLOCOS DE INFORMAÇÃO */
+.bloco-info {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* PERFIL */
+.perfil-cliente {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.foto-perfil-cliente {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2c7771;
+}
+
+.dados-cliente {
+    flex: 1;
+}
+
+.dados-cliente p {
+    margin: 8px 0;
+    color: #444;
+}
+
+/* BOTÕES */
+.btn-cliente {
+    display: inline-block;
+    background: #2c7771;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.btn-cliente:hover {
+    background: #225e59;
+    color: white;
+}
+
+/* PROCEDIMENTOS */
+.lista-procedimentos-cliente {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card-procedimento-cliente {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid #e5e5e5;
+}
+
+.card-procedimento-cliente h3 {
+    color: #2c7771;
+    font-size: 18px;
+}
+
+.card-procedimento-cliente p {
+    color: #555;
+}
+
+/* ACOMPANHAMENTO */
+.acompanhamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.acompanhamento-card {
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #e6e6e6;
+}
+
+.acompanhamento-card h3 {
+    color: #2c7771;
+    margin-bottom: 10px;
+}
+
+.fotos-comparacao {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.foto-item {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+
+.foto-item p {
+    font-weight: bold;
+    color: #2c7771;
+}
+
+.foto-item img {
+    width: 100%;
+    max-width: 300px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ANAMNESE */
+.anamnese-cliente p {
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+
+.anamnese-cliente strong {
+    color: #2c7771;
+}
+
+/* QUANDO NÃO TEM INFORMAÇÃO */
+.sem-informacao {
+    color: #777;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .cliente-container {
+        width: 95%;
+    }
+
+    .perfil-cliente {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-perfil-cliente {
+        width: 110px;
+        height: 110px;
+    }
+
+    .fotos-comparacao {
+        flex-direction: column;
+    }
+
+    .foto-item img {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   ADMIN - DETALHES DO CLIENTE
+========================================= */
+
+.cliente-detalhes {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    color: #333;
+}
+
+/* TÍTULO DA PÁGINA */
+.cliente-detalhes h1 {
+    color: #2c7771;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* CADA BLOCO */
+.cliente-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* TÍTULO DOS BLOCOS */
+.cliente-box h2 {
+    color: #2c7771;
+    font-size: 21px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* DADOS DO CLIENTE */
+.dados-cliente-admin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 30px;
+}
+
+.dados-cliente-admin p {
+    margin: 0;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 6px;
+}
+
+.dados-cliente-admin strong {
+    color: #2c7771;
+}
+
+/* FOTO + INFORMAÇÕES */
+.topo-cliente {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.foto-cliente-detalhes {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2c7771;
+}
+
+.nome-cliente h2 {
+    border: none;
+    padding: 0;
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+.nome-cliente p {
+    margin: 4px 0;
+    color: #666;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+.acoes-cliente {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn-admin {
+    display: inline-block;
+    padding: 9px 18px;
+    background: #2c7771;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-admin:hover {
+    background: #225f5a;
+    color: white;
+}
+
+.btn-admin-secundario {
+    background: #777;
+}
+
+.btn-admin-secundario:hover {
+    background: #555;
+}
+
+/* ================================
+   ANAMNESE
+================================ */
+
+.anamnese-admin {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.anamnese-admin p {
+    background: #f8f8f8;
+    padding: 10px 12px;
+    margin: 0;
+    border-radius: 6px;
+}
+
+.anamnese-admin strong {
+    color: #2c7771;
+}
+
+/* ================================
+   FOTOS DE ACOMPANHAMENTO
+================================ */
+
+.lista-acompanhamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.acompanhamento-admin {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.acompanhamento-admin h3 {
+    color: #2c7771;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.fotos-admin {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.foto-acompanhamento {
+    flex: 1;
+    min-width: 220px;
+}
+
+.foto-acompanhamento p {
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #444;
+}
+
+.foto-acompanhamento img {
+    width: 100%;
+    max-width: 350px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* OBSERVAÇÃO */
+.observacao-admin {
+    margin-top: 15px;
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+/* QUANDO NÃO TEM DADOS */
+.sem-dados {
+    color: #777;
+    padding: 15px 0;
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+
+    .cliente-detalhes {
+        width: 94%;
+    }
+
+    .topo-cliente {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dados-cliente-admin,
+    .anamnese-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .fotos-admin {
+        flex-direction: column;
+    }
+
+    .foto-acompanhamento img {
+        max-width: 100%;
+    }
+}
+
+/* ==================================================
+   DETALHES DA CLIENTE - ADMIN
+================================================== */
+
+.cliente-admin-container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 35px auto 70px;
+}
+
+
+/* VOLTAR */
+
+.voltar-clientes {
+    margin-bottom: 20px;
+}
+
+.btn-voltar-admin {
+    color: #2c7771;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-voltar-admin:hover {
+    color: #205c57;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.cliente-admin-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background-color: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    margin-bottom: 22px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+.cliente-admin-foto img {
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid #2c7771;
+}
+
+
+.cliente-admin-nome span {
+    display: block;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #888;
+
+    margin-bottom: 3px;
+}
+
+
+.cliente-admin-nome h1 {
+    margin: 0;
+
+    color: #2c7771;
+
+    font-size: 28px;
+
+    font-weight: 600;
+}
+
+
+.cliente-admin-nome p {
+    margin: 6px 0 0;
+
+    color: #666;
+}
+
+
+/* ==================================================
+   BLOCOS
+================================================== */
+
+.cliente-admin-bloco {
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+.cliente-admin-bloco > h2 {
+    color: #2c7771;
+
+    font-size: 21px;
+
+    margin-bottom: 22px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   DADOS
+================================================== */
+
+.cliente-admin-dados {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.cliente-admin-dado {
+    background: #f7f7f3;
+
+    padding: 14px 16px;
+
+    border-radius: 9px;
+}
+
+
+.cliente-admin-dado span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #777;
+
+    margin-bottom: 4px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+.cliente-admin-dado p {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* ==================================================
+   TÍTULO DAS SEÇÕES
+================================================== */
+
+.cliente-admin-titulo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+.cliente-admin-titulo span {
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.cliente-admin-titulo h2 {
+    color: #2c7771;
+
+    margin: 2px 0 0;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   BOTÃO VERDE
+================================================== */
+
+.btn-admin-principal {
+    display: inline-block;
+
+    background-color: #2c7771;
+
+    color: #ffffff;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+
+.btn-admin-principal:hover {
+    background-color: #205f59;
+
+    color: white;
+}
+
+
+/* ==================================================
+   ANAMNESE
+================================================== */
+
+.anamnese-status {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background: #f7f7f3;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+
+.anamnese-status strong {
+    color: #333;
+
+    font-size: 16px;
+}
+
+
+.anamnese-status p {
+    margin: 5px 0 0;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.anamnese-ok {
+    border-left: 4px solid #2c7771;
+}
+
+
+/* ==================================================
+   ACOMPANHAMENTO
+================================================== */
+
+.acompanhamentos-admin {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+.acompanhamento-card-admin {
+    border: 1px solid #e2e2dc;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* CABEÇALHO DO PROCEDIMENTO */
+
+.acompanhamento-cabecalho {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 20px;
+
+    background: #f7f7f3;
+}
+
+
+.acompanhamento-cabecalho span {
+    display: block;
+
+    color: #888;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+.acompanhamento-cabecalho h3 {
+    margin: 3px 0 0;
+
+    color: #2c7771;
+
+    font-size: 19px;
+}
+
+
+.acompanhamento-data {
+    background: #ffffff;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    color: #555;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   ANTES E DEPOIS
+================================================== */
+
+.comparacao-fotos-admin {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+
+.comparacao-foto-admin {
+    min-width: 0;
+}
+
+
+.foto-titulo {
+    font-weight: 600;
+
+    color: #444;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+}
+
+
+.comparacao-foto-admin img {
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    display: block;
+}
+
+
+/* QUANDO NÃO TEM FOTO */
+
+.foto-vazia-admin {
+    width: 100%;
+
+    height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1f1ee;
+
+    color: #999;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   OBSERVAÇÃO
+================================================== */
+
+.observacao-foto-admin {
+    margin: 0 20px 20px;
+
+    padding: 15px;
+
+    background: #f7f7f3;
+
+    border-radius: 8px;
+}
+
+
+.observacao-foto-admin span {
+    display: block;
+
+    color: #2c7771;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+
+.observacao-foto-admin p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   EXCLUIR
+================================================== */
+
+.acoes-foto-admin {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding: 0 20px 20px;
+}
+
+
+.btn-excluir-admin {
+    background: transparent;
+
+    color: #b33a3a;
+
+    border: 1px solid #b33a3a;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+
+.btn-excluir-admin:hover {
+    background: #b33a3a;
+
+    color: white;
+}
+
+
+/* ==================================================
+   SEM FOTOS
+================================================== */
+
+.sem-fotos-admin {
+    text-align: center;
+
+    background: #f7f7f3;
+
+    padding: 45px 20px;
+
+    border-radius: 10px;
+}
+
+
+.sem-fotos-admin h3 {
+    color: #2c7771;
+
+    font-size: 18px;
+}
+
+
+.sem-fotos-admin p {
+    color: #777;
+
+    margin: 8px 0 0;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+
+@media (max-width: 768px) {
+
+    .cliente-admin-container {
+        width: 94%;
+    }
+
+
+    .cliente-admin-cabecalho {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .cliente-admin-dados {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cliente-admin-titulo,
+    .anamnese-status {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .cliente-admin-titulo-fotos .btn-admin-principal,
+    .anamnese-status .btn-admin-principal {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .comparacao-fotos-admin {
+        grid-template-columns: 1fr;
+    }
+
+
+    .comparacao-foto-admin img,
+    .foto-vazia-admin {
+        height: 280px;
+    }
+
+}
+
+.lista-agendamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.agendamento-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.agendamento-item p {
+    margin: 6px 0;
+}
+
+.status-agendamento {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-pendente {
+    background: #fff3cd;
+}
+
+.status-confirmado {
+    background: #d1e7dd;
+}
+
+.status-concluido {
+    background: #cfe2ff;
+}
+
+.status-cancelado {
+    background: #f8d7da;
+}
+
+.admin-status-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.admin-status-acoes form {
+    margin: 0;
+}
+
+.btn-status {
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-status:hover {
+    transform: translateY(-1px);
+    opacity: 0.85;
+}
+
+.btn-pendente {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.btn-confirmado {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.btn-concluido {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.btn-cancelado {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.btn-status:disabled {
+    opacity: 0.45;
+    cursor: default;
+    transform: none;
+}

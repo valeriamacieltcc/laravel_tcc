@@ -19,7 +19,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.googleapis.com"
+        href="https://fonts.gstatic.com"
         crossorigin
     >
 
@@ -83,9 +83,6 @@
 
                 </div>
 
-
-            
-
             </div>
 
 
@@ -147,15 +144,45 @@
                                 </small>
 
                                 <h2 class="meus-agendamentos-procedure">
-                                    {{ $agendamento->procedimento->nome }}
+                                    {{ $agendamento->procedimento->nome ?? 'Não informado' }}
                                 </h2>
 
                             </div>
 
 
-                            <span class="meus-agendamentos-status">
-                                {{ $agendamento->status }}
-                            </span>
+                            {{-- STATUS VISÍVEL PARA O CLIENTE --}}
+
+                            @if($agendamento->status == 'pendente')
+
+                                <span class="meus-agendamentos-status status-pendente">
+                                    Pendente
+                                </span>
+
+                            @elseif($agendamento->status == 'confirmado')
+
+                                <span class="meus-agendamentos-status status-confirmado">
+                                    Confirmado
+                                </span>
+
+                            @elseif($agendamento->status == 'concluido')
+
+                                <span class="meus-agendamentos-status status-concluido">
+                                    Concluído
+                                </span>
+
+                            @elseif($agendamento->status == 'cancelado')
+
+                                <span class="meus-agendamentos-status status-cancelado">
+                                    Cancelado
+                                </span>
+
+                            @else
+
+                                <span class="meus-agendamentos-status">
+                                    {{ ucfirst($agendamento->status) }}
+                                </span>
+
+                            @endif
 
                         </div>
 
@@ -194,7 +221,7 @@
                         </div>
 
 
-                        {{-- OBSERVAÇÕES --}}
+                        {{-- OBSERVAÇÕES DO CLIENTE --}}
 
                         @if($agendamento->observacoes_cliente)
 
@@ -213,12 +240,64 @@
                         @endif
 
 
-                        {{-- AÇÕES --}}
+                        {{-- OBSERVAÇÕES DA ADMIN --}}
 
-                        @if(in_array(
-                            $agendamento->status,
-                            ['pendente', 'confirmado']
-                        ))
+                        @if($agendamento->observacoes_admin)
+
+                            <div class="meus-agendamentos-observacoes">
+
+                                <span>
+                                    Observações da clínica
+                                </span>
+
+                                <p>
+                                    {{ $agendamento->observacoes_admin }}
+                                </p>
+
+                            </div>
+
+                        @endif
+
+
+                        {{-- MOTIVO DO CANCELAMENTO --}}
+
+                        @if(
+                            $agendamento->status == 'cancelado'
+                            && $agendamento->motivo_cancelamento
+                        )
+
+                            <div class="meus-agendamentos-observacoes">
+
+                                <span>
+                                    Motivo do cancelamento
+                                </span>
+
+                                <p>
+                                    {{ $agendamento->motivo_cancelamento }}
+                                </p>
+
+                            </div>
+
+                        @endif
+
+
+                        {{-- =================================================
+                             CANCELAMENTO PELO CLIENTE
+                             =================================================
+
+                             O cliente NÃO altera o status manualmente.
+
+                             Ele apenas pode cancelar enquanto o agendamento
+                             não estiver cancelado nem concluído.
+
+                             Quem altera pendente / confirmado / concluído
+                             é a ADMIN.
+                             ================================================= --}}
+
+                        @if(
+                            $agendamento->status !== 'cancelado'
+                            && $agendamento->status !== 'concluido'
+                        )
 
                             <div class="meus-agendamentos-actions">
 

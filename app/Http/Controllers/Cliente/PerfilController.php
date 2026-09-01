@@ -11,16 +11,20 @@ use Illuminate\Validation\Rule;
 
 class PerfilController extends Controller
 {
-   public function show()
-{
-    $user = Auth::user();
-    $cliente = $user->cliente;
-
-    return view(
-        'cliente.perfil.index',
-        compact('user', 'cliente')
-    );
-}
+    public function show()
+    {
+        $user = Auth::user();
+    
+        $cliente = $user->cliente;
+    
+        $cliente->load('fotosAcompanhamento');
+    
+        return view(
+            'cliente.perfil.index',
+            compact('user', 'cliente')
+        );
+    }
+    
 
 public function edit()
 {

@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 
-
 use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
 use App\Http\Controllers\Cliente\ProcedimentoController;
 use App\Http\Middleware\LogAcessoMiddleware;
@@ -14,7 +13,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
-use App\Http\Controllers\Cliente\AgendamentoController;
+use App\Http\Controllers\Cliente\AgendamentoController as ClienteAgendamentoController;
+use App\Http\Controllers\Admin\AgendamentoController as AdminAgendamentoController;
 use App\Http\Controllers\Admin\AgendaController;
 use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
@@ -72,11 +72,11 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
         Route::put('/perfil/anamnese',[FichaController::class, 'update'])->name('perfil.anamnese.update');
         Route::get('/perfil/anamnese/editar',[FichaController::class, 'edit'])->name('perfil.anamnese.edit');
         Route::delete('/perfil/anamnese',[FichaController::class, 'destroy'])->name('perfil.anamnese.destroy');
-        Route::get('/agendamentos/horarios-disponiveis', [AgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
-        Route::get('/agendamentos', [AgendamentoController::class,'index'])->name('agendamentos.index');
-        Route::get('/agendamentos/criar', [AgendamentoController::class,'create'])->name('agendamentos.create');
-        Route::post('/agendamentos', [AgendamentoController::class,'store'])->name('agendamentos.store');
-        Route::patch('/agendamentos/{agendamento}/cancelar', [AgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
+        Route::get('/agendamentos/horarios-disponiveis', [ClienteAgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
+        Route::get('/agendamentos', [ClienteAgendamentoController::class,'index'])->name('agendamentos.index');
+        Route::get('/agendamentos/criar', [ClienteAgendamentoController::class,'create'])->name('agendamentos.create');
+        Route::post('/agendamentos', [ClienteAgendamentoController::class,'store'])->name('agendamentos.store');
+        Route::patch('/agendamentos/{agendamento}/cancelar', [ClienteAgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
 
     });
 
@@ -104,6 +104,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/clientes/{cliente}/anamnese/edit',[AnamneseController::class, 'edit'])->name('clientes.anamnese.edit');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
 
+    Route::patch(
+        '/agendamentos/{agendamento}/status',
+        [AdminAgendamentoController::class, 'updateStatus']
+    )->name('agendamentos.status');
 });
 
 // cadastro e login

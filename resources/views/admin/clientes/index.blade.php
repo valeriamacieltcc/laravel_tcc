@@ -24,178 +24,96 @@
         href="{{ asset('css/style.css') }}"
     >
 
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
+
 </head>
+
 
 <body>
 
 
 
-<nav class="navbar">
+<div class="admin-clientes">
 
-    <!-- BOTÃO MENU -->
-    <button
-        class="menu-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-        aria-controls="menuLateral">
+    <h1>Clientes</h1>
 
-        <img src="{{ asset('imagem/menu.png') }}" alt="Menu">
+    <div class="lista-clientes">
 
-    </button>
+        @if($clientes->count() > 0)
 
+            <table class="tabela-clientes">
 
-    <!-- LINKS PRINCIPAIS -->
-    <ul>
-        <li><a href="{{ route('admin.home') }}">HOME</a></li>
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
 
-        <li>
-            <a href="{{ route('admin.procedimentos.index') }}">
-                PROCEDIMENTOS
-            </a>
-        </li>
+                <tbody>
 
-        <li>
-        <a href="{{ route('admin.agenda.index') }}">
-    AGENDA
-</a>
-        </li>
+                    @foreach($clientes as $cliente)
 
-        <li>
-            <a href="{{ route('admin.vitrine.index') }}">
-                LOJA
-            </a>
-        </li>
+                        <tr>
 
-        <li>
-            <a href="#">
-                BLOG
-            </a>
-        </li>
-    </ul>
+                            <td>
+                                @if($cliente->foto_perfil)
+                                    <img
+                                        src="{{ asset('storage/' . $cliente->foto_perfil) }}"
+                                        class="foto-cliente-admin"
+                                        alt="Foto do cliente"
+                                    >
+                                @else
+                                    Sem foto
+                                @endif
+                            </td>
 
+                            <td>
+                                {{ $cliente->user->name }}
+                            </td>
 
+                            <td>
+                                {{ $cliente->user->email }}
+                            </td>
 
-    <div class="cart-icon">
-    @auth
-        <a href="{{ route('clientes.perfil.show') }}">
+                            <td>
+                                {{ $cliente->telefone ?? '-' }}
+                            </td>
 
-            @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
+                            <td>
+                                <a
+                                    href="{{ route('admin.clientes.show', $cliente) }}"
+                                    class="btn-ver-cliente"
+                                >
+                                    Ver cliente
+                                </a>
+                            </td>
 
-                <img
-                    src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
-                    alt="Meu perfil"
-                    class="foto-navbar"
-                >
+                        </tr>
 
-            @else
+                    @endforeach
 
-                <img
-                    src="{{ asset('imagem/perfil-padrao.png') }}"
-                    alt="Meu perfil"
-                    class="foto-navbar"
-                >
+                </tbody>
 
-            @endif
+            </table>
 
-        </a>
-    @else
+        @else
 
-        <a href="{{ route('login') }}">
-            <img
-                src="{{ asset('imagem/perfil-padrao.png') }}"
-                alt="Entrar"
-                class="foto-navbar"
-            >
-        </a>
-
-    @endauth
-
-</nav>
-
-
-
-<main class="container py-5">
-
-
-    <h1 class="mb-4">
-        Clientes
-    </h1>
-
-
-    <div class="row">
-
-
-        @forelse($clientes as $cliente)
-
-
-            <div class="col-md-4 mb-4">
-
-
-                <div class="card h-100">
-
-
-                    <div class="card-body">
-
-
-                        <h5 class="card-title">
-
-                            {{ $cliente->user->name ?? 'Cliente' }}
-
-                        </h5>
-
-
-                        <p>
-
-                            {{ $cliente->user->email ?? '' }}
-
-                        </p>
-
-
-                        @if($cliente->telefone)
-
-                            <p>
-                                {{ $cliente->telefone }}
-                            </p>
-
-                        @endif
-
-
-                        <a
-                            href="{{ route(
-                                'admin.clientes.show',
-                                $cliente
-                            ) }}"
-                            class="btn btn-success"
-                        >
-
-                            Ver cliente
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        @empty
-
-
-            <p>
-                Nenhuma cliente cadastrada.
+            <p class="sem-clientes">
+                Nenhum cliente cadastrado.
             </p>
 
-
-        @endforelse
-
+        @endif
 
     </div>
 
+</div>
 
 </main>
 

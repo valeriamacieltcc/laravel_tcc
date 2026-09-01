@@ -26,6 +26,7 @@ class ClienteController extends Controller
             'user',
             'anamnese',
             'fotosAcompanhamento',
+            'agendamentos.procedimento'
         ]);
 
         return view(

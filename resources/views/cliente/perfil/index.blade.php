@@ -282,61 +282,74 @@
 
 
     {{-- =====================================================
-         GALERIA ANTES E DEPOIS
-         ===================================================== --}}
+     GALERIA ANTES E DEPOIS
+     ===================================================== --}}
 
-    <section class="galeria-perfil">
+<section class="galeria-perfil">
 
+    <h3>
+        Histórico dos Antes & Depois
+    </h3>
 
-        <h3>
-            Histórico dos Antes & Depois
-        </h3>
+    <div class="galeria-perfil-grid">
 
+        @if(
+            isset($cliente->fotosAcompanhamento)
+            && $cliente->fotosAcompanhamento->count() > 0
+        )
 
-        <div class="galeria-perfil-grid">
+            @foreach($cliente->fotosAcompanhamento as $foto)
 
+                @if($foto->foto_antes)
 
-            {{-- MESMA LÓGICA DO CÓDIGO DELA --}}
+                    <div class="foto-galeria-perfil">
 
-            @if(
-                isset($cliente->antes_depois)
-                && count($cliente->antes_depois) > 0
-            )
+                        <span>Antes</span>
 
+                        <img
+                            src="{{ asset('storage/' . $foto->foto_antes) }}"
+                            alt="Antes"
+                        >
 
-                @foreach($cliente->antes_depois as $foto)
+                    </div>
 
-                    <img
-                        src="{{ asset($foto) }}"
-                        alt="Antes e Depois"
-                    >
-
-                @endforeach
-
-
-            @else
-
-
-                <div class="sem-dados-galeria">
-
-                    <span>♡</span>
-
-                    <p>
-                        Nenhuma foto cadastrada ainda.
-                    </p>
-
-                </div>
+                @endif
 
 
-            @endif
+                @if($foto->foto_depois)
 
+                    <div class="foto-galeria-perfil">
 
-        </div>
+                        <span>Depois</span>
 
-    </section>
+                        <img
+                            src="{{ asset('storage/' . $foto->foto_depois) }}"
+                            alt="Depois"
+                        >
 
+                    </div>
 
+                @endif
 
+            @endforeach
+
+        @else
+
+            <div class="sem-dados-galeria">
+
+                <span>♡</span>
+
+                <p>
+                    Nenhuma foto cadastrada ainda.
+                </p>
+
+            </div>
+
+        @endif
+
+    </div>
+
+</section>
     {{-- =====================================================
          HISTÓRICO DOS PROCEDIMENTOS
          ===================================================== --}}
