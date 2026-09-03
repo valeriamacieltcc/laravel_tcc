@@ -47,6 +47,8 @@
 
   <h1>{{ $procedimento->nome }}</h1>
 
+ 
+
 <p>{{ $procedimento->descricao }}</p>
 
 <p>Preço: R$ {{ $procedimento->preco }}</p>
