@@ -1,0 +1,476 @@
+/* =========================================================
+   ADMIN - DETALHES DO PROCEDIMENTO
+   Valéria Maciel Estética
+   ========================================================= */
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    background-color: #f5f2e9;
+    font-family: 'Playfair Display SC', serif;
+    color: #3b3b3b;
+}
+
+
+/* =========================================================
+   TÍTULO DO PROCEDIMENTO
+   ========================================================= */
+
+body > h1 {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 55px auto 30px;
+
+    text-align: center;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 55px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #3e746d;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+body > p {
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #3b3b3b;
+}
+
+
+/* =========================================================
+   CATEGORIA
+   ========================================================= */
+
+body > h1 + p {
+
+    width: 75%;
+    max-width: 900px;
+
+    margin: 0 auto 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+body > h1 + p + p {
+
+    width: 75%;
+    max-width: 900px;
+
+    margin: 0 auto 20px;
+
+    padding: 0;
+
+    text-align: center;
+
+    background: none;
+    border: none;
+}
+
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+body > h1 + p + p + p {
+
+    width: 90%;
+    max-width: 650px;
+
+    margin: 8px auto;
+
+    padding: 14px 25px;
+
+    background: #eeedda;
+
+    border-left: 4px solid #2c7771;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DURAÇÃO
+   ========================================================= */
+
+body > h1 + p + p + p + p {
+
+    width: 90%;
+    max-width: 650px;
+
+    margin: 8px auto 20px;
+
+    padding: 14px 25px;
+
+    background: #eeedda;
+
+    border-left: 4px solid #2c7771;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TEXTO DOS CAMPOS
+   ========================================================= */
+
+body > p strong {
+
+    font-weight: 400;
+
+    color: #2c7771;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+body > img {
+
+    display: block;
+
+    width: 360px;
+    height: 360px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   CUIDADOS
+   ========================================================= */
+
+body > p:nth-of-type(5) {
+
+    width: 43%;
+    max-width: 600px;
+
+    margin-left: 36%;
+    margin-top: -385px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTRAINDICAÇÕES
+   ========================================================= */
+
+body > p:nth-of-type(6) {
+
+    width: 43%;
+    max-width: 600px;
+
+    margin-left: 36%;
+
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+body > a {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+
+    padding: 12px 25px;
+
+    margin: 0 5px 25px;
+
+    background: #7d958d;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    border: none;
+
+    border-radius: 0;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   HOVER DOS BOTÕES
+   ========================================================= */
+
+body > a:hover {
+
+    background: #2f6d67;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   POSIÇÃO DOS BOTÕES
+   ========================================================= */
+
+body > a:first-of-type {
+    margin-left: 0;
+}
+
+
+/* =========================================================
+   ORGANIZAÇÃO DESKTOP
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    /* BOTÕES CENTRALIZADOS ACIMA DA IMAGEM */
+
+    body > a {
+        margin-top: 5px;
+        margin-bottom: 25px;
+    }
+
+    /* IMAGEM */
+
+    body > img {
+
+        margin-left: 10%;
+        margin-right: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body > h1 {
+
+        width: 88%;
+
+        font-size: 48px;
+
+        margin-top: 45px;
+    }
+
+
+    body > h1 + p,
+    body > h1 + p + p {
+
+        width: 85%;
+    }
+
+
+    body > h1 + p + p + p,
+    body > h1 + p + p + p + p {
+
+        width: 85%;
+    }
+
+
+    /* BOTÕES */
+
+    body > a {
+
+        margin-bottom: 20px;
+    }
+
+
+    /* IMAGEM */
+
+    body > img {
+
+        width: 330px;
+        height: 330px;
+
+        margin: 10px auto 45px;
+    }
+
+
+    /* CUIDADOS */
+
+    body > p:nth-of-type(5) {
+
+        width: 85%;
+
+        margin: 25px auto;
+
+        text-align: left;
+    }
+
+
+    /* CONTRAINDICAÇÕES */
+
+    body > p:nth-of-type(6) {
+
+        width: 85%;
+
+        margin: 25px auto 50px;
+
+        text-align: left;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body > h1 {
+
+        width: 88%;
+
+        margin-top: 35px;
+
+        margin-bottom: 25px;
+
+        font-size: 40px;
+    }
+
+
+    body > h1 + p,
+    body > h1 + p + p {
+
+        width: 88%;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    body > h1 + p + p + p,
+    body > h1 + p + p + p + p {
+
+        width: 88%;
+
+        padding: 14px 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* BOTÕES */
+
+    body > a {
+
+        min-width: 130px;
+
+        padding: 11px 18px;
+
+        margin: 5px 3px 20px;
+
+        font-size: 13px;
+    }
+
+
+    /* IMAGEM */
+
+    body > img {
+
+        width: 270px;
+
+        height: 270px;
+
+        margin: 10px auto 40px;
+    }
+
+
+    /* CUIDADOS */
+
+    body > p:nth-of-type(5) {
+
+        width: 88%;
+
+        margin: 25px auto;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    /* CONTRAINDICAÇÕES */
+
+    body > p:nth-of-type(6) {
+
+        width: 88%;
+
+        margin: 25px auto 45px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+}
