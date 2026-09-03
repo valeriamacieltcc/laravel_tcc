@@ -12,12 +12,9 @@ class ClienteController extends Controller
     {
         $clientes = Cliente::with('user')
             ->orderBy('id', 'desc')
-            ->get();
-
-        return view(
-            'admin.clientes.index',
-            compact('clientes')
-        );
+            ->paginate(10);
+    
+        return view('admin.clientes.index', compact('clientes'));
     }
 
     public function show(Cliente $cliente)
@@ -26,21 +23,26 @@ class ClienteController extends Controller
             'user',
             'anamnese',
             'fotosAcompanhamento',
-            'agendamentos.procedimento'
         ]);
-
+    
+        $agendamentos = $cliente->agendamentos()
+            ->with('procedimento')
+            ->orderBy('data_agendamento', 'desc')
+            ->paginate(5);
+    
         return view(
             'admin.clientes.show',
-            compact('cliente')
+            compact('cliente', 'agendamentos')
         );
     }
+    
 
     public function edit(Cliente $cliente)
     {
         $cliente->load('user');
 
         return view(
-            'admin.clientes.edit',
+            'admin.clientes.anamnese.edit_anamnese',
             compact('cliente')
         );
     }

@@ -318,7 +318,7 @@
 
                 <a
                     href="{{ route(
-                        'admin.clientes.edit_anamnese',
+                        'admin.clientes.anamnese.edit_anamnese',
                         $cliente
                     ) }}"
                     class="btn-admin-principal"
@@ -348,7 +348,7 @@
             <div class="lista-agendamentos">
 
 
-                @foreach($cliente->agendamentos as $agendamento)
+            @foreach ($agendamentos as $agendamento)
 
                     <div class="agendamento-item">
 
@@ -643,7 +643,9 @@
 
                 @endforeach
 
-
+                <div class="paginacao">
+    {{ $agendamentos->links() }}
+</div>
             </div>
 
 

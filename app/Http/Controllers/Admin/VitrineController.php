@@ -11,12 +11,12 @@ class VitrineController extends Controller
 {
     public function index()
     {
-        $produtos = Vitrine::orderBy('nome')
-            ->paginate(10);
-
+        $vitrine = Vitrine::orderBy('id', 'desc')
+            ->paginate(8);
+    
         return view(
             'admin.vitrine.index',
-            compact('produtos')
+            compact('vitrine')
         );
     }
 

@@ -33,6 +33,10 @@
         rel="stylesheet"
         href="{{ asset('css/admin.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 

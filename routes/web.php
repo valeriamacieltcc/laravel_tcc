@@ -101,7 +101,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::post('/clientes/{cliente}/fotos',[FotoAcompanhamentoController::class, 'store'])->name('clientes.fotos.store');
     Route::delete('/clientes/fotos/{foto}',[FotoAcompanhamentoController::class, 'destroy'])->name('clientes.fotos.destroy');
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class, 'index'])->name('clientes.anamnese.index');
-    Route::get('/clientes/{cliente}/anamnese/edit',[AnamneseController::class, 'edit'])->name('clientes.anamnese.edit');
+    Route::get('/clientes/{cliente}/anamnese/edit',[AnamneseController::class, 'edit'])->name('clientes.anamnese.edit_anamnese');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
 
     Route::patch(

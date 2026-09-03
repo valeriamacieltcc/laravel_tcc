@@ -38,6 +38,10 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
@@ -375,7 +379,9 @@
 
 
                 @endforelse
-
+                <div class="paginacao">
+    {{ $agendamentos->links() }}
+</div>
 
             </div>
 

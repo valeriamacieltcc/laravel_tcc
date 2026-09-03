@@ -1,5 +1,6 @@
 <title>vitrine</title>
 <link rel="stylesheet" href="{{ asset('css/procedimento.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -195,7 +196,9 @@
 
     @endif
 
-
+    <div class="paginacao">
+    {{ $vitrine->links() }}
+</div>
 </main>
 
 

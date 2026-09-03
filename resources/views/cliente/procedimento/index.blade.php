@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Procedimentos & Cuidados</title>
 <link rel="stylesheet" href="{{ asset('css/procedimento.css') }}">
+<link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -83,8 +87,12 @@
     </div>
 
     @endforeach
+    
 </section>
+<div class="paginacao">
+    {{ $procedimentos->links() }}
 
+</div>
   <!-- FOOTER -->
   <footer class="footer">
 

@@ -1,0 +1,139 @@
+
+
+/* ========================================
+   PAGINAÇÃO arrumar
+======================================== */
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+/* Container da paginação */
+.paginacao nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Esconde o texto "Showing 1 to 10..." */
+.paginacao nav > div:first-child {
+    display: none;
+}
+
+/* Área dos botões */
+.paginacao nav > div:last-child {
+    display: flex;
+    align-items: center;
+}
+
+/* Esconde texto informativo */
+.paginacao p {
+    display: none;
+}
+
+/* Botões */
+.paginacao a,
+.paginacao span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 35px;
+    height: 35px;
+
+    padding: 0 10px;
+    margin: 0 3px;
+
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+
+    text-decoration: none;
+
+    border: 1px solid #2c7771;
+    border-radius: 6px;
+
+    background: white;
+    color: #2c7771;
+
+    box-sizing: border-box;
+}
+
+/* Página selecionada */
+.paginacao span[aria-current="page"] span {
+    background: #2c7771;
+    color: white;
+    border-color: #2c7771;
+}
+
+/* Hover */
+.paginacao a:hover {
+    background: #2c7771;
+    color: white;
+}
+
+/* ARRUMA AS SETAS GIGANTES */
+.paginacao svg {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+}
+
+/* Remove elementos gigantes do Laravel */
+.paginacao .w-5 {
+    width: 16px !important;
+}
+
+.paginacao .h-5 {
+    height: 16px !important;
+}
+/* ========================================
+   PAGINAÇÃO ANAMNESE
+======================================== */
+
+.pagina-anamnese {
+    display: none;
+}
+
+.pagina-anamnese.ativa {
+    display: block;
+}
+
+.paginacao-anamnese {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    margin: 25px 0 35px;
+}
+
+.pagina-btn {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #2c7771;
+    border-radius: 6px;
+
+    background: white;
+    color: #2c7771;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.pagina-btn:hover {
+    background: #2c7771;
+    color: white;
+}
+
+.pagina-btn.ativo {
+    background: #2c7771;
+    color: white;
+}

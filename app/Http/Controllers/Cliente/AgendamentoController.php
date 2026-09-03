@@ -13,14 +13,14 @@ class AgendamentoController extends Controller
 {
     public function index()
     {
-        $cliente = Auth::user()->cliente;
-
-        $agendamentos = Agendamento::with('procedimento')
-            ->where('cliente_id', $cliente->id)
-            ->orderBy('data_agendamento')
-            ->orderBy('hora_agendamento')
-            ->get();
-
+        $user = auth()->user();
+        $cliente = $user->cliente;
+    
+        $agendamentos = $cliente->agendamentos()
+            ->with('procedimento')
+            ->orderBy('data_agendamento', 'desc')
+            ->paginate(5);
+    
         return view(
             'cliente.agendamentos.index',
             compact('agendamentos')

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vitrine</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <style>
         body {
@@ -203,7 +204,7 @@
 
         <tbody>
 
-            @forelse($produtos as $produto)
+        @forelse($vitrine as $produto)
 
                 <tr>
 
@@ -345,14 +346,14 @@
 
         </tbody>
 
+    
     </table>
 
+    <div class="paginacao">
+    {{ $vitrine->links() }}
 
-    <div style="margin-top: 20px;">
-
-        {{ $produtos->links() }}
-
-    </div>
+</div>
+   
 
 
 </div>

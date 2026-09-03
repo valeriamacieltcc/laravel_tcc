@@ -5,14 +5,21 @@ namespace App\Http\Controllers\Cliente;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Models\Procedimento;
 
 class ProcedimentoController extends Controller
 
 {
 
     public function index() {
-        $procedimentos = new \App\Models\Procedimento();
-        return view('cliente.procedimento.index', ['procedimentos'=>$procedimentos::all()]);
+       
+            $procedimentos = Procedimento::orderBy('id', 'desc')
+                ->paginate(6);
+    
+            return view(
+                'cliente.procedimento.index',
+                compact('procedimentos')
+            );
     }
 
   

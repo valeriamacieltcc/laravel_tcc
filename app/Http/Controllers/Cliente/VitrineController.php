@@ -11,7 +11,7 @@ class VitrineController extends Controller
     {
         $vitrine = Vitrine::where('disponivel', true)
             ->orderBy('nome')
-            ->get();
+            ->paginate(8);
 
         return view(
             'cliente.vitrine.loja',

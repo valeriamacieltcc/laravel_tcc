@@ -99,6 +99,8 @@
 
                     @endforeach
 
+    
+
                 </tbody>
 
             </table>
@@ -116,7 +118,9 @@
 </div>
 
 </main>
-
+<div class="paginacao">
+    {{ $clientes->links() }}
+</div>
 
 @include('_partials.footer')
 
