@@ -32,6 +32,11 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
+ <!-- CSS DO PERFIL -->
+ <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
@@ -86,23 +91,48 @@
         @else
         <div class="paginacao-anamnese">
 
-<button type="button" class="pagina-btn ativo" data-pagina="1">
+<button
+    type="button"
+    class="pagina-btn ativo"
+    id="btn-pagina-1"
+    onclick="trocarPaginaAnamnese(1)"
+>
     1
 </button>
 
-<button type="button" class="pagina-btn" data-pagina="2">
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-2"
+    onclick="trocarPaginaAnamnese(2)"
+>
     2
 </button>
 
-<button type="button" class="pagina-btn" data-pagina="3">
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-3"
+    onclick="trocarPaginaAnamnese(3)"
+>
     3
 </button>
 
-<button type="button" class="pagina-btn" data-pagina="4">
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-4"
+    onclick="trocarPaginaAnamnese(4)"
+>
     4
 </button>
 
-<button type="button" class="pagina-btn" data-pagina="5">
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-5"
+    onclick="trocarPaginaAnamnese(5)"
+>
     5
 </button>
 
@@ -959,52 +989,72 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 ></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
 
-    const botoes = document.querySelectorAll('.pagina-btn');
+function trocarPaginaAnamnese(numero) {
+
+    // pega todas as páginas
     const paginas = document.querySelectorAll('.pagina-anamnese');
 
-    botoes.forEach(function(botao) {
+    // esconde TODAS usando !important
+    paginas.forEach(function(pagina) {
 
-        botao.addEventListener('click', function() {
-
-            const numeroPagina = this.getAttribute('data-pagina');
-
-            paginas.forEach(function(pagina) {
-
-                pagina.classList.remove('ativa');
-
-            });
-
-            botoes.forEach(function(botao) {
-
-                botao.classList.remove('ativo');
-
-            });
-
-            const paginaSelecionada = document.querySelector(
-                '.pagina-anamnese[data-pagina="' + numeroPagina + '"]'
-            );
-
-            if (paginaSelecionada) {
-
-                paginaSelecionada.classList.add('ativa');
-
-            }
-
-            this.classList.add('ativo');
-
-            document.querySelector('.anamnese-container').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-
-        });
+        pagina.style.setProperty(
+            'display',
+            'none',
+            'important'
+        );
 
     });
 
+
+    // encontra a página escolhida
+    const paginaEscolhida = document.querySelector(
+        '.pagina-anamnese[data-pagina="' + numero + '"]'
+    );
+
+
+    // mostra somente ela
+    if (paginaEscolhida) {
+
+        paginaEscolhida.style.setProperty(
+            'display',
+            'block',
+            'important'
+        );
+
+    }
+
+
+    // remove ativo de todos os botões
+    const botoes = document.querySelectorAll('.pagina-btn');
+
+    botoes.forEach(function(botao) {
+        botao.classList.remove('ativo');
+    });
+
+
+    // deixa o botão selecionado ativo
+    const botaoAtual = document.getElementById(
+        'btn-pagina-' + numero
+    );
+
+    if (botaoAtual) {
+        botaoAtual.classList.add('ativo');
+    }
+
+}
+
+
+/* QUANDO A PÁGINA ABRIR */
+
+window.addEventListener('load', function () {
+
+    trocarPaginaAnamnese(1);
+
 });
+
 </script>
+
 </body>
 
 </html>

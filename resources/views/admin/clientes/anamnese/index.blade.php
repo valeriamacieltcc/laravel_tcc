@@ -36,6 +36,11 @@
         href="{{ asset('css/home.css') }}"
     >
 
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
+
 </head>
 
 
@@ -98,13 +103,27 @@
 
 
         @else
+        <input type="radio" name="pagina_anamnese" id="pagina1" checked>
+<input type="radio" name="pagina_anamnese" id="pagina2">
+<input type="radio" name="pagina_anamnese" id="pagina3">
+<input type="radio" name="pagina_anamnese" id="pagina4">
+<input type="radio" name="pagina_anamnese" id="pagina5">
 
+<div class="paginacao-anamnese">
+
+    <label for="pagina1">1</label>
+    <label for="pagina2">2</label>
+    <label for="pagina3">3</label>
+    <label for="pagina4">4</label>
+    <label for="pagina5">5</label>
+
+</div>
 
             {{-- =====================================================
                  01 - DADOS PESSOAIS
             ====================================================== --}}
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese pagina-conteudo-1">
 
                 <div class="section-title">
 
@@ -442,7 +461,7 @@
                  02 - HISTÓRICO
             ====================================================== --}}
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese pagina-conteudo-2">
 
                 <div class="section-title">
 
@@ -912,7 +931,7 @@
                  03 - AVALIAÇÃO DA PELE
             ====================================================== --}}
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese pagina-conteudo-3">
 
                 <div class="section-title">
 
@@ -1116,7 +1135,7 @@
                  04 - DESIGN DE SOBRANCELHAS
             ====================================================== --}}
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese pagina-conteudo-4">
 
                 <div class="section-title">
 
@@ -1327,7 +1346,7 @@
                  05 - TERMO
             ====================================================== --}}
 
-            <section class="anamnese-section termo-section">
+            <section class="anamnese-section termo-section pagina-anamnese pagina-conteudo-5">
 
                 <div class="section-title">
 
