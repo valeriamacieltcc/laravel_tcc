@@ -1,3 +1,4 @@
+
 function trocarPaginaAnamnese(numero) {
 
     // pega todas as páginas
@@ -60,4 +61,3 @@ window.addEventListener('load', function () {
     trocarPaginaAnamnese(1);
 
 });
-
