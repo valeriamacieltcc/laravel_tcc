@@ -443,6 +443,8 @@ body{
 }
 
 
+
+
 /* =========================================================
    TÍTULO
    ========================================================= */
@@ -464,6 +466,24 @@ body{
     text-transform: uppercase;
 }
 
+/* =========================================================
+   SUBTÍTULO - PROCEDIMENTOS
+   ========================================================= */
+
+   .admin-procedimentos-subtitulo {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
 
 /* =========================================================
    BOTÃO - PADRÃO
@@ -1129,6 +1149,1946 @@ body{
    body.admin-procedimentos-body footer {
        margin-top: 0 !important;
    }
+
+
+/* =========================================================
+   NOVO PROCEDIMENTO
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .admin-procedimento-body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #f5f2e9;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.admin-procedimento-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.admin-procedimento-container {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.admin-procedimento-header {
+
+    margin-bottom: 55px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.admin-procedimento-subtitle {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.admin-procedimento-title {
+
+    margin: 0 0 16px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.admin-procedimento-description {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   ALERTA DE ERRO
+   ========================================================= */
+
+.admin-procedimento-alert {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 16px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-procedimento-alert-erro {
+
+    background: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+
+}
+
+
+.admin-procedimento-alert strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.admin-procedimento-alert ul {
+
+    margin: 5px 0 0 18px;
+
+    padding: 0;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.admin-procedimento-form {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.admin-procedimento-section {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 30px 35px 35px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-procedimento-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.admin-procedimento-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA SEÇÃO
+   ========================================================= */
+
+.admin-procedimento-section-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-procedimento-section-info small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-procedimento-section-info h2 {
+
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.admin-procedimento-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.admin-procedimento-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO COMPLETO
+   ========================================================= */
+
+.admin-procedimento-field-full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.admin-procedimento-field label {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   INPUT / TEXTAREA / SELECT
+   ========================================================= */
+
+.admin-procedimento-field input,
+.admin-procedimento-field textarea,
+.admin-procedimento-field select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.admin-procedimento-field input {
+
+    height: 46px;
+
+    padding: 0 14px;
+
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.admin-procedimento-field select {
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.admin-procedimento-field textarea {
+
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   INPUT FILE
+   ========================================================= */
+
+.admin-procedimento-field input[type="file"] {
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.admin-procedimento-field input:focus,
+.admin-procedimento-field textarea:focus,
+.admin-procedimento-field select:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.admin-procedimento-field input::placeholder,
+.admin-procedimento-field textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   TEXTO AUXILIAR
+   ========================================================= */
+
+.admin-procedimento-help {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #6f7975;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ERRO DO CAMPO
+   ========================================================= */
+
+.admin-procedimento-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.admin-procedimento-check {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    padding: 13px 16px;
+
+    background: #f5f5ee;
+
+    border-radius: 4px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+}
+
+
+.admin-procedimento-check input[type="checkbox"] {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    accent-color: #2f6d67;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.admin-procedimento-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
+
+.admin-procedimento-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.admin-procedimento-back:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   BOTÃO CADASTRAR
+   ========================================================= */
+
+.admin-procedimento-save {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.admin-procedimento-save:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .admin-procedimento-page {
+
+        padding: 30px 0 60px;
+
+    }
+
+
+    .admin-procedimento-container {
+
+        width: 90%;
+
+    }
+
+
+    .admin-procedimento-title {
+
+        font-size: 34px;
+
+    }
+
+
+    .admin-procedimento-description {
+
+        font-size: 10px;
+
+    }
+
+
+    .admin-procedimento-section {
+
+        padding: 25px 20px 30px;
+
+    }
+
+
+    .admin-procedimento-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .admin-procedimento-field-full {
+
+        grid-column: auto;
+
+    }
+
+
+    .admin-procedimento-section-title {
+
+        align-items: flex-start;
+
+    }
+
+
+    .admin-procedimento-section-info h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .admin-procedimento-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .admin-procedimento-back,
+    .admin-procedimento-save {
+
+        width: 100%;
+
+    }
+
+
+    .admin-procedimento-check {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .admin-procedimento-page {
+
+        padding: 25px 0 50px;
+
+    }
+
+
+    .admin-procedimento-container {
+
+        width: 92%;
+
+    }
+
+
+    .admin-procedimento-header {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .admin-procedimento-title {
+
+        font-size: 29px;
+
+    }
+
+
+    .admin-procedimento-section {
+
+        padding: 22px 16px 25px;
+
+    }
+
+
+    .admin-procedimento-section-title {
+
+        gap: 12px;
+
+    }
+
+
+    .admin-procedimento-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 10px;
+
+    }
+
+
+    .admin-procedimento-section-info h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .admin-procedimento-field input,
+    .admin-procedimento-field select {
+
+        height: 44px;
+
+    }
+
+
+    .admin-procedimento-actions {
+
+        padding-top: 20px;
+
+    }
+
+}
+
+/* =========================================================
+   EDITAR PROCEDIMENTO
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+.vm-procedimento-body {
+
+    margin: 0;
+    padding: 0;
+
+    background: #f5f2e9;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.vm-procedimento-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.vm-procedimento-container {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.vm-procedimento-header {
+
+    margin-bottom: 55px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.vm-procedimento-subtitle {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.vm-procedimento-title {
+
+    margin: 0 0 16px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.vm-procedimento-description {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ALERTA
+   ========================================================= */
+
+.vm-procedimento-alert {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 16px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+}
+
+
+.vm-procedimento-alert-erro {
+
+    background: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+}
+
+
+.vm-procedimento-alert strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.vm-procedimento-alert ul {
+
+    margin: 5px 0 0 18px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.vm-procedimento-form {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.vm-procedimento-section {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 30px 35px 35px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-procedimento-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.vm-procedimento-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA SEÇÃO
+   ========================================================= */
+
+.vm-procedimento-section-info {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   SUBTÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-procedimento-section-info small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-procedimento-section-info h2 {
+
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.vm-procedimento-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.vm-procedimento-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CAMPO COMPLETO
+   ========================================================= */
+
+.vm-procedimento-field-full {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.vm-procedimento-field label {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+   ========================================================= */
+
+.vm-procedimento-field input,
+.vm-procedimento-field select,
+.vm-procedimento-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.vm-procedimento-field input {
+
+    height: 46px;
+
+    padding: 0 14px;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.vm-procedimento-field select {
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.vm-procedimento-field textarea {
+
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   INPUT FILE
+   ========================================================= */
+
+.vm-procedimento-field input[type="file"] {
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.vm-procedimento-field input:focus,
+.vm-procedimento-field select:focus,
+.vm-procedimento-field textarea:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.vm-procedimento-field input::placeholder,
+.vm-procedimento-field textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   TEXTO AUXILIAR
+   ========================================================= */
+
+.vm-procedimento-help {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #6f7975;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERRO
+   ========================================================= */
+
+.vm-procedimento-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.vm-procedimento-check {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    padding: 13px 16px;
+
+    background: #f5f5ee;
+
+    border-radius: 4px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CHECKBOX INPUT
+   ========================================================= */
+
+.vm-procedimento-check input[type="checkbox"] {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    accent-color: #2f6d67;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.vm-procedimento-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
+
+.vm-procedimento-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+.vm-procedimento-back:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+   ========================================================= */
+
+.vm-procedimento-save {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+.vm-procedimento-save:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .vm-procedimento-page {
+
+        padding: 30px 0 60px;
+    }
+
+
+    .vm-procedimento-container {
+
+        width: 90%;
+    }
+
+
+    .vm-procedimento-title {
+
+        font-size: 34px;
+    }
+
+
+    .vm-procedimento-description {
+
+        font-size: 10px;
+    }
+
+
+    .vm-procedimento-section {
+
+        padding: 25px 20px 30px;
+    }
+
+
+    .vm-procedimento-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .vm-procedimento-field-full {
+
+        grid-column: auto;
+    }
+
+
+    .vm-procedimento-section-title {
+
+        align-items: flex-start;
+    }
+
+
+    .vm-procedimento-section-info h2 {
+
+        font-size: 19px;
+    }
+
+
+    .vm-procedimento-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .vm-procedimento-back,
+    .vm-procedimento-save {
+
+        width: 100%;
+    }
+
+
+    .vm-procedimento-check {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .vm-procedimento-page {
+
+        padding: 25px 0 50px;
+    }
+
+
+    .vm-procedimento-container {
+
+        width: 92%;
+    }
+
+
+    .vm-procedimento-header {
+
+        margin-bottom: 40px;
+    }
+
+
+    .vm-procedimento-title {
+
+        font-size: 29px;
+    }
+
+
+    .vm-procedimento-section {
+
+        padding: 22px 16px 25px;
+    }
+
+
+    .vm-procedimento-section-title {
+
+        gap: 12px;
+    }
+
+
+    .vm-procedimento-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 10px;
+    }
+
+
+    .vm-procedimento-section-info h2 {
+
+        font-size: 16px;
+    }
+
+
+    .vm-procedimento-field input,
+    .vm-procedimento-field select {
+
+        height: 44px;
+    }
+
+
+    .vm-procedimento-actions {
+
+        padding-top: 20px;
+    }
+
+}
+
+
+
+
+
+
+
+
 
 
 /* =========================================================
@@ -3066,5 +5026,162 @@ body{
     }
 
 
+
+
+
 }
+
+
+
+/* =========================================================
+   EDITAR PRODUTO
+   ========================================================= */
+
+
+/* =========================================================
+   IMAGEM ATUAL
+   ========================================================= */
+
+   .vm-produto-imagem-atual {
+
+    display: block;
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    margin: 0;
+
+    background: #ffffff;
+
+    border: 3px solid #d6c5a6;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   SEM IMAGEM
+   ========================================================= */
+
+.vm-produto-sem-imagem {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 180px;
+    height: 180px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: #e9ebe3;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 8px;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   AJUSTE DO UPLOAD
+   ========================================================= */
+
+.vm-produto-upload input[type="file"] {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CHECKBOX - EDITAR
+   ========================================================= */
+
+.vm-produto-check {
+
+    width: fit-content;
+
+    min-width: 230px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .vm-produto-imagem-atual,
+    .vm-produto-sem-imagem {
+
+        width: 150px;
+        height: 150px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .vm-produto-imagem-atual,
+    .vm-produto-sem-imagem {
+
+        width: 130px;
+        height: 130px;
+
+    }
+
+}
+
+
+
 

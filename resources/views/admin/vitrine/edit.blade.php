@@ -5,328 +5,443 @@
 
     <meta charset="UTF-8">
 
-    <title>Editar Produto</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Editar Produto | Admin</title>
 
 
-    <style>
+    <!-- FONTES -->
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            margin: 0;
-            padding: 30px;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-        h1 {
-            margin-top: 0;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet"
+    >
 
-        .campo {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 18px;
-        }
 
-        .campo label {
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
+    <!-- BOOTSTRAP -->
 
-        .campo input,
-        .campo textarea {
-            padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 5px;
-            font-size: 15px;
-        }
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        .campo textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
 
-        .imagem-atual {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+    <!-- CSS -->
 
-        .botao {
-            background: #2c7771;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
 
-        .cancelar {
-            background: #777;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 10px;
-        }
-
-        .erro {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 12px;
-            margin-bottom: 20px;
-        }
-
-        .check {
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-        }
-
-    </style>
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
 
 <body>
 
-
-<div class="container">
-
-    <h1>
-        Editar Produto
-    </h1>
+@include('admin._partials_admin.header_admin')
 
 
-    @if($errors->any())
+<main class="vm-produto-page">
 
-        <div class="erro">
-
-            <ul>
-
-                @foreach($errors->all() as $erro)
-
-                    <li>
-                        {{ $erro }}
-                    </li>
-
-                @endforeach
-
-            </ul>
-
-        </div>
-
-    @endif
+    <div class="vm-produto-container">
 
 
-    <form
-        action="{{ route(
-            'admin.vitrine.update',
-            $vitrine
-        ) }}"
-        method="POST"
-        enctype="multipart/form-data"
-    >
+        <!-- =====================================================
+             CABEÇALHO
+             ===================================================== -->
 
-        @csrf
-        @method('PUT')
+        <header class="vm-produto-header">
 
+            <span class="vm-produto-subtitle">
+                Administração da vitrine
+            </span>
 
-        <div class="campo">
+            <h1 class="vm-produto-title">
+                Editar produto
+            </h1>
 
-            <label for="nome">
-                Nome
-            </label>
+            <p class="vm-produto-description">
+                Atualize as informações do produto disponível na loja.
+            </p>
 
-            <input
-                type="text"
-                id="nome"
-                name="nome"
-                value="{{ old(
-                    'nome',
-                    $vitrine->nome
-                ) }}"
-                required
-            >
-
-        </div>
+        </header>
 
 
-        <div class="campo">
+        <!-- =====================================================
+             ERROS
+             ===================================================== -->
 
-            <label for="marca">
-                Marca
-            </label>
+        @if($errors->any())
 
-            <input
-                type="text"
-                id="marca"
-                name="marca"
-                value="{{ old(
-                    'marca',
-                    $vitrine->marca
-                ) }}"
-                required
-            >
+            <div class="vm-produto-alert vm-produto-alert-erro">
 
-        </div>
+                <strong>
+                    Verifique os dados informados
+                </strong>
 
+                <ul>
 
-        <div class="campo">
+                    @foreach($errors->all() as $erro)
 
-            <label for="descricao">
-                Descrição
-            </label>
+                        <li>
+                            {{ $erro }}
+                        </li>
 
-            <textarea
-                id="descricao"
-                name="descricao"
-                required
-            >{{ old(
-                'descricao',
-                $vitrine->descricao
-            ) }}</textarea>
+                    @endforeach
 
-        </div>
+                </ul>
+
+            </div>
+
+        @endif
 
 
-        <div class="campo">
+        <!-- =====================================================
+             FORMULÁRIO
+             ===================================================== -->
 
-            <label for="preco">
-                Preço
-            </label>
+        <form
+            action="{{ route('admin.vitrine.update', $vitrine) }}"
+            method="POST"
+            enctype="multipart/form-data"
+            class="vm-produto-form"
+        >
 
-            <input
-                type="number"
-                id="preco"
-                name="preco"
-                step="0.01"
-                min="0"
-                value="{{ old(
-                    'preco',
-                    $vitrine->preco
-                ) }}"
-                required
-            >
+            @csrf
 
-        </div>
+            @method('PUT')
 
 
-        <div class="campo">
+            <!-- =================================================
+                 SEÇÃO 01
+                 ================================================= -->
 
-            <label>
-                Imagem atual
-            </label>
+            <section class="vm-produto-section">
 
-            @if($vitrine->imagem)
 
-                <img
-                    src="{{ asset(
-                        'storage/' . $vitrine->imagem
-                    ) }}"
-                    alt="{{ $vitrine->nome }}"
-                    class="imagem-atual"
+                <div class="vm-produto-section-title">
+
+                    <span class="vm-produto-number">
+                        01
+                    </span>
+
+
+                    <div class="vm-produto-section-info">
+
+                        <small>
+                            Informações principais
+                        </small>
+
+                        <h2>
+                            Dados do produto
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vm-produto-grid">
+
+
+                    <!-- NOME -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="nome">
+                            Nome do produto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            value="{{ old('nome', $vitrine->nome) }}"
+                            placeholder="Digite o nome do produto"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- MARCA -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="marca">
+                            Marca
+                        </label>
+
+                        <input
+                            type="text"
+                            id="marca"
+                            name="marca"
+                            value="{{ old('marca', $vitrine->marca) }}"
+                            placeholder="Digite a marca"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <div class="vm-produto-field vm-produto-field-full">
+
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            placeholder="Descreva o produto..."
+                            required
+                        >{{ old('descricao', $vitrine->descricao) }}</textarea>
+
+                    </div>
+
+
+                    <!-- PREÇO -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="preco">
+                            Preço
+                        </label>
+
+                        <input
+                            type="number"
+                            id="preco"
+                            name="preco"
+                            step="0.01"
+                            min="0"
+                            value="{{ old('preco', $vitrine->preco) }}"
+                            placeholder="0,00"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- LINK -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="link_contato">
+                            Link para contato
+                        </label>
+
+                        <input
+                            type="text"
+                            id="link_contato"
+                            name="link_contato"
+                            value="{{ old('link_contato', $vitrine->link_contato) }}"
+                            placeholder="Digite o link para contato"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SEÇÃO 02
+                 ================================================= -->
+
+            <section class="vm-produto-section">
+
+
+                <div class="vm-produto-section-title">
+
+                    <span class="vm-produto-number">
+                        02
+                    </span>
+
+
+                    <div class="vm-produto-section-info">
+
+                        <small>
+                            Imagem do produto
+                        </small>
+
+                        <h2>
+                            Foto da vitrine
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vm-produto-grid">
+
+
+                    <!-- IMAGEM ATUAL -->
+
+                    <div class="vm-produto-field vm-produto-field-full">
+
+                        <label>
+                            Imagem atual
+                        </label>
+
+
+                        @if($vitrine->imagem)
+
+                            <img
+                                src="{{ asset('storage/' . $vitrine->imagem) }}"
+                                alt="{{ $vitrine->nome }}"
+                                class="vm-produto-imagem-atual"
+                            >
+
+                        @else
+
+                            <div class="vm-produto-sem-imagem">
+
+                                Nenhuma imagem cadastrada.
+
+                            </div>
+
+                        @endif
+
+                    </div>
+
+
+                    <!-- NOVA IMAGEM -->
+
+                    <div class="vm-produto-field vm-produto-field-full">
+
+                        <label for="imagem">
+                            Alterar imagem
+                        </label>
+
+                        <div class="vm-produto-upload">
+
+                            <input
+                                type="file"
+                                id="imagem"
+                                name="imagem"
+                                accept="image/*"
+                            >
+
+                            <small class="vm-produto-help">
+                                Selecione uma nova imagem caso queira substituir a atual.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SEÇÃO 03
+                 ================================================= -->
+
+            <section class="vm-produto-section">
+
+
+                <div class="vm-produto-section-title">
+
+                    <span class="vm-produto-number">
+                        03
+                    </span>
+
+
+                    <div class="vm-produto-section-info">
+
+                        <small>
+                            Disponibilidade
+                        </small>
+
+                        <h2>
+                            Status do produto
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <label class="vm-produto-check">
+
+                    <input
+                        type="checkbox"
+                        id="disponivel"
+                        name="disponivel"
+                        value="1"
+                        {{ old('disponivel', $vitrine->disponivel) ? 'checked' : '' }}
+                    >
+
+                    <span>
+                        Produto disponível
+                    </span>
+
+                </label>
+
+            </section>
+
+
+            <!-- =================================================
+                 BOTÕES
+                 ================================================= -->
+
+            <div class="vm-produto-actions">
+
+
+                <a
+                    href="{{ route('admin.vitrine.index') }}"
+                    class="vm-produto-back"
                 >
-
-            @else
-
-                <p>
-                    Nenhuma imagem cadastrada.
-                </p>
-
-            @endif
-
-        </div>
+                    Cancelar
+                </a>
 
 
-        <div class="campo">
-
-            <label for="imagem">
-                Alterar imagem
-            </label>
-
-            <input
-                type="file"
-                id="imagem"
-                name="imagem"
-                accept="image/*"
-            >
-
-        </div>
+                <button
+                    type="submit"
+                    class="vm-produto-save"
+                >
+                    Salvar alterações
+                </button>
 
 
-        <div class="campo">
-
-            <label for="link_contato">
-                Link para contato
-            </label>
-
-            <input
-                type="text"
-                id="link_contato"
-                name="link_contato"
-                value="{{ old(
-                    'link_contato',
-                    $vitrine->link_contato
-                ) }}"
-            >
-
-        </div>
+            </div>
 
 
-        <div class="campo check">
+        </form>
 
-            <input
-                type="checkbox"
-                id="disponivel"
-                name="disponivel"
-                value="1"
-                {{ old(
-                    'disponivel',
-                    $vitrine->disponivel
-                ) ? 'checked' : '' }}
-            >
+    </div>
 
-            <label for="disponivel">
-                Produto disponível
-            </label>
-
-        </div>
+</main>
 
 
-        <div class="acoes">
-
-            <button
-                type="submit"
-                class="botao"
-            >
-                Salvar alterações
-            </button>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
 
 
-            <a
-                href="{{ route('admin.vitrine.index') }}"
-                class="botao cancelar"
-            >
-                Cancelar
-            </a>
-
-        </div>
-
-    </form>
-
-</div>
-
+@include('admin._partials_admin.footer_admin')
 
 </body>
 

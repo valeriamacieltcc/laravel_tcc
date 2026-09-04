@@ -44,46 +44,71 @@
 @include('admin._partials_admin.header_admin')
 
 
-    <main class="admin-procedimentos">
+<main class="admin-procedimentos">
 
-        <div class="admin-procedimentos-container">
+<div class="admin-procedimentos-container">
 
-            <!-- TOPO DA PÁGINA -->
+    <!-- TOPO DA PÁGINA -->
 
-            <div class="admin-procedimentos-topo">
+    <div class="admin-procedimentos-topo">
 
-                <h1 class="admin-procedimentos-titulo">
-                    Procedimentos
-                </h1>
+        <div>
 
-                <a
-                    href="{{ route('admin.procedimentos.create') }}"
-                    class="admin-procedimentos-botao admin-procedimentos-botao-novo"
-                >
-                    Novo procedimento
-                </a>
+            <h1 class="admin-procedimentos-titulo">
+                Procedimentos
+            </h1>
 
-            </div>
+            <p class="admin-procedimentos-subtitulo">
+                Gerencie os procedimentos disponíveis para seus clientes.
+            </p>
 
-
-            <!-- MENSAGENS -->
-
-            @if(session('sucesso'))
-
-                <div class="admin-procedimentos-mensagem">
-                    {{ session('sucesso') }}
-                </div>
-
-            @endif
+        </div>
 
 
-            @if(session('erro'))
+        <a
+            href="{{ route('admin.procedimentos.create') }}"
+            class="admin-procedimentos-botao admin-procedimentos-botao-novo"
+        >
+            Novo procedimento
+        </a>
 
-                <div class="admin-procedimentos-mensagem admin-procedimentos-mensagem-erro">
-                    {{ session('erro') }}
-                </div>
+    </div>
 
-            @endif
+
+        <!-- MENSAGENS -->
+
+@if(session('sucesso'))
+
+<div class="alerta alerta-sucesso">
+
+    <span class="alerta-icone">
+        ✓
+    </span>
+
+    <span>
+        {{ session('sucesso') }}
+    </span>
+
+</div>
+
+@endif
+
+
+@if(session('erro'))
+
+<div class="alerta alerta-erro">
+
+    <span class="alerta-icone">
+        !
+    </span>
+
+    <span>
+        {{ session('erro') }}
+    </span>
+
+</div>
+
+@endif
 
 
             <!-- TABELA -->
