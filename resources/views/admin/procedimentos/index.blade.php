@@ -41,7 +41,7 @@
 
 <body class="admin-procedimentos-body">
 
-    @include('_partials.header')
+@include('admin._partials_admin.header_admin')
 
 
     <main class="admin-procedimentos">
@@ -282,7 +282,7 @@
     </main>
 
 
-    @include('_partials.footer')
+    @include('admin._partials_admin.footer_admin')
 
 
     <!-- BOOTSTRAP JS -->

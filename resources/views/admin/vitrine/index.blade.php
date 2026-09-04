@@ -1,362 +1,416 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Vitrine</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            margin: 0;
-            padding: 30px;
-        }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+    <title>Vitrine | Admin</title>
 
-        .topo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .botao {
-            background: #2c7771;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet"
+    >
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            margin-top: 20px;
-        }
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        th,
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
-        th {
-            background: #2c7771;
-            color: white;
-        }
-
-        .imagem {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .editar {
-            background: #d9a441;
-        }
-
-        .excluir {
-            background: #b94a48;
-        }
-
-        .mensagem {
-            padding: 12px;
-            margin: 15px 0;
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .erro {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .disponivel {
-            color: #198754;
-            font-weight: bold;
-        }
-
-        .indisponivel {
-            color: #b94a48;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
+
 <body>
-<nav class="navbar">
+@include('admin._partials_admin.header_admin')
+    <!-- =====================================================
+         CONTEÚDO
+         ===================================================== -->
 
-    <!-- BOTÃO MENU -->
-    <button
-        class="menu-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-        aria-controls="menuLateral">
+    <main class="vitrine-page">
 
-        <img src="{{ asset('imagem/menu.png') }}" alt="Menu">
-
-    </button>
+        <div class="vitrine-container">
 
 
-    <!-- LINKS PRINCIPAIS -->
-    <ul>
-        <li><a href="{{ route('admin.home') }}">HOME</a></li>
+            <!-- CABEÇALHO -->
 
-        <li>
-            <a href="{{ route('admin.procedimentos.index') }}">
-                PROCEDIMENTOS
-            </a>
-        </li>
+            <div class="vitrine-header">
 
-        <li>
-            <a href="#">
-                AGENDAR
-            </a>
-        </li>
+                <div>
 
-        <li>
-            <a href="{{ route('admin.vitrine.index') }}">
-                LOJA
-            </a>
-        </li>
+                    <h1>
+                        Vitrine
+                    </h1>
 
-        <li>
-            <a href="#">
-                BLOG
-            </a>
-        </li>
-    </ul>
+                    <p>
+                        Gerencie os produtos disponíveis na loja.
+                    </p>
 
-<div class="container">
-
-    <div class="topo">
-
-        <h1>
-            Vitrine
-        </h1>
-
-        <a
-            href="{{ route('admin.vitrine.create') }}"
-            class="botao"
-        >
-            Novo produto
-        </a>
-        
-
-    </div>
+                </div>
 
 
-    @if(session('sucesso'))
+                <a
+                    href="{{ route('admin.vitrine.create') }}"
+                    class="btn-vitrine btn-novo"
+                >
 
-        <div class="mensagem">
+                    Novo produto
 
-            {{ session('sucesso') }}
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 MENSAGENS
+                 ================================================= -->
+
+            @if(session('sucesso'))
+
+                <div class="alerta alerta-sucesso">
+
+                    <span class="alerta-icone">
+                        ✓
+                    </span>
+
+                    <span>
+                        {{ session('sucesso') }}
+                    </span>
+
+                </div>
+
+            @endif
+
+
+            @if(session('erro'))
+
+                <div class="alerta alerta-erro">
+
+                    <span class="alerta-icone">
+                        !
+                    </span>
+
+                    <span>
+                        {{ session('erro') }}
+                    </span>
+
+                </div>
+
+            @endif
+
+
+            <!-- =================================================
+                 TABELA
+                 ================================================= -->
+
+            <div class="vitrine-card">
+
+                <div class="tabela-wrapper">
+
+                    <table class="tabela-vitrine">
+
+                        <thead>
+
+                            <tr>
+
+                                <th class="coluna-imagem">
+                                    Imagem
+                                </th>
+
+                                <th>
+                                    Nome
+                                </th>
+
+                                <th>
+                                    Marca
+                                </th>
+
+                                <th>
+                                    Preço
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th class="coluna-acoes">
+                                    Ações
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @forelse($vitrine as $produto)
+
+                                <tr>
+
+                                    <!-- IMAGEM -->
+
+                                    <td>
+
+                                        @if($produto->imagem)
+
+                                            <img
+                                                src="{{ asset('storage/' . $produto->imagem) }}"
+                                                class="produto-imagem"
+                                                alt="{{ $produto->nome }}"
+                                            >
+
+                                        @else
+
+                                            <div class="sem-imagem">
+
+                                                Sem imagem
+
+                                            </div>
+
+                                        @endif
+
+                                    </td>
+
+
+                                    <!-- NOME -->
+
+                                    <td>
+
+                                        <span class="produto-nome">
+
+                                            {{ $produto->nome }}
+
+                                        </span>
+
+                                    </td>
+
+
+                                    <!-- MARCA -->
+
+                                    <td>
+
+                                        <span class="produto-marca">
+
+                                            {{ $produto->marca ?? 'Não informada' }}
+
+                                        </span>
+
+                                    </td>
+
+
+                                    <!-- PREÇO -->
+
+                                    <td>
+
+                                        <span class="produto-preco">
+
+                                            R$
+                                            {{ number_format(
+                                                $produto->preco,
+                                                2,
+                                                ',',
+                                                '.'
+                                            ) }}
+
+                                        </span>
+
+                                    </td>
+
+
+                                    <!-- STATUS -->
+
+                                    <td>
+
+                                        @if($produto->disponivel)
+
+                                            <span class="status disponivel">
+
+                                                <span class="status-ponto"></span>
+
+                                                Disponível
+
+                                            </span>
+
+                                        @else
+
+                                            <span class="status indisponivel">
+
+                                                <span class="status-ponto"></span>
+
+                                                Indisponível
+
+                                            </span>
+
+                                        @endif
+
+                                    </td>
+
+
+                                    <!-- AÇÕES -->
+
+                                    <td>
+
+                                        <div class="acoes">
+
+                                            <!-- VER -->
+
+                                            <a
+                                                href="{{ route(
+                                                    'admin.vitrine.show',
+                                                    $produto
+                                                ) }}"
+                                                class="btn-acao btn-ver"
+                                            >
+
+                                                Ver
+
+                                            </a>
+
+
+                                            <!-- EDITAR -->
+
+                                            <a
+                                                href="{{ route(
+                                                    'admin.vitrine.edit',
+                                                    $produto
+                                                ) }}"
+                                                class="btn-acao btn-editar"
+                                            >
+
+                                                Editar
+
+                                            </a>
+
+
+                                            <!-- EXCLUIR -->
+
+                                            <form
+                                                action="{{ route(
+                                                    'admin.vitrine.destroy',
+                                                    $produto
+                                                ) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('Deseja excluir este produto?')"
+                                            >
+
+                                                @csrf
+
+                                                @method('DELETE')
+
+
+                                                <button
+                                                    type="submit"
+                                                    class="btn-acao btn-excluir"
+                                                >
+
+                                                    Excluir
+
+                                                </button>
+
+                                            </form>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                            @empty
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="tabela-vazia"
+                                    >
+
+                                        <div class="vazia-conteudo">
+
+                                            <span class="vazia-icone">
+                                                🛍
+                                            </span>
+
+                                            <strong>
+                                                Nenhum produto cadastrado
+                                            </strong>
+
+                                            <p>
+                                                Adicione um produto para começar a montar sua vitrine.
+                                            </p>
+
+                                            <a
+                                                href="{{ route('admin.vitrine.create') }}"
+                                                class="btn-vitrine btn-novo"
+                                            >
+                                                Novo produto
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            @endforelse
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =================================================
+                     PAGINAÇÃO
+                     ================================================= -->
+
+                @if($vitrine->hasPages())
+
+                    <div class="paginacao">
+
+                        {{ $vitrine->links() }}
+
+                    </div>
+
+                @endif
+
+            </div>
 
         </div>
 
-    @endif
+    </main>
 
 
-    @if(session('erro'))
+    <!-- BOOTSTRAP JS -->
 
-        <div class="mensagem erro">
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-            {{ session('erro') }}
-
-        </div>
-
-    @endif
-
-
-    <table>
-
-        <thead>
-
-            <tr>
-
-                <th>Imagem</th>
-                <th>Nome</th>
-                <th>Marca</th>
-                <th>Preço</th>
-                <th>Status</th>
-                <th>Ações</th>
-
-            </tr>
-
-        </thead>
-
-
-        <tbody>
-
-        @forelse($vitrine as $produto)
-
-                <tr>
-
-                    <td>
-
-                        @if($produto->imagem)
-
-                            <img
-                                src="{{ asset('storage/' . $produto->imagem) }}"
-                                class="imagem"
-                                alt="{{ $produto->nome }}"
-                            >
-
-                        @else
-
-                            Sem imagem
-
-                        @endif
-
-                    </td>
-
-
-                    <td>
-
-                        {{ $produto->nome }}
-
-                    </td>
-
-
-                    <td>
-
-                        {{ $produto->marca ?? 'Não informada' }}
-
-                    </td>
-
-
-                    <td>
-
-                        R$
-                        {{ number_format(
-                            $produto->preco,
-                            2,
-                            ',',
-                            '.'
-                        ) }}
-
-                    </td>
-
-
-                    <td>
-
-                        @if($produto->disponivel)
-
-                            <span class="disponivel">
-                                Disponível
-                            </span>
-
-                        @else
-
-                            <span class="indisponivel">
-                                Indisponível
-                            </span>
-
-                        @endif
-
-                    </td>
-
-
-                    <td>
-
-                        <div class="acoes">
-
-                            <a
-                                href="{{ route(
-                                    'admin.vitrine.show',
-                                    $produto
-                                ) }}"
-                                class="botao"
-                            >
-                                Ver
-                            </a>
-
-
-                            <a
-                                href="{{ route(
-                                    'admin.vitrine.edit',
-                                    $produto
-                                ) }}"
-                                class="botao editar"
-                            >
-                                Editar
-                            </a>
-
-
-                            <form
-                                action="{{ route(
-                                    'admin.vitrine.destroy',
-                                    $produto
-                                ) }}"
-                                method="POST"
-                                onsubmit="return confirm(
-                                    'Deseja excluir este produto?'
-                                )"
-                            >
-
-                                @csrf
-                                @method('DELETE')
-
-
-                                <button
-                                    type="submit"
-                                    class="botao excluir"
-                                >
-                                    Excluir
-                                </button>
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
-                </tr>
-
-
-            @empty
-
-                <tr>
-
-                    <td colspan="6">
-
-                        Nenhum produto cadastrado na vitrine.
-
-                    </td>
-
-                </tr>
-
-            @endforelse
-
-        </tbody>
-
-    
-    </table>
-
-    <div class="paginacao">
-    {{ $vitrine->links() }}
-
-</div>
-   
-
-
-</div>
+    @include('admin._partials_admin.footer_admin')
 
 </body>
+
 </html>
+

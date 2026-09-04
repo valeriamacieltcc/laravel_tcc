@@ -5,273 +5,440 @@
 
     <meta charset="UTF-8">
 
-    <title>Novo Produto</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <style>
+    <title>Vitrine Criar | Admin</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            margin: 0;
-            padding: 30px;
-        }
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet"
+    >
 
-        h1 {
-            margin-top: 0;
-        }
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-        .campo {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 18px;
-        }
-
-        .campo label {
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-
-        .campo input,
-        .campo textarea,
-        .campo select {
-            padding: 10px;
-            border: 1px solid #bbb;
-            border-radius: 5px;
-            font-size: 15px;
-        }
-
-        .campo textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .botao {
-            background: #2c7771;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .cancelar {
-            background: #777;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 10px;
-        }
-
-        .erro {
-            background: #f8d7da;
-            color: #721c24;
-            padding: 12px;
-            margin-bottom: 20px;
-        }
-
-        .check {
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-        }
-
-    </style>
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
+
+
 <body>
+@include('admin._partials_admin.header_admin')
 
 
-<div class="container">
-
-    <h1>
-        Cadastrar Produto
-    </h1>
+<main class="vm-produto-page">
 
 
-    @if($errors->any())
-
-        <div class="erro">
-
-            <ul>
-
-                @foreach($errors->all() as $erro)
-
-                    <li>
-                        {{ $erro }}
-                    </li>
-
-                @endforeach
-
-            </ul>
-
-        </div>
-
-    @endif
+    <div class="vm-produto-container">
 
 
-    <form
-        action="{{ route('admin.vitrine.store') }}"
-        method="POST"
-        enctype="multipart/form-data"
-    >
+        <!-- =====================================================
+             CABEÇALHO
+        ====================================================== -->
 
-        @csrf
+        <header class="vm-produto-header">
 
+            <h1 class="vm-produto-title">
+                Novo Produto
+            </h1>
 
-        <div class="campo">
+            <p class="vm-produto-description">
+                Cadastre um novo produto para aparecer na vitrine da loja.
+            </p>
 
-            <label for="nome">
-                Nome
-            </label>
-
-            <input
-                type="text"
-                id="nome"
-                name="nome"
-                value="{{ old('nome') }}"
-                required
-            >
-
-        </div>
+        </header>
 
 
-        <div class="campo">
+        <!-- =====================================================
+             MENSAGENS DE ERRO
+        ====================================================== -->
 
-            <label for="marca">
-                Marca
-            </label>
+        @if($errors->any())
 
-            <input
-                type="text"
-                id="marca"
-                name="marca"
-                value="{{ old('marca') }}"
-                required
-            >
+            <div class="vm-produto-alert vm-produto-alert-erro">
 
-        </div>
+                <strong>
+                    Verifique os dados informados
+                </strong>
 
+                <ul>
 
-        <div class="campo">
+                    @foreach($errors->all() as $erro)
 
-            <label for="descricao">
-                Descrição
-            </label>
+                        <li>
+                            {{ $erro }}
+                        </li>
 
-            <textarea
-                id="descricao"
-                name="descricao"
-                required
-            >{{ old('descricao') }}</textarea>
+                    @endforeach
 
-        </div>
+                </ul>
+
+            </div>
+
+        @endif
 
 
-        <div class="campo">
+        <!-- =====================================================
+             FORMULÁRIO
+        ====================================================== -->
 
-            <label for="preco">
-                Preço
-            </label>
+        <form
+            action="{{ route('admin.vitrine.store') }}"
+            method="POST"
+            enctype="multipart/form-data"
+            class="vm-produto-form"
+        >
 
-            <input
-                type="number"
-                id="preco"
-                name="preco"
-                step="0.01"
-                min="0"
-                value="{{ old('preco') }}"
-                required
-            >
-
-        </div>
+            @csrf
 
 
-        <div class="campo">
+            <!-- =================================================
+                 INFORMAÇÕES DO PRODUTO
+            ================================================== -->
 
-            <label for="imagem">
-                Imagem
-            </label>
-
-            <input
-                type="file"
-                id="imagem"
-                name="imagem"
-                accept="image/*"
-                required
-            >
-
-        </div>
+            <section class="vm-produto-section">
 
 
-        <div class="campo">
+                <div class="vm-produto-section-title">
 
-            <label for="link_contato">
-                Link para contato
-            </label>
+                    <span class="vm-produto-number">
+                        01
+                    </span>
 
-            <input
-                type="text"
-                id="link_contato"
-                name="link_contato"
-                value="{{ old('link_contato') }}"
-                placeholder="Ex: link do WhatsApp"
-            >
+                    <div class="vm-produto-section-info">
 
-        </div>
+                        <small>
+                            Cadastro
+                        </small>
 
+                        <h2>
+                            Informações do produto
+                        </h2>
 
-        <div class="campo check">
+                    </div>
 
-            <input
-                type="checkbox"
-                id="disponivel"
-                name="disponivel"
-                value="1"
-                {{ old('disponivel', true) ? 'checked' : '' }}
-            >
-
-            <label for="disponivel">
-                Produto disponível
-            </label>
-
-        </div>
+                </div>
 
 
-        <div class="acoes">
-
-            <button
-                type="submit"
-                class="botao"
-            >
-                Salvar produto
-            </button>
+                <div class="vm-produto-grid">
 
 
-            <a
-                href="{{ route('admin.vitrine.index') }}"
-                class="botao cancelar"
-            >
-                Cancelar
-            </a>
+                    <!-- NOME -->
 
-        </div>
+                    <div class="vm-produto-field">
 
-    </form>
+                        <label for="nome">
+                            Nome do produto
+                        </label>
 
-</div>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            value="{{ old('nome') }}"
+                            placeholder="Digite o nome do produto"
+                            required
+                        >
+
+                        @error('nome')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
 
 
+                    <!-- MARCA -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="marca">
+                            Marca
+                        </label>
+
+                        <input
+                            type="text"
+                            id="marca"
+                            name="marca"
+                            value="{{ old('marca') }}"
+                            placeholder="Digite a marca"
+                            required
+                        >
+
+                        @error('marca')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    <!-- DESCRIÇÃO -->
+
+                    <div class="vm-produto-field vm-produto-field-full">
+
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            placeholder="Digite uma descrição para o produto"
+                            required
+                        >{{ old('descricao') }}</textarea>
+
+                        @error('descricao')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    <!-- PREÇO -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="preco">
+                            Preço
+                        </label>
+
+                        <input
+                            type="number"
+                            id="preco"
+                            name="preco"
+                            step="0.01"
+                            min="0"
+                            value="{{ old('preco') }}"
+                            placeholder="0,00"
+                            required
+                        >
+
+                        @error('preco')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                    <!-- LINK -->
+
+                    <div class="vm-produto-field">
+
+                        <label for="link_contato">
+                            Link para contato
+                        </label>
+
+                        <input
+                            type="text"
+                            id="link_contato"
+                            name="link_contato"
+                            value="{{ old('link_contato') }}"
+                            placeholder="Ex.: link do WhatsApp"
+                        >
+
+                        @error('link_contato')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 IMAGEM
+            ================================================== -->
+
+            <section class="vm-produto-section">
+
+
+                <div class="vm-produto-section-title">
+
+                    <span class="vm-produto-number">
+                        02
+                    </span>
+
+                    <div class="vm-produto-section-info">
+
+                        <small>
+                            Visual
+                        </small>
+
+                        <h2>
+                            Imagem do produto
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vm-produto-upload">
+
+
+                    <div class="vm-produto-field">
+
+                        <label for="imagem">
+                            Imagem
+                        </label>
+
+                        <input
+                            type="file"
+                            id="imagem"
+                            name="imagem"
+                            accept="image/*"
+                            required
+                        >
+
+                        <span class="vm-produto-help">
+                            Selecione uma imagem para apresentar o produto na vitrine.
+                        </span>
+
+                        @error('imagem')
+
+                            <span class="vm-produto-error">
+                                {{ $message }}
+                            </span>
+
+                        @enderror
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 DISPONIBILIDADE
+            ================================================== -->
+
+            <section class="vm-produto-section">
+
+
+                <div class="vm-produto-section-title">
+
+                    <span class="vm-produto-number">
+                        03
+                    </span>
+
+                    <div class="vm-produto-section-info">
+
+                        <small>
+                            Status
+                        </small>
+
+                        <h2>
+                            Disponibilidade
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <label
+                    for="disponivel"
+                    class="vm-produto-check"
+                >
+
+                    <input
+                        type="checkbox"
+                        id="disponivel"
+                        name="disponivel"
+                        value="1"
+                        {{ old('disponivel', true) ? 'checked' : '' }}
+                    >
+
+                    <span>
+                        Produto disponível para os clientes
+                    </span>
+
+                </label>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 AÇÕES
+            ================================================== -->
+
+            <div class="vm-produto-actions">
+
+
+                <a
+                    href="{{ route('admin.vitrine.index') }}"
+                    class="vm-produto-back"
+                >
+                    Cancelar
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="vm-produto-save"
+                >
+                    Salvar produto
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</main>
+
+@include('admin._partials_admin.footer_admin')
 </body>
 
 </html>

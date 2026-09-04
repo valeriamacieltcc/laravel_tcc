@@ -1101,3 +1101,1970 @@ body{
     border-radius: 8px !important;
     overflow: hidden !important;
 }
+
+
+/* =========================================================
+   PROCEDIMENTOS - AJUSTE DO FOOTER
+   ========================================================= */
+
+   html,
+   body {
+       margin: 0 !important;
+       padding: 0 !important;
+       min-height: 100% !important;
+   }
+   
+   body.admin-procedimentos-body {
+       min-height: 100vh !important;
+       display: flex !important;
+       flex-direction: column !important;
+   }
+   
+   body.admin-procedimentos-body main.admin-procedimentos {
+       flex: 1 0 auto !important;
+       margin-bottom: 0 !important;
+       padding-bottom: 0 !important;
+   }
+   
+   body.admin-procedimentos-body footer {
+       margin-top: 0 !important;
+   }
+
+
+/* =========================================================
+   VITRINE - ADMIN
+   MESMO PADRÃO VISUAL DE PROCEDIMENTOS
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .vitrine-page {
+    width: 100%;
+
+    margin: 0;
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.vitrine-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.vitrine-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin: 0 0 45px;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.vitrine-header h1 {
+    margin: 0;
+    padding: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 48px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.vitrine-header p {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO PRODUTO
+   ========================================================= */
+
+.btn-vitrine {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.2;
+
+    text-align: center;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO
+   ========================================================= */
+
+.btn-novo {
+    min-width: 180px;
+
+    padding: 13px 25px;
+
+    background: #7d958d;
+
+    color: #ffffff;
+}
+
+
+.btn-novo:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SÍMBOLO +
+   ========================================================= */
+
+.btn-novo span {
+    margin-right: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MENSAGENS
+   ========================================================= */
+
+.alerta {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 0 30px;
+
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 5px;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MENSAGEM - SUCESSO
+   ========================================================= */
+
+.alerta-sucesso {
+    background: #d9ded2;
+
+    border-left: 4px solid #3e746d;
+
+    color: #3e746d;
+}
+
+
+/* =========================================================
+   MENSAGEM - ERRO
+   ========================================================= */
+
+.alerta-erro {
+    background: #f3dddd;
+
+    border-left: 4px solid #a94442;
+
+    color: #873836;
+}
+
+
+/* =========================================================
+   ÍCONE DA MENSAGEM
+   ========================================================= */
+
+.alerta-icone {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+.alerta-sucesso .alerta-icone {
+    background: #3e746d;
+
+    color: #ffffff;
+}
+
+
+.alerta-erro .alerta-icone {
+    background: #a94442;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   WRAPPER DA TABELA
+   IGUAL AO DE PROCEDIMENTOS
+   ========================================================= */
+
+.tabela-wrapper {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: auto;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.tabela-vitrine {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+    background: #f5f2e9;
+
+    font-family: "Playfair Display SC", serif;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA TABELA
+   IGUAL AO DE PROCEDIMENTOS
+   ========================================================= */
+
+.tabela-vitrine thead {
+    background: #2f6d67;
+}
+
+
+.tabela-vitrine th {
+    margin: 0;
+
+    padding: 17px 15px;
+
+    background: #2f6d67;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CORPO DA TABELA
+   ========================================================= */
+
+.tabela-vitrine tbody tr {
+    margin: 0;
+    padding: 0;
+
+    background: #d9ded2;
+
+    transition: background-color .2s ease;
+}
+
+
+.tabela-vitrine tbody tr:hover {
+    background: #e9ebe3;
+}
+
+
+/* =========================================================
+   CÉLULAS
+   ========================================================= */
+
+.tabela-vitrine td {
+    margin: 0;
+
+    padding: 15px;
+
+    background: #d9ded2;
+
+    border: none;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .12);
+
+    color: #555;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    vertical-align: middle;
+}
+
+
+.tabela-vitrine tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   IMAGEM
+   IGUAL À DE PROCEDIMENTOS
+   ========================================================= */
+
+.produto-imagem {
+    display: block;
+
+    width: 75px;
+    height: 70px;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+
+    background: #ffffff;
+
+    border: 3px solid #d6c5a6;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SEM IMAGEM
+   ========================================================= */
+
+.sem-imagem {
+    width: 75px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    background: #e9ebe3;
+
+    border: none;
+
+    border-radius: 6px;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NOME DO PRODUTO
+   ========================================================= */
+
+.produto-nome {
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: .3px;
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.produto-marca {
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+.produto-preco {
+    color: #555 !important;
+    font-size: 13px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS
+   IGUAL AO DE PROCEDIMENTOS
+   ========================================================= */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 80px;
+
+    padding: 7px 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 0;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: .8px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PONTO DO STATUS
+   ========================================================= */
+
+.status-ponto {
+    display: none;
+}
+
+
+/* =========================================================
+   DISPONÍVEL
+   ========================================================= */
+
+.status.disponivel {
+    background: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   INDISPONÍVEL
+   ========================================================= */
+
+.status.indisponivel {
+    background: #873836;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   AÇÕES
+   IGUAL À PROCEDIMENTOS
+   ========================================================= */
+
+.acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    white-space: nowrap;
+}
+
+
+.acoes form {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   BOTÕES DE AÇÃO
+   ========================================================= */
+
+.btn-acao {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 58px;
+
+    min-height: 34px;
+
+    padding: 9px 13px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    line-height: 1;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   VER
+   ========================================================= */
+
+.btn-ver {
+    background: #7d958d;
+
+    color: #ffffff;
+}
+
+
+.btn-ver:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EDITAR
+   ========================================================= */
+
+.btn-editar {
+    background: #819d96;
+
+    color: #ffffff;
+}
+
+
+.btn-editar:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EXCLUIR
+   ========================================================= */
+
+.btn-excluir {
+    background: #a94442;
+
+    color: #ffffff;
+}
+
+
+.btn-excluir:hover {
+    background: #873836;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABELA VAZIA
+   ========================================================= */
+
+.tabela-vazia {
+    height: auto;
+
+    padding: 50px 20px !important;
+
+    background: #d9ded2 !important;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    letter-spacing: .7px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTEÚDO DA TABELA VAZIA
+   ========================================================= */
+
+.vazia-conteudo {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.vazia-icone {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 5px;
+
+    background: #e9ebe3;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+
+.vazia-conteudo strong {
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: .5px;
+}
+
+
+.vazia-conteudo p {
+    margin: 0 0 8px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: .3px;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   IGUAL À DE PROCEDIMENTOS
+   ========================================================= */
+
+.paginacao {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 30px 0 0;
+
+    padding: 0;
+}
+
+
+.paginacao .pagination {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.paginacao .page-item {
+    margin: 0;
+    padding: 0;
+}
+
+
+.paginacao .page-link {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 12px;
+
+    background: #f5f2e9;
+
+    border: 1px solid #c9d1cc;
+
+    border-radius: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+
+.paginacao .page-link:hover {
+    background: #7d958d;
+
+    border-color: #7d958d;
+
+    color: #ffffff;
+}
+
+
+.paginacao .page-item.active .page-link {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+.paginacao .page-item.disabled .page-link {
+    background: #e9ebe3;
+
+    border-color: #d5d9d5;
+
+    color: #999;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .vitrine-container {
+        width: 90%;
+    }
+
+    .tabela-wrapper {
+        overflow-x: auto;
+    }
+
+    .tabela-vitrine {
+        min-width: 950px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .vitrine-page {
+        padding: 30px 0 60px;
+    }
+
+    .vitrine-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        margin-bottom: 35px;
+    }
+
+    .vitrine-header h1 {
+        font-size: 40px;
+    }
+
+    .btn-novo {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .vitrine-container {
+        width: 92%;
+    }
+
+    .vitrine-header h1 {
+        font-size: 32px;
+    }
+
+    .vitrine-header p {
+        font-size: 10px;
+    }
+
+    .alerta {
+        font-size: 10px;
+    }
+
+    .tabela-vitrine {
+        min-width: 900px;
+    }
+
+}
+
+
+/* =========================================================
+   PÁGINA DE NOVO PRODUTO
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .vm-produto-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.vm-produto-container {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.vm-produto-header {
+
+    margin-bottom: 55px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.vm-produto-subtitle {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.vm-produto-title {
+
+    margin: 0 0 16px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.vm-produto-description {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   ALERTA DE ERRO
+   ========================================================= */
+
+.vm-produto-alert {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 16px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+
+}
+
+
+.vm-produto-alert-erro {
+
+    background: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+
+}
+
+
+.vm-produto-alert strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.vm-produto-alert ul {
+
+    margin: 5px 0 0 18px;
+
+    padding: 0;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.vm-produto-form {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.vm-produto-section {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 30px 35px 35px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-produto-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.vm-produto-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DO TÍTULO
+   ========================================================= */
+
+.vm-produto-section-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-produto-section-info small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.vm-produto-section-info h2 {
+
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.vm-produto-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.vm-produto-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO COMPLETO
+   ========================================================= */
+
+.vm-produto-field-full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.vm-produto-field label {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   INPUT / TEXTAREA
+   ========================================================= */
+
+.vm-produto-field input,
+.vm-produto-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.vm-produto-field input {
+
+    height: 46px;
+
+    padding: 0 14px;
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.vm-produto-field textarea {
+
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   INPUT FILE
+   ========================================================= */
+
+.vm-produto-field input[type="file"] {
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.vm-produto-field input:focus,
+.vm-produto-field textarea:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.vm-produto-field input::placeholder,
+.vm-produto-field textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   ÁREA DE UPLOAD
+   ========================================================= */
+
+.vm-produto-upload {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   TEXTO AUXILIAR
+   ========================================================= */
+
+.vm-produto-help {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #6f7975;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ERRO DO CAMPO
+   ========================================================= */
+
+.vm-produto-error {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a94442;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.vm-produto-check {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    padding: 13px 16px;
+
+    background: #f5f5ee;
+
+    border-radius: 4px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CHECKBOX INPUT
+   ========================================================= */
+
+.vm-produto-check input[type="checkbox"] {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    accent-color: #2f6d67;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.vm-produto-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+/* =========================================================
+   BOTÃO CANCELAR
+   ========================================================= */
+
+   .vm-produto-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.vm-produto-back:hover {
+
+    background: #7d958d;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+   ========================================================= */
+
+.vm-produto-save {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 210px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.vm-produto-save:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+
+    .vm-produto-page {
+
+        padding: 30px 0 60px;
+
+    }
+
+
+    .vm-produto-container {
+
+        width: 90%;
+
+    }
+
+
+    .vm-produto-title {
+
+        font-size: 34px;
+
+    }
+
+
+    .vm-produto-description {
+
+        font-size: 10px;
+
+    }
+
+
+    .vm-produto-section {
+
+        padding: 25px 20px 30px;
+
+    }
+
+
+    .vm-produto-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .vm-produto-field-full {
+
+        grid-column: auto;
+
+    }
+
+
+    .vm-produto-section-title {
+
+        align-items: flex-start;
+
+    }
+
+
+    .vm-produto-section-info h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .vm-produto-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .vm-produto-back,
+    .vm-produto-save {
+
+        width: 100%;
+
+    }
+
+
+    .vm-produto-check {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+
+    .vm-produto-page {
+
+        padding: 25px 0 50px;
+
+    }
+
+
+    .vm-produto-container {
+
+        width: 92%;
+
+    }
+
+
+    .vm-produto-header {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .vm-produto-title {
+
+        font-size: 29px;
+
+    }
+
+
+    .vm-produto-section {
+
+        padding: 22px 16px 25px;
+
+    }
+
+
+    .vm-produto-section-title {
+
+        gap: 12px;
+
+    }
+
+
+    .vm-produto-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 10px;
+
+    }
+
+
+    .vm-produto-section-info h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .vm-produto-field input {
+
+        height: 44px;
+
+    }
+
+
+    .vm-produto-actions {
+
+        padding-top: 20px;
+
+    }
+
+
+}
+
