@@ -32,6 +32,10 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
@@ -47,7 +51,54 @@
                 Cliente: <strong>{{ $cliente->user->name ?? 'Cliente' }}</strong>
             </p>
         </div>
+        <div class="paginacao-anamnese">
 
+<button
+    type="button"
+    class="pagina-btn ativo"
+    id="btn-pagina-1"
+    onclick="trocarPaginaAnamnese(1)"
+>
+    1
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-2"
+    onclick="trocarPaginaAnamnese(2)"
+>
+    2
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-3"
+    onclick="trocarPaginaAnamnese(3)"
+>
+    3
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-4"
+    onclick="trocarPaginaAnamnese(4)"
+>
+    4
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-5"
+    onclick="trocarPaginaAnamnese(5)"
+>
+    5
+</button>
+
+</div>
         
         <form
     action="{{ route('admin.clientes.anamnese.update', $cliente) }}"
@@ -57,7 +108,7 @@
     @csrf
     @method('PUT')
 
-<section class="anamnese-section">
+    <section class="anamnese-section pagina-anamnese ativa" data-pagina="1">
 
 <div class="section-title">
     <span>01</span>
@@ -373,7 +424,7 @@
 
             <!-- HISTÓRICO -->
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese" data-pagina="2">
 
                 <div class="section-title">
                     <span>02</span>
@@ -893,7 +944,7 @@
 
             <!-- AVALIAÇÃO DA PELE -->
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese" data-pagina="3">
 
                 <div class="section-title">
                     <span>03</span>
@@ -1067,7 +1118,7 @@
 
             <!-- SOBRANCELHAS -->
 
-            <section class="anamnese-section">
+            <section class="anamnese-section pagina-anamnese" data-pagina="4">
 
                 <div class="section-title">
                     <span>04</span>
@@ -1223,7 +1274,7 @@
 
             <!-- TERMO -->
 
-            <section class="anamnese-section termo-section">
+            <section class="anamnese-section pagina-anamnese" data-pagina="5">
 
                 <div class="section-title">
                     <span>05</span>
@@ -1392,7 +1443,7 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 ></script>
 
-
+<script src="{{ asset('js/anamnese.js') }}"></script>
 </main>
 
 @include('_partials.footer')

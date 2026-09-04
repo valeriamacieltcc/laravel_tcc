@@ -103,19 +103,52 @@
 
 
         @else
-        <input type="radio" name="pagina_anamnese" id="pagina1" checked>
-<input type="radio" name="pagina_anamnese" id="pagina2">
-<input type="radio" name="pagina_anamnese" id="pagina3">
-<input type="radio" name="pagina_anamnese" id="pagina4">
-<input type="radio" name="pagina_anamnese" id="pagina5">
+        <div class="paginacao-anamnese">
 
-<div class="paginacao-anamnese">
+<button
+    type="button"
+    class="pagina-btn ativo"
+    id="btn-pagina-1"
+    onclick="trocarPaginaAnamnese(1)"
+>
+    1
+</button>
 
-    <label for="pagina1">1</label>
-    <label for="pagina2">2</label>
-    <label for="pagina3">3</label>
-    <label for="pagina4">4</label>
-    <label for="pagina5">5</label>
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-2"
+    onclick="trocarPaginaAnamnese(2)"
+>
+    2
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-3"
+    onclick="trocarPaginaAnamnese(3)"
+>
+    3
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-4"
+    onclick="trocarPaginaAnamnese(4)"
+>
+    4
+</button>
+
+<button
+    type="button"
+    class="pagina-btn"
+    id="btn-pagina-5"
+    onclick="trocarPaginaAnamnese(5)"
+>
+    5
+</button>
 
 </div>
 
@@ -123,7 +156,7 @@
                  01 - DADOS PESSOAIS
             ====================================================== --}}
 
-            <section class="anamnese-section pagina-anamnese pagina-conteudo-1">
+            <section class="anamnese-section pagina-anamnese ativa" data-pagina="1">
 
                 <div class="section-title">
 
@@ -461,7 +494,7 @@
                  02 - HISTÓRICO
             ====================================================== --}}
 
-            <section class="anamnese-section pagina-anamnese pagina-conteudo-2">
+            <section class="anamnese-section pagina-anamnese" data-pagina="2">
 
                 <div class="section-title">
 
@@ -931,7 +964,7 @@
                  03 - AVALIAÇÃO DA PELE
             ====================================================== --}}
 
-            <section class="anamnese-section pagina-anamnese pagina-conteudo-3">
+            <section class="anamnese-section pagina-anamnese" data-pagina="3">
 
                 <div class="section-title">
 
@@ -1135,7 +1168,7 @@
                  04 - DESIGN DE SOBRANCELHAS
             ====================================================== --}}
 
-            <section class="anamnese-section pagina-anamnese pagina-conteudo-4">
+            <section class="anamnese-section pagina-anamnese" data-pagina="4">
 
                 <div class="section-title">
 
@@ -1346,7 +1379,7 @@
                  05 - TERMO
             ====================================================== --}}
 
-            <section class="anamnese-section termo-section pagina-anamnese pagina-conteudo-5">
+            <section class="anamnese-section pagina-anamnese" data-pagina="5">
 
                 <div class="section-title">
 
@@ -1598,7 +1631,7 @@
 </a>
 
                 <a
-    href="{{ route('admin.clientes.anamnese.edit', $cliente) }}"
+    href="{{ route('admin.clientes.anamnese.edit_anamnese', $cliente) }}"
     class="btn-salvar-ficha"
 >
     EDITAR FICHA
@@ -1622,7 +1655,7 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 ></script>
 
-
+<script src="{{ asset('js/anamnese.js') }}"></script>
 </body>
 
 </html>
