@@ -85,13 +85,18 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.titulo h1{
-    color: #4f746d;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 1.2;
+.titulo {
+    width: 100%;
+    text-align: right;
 }
 
+.titulo h1 {
+    color: #4f746d;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0;
+    padding-right: 5%;
+}
 /* CARDS */
 
 .cards{
