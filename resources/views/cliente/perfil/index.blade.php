@@ -468,62 +468,30 @@
          FAVORITOS
          ===================================================== --}}
 
-    <section class="bloco-info">
+         <section class="bloco-info">
 
 
-        <div class="titulo-bloco">
-            Favoritos
-        </div>
+{{-- ROTA EXATAMENTE COMO NO CÓDIGO DELA --}}
+
+<a
+    href="{{ route('cliente.favoritos.index') }}"
+    class="titulo-bloco botao-anamnese"
+>
+    favoritos
+</a>
 
 
-        <div class="conteudo-bloco">
+<div class="conteudo-bloco anamnese-resumo">
+
+    <p>
+        Acesse sua ficha de anamnese para visualizar
+        ou preencher suas informações.
+    </p>
+
+</div>
 
 
-            {{-- MESMA LÓGICA DO CÓDIGO DELA --}}
-
-            @if(
-                isset($cliente->favoritos)
-                && count($cliente->favoritos) > 0
-            )
-
-
-                <ul class="lista-favoritos">
-
-
-                    @foreach($cliente->favoritos as $favorito)
-
-
-                        <li>
-
-                            {{ is_object($favorito)
-                                ? ($favorito->nome ?? '')
-                                : $favorito }}
-
-                        </li>
-
-
-                    @endforeach
-
-
-                </ul>
-
-
-            @else
-
-
-                <div class="sem-dados">
-
-                    Nenhum produto favoritado ainda.
-
-                </div>
-
-
-            @endif
-
-
-        </div>
-
-    </section>
+</section>
 
 
 </main>

@@ -22,6 +22,9 @@ use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\AnamneseController;
 use App\Http\Controllers\Admin\FotoAcompanhamentoController;
 
+use App\Http\Controllers\Cliente\FavoritoController;
+
+
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 });
@@ -78,7 +81,14 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
         Route::post('/agendamentos', [ClienteAgendamentoController::class,'store'])->name('agendamentos.store');
         Route::patch('/agendamentos/{agendamento}/cancelar', [ClienteAgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
 
-    });
+        Route::post('/favoritos/{procedimento}', [FavoritoController::class, 'toggle'])
+        ->name('favoritos.toggle');
+
+    Route::get('/favoritos', [FavoritoController::class, 'index'])
+        ->name('favoritos.index');
+});
+
+
 
       
 // Procedimentos(admin)

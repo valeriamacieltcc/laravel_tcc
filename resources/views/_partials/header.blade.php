@@ -56,32 +56,49 @@
 
     <!-- LINKS PRINCIPAIS -->
     <ul>
-        <li><a href="#">HOME</a></li>
 
+        <!-- HOME -->
         <li>
-            <a href="../procedimento/index">
+            <a href="{{ route('home.index') }}">
+                HOME
+            </a>
+        </li>
+
+
+        <!-- PROCEDIMENTOS -->
+        <li>
+            <a href="{{ route('procedimento.index') }}">
                 PROCEDIMENTOS
             </a>
         </li>
 
+
+        <!-- AGENDAR -->
         <li>
-            <a href="#">
+            <a href="{{ route('cliente.agendamentos.index') }}">
                 AGENDAR
             </a>
         </li>
 
+
+        <!-- LOJA -->
         <li>
-            <a href="../vitrine">
+            <a href="{{ route('vitrine.index') }}">
                 LOJA
             </a>
         </li>
 
+
+        <!-- BLOG -->
         <li>
             <a href="#">
                 BLOG
             </a>
         </li>
+
     </ul>
+
+
 
 
 

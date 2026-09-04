@@ -85,13 +85,18 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.titulo h1{
-    color: #4f746d;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 1.2;
+.titulo {
+    width: 100%;
+    text-align: right;
 }
 
+.titulo h1 {
+    color: #4f746d;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0;
+    padding-right: 5%;
+}
 /* CARDS */
 
 .cards{
@@ -1115,4 +1120,15 @@ body > h3:last-of-type {
 }
 body > img {
     margin-bottom: 120px !important;
+}
+.btn-favorito {
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
 }
