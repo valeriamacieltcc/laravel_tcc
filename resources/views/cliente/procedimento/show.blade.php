@@ -40,42 +40,72 @@
     >
 
 </head>
+
 <body>
 
+    @include('_partials.header')
 
-        @include('_partials.header')
+    <h1>{{ $procedimento->nome }}</h1>
 
-  <h1>{{ $procedimento->nome }}</h1>
+    <p>{{ $procedimento->descricao }}</p>
 
- 
+    <p>Preço: R$ {{ $procedimento->preco }}</p>
 
-<p>{{ $procedimento->descricao }}</p>
-
-<p>Preço: R$ {{ $procedimento->preco }}</p>
-
-<p>Duração: {{ $procedimento->duracao_minutos }} minutos</p>
-
-<a
-    href="{{ route('cliente.agendamentos.index') }}"
-    class="vm-agendamento-confirm"
->
-    Agendar Procedimento
-</a>
-
-            <img src="{{ asset('storage/' . $procedimento->imagem) }}">
-
-<h3>Cuidados</h3>
-<p>{{ $procedimento->cuidados }}</p>
-
-<h3>Contraindicações</h3>
-<p>{{ $procedimento->contraindicacoes }}</p>  
+    <p>Duração: {{ $procedimento->duracao_minutos }} minutos</p>
 
 
-@include('_partials.footer')
+    {{-- FAVORITOS --}}
+    @auth
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-></script>
+        @php
+            $favoritado = \App\Models\Favorito::where('user_id', auth()->id())
+                ->where('procedimento_id', $procedimento->id)
+                ->exists();
+        @endphp
+
+        <form
+            action="{{ route('cliente.favoritos.toggle', $procedimento->id) }}"
+            method="POST"
+        >
+
+            @csrf
+            <button type="submit" class="vm-agendamento-confirm">
+    {{ $favoritado ? 'Favoritado' : 'Favoritar' }}
+</button>
+
+
+        </form>
+
+    @endauth
+
+
+    <a
+        href="{{ route('cliente.agendamentos.index') }}"
+        class="vm-agendamento-confirm"
+    >
+        Agendar Procedimento
+    </a>
+
+
+    <img src="{{ asset('storage/' . $procedimento->imagem) }}">
+
+
+    <h3>Cuidados</h3>
+
+    <p>{{ $procedimento->cuidados }}</p>
+
+
+    <h3>Contraindicações</h3>
+
+    <p>{{ $procedimento->contraindicacoes }}</p>
+
+
+    @include('_partials.footer')
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
 

@@ -40,4 +40,10 @@ class Procedimento extends Model
     {
         return $this->hasMany(Agendamento::class);
     }
+    
+    public function favoritos()
+    {
+        return $this->hasMany(Favorito::class);
+    }
+    
 }

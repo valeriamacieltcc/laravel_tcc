@@ -1121,3 +1121,14 @@ body > h3:last-of-type {
 body > img {
     margin-bottom: 120px !important;
 }
+.btn-favorito {
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
+}
