@@ -34,6 +34,9 @@
 </head>
 <body>
 
+@include('admin._partials_admin.header_admin')
+
+
 <h1>{{ $procedimento->nome }}</h1>
 
 
@@ -80,13 +83,25 @@
     {{ $procedimento->contraindicacoes ?? 'Não informado' }}
 </p>
 
-<a href="{{ route('admin.procedimentos.edit', $procedimento) }}">
-    Editar
-</a>
+<div class="botoes-procedimento">
 
-<a href="{{ route('admin.procedimentos.index') }}">
-    Voltar
-</a>
+    <a href="{{ route('admin.procedimentos.edit', $procedimento) }}">
+        Editar
+    </a>
+
+    <a href="{{ route('admin.procedimentos.index') }}">
+        Voltar
+    </a>
+
+</div>
+
+
+@include('admin._partials_admin.footer_admin')
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
 </body>
 </html>

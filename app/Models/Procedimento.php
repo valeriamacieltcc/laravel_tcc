@@ -45,5 +45,12 @@ class Procedimento extends Model
     {
         return $this->hasMany(Favorito::class);
     }
+
+    public function avaliacoes()
+{
+    return $this->hasMany(
+        AvaliacaoProcedimento::class
+    );
+}
     
 }

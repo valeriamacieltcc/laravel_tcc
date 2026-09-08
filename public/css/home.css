@@ -3429,7 +3429,115 @@ background: #873836;
    PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
    ========================================================= */
 
+/* =========================================================
+   AVALIAÇÃO NO CARD
+========================================================= */
 
+.meus-agendamentos-avaliacao {
+    margin-top: 18px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #eee;
+}
+
+
+.meus-agendamentos-avaliar {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: #a85c70;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.meus-agendamentos-avaliar:hover {
+    background: #914b5e;
+
+    color: #fff;
+
+    transform: translateY(-1px);
+}
+
+
+.avaliacao-existente {
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #faf7f8;
+}
+
+
+.avaliacao-existente-topo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.avaliacao-existente-topo > span {
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.estrelas-pequenas {
+    display: flex;
+
+    gap: 2px;
+}
+
+
+.estrelas-pequenas span {
+    font-size: 18px;
+}
+
+
+.estrela-preenchida {
+    color: #c69a59;
+}
+
+
+.estrela-vazia {
+    color: #d8c9cd;
+}
+
+
+.avaliacao-existente p {
+    margin: 10px 0 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
 /* =========================================================
    RESET DA PÁGINA
    ========================================================= */

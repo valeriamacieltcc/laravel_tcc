@@ -678,6 +678,7 @@
         gap: 25px;
     }
 
+<<<<<<< HEAD
     .novo-compromisso {
         padding: 28px 30px 30px;
     }
@@ -685,10 +686,124 @@
     .calendario-area {
         padding: 20px;
     }
+=======
+}
+
+/* =========================================================
+   CALENDÁRIO MENSAL
+========================================================= */
+
+.calendario-area {
+    background: #fff;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Título do mês */
+
+.fc .fc-toolbar-title {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 26px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+
+/* Cabeçalho dos dias */
+
+.fc .fc-col-header-cell {
+    background: #faf7f8;
+    border-color: #eeeeee;
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: block;
+
+    padding: 12px 5px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+}
+
+
+/* Quadrados dos dias */
+
+.fc .fc-daygrid-day {
+    min-height: 125px;
+
+    background: #fff;
+
+    border-color: #eeeeee;
+
+    transition: background 0.2s;
+}
+
+
+/* Quando passa o mouse */
+
+.fc .fc-daygrid-day:hover {
+    background: #fcf8fd;
+}
+
+
+/* Número do dia */
+
+.fc .fc-daygrid-day-number {
+    display: block;
+
+    padding: 10px;
+
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* Dia atual */
+
+.fc .fc-day-today {
+    background: rgba(201, 154, 223, 0.08) !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 30px;
+
+    margin: 5px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #c99adf;
+
+    color: #fff;
+>>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    RESPONSIVIDADE - CELULAR
    ========================================================= */
 
@@ -763,10 +878,77 @@
     .fc .fc-daygrid-day-number {
         font-size: 9px;
     }
+=======
+   EVENTOS DENTRO DOS DIAS
+========================================================= */
+
+.fc .fc-daygrid-event {
+    margin: 3px 5px;
+
+    padding: 5px 7px;
+
+    border: none !important;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* Cliente */
+
+.fc .fc-daygrid-event.evento-cliente {
+    background: #dfc2e9 !important;
+
+    color: #563b5e !important;
+
+    border-left: 4px solid #a66abb !important;
+}
+
+
+/* Compromisso */
+
+.fc .fc-daygrid-event.evento-compromisso {
+    background: #f5d1ca !important;
+
+    color: #69423c !important;
+
+    border-left: 4px solid #d98c7f !important;
+}
+
+
+/* Texto */
+
+.fc .fc-event-title {
+    font-weight: 600;
+}
+
+
+/* Horário */
+
+.fc .fc-event-time {
+    font-weight: 500;
+}
+
+
+/* Mais eventos */
+
+.fc .fc-daygrid-more-link {
+    color: #9a65aa;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+>>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 }
 
 
 /* =========================================================
+<<<<<<< HEAD
    CELULAR PEQUENO
    ========================================================= */
 
@@ -843,3 +1025,339 @@
     }
 }
 
+=======
+   BOTÕES
+========================================================= */
+
+.fc .fc-button {
+    border-radius: 8px;
+
+    border: 1px solid #ddd;
+
+    background: #fff;
+
+    color: #555;
+
+    box-shadow: none;
+}
+
+.fc .fc-button:hover {
+    background: #f7f1f8;
+
+    border-color: #c99adf;
+
+    color: #555;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background: #c99adf;
+
+    border-color: #c99adf;
+
+    color: #fff;
+}
+
+/* =========================================================
+   MODAL DE CANCELAMENTO
+========================================================= */
+
+.modal-cancelamento {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 99999;
+}
+
+
+/* =========================================================
+   CAIXA
+========================================================= */
+
+.caixa-cancelamento {
+    position: relative;
+
+    width: 100%;
+    max-width: 480px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22);
+
+    animation: modalAparecer 0.2s ease;
+}
+
+
+@keyframes modalAparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.fechar-cancelamento {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.fechar-cancelamento:hover {
+    color: #333;
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.icone-cancelamento {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f7e7ec;
+
+    color: #a4576c;
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.caixa-cancelamento h2 {
+    margin: 0 0 10px;
+
+    text-align: center;
+
+    font-family:
+        'Playfair Display SC',
+        serif;
+
+    font-size: 25px;
+
+    color: #633b48;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.texto-confirmacao {
+    margin: 0 0 22px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.informacoes-cancelamento {
+    margin-bottom: 23px;
+
+    padding: 15px 17px;
+
+    border-radius: 12px;
+
+    background: #faf7f8;
+}
+
+
+.informacao-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 9px 0;
+
+    border-bottom:
+        1px solid #ece7e9;
+}
+
+
+.informacao-item:last-child {
+    border-bottom: none;
+}
+
+
+.informacao-label {
+    flex-shrink: 0;
+
+    color: #888;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.informacao-valor {
+    color: #444;
+
+    font-size: 14px;
+
+    text-align: right;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes-cancelamento {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.btn-voltar,
+.btn-confirmar-cancelamento {
+    flex: 1;
+
+    min-height: 44px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-voltar {
+    border: 1px solid #d7c7cc;
+
+    background: #fff;
+
+    color: #704b58;
+}
+
+
+.btn-voltar:hover {
+    background: #faf5f7;
+}
+
+
+.btn-confirmar-cancelamento {
+    border: none;
+
+    background: #a4576c;
+
+    color: #fff;
+}
+
+
+.btn-confirmar-cancelamento:hover {
+    background: #8f465a;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .caixa-cancelamento {
+        padding: 28px 20px;
+    }
+
+
+    .informacao-item {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+
+    .informacao-valor {
+        text-align: left;
+    }
+
+
+    .botoes-cancelamento {
+        flex-direction: column;
+    }
+
+}
+>>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935

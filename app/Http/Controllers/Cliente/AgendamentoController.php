@@ -12,21 +12,23 @@ use Carbon\Carbon;
 class AgendamentoController extends Controller
 {
     public function index()
-    {
-        $user = auth()->user();
-        $cliente = $user->cliente;
-    
-        $agendamentos = $cliente->agendamentos()
-            ->with('procedimento')
-            ->orderBy('data_agendamento', 'desc')
-            ->paginate(5);
-    
-        return view(
-            'cliente.agendamentos.index',
-            compact('agendamentos')
-        );
-    }
+{
+    $user = auth()->user();
+    $cliente = $user->cliente;
 
+    $agendamentos = $cliente->agendamentos()
+        ->with([
+            'procedimento',
+            'avaliacao'
+        ])
+        ->orderBy('data_agendamento', 'desc')
+        ->paginate(5);
+
+    return view(
+        'cliente.agendamentos.index',
+        compact('agendamentos')
+    );
+}
     public function create()
     {
         $procedimentos = Procedimento::where('ativo', true)

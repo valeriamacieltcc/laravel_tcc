@@ -335,7 +335,71 @@
 
 
                     </article>
+                    {{-- =================================================
+     AVALIAÇÃO DO PROCEDIMENTO
+================================================= --}}
 
+@if($agendamento->status === 'concluido')
+
+    <div class="meus-agendamentos-avaliacao">
+
+        @if($agendamento->avaliacao)
+
+            <div class="avaliacao-existente">
+
+                <div class="avaliacao-existente-topo">
+
+                    <span>
+                        Sua avaliação
+                    </span>
+
+                    <div class="estrelas-pequenas">
+
+                        @for($i = 1; $i <= 5; $i++)
+
+                            @if($i <= $agendamento->avaliacao->nota)
+                                <span class="estrela-preenchida">★</span>
+                            @else
+                                <span class="estrela-vazia">★</span>
+                            @endif
+
+                        @endfor
+
+                    </div>
+
+                </div>
+
+
+                @if($agendamento->avaliacao->comentario)
+
+                    <p>
+                        "{{ $agendamento->avaliacao->comentario }}"
+                    </p>
+
+                @endif
+
+            </div>
+
+        @else
+
+            <a
+                href="{{ route(
+                    'cliente.agendamentos.avaliar',
+                    $agendamento
+                ) }}"
+                class="meus-agendamentos-avaliar"
+            >
+
+                ★
+                Avaliar procedimento
+
+            </a>
+
+        @endif
+
+    </div>
+
+@endif
 
                 @empty
 
