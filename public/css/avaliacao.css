@@ -1,0 +1,340 @@
+/* =========================================================
+   PÁGINA DE AVALIAÇÃO
+========================================================= */
+
+.pagina-avaliacao {
+    min-height: 70vh;
+
+    padding: 60px 20px;
+}
+
+
+.avaliacao-container {
+    width: 92%;
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.avaliacao-header {
+    margin-bottom: 30px;
+}
+
+
+.avaliacao-header small {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #9b7a84;
+}
+
+
+.avaliacao-header h1 {
+    margin: 7px 0;
+
+    font-family:
+        'Playfair Display SC',
+        serif;
+
+    font-size: 38px;
+
+    color: #5e3d48;
+}
+
+
+.avaliacao-header p {
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.avaliacao-card {
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #eee;
+}
+
+
+/* =========================================================
+   PROCEDIMENTO
+========================================================= */
+
+.avaliacao-procedimento {
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.avaliacao-procedimento small {
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    color: #aa8a93;
+}
+
+
+.avaliacao-procedimento h2 {
+    margin: 8px 0 12px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 30px;
+
+    color: #593b45;
+}
+
+
+.avaliacao-dados {
+    display: flex;
+
+    gap: 25px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo-avaliacao {
+    margin-bottom: 25px;
+}
+
+
+.campo-avaliacao > label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   ESTRELAS
+========================================================= */
+
+.estrelas-avaliacao {
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    justify-content: flex-end;
+
+    gap: 5px;
+}
+
+
+.estrelas-avaliacao input {
+    display: none;
+}
+
+
+.estrelas-avaliacao label {
+    font-size: 42px;
+
+    color: #d8c9cd;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.estrelas-avaliacao label:hover,
+.estrelas-avaliacao label:hover ~ label,
+.estrelas-avaliacao input:checked ~ label {
+    color: #c69a59;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.campo-avaliacao textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    background: #fafafa;
+
+    resize: vertical;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+
+.campo-avaliacao textarea:focus {
+    border-color: #c9aab4;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 0 3px rgba(201, 170, 180, 0.12);
+}
+
+
+/* =========================================================
+   ERRO
+========================================================= */
+
+.erro-avaliacao {
+    margin-top: 7px;
+
+    color: #b54e61;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.acoes-avaliacao {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+
+.botao-voltar-avaliacao,
+.botao-enviar-avaliacao {
+    flex: 1;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.botao-voltar-avaliacao {
+    border: 1px solid #d8c7cd;
+
+    color: #704b58;
+
+    background: #fff;
+}
+
+
+.botao-voltar-avaliacao:hover {
+    background: #faf5f7;
+}
+
+
+.botao-enviar-avaliacao {
+    border: none;
+
+    background: #a85c70;
+
+    color: #fff;
+}
+
+
+.botao-enviar-avaliacao:hover {
+    background: #914b5e;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-avaliacao {
+        padding: 35px 15px;
+    }
+
+
+    .avaliacao-header h1 {
+        font-size: 30px;
+    }
+
+
+    .avaliacao-card {
+        padding: 25px 20px;
+    }
+
+
+    .avaliacao-dados {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .estrelas-avaliacao label {
+        font-size: 35px;
+    }
+
+
+    .acoes-avaliacao {
+        flex-direction: column;
+    }
+
+}

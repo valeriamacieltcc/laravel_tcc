@@ -21,7 +21,7 @@ use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\AnamneseController;
 use App\Http\Controllers\Admin\FotoAcompanhamentoController;
-
+use App\Http\Controllers\Cliente\AvaliacaoProcedimentoController;
 use App\Http\Controllers\Cliente\FavoritoController;
 
 
@@ -86,6 +86,16 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
 
     Route::get('/favoritos', [FavoritoController::class, 'index'])
         ->name('favoritos.index');
+
+        Route::get(
+            '/agendamentos/{agendamento}/avaliar',
+            [AvaliacaoProcedimentoController::class, 'create']
+        )->name('agendamentos.avaliar');
+        
+        Route::post(
+            '/agendamentos/{agendamento}/avaliar',
+            [AvaliacaoProcedimentoController::class, 'store']
+        )->name('agendamentos.avaliar.store');
 });
 
 

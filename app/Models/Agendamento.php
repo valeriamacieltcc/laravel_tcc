@@ -35,4 +35,11 @@ class Agendamento extends Model
     {
         return $this->belongsTo(Procedimento::class);
     }
+
+    public function avaliacao()
+{
+    return $this->hasOne(
+        AvaliacaoProcedimento::class
+    );
+}
 }

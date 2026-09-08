@@ -51,7 +51,7 @@
     <ul>
 
         <li>
-            <a href="{{ route('admin.home') }}">
+            <a href="{{ route('admin.home.index') }}">
                 HOME
             </a>
         </li>
