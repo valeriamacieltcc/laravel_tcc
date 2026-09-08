@@ -36,6 +36,7 @@
 
 @include('admin._partials_admin.header_admin')
 
+
 <h1>{{ $procedimento->nome }}</h1>
 
 
