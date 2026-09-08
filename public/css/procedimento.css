@@ -526,10 +526,16 @@ body > h1 + p{
     text-align: center;
 
     font-family: 'Playfair Display SC', serif !important;
+
     font-size: 16px;
+
     line-height: 1.9;
 
     color: #3b3b3b;
+
+    background: none;
+
+    border: none;
 }
 
 
@@ -753,6 +759,7 @@ body > img{
 
 
     /* CONTRAINDICAÇÕES */
+    
     body > h3:last-of-type{
         width: 43% !important;
 
@@ -855,6 +862,286 @@ body > img{
         line-height: 1.8;
 
         margin: 0 auto 30px !important;
+    }
+}
+/* =========================================================
+   AJUSTE FINAL - DESCRIÇÃO DO PROCEDIMENTO
+   IGUAL À PÁGINA DA ADMIN
+   ========================================================= */
+
+   @media (min-width: 901px) {
+
+    /* DESCRIÇÃO */
+
+    body > h1 + p {
+        width: 75% !important;
+        max-width: 900px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 35px !important;
+
+        padding: 0 !important;
+
+        text-align: center !important;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+
+        line-height: 1.9;
+
+        color: #3b3b3b;
+
+        background: none !important;
+        border: none !important;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body > h1 + p {
+        width: 85% !important;
+        max-width: 900px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: center !important;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body > h1 + p {
+        width: 88% !important;
+        max-width: 900px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        font-size: 14px !important;
+        line-height: 1.8;
+
+        text-align: center !important;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+/* =========================================================
+   AJUSTE FINAL - TEXTOS DO PROCEDIMENTO
+   IGUAL À PÁGINA DA ADMIN
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+   @media (min-width: 901px) {
+
+    /* CUIDADOS */
+
+    body > h3:first-of-type {
+        width: 43% !important;
+        max-width: 600px !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: -390px !important;
+        margin-bottom: 12px !important;
+
+        padding-bottom: 8px;
+
+        text-align: left;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 29px !important;
+        font-weight: 400 !important;
+
+        line-height: 1.2;
+
+        color: #2c7771 !important;
+
+        border-bottom: 1px solid #d7d5bd;
+    }
+
+
+    /* TEXTO DOS CUIDADOS */
+
+    body > h3:first-of-type + p {
+        width: 43% !important;
+        max-width: 600px !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 25px !important;
+
+        text-align: left;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+
+        line-height: 1.8;
+
+        color: #3b3b3b;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+
+    /* =====================================================
+       CONTRAINDICAÇÕES
+       ===================================================== */
+
+    body > h3:last-of-type {
+        width: 43% !important;
+        max-width: 600px !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+
+        padding-bottom: 8px;
+
+        text-align: left;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 29px !important;
+        font-weight: 400 !important;
+
+        line-height: 1.2;
+
+        color: #2c7771 !important;
+
+        border-bottom: 1px solid #d7d5bd;
+    }
+
+
+    /* TEXTO DAS CONTRAINDICAÇÕES */
+
+    body > h3:last-of-type + p {
+        width: 43% !important;
+        max-width: 600px !important;
+
+        margin-left: 36% !important;
+        margin-right: 0 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 30px !important;
+
+        text-align: left;
+
+        font-family: 'Playfair Display SC', serif !important;
+        font-size: 15px !important;
+        font-weight: 400 !important;
+
+        line-height: 1.8;
+
+        color: #3b3b3b;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    body > h3:first-of-type,
+    body > h3:last-of-type {
+        width: 85% !important;
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: left;
+    }
+
+
+    body > h3:first-of-type + p,
+    body > h3:last-of-type + p {
+        width: 85% !important;
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: left;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body > h3:first-of-type,
+    body > h3:last-of-type {
+        width: 88% !important;
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: left;
+
+        font-size: 27px !important;
+        font-weight: 400 !important;
+    }
+
+
+    body > h3:first-of-type + p,
+    body > h3:last-of-type + p {
+        width: 88% !important;
+        max-width: 600px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: left;
+
+        font-size: 14px !important;
+        line-height: 1.8;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 }
 /* BOTÃO AGENDAR PROCEDIMENTO */
