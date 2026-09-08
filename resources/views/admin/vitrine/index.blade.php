@@ -1,184 +1,255 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>{{ $vitrine->nome }} | Vitrine</title>
-
-
-    <!-- FONTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
-        rel="stylesheet"
-    >
+<title>Vitrine | Administração</title>
 
 
-    <!-- BOOTSTRAP -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+<!-- FONTES -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+    rel="stylesheet"
+>
 
 
-    <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    >
+<!-- BOOTSTRAP -->
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/admin.css') }}"
-    >
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/style.css') }}"
+>
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/admin.css') }}"
+>
+```
 
 </head>
 
-
 <body>
-
 
 @include('admin._partials_admin.header_admin')
 
-
-
 <main class="vitrine-detalhes">
 
+```
+<!-- TÍTULO -->
 
-    <!-- TÍTULO -->
+<div class="vitrine-titulo">
 
-    <div class="vitrine-titulo">
+    <h1>
+        Vitrine
+    </h1>
 
-        <h1>
-            Vitrine
-        </h1>
+    <p>
+        Produtos cadastrados
+    </p>
 
-        <p>
-            Visualização do produto
-        </p>
+</div>
+
+
+
+<!-- MENSAGEM DE SUCESSO -->
+
+@if(session('sucesso'))
+
+    <div class="alert alert-success">
+
+        {{ session('sucesso') }}
 
     </div>
 
-
-
-    <!-- CARD -->
-
-    <div class="vitrine-produto-card">
-
-
-        <!-- IMAGEM -->
-
-        <div class="vitrine-produto-imagem">
-
-            @if($vitrine->imagem)
-
-                <img
-                    src="{{ asset('storage/' . $vitrine->imagem) }}"
-                    alt="{{ $vitrine->nome }}"
-                >
-
-            @else
-
-                <div class="vitrine-sem-imagem">
-                    Sem imagem
-                </div>
-
-            @endif
-
-        </div>
+@endif
 
 
 
-        <!-- INFORMAÇÕES -->
+<!-- PRODUTOS -->
 
-        <div class="vitrine-produto-info">
-
-
-            <!-- NOME -->
-
-            <h2>
-                {{ $vitrine->nome }}
-            </h2>
+<div class="vitrine-produtos">
 
 
-
-            <!-- MARCA -->
-
-            @if($vitrine->marca)
-
-                <p class="vitrine-marca">
-                    {{ $vitrine->marca }}
-                </p>
-
-            @endif
+    @forelse($vitrine as $produto)
 
 
+        <!-- CARD DO PRODUTO -->
 
-            <!-- DESCRIÇÃO -->
-
-            @if($vitrine->descricao)
-
-                <p class="vitrine-descricao">
-                    {{ $vitrine->descricao }}
-                </p>
-
-            @endif
+        <div class="vitrine-produto-card">
 
 
+            <!-- IMAGEM -->
 
-            <!-- PREÇO -->
+            <div class="vitrine-produto-imagem">
 
-            <span class="vitrine-preco">
+                @if($produto->imagem)
 
-                R$
-
-                {{ number_format(
-                    $vitrine->preco,
-                    2,
-                    ',',
-                    '.'
-                ) }}
-
-            </span>
-
-
-
-            <!-- AÇÕES -->
-
-            <div class="vitrine-acoes">
-
-
-                @if($vitrine->link_contato)
-
-                    <a
-                        href="{{ $vitrine->link_contato }}"
-                        target="_blank"
-                        class="vitrine-comprar"
+                    <img
+                        src="{{ asset('storage/' . $produto->imagem) }}"
+                        alt="{{ $produto->nome }}"
                     >
 
-                        <span class="icone-sacola">
-                            ♡
-                        </span>
+                @else
 
-                        COMPRAR
-
-                    </a>
+                    <div class="vitrine-sem-imagem">
+                        Sem imagem
+                    </div>
 
                 @endif
+
+            </div>
+
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="vitrine-produto-info">
+
+
+                <!-- NOME -->
+
+                <h2>
+                    {{ $produto->nome }}
+                </h2>
+
+
+
+                <!-- MARCA -->
+
+                @if($produto->marca)
+
+                    <p class="vitrine-marca">
+                        {{ $produto->marca }}
+                    </p>
+
+                @endif
+
+
+
+                <!-- DESCRIÇÃO -->
+
+                @if($produto->descricao)
+
+                    <p class="vitrine-descricao">
+                        {{ $produto->descricao }}
+                    </p>
+
+                @endif
+
+
+
+                <!-- PREÇO -->
+
+                <span class="vitrine-preco">
+
+                    R$
+
+                    {{ number_format(
+                        $produto->preco,
+                        2,
+                        ',',
+                        '.'
+                    ) }}
+
+                </span>
+
+
+
+                <!-- DISPONIBILIDADE -->
+
+                @if($produto->disponivel)
+
+                    <p class="text-success">
+                        Disponível
+                    </p>
+
+                @else
+
+                    <p class="text-danger">
+                        Indisponível
+                    </p>
+
+                @endif
+
+
+
+                <!-- AÇÕES -->
+
+                <div class="vitrine-acoes">
+
+
+                    <!-- VER -->
+
+                    <a
+                        href="{{ route('admin.vitrine.show', $produto) }}"
+                        class="vitrine-comprar"
+                    >
+                        Ver produto
+                    </a>
+
+
+
+                    <!-- EDITAR -->
+
+                    <a
+                        href="{{ route('admin.vitrine.edit', $produto) }}"
+                        class="vitrine-editar"
+                    >
+                        Editar
+                    </a>
+
+
+
+                    <!-- EXCLUIR -->
+
+                    <form
+                        action="{{ route('admin.vitrine.destroy', $produto) }}"
+                        method="POST"
+                        style="display: inline;"
+                    >
+
+                        @csrf
+
+                        @method('DELETE')
+
+                        <button
+                            type="submit"
+                            class="vitrine-voltar"
+                            onclick="return confirm('Tem certeza que deseja excluir este produto?')"
+                        >
+                            Excluir
+                        </button>
+
+                    </form>
+
+
+                </div>
 
 
             </div>
@@ -187,42 +258,71 @@
         </div>
 
 
+    @empty
+
+
+        <!-- CASO NÃO TENHA PRODUTOS -->
+
+        <div class="vitrine-sem-produtos">
+
+            <p>
+                Nenhum produto cadastrado na vitrine.
+            </p>
+
+            <a
+                href="{{ route('admin.vitrine.create') }}"
+                class="vitrine-comprar"
+            >
+                Cadastrar produto
+            </a>
+
+        </div>
+
+
+    @endforelse
+
+
+</div>
+
+
+
+<!-- PAGINAÇÃO -->
+
+@if($vitrine->hasPages())
+
+    <div class="mt-4">
+
+        {{ $vitrine->links() }}
+
     </div>
 
+@endif
 
 
-    <!-- AÇÕES ADMIN -->
 
-    <div class="vitrine-admin-acoes">
+<!-- AÇÕES ADMIN -->
 
-        <a
-            href="{{ route('admin.vitrine.edit', $vitrine) }}"
-            class="vitrine-editar"
-        >
-            Editar
-        </a>
+<div class="vitrine-admin-acoes">
 
-        <a
-            href="{{ route('admin.vitrine.index') }}"
-            class="vitrine-voltar"
-        >
-            Voltar
-        </a>
+    <a
+        href="{{ route('admin.vitrine.create') }}"
+        class="vitrine-editar"
+    >
+        + Cadastrar produto
+    </a>
 
-    </div>
-
+</div>
+```
 
 </main>
 
-
+<!-- BOOTSTRAP JS -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 ></script>
 
-
 @include('admin._partials_admin.footer_admin')
-
 
 </body>
 
