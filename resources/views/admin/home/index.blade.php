@@ -51,7 +51,7 @@
 
     <!-- LINKS PRINCIPAIS -->
     <ul>
-        <li><a href="{{ route('admin.home') }}">HOME</a></li>
+        <li><a href="{{ route('admin.home.index') }}">HOME</a></li>
 
         <li>
             <a href="{{ route('admin.procedimentos.index') }}">
@@ -158,7 +158,7 @@
 
         <div class="menu-links">
 
-            <a href="#">
+            <a href="{{ route('admin.home.index') }}">
                 HOME
             </a>
 

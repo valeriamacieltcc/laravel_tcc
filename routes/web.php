@@ -94,16 +94,19 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
 // Procedimentos(admin)
 Route::prefix('admin')->name('admin.')->group(function () {
     
-         Route::get('/home', [AdminHomeController::class, 'index'])->name('home');
+         Route::get('/home', [AdminHomeController::class, 'index'])->name('home.index');
         Route::resource('procedimentos',AdminProcedimentoController::class);
         Route::resource('vitrine',AdminVitrineController::class);
         Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda.index');
         Route::get('/agenda/eventos',[AgendaController::class, 'eventos'])->name('agenda.eventos');
         Route::post('/agenda/compromissos',[AgendaController::class, 'store'])->name('agenda.store');
-        Route::delete('/agenda/compromissos/{compromisso}',[AgendaController::class, 'destroy'])->name('agenda.destroy');
+        Route::delete('/agenda/compromissos/{compromisso}', [AgendaController::class, 'destroy'])
+        ->name('agenda.destroy');
 
-    Route::get('/clientes',[ClienteController::class, 'index'])->name('clientes.index');
-
+        Route::get('/clientes', [ClienteController::class, 'index'])
+        ->name('clientes.index');
+    Route::delete('/agenda/agendamento/{agendamento}', [AgendaController::class, 'destroyAgendamento'])
+        ->name('agenda.agendamento.destroy');
     Route::get('/clientes/{cliente}',[ClienteController::class, 'show'])->name('clientes.show');
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class,'edit'] )->name('clientes.anamnese.edit');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
@@ -118,6 +121,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         '/agendamentos/{agendamento}/status',
         [AdminAgendamentoController::class, 'updateStatus']
     )->name('agendamentos.status');
+
+
 });
 
 // cadastro e login
