@@ -1,28 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Cliente | Valéria Maciel Estética
-    </title>
+<meta charset="UTF-8">
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    >
+<title>Cliente | Administração</title>
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/admin.css') }}"
-    >
+
+<!-- FONTES -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- BOOTSTRAP -->
+
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/style.css') }}"
+>
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/admin.css') }}"
+>
+
+
 </head>
 
 <body>
@@ -101,7 +129,7 @@
             href="{{ route('admin.clientes.index') }}"
             class="btn-voltar-admin"
         >
-            ← Voltar para clientes
+             Voltar para clientes
         </a>
 
     </div>
@@ -643,9 +671,14 @@
 
                 @endforeach
 
-                <div class="paginacao">
-    {{ $agendamentos->links() }}
-</div>
+                {{-- PAGINAÇÃO --}}
+@if($clientes->hasPages())
+
+    <div class="admin-paginacao">
+        {{ $clientes->links() }}
+    </div>
+
+@endif
             </div>
 
 

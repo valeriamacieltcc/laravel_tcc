@@ -1,4 +1,5 @@
 /* CSS GERAL */
+
 *{
     margin: 0;
     padding: 0;
@@ -373,6 +374,90 @@ body{
     letter-spacing: 4px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+
+/* =========================================
+   PAGINAÇÃO PADRÃO DO ADMIN
+   ========================================= */
+
+   .admin-paginacao {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.admin-paginacao .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin: 0;
+}
+
+.admin-paginacao .page-item {
+    margin: 0;
+}
+
+.admin-paginacao .page-link {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #f5f2e9;
+    color: #3e746d;
+
+    border: 1px solid rgba(47, 109, 103, 0.20);
+    border-radius: 6px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+
+    box-shadow: none;
+}
+
+.admin-paginacao .page-link:hover {
+    background: #7d958d;
+    color: #fff;
+    border-color: #7d958d;
+}
+
+.admin-paginacao .page-item.active .page-link {
+    background: #2f6d67;
+    color: #fff;
+    border-color: #2f6d67;
+}
+
+.admin-paginacao .page-item.disabled .page-link {
+    background: #f5f2e9;
+    color: #aaa;
+    border-color: rgba(47, 109, 103, 0.10);
+    opacity: .65;
+}
+
+.admin-paginacao .page-link:focus {
+    box-shadow: none;
+}
+
+.admin-paginacao .page-item:first-child .page-link,
+.admin-paginacao .page-item:last-child .page-link {
+    width: auto;
+    min-width: 36px;
+    padding: 0 12px;
+}
+
+
+
+
+
 
 /* =========================================================
    ADMIN - PÁGINA DE PROCEDIMENTOS
@@ -929,7 +1014,7 @@ body{
 /* =========================================================
    PAGINAÇÃO
    ========================================================= */
-
+/* 
 .admin-procedimentos-paginacao {
     width: 100%;
 
@@ -940,13 +1025,13 @@ body{
 
     margin: 30px 0 0;
     padding: 0;
-}
+} */
 
 
 /* =========================================================
    PAGINAÇÃO - BOOTSTRAP
    ========================================================= */
-
+/* 
 .admin-procedimentos-paginacao .pagination {
     display: flex;
 
@@ -1003,14 +1088,14 @@ body{
     border-color: #7d958d;
 
     color: #ffffff;
-}
+} */
 
 
 /* =========================================================
    PAGINAÇÃO - ATIVA
    ========================================================= */
 
-.admin-procedimentos-paginacao
+/* .admin-procedimentos-paginacao
 .page-item.active
 .page-link {
     background: #2f6d67;
@@ -1018,14 +1103,14 @@ body{
     border-color: #2f6d67;
 
     color: #ffffff;
-}
+} */
 
 
 /* =========================================================
    PAGINAÇÃO - DESABILITADA
    ========================================================= */
 
-.admin-procedimentos-paginacao
+/* .admin-procedimentos-paginacao
 .page-item.disabled
 .page-link {
     background: #e9ebe3;
@@ -1033,7 +1118,7 @@ body{
     border-color: #d5d9d5;
 
     color: #999;
-}
+} */
 
 
 /* =========================================================
@@ -3885,7 +3970,7 @@ body{
    IGUAL À DE PROCEDIMENTOS
    ========================================================= */
 
-.paginacao {
+/* .paginacao {
     width: 100%;
 
     display: flex;
@@ -3896,9 +3981,9 @@ body{
     margin: 30px 0 0;
 
     padding: 0;
-}
+} */
 
-
+/* 
 .paginacao .pagination {
     display: flex;
 
@@ -3908,10 +3993,10 @@ body{
 
     margin: 0;
     padding: 0;
-}
+} */
 
 
-.paginacao .page-item {
+/* .paginacao .page-item {
     margin: 0;
     padding: 0;
 }
@@ -3975,7 +4060,7 @@ body{
     border-color: #d5d9d5;
 
     color: #999;
-}
+} */
 
 
 /* =========================================================
@@ -5181,6 +5266,3647 @@ body{
     }
 
 }
+
+/* =========================================================
+   VITRINE - ADMIN
+   PADRÃO VISUAL DO SITE
+   ========================================================= */
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.vitrine-detalhes {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 40px 0 70px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.vitrine-titulo {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 45px;
+
+    text-align: left;
+}
+
+.vitrine-titulo h1 {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 48px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+.vitrine-titulo p {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+   ========================================================= */
+
+.vitrine-detalhes .alert-success {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 30px;
+    padding: 14px 20px;
+
+    background: #d9ded2;
+
+    border: none;
+    border-left: 4px solid #3e746d;
+    border-radius: 5px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ÁREA DOS PRODUTOS
+   ========================================================= */
+
+.vitrine-produtos {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CARD DO PRODUTO
+   ========================================================= */
+
+.vitrine-produto-card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #d9ded2;
+
+    border: 1px solid rgba(47, 109, 103, .12);
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.vitrine-produto-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(47, 109, 103, .10);
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.vitrine-produto-imagem {
+    width: 100%;
+    height: 240px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f8f7f1;
+
+    box-sizing: border-box;
+}
+
+.vitrine-produto-imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .3s ease;
+}
+
+.vitrine-produto-card:hover
+.vitrine-produto-imagem img {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   SEM IMAGEM
+   ========================================================= */
+
+.vitrine-sem-imagem {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9ebe3;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.vitrine-produto-info {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 22px 22px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NOME
+   ========================================================= */
+
+.vitrine-produto-info h2 {
+    margin: 0 0 7px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 19px;
+    font-weight: 500;
+
+    letter-spacing: .5px;
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.vitrine-marca {
+    margin: 0 0 12px;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.vitrine-descricao {
+    margin: 0 0 18px;
+
+    color: #666;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    letter-spacing: .2px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+.vitrine-preco {
+    display: block;
+
+    margin: 0 0 12px;
+
+    color: #555 !important;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   DISPONIBILIDADE
+   ========================================================= */
+
+.vitrine-produto-info > p.text-success,
+.vitrine-produto-info > p.text-danger {
+    width: fit-content;
+
+    margin: 0 0 18px;
+    padding: 6px 11px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: .8px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* DISPONÍVEL */
+
+.vitrine-produto-info > p.text-success {
+    background: #2f6d67;
+
+    color: #ffffff !important;
+}
+
+
+/* INDISPONÍVEL */
+
+.vitrine-produto-info > p.text-danger {
+    background: #873836;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.vitrine-acoes {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BOTÃO PADRÃO
+   ========================================================= */
+
+.vitrine-comprar,
+.vitrine-editar,
+.vitrine-voltar {
+    min-height: 36px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 13px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff !important;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    line-height: 1;
+
+    text-align: center;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   VER PRODUTO
+   ========================================================= */
+
+.vitrine-comprar {
+    background: #7d958d;
+}
+
+.vitrine-comprar:hover {
+    background: #2f6d67;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EDITAR
+   ========================================================= */
+
+.vitrine-editar {
+    background: #819d96;
+}
+
+.vitrine-editar:hover {
+    background: #2f6d67;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EXCLUIR
+   ========================================================= */
+
+.vitrine-voltar {
+    background: #a94442;
+}
+
+.vitrine-voltar:hover {
+    background: #873836;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FORMULÁRIO DE EXCLUSÃO
+   ========================================================= */
+
+.vitrine-acoes form {
+    display: inline-flex;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   NENHUM PRODUTO
+   ========================================================= */
+
+.vitrine-sem-produtos {
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+
+    padding: 40px 20px;
+
+    background: #d9ded2;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.vitrine-sem-produtos p {
+    margin: 0 0 20px;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+/* 
+.vitrine-detalhes > .mt-4 {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 30px auto 0 !important;
+
+    display: flex;
+    justify-content: center;
+}
+
+.vitrine-detalhes .pagination {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin: 0;
+}
+
+.vitrine-detalhes .page-item {
+    margin: 0;
+}
+
+.vitrine-detalhes .page-link {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 12px;
+
+    background: #f5f2e9;
+
+    border: 1px solid #c9d1cc;
+    border-radius: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    text-decoration: none;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.vitrine-detalhes .page-link:hover {
+    background: #7d958d;
+
+    border-color: #7d958d;
+
+    color: #ffffff;
+}
+
+.vitrine-detalhes .page-item.active .page-link {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+.vitrine-detalhes .page-item.disabled .page-link {
+    background: #e9ebe3;
+
+    border-color: #d5d9d5;
+
+    color: #999;
+} */
+
+
+/* =========================================================
+   AÇÕES ADMIN
+   ========================================================= */
+
+.vitrine-admin-acoes {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.vitrine-admin-acoes .vitrine-editar {
+    min-width: 180px;
+
+    padding: 13px 25px;
+
+    background: #7d958d;
+
+    font-size: 10px;
+}
+
+.vitrine-admin-acoes .vitrine-editar:hover {
+    background: #2f6d67;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .vitrine-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vitrine-titulo h1 {
+        font-size: 42px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .vitrine-detalhes {
+        padding: 30px 0 60px;
+    }
+
+    .vitrine-titulo {
+        width: 90%;
+
+        margin-bottom: 35px;
+    }
+
+    .vitrine-titulo h1 {
+        font-size: 38px;
+    }
+
+    .vitrine-produtos {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .vitrine-produto-imagem {
+        height: 230px;
+    }
+
+    .vitrine-admin-acoes {
+        width: 90%;
+
+        justify-content: stretch;
+    }
+
+    .vitrine-admin-acoes .vitrine-editar {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .vitrine-detalhes {
+        padding: 25px 0 50px;
+    }
+
+    .vitrine-titulo {
+        width: 92%;
+    }
+
+    .vitrine-titulo h1 {
+        font-size: 32px;
+    }
+
+    .vitrine-titulo p {
+        font-size: 10px;
+    }
+
+    .vitrine-detalhes .alert-success {
+        width: 92%;
+
+        font-size: 10px;
+    }
+
+    .vitrine-produtos {
+        width: 92%;
+    }
+
+    .vitrine-produto-imagem {
+        height: 210px;
+    }
+
+    .vitrine-produto-info {
+        padding: 20px 18px 18px;
+    }
+
+    .vitrine-produto-info h2 {
+        font-size: 17px;
+    }
+
+    .vitrine-acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .vitrine-acoes .vitrine-comprar,
+    .vitrine-acoes .vitrine-editar,
+    .vitrine-acoes .vitrine-voltar,
+    .vitrine-acoes form {
+        width: 100%;
+    }
+
+    .vitrine-acoes form .vitrine-voltar {
+        width: 100%;
+    }
+
+    .vitrine-detalhes > .mt-4 {
+        width: 92%;
+    }
+
+}
+
+
+/* =========================================================
+   VITRINE - DETALHES
+   MESMO PADRÃO VISUAL DA VITRINE
+   ========================================================= */
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.vitrine-detalhe {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 40px 0 70px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.vitrine-detalhe-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.vitrine-detalhe-titulo {
+    margin-bottom: 40px;
+}
+
+.vitrine-detalhe-titulo h1 {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 46px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+.vitrine-detalhe-titulo p {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.vitrine-detalhe-conteudo {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 420px 1fr;
+
+    gap: 45px;
+
+    padding: 30px;
+
+    background: #d9ded2;
+
+    border: 1px solid rgba(47, 109, 103, .12);
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.vitrine-detalhe-imagem {
+    width: 100%;
+    height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f8f7f1;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+.vitrine-detalhe-imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   SEM IMAGEM
+   ========================================================= */
+
+.vitrine-detalhe-sem-imagem {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.vitrine-detalhe-informacoes {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CADA INFORMAÇÃO
+   ========================================================= */
+
+.vitrine-detalhe-item {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .15);
+
+    box-sizing: border-box;
+}
+
+.vitrine-detalhe-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TÍTULO DA INFORMAÇÃO
+   ========================================================= */
+
+.vitrine-detalhe-item strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.vitrine-detalhe-item > span {
+    color: #555;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+.vitrine-detalhe-preco {
+    color: #555 !important;
+
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 17px !important;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.vitrine-status {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    font-family: "Playfair Display SC", serif !important;
+    font-size: 9px !important;
+    font-weight: 500;
+
+    letter-spacing: .8px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* DISPONÍVEL */
+
+.vitrine-status.disponivel {
+    background: #2f6d67;
+
+    color: #ffffff !important;
+}
+
+
+/* INDISPONÍVEL */
+
+.vitrine-status.indisponivel {
+    background: #873836;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   LINK
+   ========================================================= */
+
+.vitrine-link {
+    color: #3e746d !important;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+
+    text-decoration: underline;
+}
+
+.vitrine-link:hover {
+    color: #2f6d67 !important;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.vitrine-detalhe-acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+.vitrine-detalhe-botao {
+    min-height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 22px;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff !important;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   EDITAR
+   ========================================================= */
+
+.vitrine-detalhe-botao.editar {
+    background:  #2f6d67;
+}
+
+.vitrine-detalhe-botao.editar:hover {
+    background: #7d958d;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   VOLTAR
+   ========================================================= */
+
+.vitrine-detalhe-botao.voltar {
+    background: #2f6d67;
+}
+
+.vitrine-detalhe-botao.voltar:hover {
+    background: #7d958d;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .vitrine-detalhe-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .vitrine-detalhe-imagem {
+        width: 100%;
+        max-width: 450px;
+
+        height: 400px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .vitrine-detalhe {
+        padding: 30px 0 55px;
+    }
+
+    .vitrine-detalhe-container {
+        width: 92%;
+    }
+
+    .vitrine-detalhe-titulo {
+        margin-bottom: 30px;
+    }
+
+    .vitrine-detalhe-titulo h1 {
+        font-size: 35px;
+    }
+
+    .vitrine-detalhe-conteudo {
+        padding: 20px;
+
+        gap: 25px;
+    }
+
+    .vitrine-detalhe-imagem {
+        height: 300px;
+    }
+
+    .vitrine-detalhe-item > span {
+        font-size: 16px;
+    }
+
+    .vitrine-detalhe-acoes {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .vitrine-detalhe-botao {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .vitrine-detalhe-titulo h1 {
+        font-size: 30px;
+    }
+
+    .vitrine-detalhe-conteudo {
+        padding: 17px;
+    }
+
+    .vitrine-detalhe-imagem {
+        height: 250px;
+    }
+
+}
+
+
+
+/* =========================================================
+   ADMIN - PÁGINA DE CLIENTES
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .admin-clientes-body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #f5f2e9;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.admin-clientes {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.admin-clientes-container {
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOPO
+   ========================================================= */
+
+.admin-clientes-topo {
+    width: 100%;
+
+    margin: 0 0 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.admin-clientes-titulo {
+    margin: 0;
+
+    padding: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.admin-clientes-subtitulo {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   WRAPPER DA TABELA
+   SEM BORDA EXTERNA
+   ========================================================= */
+
+.admin-clientes-tabela-wrapper {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow-x: auto;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.admin-clientes-tabela {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-collapse: collapse;
+
+    border-spacing: 0;
+
+    background: #f5f2e9;
+
+    font-family: "Playfair Display SC", serif;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.admin-clientes-tabela thead {
+    background: #2f6d67;
+}
+
+
+.admin-clientes-tabela th {
+    margin: 0;
+
+    padding: 17px 15px;
+
+    background: #2f6d67;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   LINHAS
+   ========================================================= */
+
+.admin-clientes-tabela tbody tr {
+    margin: 0;
+
+    padding: 0;
+
+    background: #d9ded2;
+
+    transition: background-color .2s ease;
+}
+
+
+.admin-clientes-tabela tbody tr:hover {
+    background: #e9ebe3;
+}
+
+
+/* =========================================================
+   CÉLULAS
+   ========================================================= */
+
+.admin-clientes-tabela td {
+    margin: 0;
+
+    padding: 15px;
+
+    border: none;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .12);
+
+    color: #555;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    vertical-align: middle;
+}
+
+
+.admin-clientes-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
+
+.admin-clientes-imagem {
+    display: block;
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SEM FOTO
+   ========================================================= */
+
+.admin-clientes-sem-imagem {
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 8px;
+
+    background: #e9ebe3;
+
+    border-radius: 50%;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 8px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.admin-clientes-acoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   BOTÃO VER CLIENTE
+   ========================================================= */
+
+.admin-clientes-botao {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    min-width: 120px;
+
+    padding: 10px 18px;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff !important;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        transform .2s ease;
+}
+
+
+.admin-clientes-botao:hover {
+    background: #2f6d67;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABELA VAZIA
+   ========================================================= */
+
+.admin-clientes-vazio {
+    width: 100%;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+
+/* .admin-clientes-paginacao {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 30px 0 0;
+
+    padding: 0;
+} */
+
+
+/* =========================================================
+   PAGINAÇÃO - BOOTSTRAP
+   ========================================================= */
+
+/* .admin-clientes-paginacao .pagination {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.admin-clientes-paginacao .page-item {
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.admin-clientes-paginacao .page-link {
+    min-width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 8px 12px;
+
+    background: #f5f2e9;
+
+    border: 1px solid #c9d1cc;
+
+    border-radius: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+} */
+
+/* 
+.admin-clientes-paginacao .page-link:hover {
+    background: #7d958d;
+
+    border-color: #7d958d;
+
+    color: #ffffff;
+} */
+
+
+/* =========================================================
+   PAGINAÇÃO - ATIVA
+   ========================================================= */
+
+/* .admin-clientes-paginacao
+.page-item.active
+.page-link {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+} */
+
+
+/* =========================================================
+   PAGINAÇÃO - DESABILITADA
+   ========================================================= */
+/* 
+.admin-clientes-paginacao
+.page-item.disabled
+.page-link {
+    background: #e9ebe3;
+
+    border-color: #d5d9d5;
+
+    color: #999;
+} */
+
+
+/* =========================================================
+   PAGINAÇÃO - REMOVER SOMBRAS DO BOOTSTRAP
+   ========================================================= */
+
+/* .admin-clientes-paginacao
+.page-link:focus {
+    box-shadow: none;
+
+    outline: none;
+} */
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .admin-clientes-container {
+        width: 90%;
+    }
+
+    .admin-clientes-tabela-wrapper {
+        overflow-x: auto;
+    }
+
+    .admin-clientes-tabela {
+        min-width: 900px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .admin-clientes {
+        padding: 30px 0 60px;
+    }
+
+    .admin-clientes-topo {
+        margin-bottom: 35px;
+    }
+
+    .admin-clientes-titulo {
+        font-size: 40px;
+    }
+
+    .admin-clientes-subtitulo {
+        font-size: 10px;
+    }
+
+    .admin-clientes-tabela {
+        min-width: 900px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .admin-clientes-container {
+        width: 92%;
+    }
+
+    .admin-clientes-titulo {
+        font-size: 32px;
+    }
+
+    .admin-clientes-tabela {
+        min-width: 850px;
+    }
+
+}
+/* CANTOS ARREDONDADOS DA TABELA */
+.admin-clientes-tabela {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+}
+
+/* CANTOS SUPERIORES */
+.admin-clientes-tabela thead tr th:first-child {
+    border-top-left-radius: 8px !important;
+}
+
+.admin-clientes-tabela thead tr th:last-child {
+    border-top-right-radius: 8px !important;
+}
+
+/* CANTOS INFERIORES */
+.admin-clientes-tabela tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px !important;
+}
+
+.admin-clientes-tabela tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px !important;
+}
+
+
+
+/* =========================================================
+   PÁGINA INDIVIDUAL DO CLIENTE - ADMIN
+   ========================================================= */
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+   .cliente-admin-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VOLTAR
+   ========================================================= */
+
+.voltar-clientes {
+    margin-bottom: 30px;
+}
+
+.btn-voltar-admin {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 10px 16px;
+
+    background: #7d958d;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .6px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition: .2s ease;
+}
+
+.btn-voltar-admin:hover {
+    background: #2f6d67;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CLIENTE
+   ========================================================= */
+
+.cliente-admin-cabecalho {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 45px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .15);
+}
+
+
+/* FOTO */
+
+.cliente-admin-foto {
+    width: 105px;
+    height: 105px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border: 3px solid #d6c5a6;
+    border-radius: 8px;
+
+    background: #e9ebe3;
+}
+
+.cliente-admin-foto img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* NOME */
+
+.cliente-admin-nome span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #7d958d;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.cliente-admin-nome h1 {
+    margin: 0 0 6px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 38px;
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+}
+
+.cliente-admin-nome p {
+    margin: 0;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   BLOCOS PRINCIPAIS
+   ========================================================= */
+
+.cliente-admin-bloco {
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 0;
+
+    background: transparent;
+
+    box-sizing: border-box;
+}
+
+
+/* TÍTULOS */
+
+.cliente-admin-bloco h2 {
+    margin: 0 0 25px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 28px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+    letter-spacing: .7px;
+}
+
+
+/* =========================================================
+   DADOS DA CLIENTE
+   ========================================================= */
+
+.cliente-admin-dados {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: rgba(47, 109, 103, .12);
+
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.cliente-admin-dado {
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    background: #f5f2e9;
+}
+
+.cliente-admin-dado span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #7d958d;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: .9px;
+    text-transform: uppercase;
+}
+
+.cliente-admin-dado p {
+    margin: 0;
+
+    color: #555;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   TÍTULO DE SEÇÃO
+   ========================================================= */
+
+.cliente-admin-titulo {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.cliente-admin-titulo > div span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #7d958d;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.cliente-admin-titulo h2 {
+    margin: 0;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+   ========================================================= */
+
+.btn-admin-principal {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    background: #7d958d;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: .2s ease;
+}
+
+.btn-admin-principal:hover {
+    background: #2f6d67;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ANAMNESE
+   ========================================================= */
+
+.anamnese-status {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 22px 24px;
+
+    background: #e9ebe3;
+
+    border-left: 4px solid #7d958d;
+    border-radius: 7px;
+}
+
+.anamnese-status.anamnese-ok {
+    border-left-color: #2f6d67;
+}
+
+.anamnese-status strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+.anamnese-status p {
+    margin: 0;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   AGENDAMENTOS
+   ========================================================= */
+
+.bloco-info {
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 0;
+}
+
+.bloco-info > h3 {
+    margin: 0 0 25px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 28px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+}
+
+
+/* LISTA */
+
+.lista-agendamentos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* ITEM */
+
+.agendamento-item {
+    padding: 22px 24px;
+
+    background: #e9ebe3;
+
+    border-radius: 7px;
+
+    border-left: 4px solid #7d958d;
+
+    box-sizing: border-box;
+}
+
+.agendamento-item p {
+    margin: 0 0 9px;
+
+    color: #555;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+
+    line-height: 1.4;
+}
+
+.agendamento-item p:last-of-type {
+    margin-bottom: 0;
+}
+
+.agendamento-item strong {
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .4px;
+}
+
+
+/* =========================================================
+   STATUS DOS AGENDAMENTOS
+   ========================================================= */
+
+.status-agendamento {
+    display: inline-block;
+
+    margin-left: 5px;
+
+    padding: 5px 9px;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.status-pendente {
+    background: #e6dcc4;
+    color: #765f32;
+}
+
+.status-confirmado {
+    background: #d5e1dc;
+    color: #2f6d67;
+}
+
+.status-concluido {
+    background: #cbdad2;
+    color: #285e56;
+}
+
+.status-cancelado {
+    background: #e5d5d2;
+    color: #87554d;
+}
+
+
+/* =========================================================
+   BOTÕES DE STATUS
+   ========================================================= */
+
+.admin-status-acoes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(47, 109, 103, .12);
+}
+
+.admin-status-acoes form {
+    margin: 0;
+}
+
+.btn-status {
+    padding: 8px 13px;
+
+    border: none;
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.btn-pendente {
+    background: #d6c9a9;
+    color: #665329;
+}
+
+.btn-confirmado {
+    background: #b8cbc4;
+    color: #2f6d67;
+}
+
+.btn-concluido {
+    background: #9fb9ae;
+    color: #285e56;
+}
+
+.btn-cancelado {
+    background: #d5b8b3;
+    color: #764a43;
+}
+
+.btn-status:hover:not(:disabled) {
+    opacity: .8;
+}
+
+.btn-status:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+}
+
+
+/* =========================================================
+   SEM DADOS
+   ========================================================= */
+
+.sem-dados {
+    padding: 25px;
+
+    background: #e9ebe3;
+
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+.sem-dados p {
+    margin: 0;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   FOTOS - ANTES E DEPOIS
+   ========================================================= */
+
+.cliente-admin-titulo-fotos {
+    align-items: center;
+}
+
+.acompanhamentos-admin {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.acompanhamento-card-admin {
+    padding: 25px;
+
+    background: #e9ebe3;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* CABEÇALHO */
+
+.acompanhamento-cabecalho {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .12);
+}
+
+.acompanhamento-cabecalho span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #7d958d;
+
+    font-size: 10px;
+    letter-spacing: .9px;
+
+    text-transform: uppercase;
+}
+
+.acompanhamento-cabecalho h3 {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 18px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+.acompanhamento-data {
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   COMPARAÇÃO DAS FOTOS
+   ========================================================= */
+
+.comparacao-fotos-admin {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.comparacao-foto-admin {
+    min-width: 0;
+}
+
+.foto-titulo {
+    margin-bottom: 9px;
+
+    color: #3e746d;
+
+    font-size: 11px;
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+}
+
+.comparacao-foto-admin img {
+    width: 100%;
+    height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border: 3px solid #d6c5a6;
+    border-radius: 7px;
+
+    box-sizing: border-box;
+}
+
+.foto-vazia-admin {
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: #f5f2e9;
+
+    border: 1px solid rgba(47, 109, 103, .15);
+    border-radius: 7px;
+
+    color: #999;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   OBSERVAÇÃO
+   ========================================================= */
+
+.observacao-foto-admin {
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(47, 109, 103, .12);
+}
+
+.observacao-foto-admin span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #7d958d;
+
+    font-size: 10px;
+    letter-spacing: .9px;
+
+    text-transform: uppercase;
+}
+
+.observacao-foto-admin p {
+    margin: 0;
+
+    color: #555;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   EXCLUIR FOTO
+   ========================================================= */
+
+.acoes-foto-admin {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 20px;
+}
+
+.btn-excluir-admin {
+    padding: 9px 15px;
+
+    background: #d5b8b3;
+    color: #764a43;
+
+    border: none;
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: .6px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.btn-excluir-admin:hover {
+    background: #b88982;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   NENHUMA FOTO
+   ========================================================= */
+
+.sem-fotos-admin {
+    padding: 35px 25px;
+
+    background: #e9ebe3;
+
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+.sem-fotos-admin h3 {
+    margin: 0 0 8px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 18px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+.sem-fotos-admin p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .cliente-admin-dados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparacao-fotos-admin {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cliente-admin-container {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .cliente-admin-cabecalho {
+        align-items: flex-start;
+
+        gap: 18px;
+
+        margin-bottom: 35px;
+    }
+
+    .cliente-admin-foto {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cliente-admin-nome h1 {
+        font-size: 27px;
+    }
+
+    .cliente-admin-dados {
+        grid-template-columns: 1fr;
+    }
+
+    .cliente-admin-titulo {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .anamnese-status {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .acompanhamento-cabecalho {
+        flex-direction: column;
+    }
+
+    .comparacao-foto-admin img,
+    .foto-vazia-admin {
+        height: 240px;
+    }
+
+    .admin-status-acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-status-acoes form,
+    .btn-status {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+    AGENDA ÁREA PRINCIPAL
+   ========================================================= */
+
+   .agenda-container {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 40px 0 70px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.titulo-agenda {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 40px;
+
+    text-align: left;
+}
+
+.titulo-agenda h1 {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 48px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+.titulo-agenda p {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: .5px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ALERTAS
+   ========================================================= */
+
+.agenda-container .alert {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 25px;
+    padding: 14px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    letter-spacing: .5px;
+    line-height: 1.5;
+}
+
+.agenda-container .alert-success {
+    background: #d9ded2;
+
+    border: none;
+    border-left: 4px solid #3e746d;
+
+    color: #3e746d;
+}
+
+.agenda-container .alert-danger {
+    background: #eee0dc;
+
+    border: none;
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+}
+
+.agenda-container .alert p {
+    margin: 0 0 5px;
+}
+
+.agenda-container .alert p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LEGENDA
+   ========================================================= */
+
+.legenda-agenda {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    color: #666;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+
+    letter-spacing: .6px;
+}
+
+.legenda-agenda > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* bolinhas da legenda */
+
+.legenda-cliente,
+.legenda-compromisso {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.legenda-cliente {
+    background: #2f6d67;
+}
+
+.legenda-compromisso {
+    background: #819d96;
+}
+
+
+/* =========================================================
+   ÁREA DO CALENDÁRIO + FORMULÁRIO
+   ========================================================= */
+
+.area-agenda {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 340px;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CALENDÁRIO
+   ========================================================= */
+
+.calendario-area {
+    width: 100%;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   FULLCALENDAR
+   ========================================================= */
+
+#calendar {
+    width: 100%;
+
+    background: #f8f7f1;
+
+    font-family: "Playfair Display SC", serif;
+}
+
+
+/* fundo geral */
+
+.fc {
+    --fc-border-color: rgba(47, 109, 103, .15);
+    --fc-page-bg-color: #f8f7f1;
+    --fc-neutral-bg-color: #eef0ea;
+
+    color: #555;
+
+    font-family: "Playfair Display SC", serif;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO CALENDÁRIO
+   ========================================================= */
+
+.fc .fc-toolbar {
+    margin-bottom: 20px;
+
+    gap: 15px;
+}
+
+.fc .fc-toolbar-title {
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BOTÕES DO CALENDÁRIO
+   ========================================================= */
+
+.fc .fc-button {
+    padding: 8px 13px;
+
+    background: #7d958d;
+
+    border: 1px solid #7d958d;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    box-shadow: none;
+
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+.fc .fc-button:hover {
+    background: #2f6d67;
+    border-color: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.fc .fc-button:focus,
+.fc .fc-button:active {
+    background: #2f6d67 !important;
+    border-color: #2f6d67 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* botão selecionado */
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DIAS DA SEMANA
+   ========================================================= */
+
+.fc .fc-col-header-cell {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+}
+
+.fc .fc-col-header-cell-cushion {
+    padding: 10px 5px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CÉLULAS DOS DIAS
+   ========================================================= */
+
+.fc .fc-daygrid-day {
+    background: #f8f7f1;
+
+    transition: background-color .2s ease;
+}
+
+.fc .fc-daygrid-day:hover {
+    background: #eef0ea;
+}
+
+.fc .fc-daygrid-day-number {
+    padding: 8px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+/* dia atual */
+
+.fc .fc-day-today {
+    background: rgba(47, 109, 103, .08) !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+    color: #2f6d67;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EVENTOS
+   ========================================================= */
+
+.fc-event {
+    border: none !important;
+    border-radius: 3px;
+
+    padding: 3px 5px;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+
+    letter-spacing: .2px;
+
+    cursor: pointer;
+}
+
+
+/* agendamento da cliente */
+
+.fc-event.evento-cliente {
+    background: #2f6d67 !important;
+
+    border-left: 3px solid #1f5752 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* compromisso */
+
+.fc-event.evento-compromisso {
+    background: #819d96 !important;
+
+    border-left: 3px solid #657f78 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   VISÃO SEMANAL / DIÁRIA
+   ========================================================= */
+
+.fc .fc-timegrid-slot {
+    height: 42px;
+
+    background: #f8f7f1;
+}
+
+.fc .fc-timegrid-slot-label {
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 9px;
+}
+
+.fc .fc-timegrid-axis-cushion {
+    color: #777;
+
+    font-size: 9px;
+}
+
+.fc .fc-timegrid-event {
+    border-radius: 4px;
+
+    padding: 3px;
+}
+
+
+/* =========================================================
+   FORMULÁRIO - NOVO COMPROMISSO
+   ========================================================= */
+
+.novo-compromisso {
+    width: 100%;
+
+    padding: 30px 28px 32px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   TÍTULO DO FORMULÁRIO
+   ========================================================= */
+
+.novo-compromisso h2 {
+    margin: 0 0 25px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 22px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.novo-compromisso .campo {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.novo-compromisso .campo:last-of-type {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.novo-compromisso .campo label {
+    display: block;
+
+    margin: 0 0 8px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.3px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUTS / TEXTAREA
+   ========================================================= */
+
+.novo-compromisso .campo input,
+.novo-compromisso .campo textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+    border-radius: 4px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: .4px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* inputs */
+
+.novo-compromisso .campo input {
+    height: 44px;
+
+    padding: 0 13px;
+}
+
+
+/* textarea */
+
+.novo-compromisso .campo textarea {
+    min-height: 105px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.novo-compromisso .campo input:focus,
+.novo-compromisso .campo textarea:focus {
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.novo-compromisso .campo input::placeholder,
+.novo-compromisso .campo textarea::placeholder {
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+
+    letter-spacing: .3px;
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+   ========================================================= */
+
+.btn-salvar {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 12px 20px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+.btn-salvar:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .agenda-container {
+        padding: 35px 0 60px;
+    }
+
+    .titulo-agenda,
+    .legenda-agenda,
+    .area-agenda {
+        width: 90%;
+    }
+
+    .area-agenda {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .novo-compromisso {
+        padding: 28px 30px 30px;
+    }
+
+    .calendario-area {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .agenda-container {
+        padding: 30px 0 50px;
+    }
+
+    .titulo-agenda {
+        margin-bottom: 30px;
+    }
+
+    .titulo-agenda h1 {
+        font-size: 40px;
+    }
+
+    .titulo-agenda p {
+        font-size: 10px;
+    }
+
+    .legenda-agenda {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-bottom: 18px;
+    }
+
+    .calendario-area {
+        padding: 15px;
+    }
+
+    .novo-compromisso {
+        padding: 25px 20px 28px;
+    }
+
+    .novo-compromisso h2 {
+        font-size: 19px;
+    }
+
+    .fc .fc-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .fc .fc-toolbar-chunk {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 20px;
+    }
+
+    .fc .fc-button {
+        padding: 7px 10px;
+
+        font-size: 9px;
+    }
+
+    .fc .fc-col-header-cell-cushion {
+        font-size: 8px;
+    }
+
+    .fc .fc-daygrid-day-number {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .agenda-container {
+        padding: 25px 0 45px;
+    }
+
+    .titulo-agenda,
+    .legenda-agenda,
+    .area-agenda {
+        width: 92%;
+    }
+
+    .titulo-agenda {
+        margin-bottom: 25px;
+    }
+
+    .titulo-agenda h1 {
+        font-size: 32px;
+    }
+
+    .titulo-agenda p {
+        font-size: 10px;
+    }
+
+    .calendario-area {
+        padding: 10px;
+    }
+
+    .novo-compromisso {
+        padding: 22px 16px 25px;
+    }
+
+    .novo-compromisso h2 {
+        margin-bottom: 22px;
+
+        font-size: 17px;
+    }
+
+    .novo-compromisso .campo {
+        margin-bottom: 17px;
+    }
+
+    .novo-compromisso .campo input {
+        height: 42px;
+    }
+
+    .novo-compromisso .campo textarea {
+        min-height: 95px;
+    }
+
+    .fc .fc-toolbar-title {
+        font-size: 17px;
+    }
+
+    .fc .fc-button {
+        padding: 6px 8px;
+
+        font-size: 8px;
+    }
+
+    .fc .fc-col-header-cell-cushion {
+        padding: 8px 2px;
+
+        font-size: 7px;
+    }
+
+    .fc .fc-daygrid-day-number {
+        padding: 5px;
+
+        font-size: 8px;
+    }
+}
+
+
+
+
 
 
 

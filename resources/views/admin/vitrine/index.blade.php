@@ -4,7 +4,6 @@
 
 <head>
 
-```
 <meta charset="UTF-8">
 
 <meta
@@ -50,7 +49,7 @@
     rel="stylesheet"
     href="{{ asset('css/admin.css') }}"
 >
-```
+
 
 </head>
 
@@ -60,7 +59,7 @@
 
 <main class="vitrine-detalhes">
 
-```
+
 <!-- TÍTULO -->
 
 <div class="vitrine-titulo">
@@ -72,6 +71,20 @@
     <p>
         Produtos cadastrados
     </p>
+
+</div>
+
+
+<!-- AÇÕES ADMIN -->
+
+<div class="vitrine-admin-acoes">
+
+    <a
+        href="{{ route('admin.vitrine.create') }}"
+        class="vitrine-editar"
+    >
+        + Cadastrar produto
+    </a>
 
 </div>
 
@@ -287,32 +300,16 @@
 
 
 <!-- PAGINAÇÃO -->
-
+{{-- PAGINAÇÃO --}}
 @if($vitrine->hasPages())
 
-    <div class="mt-4">
-
+    <div class="admin-paginacao">
         {{ $vitrine->links() }}
-
     </div>
 
 @endif
 
 
-
-<!-- AÇÕES ADMIN -->
-
-<div class="vitrine-admin-acoes">
-
-    <a
-        href="{{ route('admin.vitrine.create') }}"
-        class="vitrine-editar"
-    >
-        + Cadastrar produto
-    </a>
-
-</div>
-```
 
 </main>
 

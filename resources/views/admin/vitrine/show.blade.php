@@ -1,80 +1,55 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>
-        {{ $vitrine->nome }}
-    </title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Vitrine | Administração</title>
 
 
-    <style>
+<!-- FONTES -->
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f6f5e5;
-            margin: 0;
-            padding: 30px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
-        .imagem {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+    rel="stylesheet"
+>
 
-        .informacao {
-            margin-bottom: 18px;
-        }
 
-        .informacao strong {
-            display: block;
-            margin-bottom: 5px;
-        }
+<!-- BOOTSTRAP -->
 
-        .botao {
-            background: #2c7771;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
 
-        .editar {
-            background: #d9a441;
-        }
 
-        .acoes {
-            display: flex;
-            gap: 10px;
-            margin-top: 25px;
-        }
+<!-- CSS -->
 
-        .disponivel {
-            color: #198754;
-            font-weight: bold;
-        }
+<link
+    rel="stylesheet"
+    href="{{ asset('css/style.css') }}"
+>
 
-        .indisponivel {
-            color: #b94a48;
-            font-weight: bold;
-        }
+<link
+    rel="stylesheet"
+    href="{{ asset('css/admin.css') }}"
+>
 
-    </style>
 
 </head>
 
@@ -82,137 +57,189 @@
 <body>
 
 
-<div class="container">
-
-    <h1>
-        {{ $vitrine->nome }}
-    </h1>
+@include('admin._partials_admin.header_admin')
 
 
-    @if($vitrine->imagem)
+<main class="vitrine-detalhe">
 
-        <img
-            src="{{ asset(
-                'storage/' . $vitrine->imagem
-            ) }}"
-            class="imagem"
-            alt="{{ $vitrine->nome }}"
-        >
-
-    @endif
+    <div class="vitrine-detalhe-container">
 
 
-    <div class="informacao">
+        <!-- TÍTULO -->
 
-        <strong>
-            Marca
-        </strong>
+        <div class="vitrine-detalhe-titulo">
 
-        {{ $vitrine->marca }}
+            <h1>
+                {{ $vitrine->nome }}
+            </h1>
 
-    </div>
+            <p>
+                Detalhes do produto
+            </p>
 
-
-    <div class="informacao">
-
-        <strong>
-            Descrição
-        </strong>
-
-        {{ $vitrine->descricao }}
-
-    </div>
+        </div>
 
 
-    <div class="informacao">
+        <!-- CONTEÚDO -->
 
-        <strong>
-            Preço
-        </strong>
-
-        R$
-        {{ number_format(
-            $vitrine->preco,
-            2,
-            ',',
-            '.'
-        ) }}
-
-    </div>
+        <div class="vitrine-detalhe-conteudo">
 
 
-    <div class="informacao">
+            <!-- IMAGEM -->
 
-        <strong>
-            Status
-        </strong>
+            <div class="vitrine-detalhe-imagem">
 
-        @if($vitrine->disponivel)
+                @if($vitrine->imagem)
 
-            <span class="disponivel">
-                Disponível
-            </span>
+                    <img
+                        src="{{ asset('storage/' . $vitrine->imagem) }}"
+                        alt="{{ $vitrine->nome }}"
+                    >
 
-        @else
+                @else
 
-            <span class="indisponivel">
-                Indisponível
-            </span>
+                    <div class="vitrine-detalhe-sem-imagem">
+                        Sem imagem
+                    </div>
 
-        @endif
+                @endif
 
-    </div>
+            </div>
 
 
-    <div class="informacao">
+            <!-- INFORMAÇÕES -->
 
-        <strong>
-            Link para contato
-        </strong>
+            <div class="vitrine-detalhe-informacoes">
 
-        @if($vitrine->link_contato)
+
+                <div class="vitrine-detalhe-item">
+
+                    <strong>
+                        Marca
+                    </strong>
+
+                    <span>
+                        {{ $vitrine->marca }}
+                    </span>
+
+                </div>
+
+
+                <div class="vitrine-detalhe-item">
+
+                    <strong>
+                        Descrição
+                    </strong>
+
+                    <span>
+                        {{ $vitrine->descricao }}
+                    </span>
+
+                </div>
+
+
+                <div class="vitrine-detalhe-item">
+
+                    <strong>
+                        Preço
+                    </strong>
+
+                    <span class="vitrine-detalhe-preco">
+                        R$ {{ number_format($vitrine->preco, 2, ',', '.') }}
+                    </span>
+
+                </div>
+
+
+                <div class="vitrine-detalhe-item">
+
+                    <strong>
+                        Status
+                    </strong>
+
+                    @if($vitrine->disponivel)
+
+                        <span class="vitrine-status disponivel">
+                            Disponível
+                        </span>
+
+                    @else
+
+                        <span class="vitrine-status indisponivel">
+                            Indisponível
+                        </span>
+
+                    @endif
+
+                </div>
+
+
+                <div class="vitrine-detalhe-item">
+
+                    <strong>
+                        Link para contato
+                    </strong>
+
+                    @if($vitrine->link_contato)
+
+                        <a
+                            href="{{ $vitrine->link_contato }}"
+                            target="_blank"
+                            class="vitrine-link"
+                        >
+                            {{ $vitrine->link_contato }}
+                        </a>
+
+                    @else
+
+                        <span>
+                            Não informado
+                        </span>
+
+                    @endif
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÕES -->
+
+        <div class="vitrine-detalhe-acoes">
 
             <a
-                href="{{ $vitrine->link_contato }}"
-                target="_blank"
+                href="{{ route('admin.vitrine.edit', $vitrine) }}"
+                class="vitrine-detalhe-botao editar"
             >
-                {{ $vitrine->link_contato }}
+                Editar
             </a>
 
-        @else
 
-            Não informado
+            <a
+                href="{{ route('admin.vitrine.index') }}"
+                class="vitrine-detalhe-botao voltar"
+            >
+                Voltar
+            </a>
 
-        @endif
+        </div>
+
 
     </div>
 
+</main>
 
-    <div class="acoes">
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
 
-        <a
-            href="{{ route(
-                'admin.vitrine.edit',
-                $vitrine
-            ) }}"
-            class="botao editar"
-        >
-            Editar
-        </a>
-
-
-        <a
-            href="{{ route('admin.vitrine.index') }}"
-            class="botao"
-        >
-            Voltar
-        </a>
-
-    </div>
-
-</div>
+@include('admin._partials_admin.footer_admin')
 
 
 </body>
 
 </html>
+

@@ -10,13 +10,27 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Clientes | Valéria Maciel Estética
-    </title>
+    <title>Cliente | Admin</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
         rel="stylesheet"
+    >
+
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
     >
 
     <link
@@ -24,111 +38,159 @@
         href="{{ asset('css/style.css') }}"
     >
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/admin.css') }}"
-    >
-
 </head>
 
+<body class="admin-clientes-body">
 
-<body>
+    {{-- HEADER DO ADMIN --}}
+    @include('admin._partials_admin.header_admin')
 
 
+    <main class="admin-clientes">
 
-<div class="admin-clientes">
+        <div class="admin-clientes-container">
 
-    <h1>Clientes</h1>
+            {{-- TOPO --}}
+            <div class="admin-clientes-topo">
 
-    <div class="lista-clientes">
+                <div>
+                    <h1 class="admin-clientes-titulo">
+                        Clientes
+                    </h1>
 
-        @if($clientes->count() > 0)
+                    <p class="admin-clientes-subtitulo">
+                        Gerenciamento dos clientes cadastrados
+                    </p>
+                </div>
 
-            <table class="tabela-clientes">
+            </div>
 
-                <thead>
-                    <tr>
-                        <th>Foto</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
 
-                <tbody>
+            {{-- TABELA --}}
+            <div class="admin-clientes-tabela-wrapper">
 
-                    @foreach($clientes as $cliente)
+                @if($clientes->count() > 0)
 
-                        <tr>
+                    <table class="admin-clientes-tabela">
 
-                            <td>
-                                @if($cliente->foto_perfil)
-                                    <img
-                                        src="{{ asset('storage/' . $cliente->foto_perfil) }}"
-                                        class="foto-cliente-admin"
-                                        alt="Foto do cliente"
-                                    >
-                                @else
-                                    Sem foto
-                                @endif
-                            </td>
+                        <thead>
 
-                            <td>
-                                {{ $cliente->user->name }}
-                            </td>
+                            <tr>
 
-                            <td>
-                                {{ $cliente->user->email }}
-                            </td>
+                                <th>Foto</th>
 
-                            <td>
-                                {{ $cliente->telefone ?? '-' }}
-                            </td>
+                                <th>Nome</th>
 
-                            <td>
-                                <a
-                                    href="{{ route('admin.clientes.show', $cliente) }}"
-                                    class="btn-ver-cliente"
-                                >
-                                    Ver cliente
-                                </a>
-                            </td>
+                                <th>Email</th>
 
-                        </tr>
+                                <th>Telefone</th>
 
-                    @endforeach
+                                <th>Ações</th>
 
-    
+                            </tr>
 
-                </tbody>
+                        </thead>
 
-            </table>
 
-        @else
+                        <tbody>
 
-            <p class="sem-clientes">
-                Nenhum cliente cadastrado.
-            </p>
+                            @foreach($clientes as $cliente)
 
-        @endif
+                                <tr>
 
+                                    {{-- FOTO --}}
+                                    <td>
+
+                                        @if($cliente->foto_perfil)
+
+                                            <img
+                                                src="{{ asset('storage/' . $cliente->foto_perfil) }}"
+                                                class="admin-clientes-imagem"
+                                                alt="Foto de {{ $cliente->user->name }}"
+                                            >
+
+                                        @else
+
+                                            <span class="admin-clientes-sem-imagem">
+                                                Sem foto
+                                            </span>
+
+                                        @endif
+
+                                    </td>
+
+
+                                    {{-- NOME --}}
+                                    <td>
+                                        {{ $cliente->user->name }}
+                                    </td>
+
+
+                                    {{-- EMAIL --}}
+                                    <td>
+                                        {{ $cliente->user->email }}
+                                    </td>
+
+
+                                    {{-- TELEFONE --}}
+                                    <td>
+                                        {{ $cliente->telefone ?? '-' }}
+                                    </td>
+
+
+                                    {{-- AÇÃO --}}
+                                    <td>
+
+                                        <div class="admin-clientes-acoes">
+
+                                            <a
+                                                href="{{ route('admin.clientes.show', $cliente) }}"
+                                                class="admin-clientes-botao"
+                                            >
+                                                Ver cliente
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            @endforeach
+
+                        </tbody>
+
+                    </table>
+
+                @else
+
+                    <div class="admin-clientes-vazio">
+                        Nenhum cliente cadastrado.
+                    </div>
+
+                @endif
+
+            </div>
+            {{-- PAGINAÇÃO --}}
+@if($clientes->hasPages())
+
+    <div class="admin-paginacao">
+        {{ $clientes->links() }}
     </div>
 
-</div>
+@endif
+        </div>
 
-</main>
-<div class="paginacao">
-    {{ $clientes->links() }}
-</div>
-
-@include('_partials.footer')
+    </main>
 
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-</script>
+    {{-- FOOTER DO ADMIN --}}
+    @include('admin._partials_admin.footer_admin')
 
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 

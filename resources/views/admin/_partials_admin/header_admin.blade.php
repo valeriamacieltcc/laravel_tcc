@@ -8,76 +8,92 @@
         data-bs-target="#menuLateral"
         aria-controls="menuLateral">
 
-        <img src="{{ asset('imagem/menu.png') }}" alt="Menu">
+        <img
+            src="{{ asset('imagem/menu.png') }}"
+            alt="Menu">
 
     </button>
 
 
     <!-- LINKS PRINCIPAIS -->
     <ul>
-        <li><a href="#">HOME</a></li>
 
         <li>
-            <a href="../procedimento/index">
+            <a href="{{ route('admin.home') }}">
+                HOME
+            </a>
+        </li>
+
+
+        <li>
+            <a href="{{ route('admin.procedimentos.index') }}">
                 PROCEDIMENTOS
             </a>
         </li>
 
+
         <li>
-            <a href="#">
+            <a href="{{ route('admin.agenda.index') }}">
                 AGENDAR
             </a>
         </li>
 
+
         <li>
-            <a href="../vitrine">
+            <a href="{{ route('admin.vitrine.index') }}">
                 LOJA
             </a>
         </li>
 
+
         <li>
-            <a href="#">
-                BLOG
+            <a href="{{ route('admin.clientes.index') }}">
+                CLIENTES
             </a>
         </li>
+
     </ul>
 
 
-
+    <!-- PERFIL -->
     <div class="cart-icon">
-    @auth
-        <a href="{{ route('cliente.perfil.show') }}">
 
-            @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
+        @auth
 
-                <img
-                    src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
-                    alt="Meu perfil"
-                    class="foto-navbar"
-                >
+            <a href="{{ route('cliente.perfil.show') }}">
 
-            @else
+                @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
+
+                    <img
+                        src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
+                        alt="Meu perfil"
+                        class="foto-navbar">
+
+                @else
+
+                    <img
+                        src="{{ asset('imagem/perfil-padrao.png') }}"
+                        alt="Meu perfil"
+                        class="foto-navbar">
+
+                @endif
+
+            </a>
+
+        @else
+
+            <a href="{{ route('login') }}">
 
                 <img
                     src="{{ asset('imagem/perfil-padrao.png') }}"
-                    alt="Meu perfil"
-                    class="foto-navbar"
-                >
+                    alt="Entrar"
+                    class="foto-navbar">
 
-            @endif
+            </a>
 
-        </a>
-    @else
+        @endauth
 
-        <a href="{{ route('login') }}">
-            <img
-                src="{{ asset('imagem/perfil-padrao.png') }}"
-                alt="Entrar"
-                class="foto-navbar"
-            >
-        </a>
-
-    @endauth
+    </div>
 
 </nav>
 
@@ -122,25 +138,31 @@
 
         <div class="menu-links">
 
-            <a href="#">
+
+            <a href="{{ route('admin.home') }}">
                 HOME
             </a>
 
-            <a href="../procedimento/index">
+
+            <a href="{{ route('admin.procedimentos.index') }}">
                 PROCEDIMENTOS
             </a>
 
-            <a href="#">
+
+            <a href="{{ route('admin.agenda.index') }}">
                 AGENDAR
             </a>
 
-            <a href="../vitrine/index">
+
+            <a href="{{ route('admin.vitrine.index') }}">
                 LOJA
             </a>
 
-            <a href="#">
-                BLOG
+
+            <a href="{{ route('admin.clientes.index') }}">
+                CLIENTES
             </a>
+
 
         </div>
 
@@ -164,7 +186,9 @@
 
         Valéria Maciel
 
-        <small>ESTÉTICA</small>
+        <small>
+            ESTÉTICA
+        </small>
 
     </div>
 

@@ -296,12 +296,14 @@
 
             <!-- PAGINAÇÃO -->
 
-            <div class="admin-procedimentos-paginacao">
+            {{-- PAGINAÇÃO --}}
+@if($procedimentos->hasPages())
 
-                {{ $procedimentos->links() }}
+    <div class="admin-paginacao">
+        {{ $procedimentos->links() }}
+    </div>
 
-            </div>
-
+@endif
         </div>
 
     </main>
