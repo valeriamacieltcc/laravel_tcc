@@ -162,4 +162,13 @@ class AgendaController extends Controller
                 'Compromisso excluído!'
             );
     }
+    public function destroyAgendamento(Agendamento $agendamento)
+{
+    $agendamento->delete();
+
+    return response()->json([
+        'sucesso' => true,
+        'mensagem' => 'Agendamento cancelado com sucesso!'
+    ]);
+}
 }
