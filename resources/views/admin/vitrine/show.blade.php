@@ -124,7 +124,17 @@
 
                 </div>
 
+                <div class="vitrine-detalhe-item">
 
+<strong>
+    Categoria
+</strong>
+
+<span>
+    {{ $vitrine->categoria ?? 'Não informada' }}
+</span>
+
+</div>
                 <div class="vitrine-detalhe-item">
 
                     <strong>

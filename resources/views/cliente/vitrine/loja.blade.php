@@ -69,7 +69,83 @@
 
     </div>
 
+    <div class="vitrine-filtros">
 
+<form action="{{ route('vitrine.index') }}" method="GET" class="form-pesquisa">
+
+    <div class="campo-pesquisa">
+        <input
+            type="text"
+            name="pesquisa"
+            value="{{ $pesquisa }}"
+            placeholder="Pesquisar produto..."
+        >
+
+        <button type="submit">
+            🔍
+        </button>
+    </div>
+
+    @if($categoria && $categoria !== 'Todos')
+        <input
+            type="hidden"
+            name="categoria"
+            value="{{ $categoria }}"
+        >
+    @endif
+
+</form>
+
+
+<div class="categorias">
+
+    @foreach($categorias as $item)
+
+        <a
+            href="{{ route('vitrine.index', [
+                'categoria' => $item === 'Todos' ? null : $item,
+                'pesquisa' => $pesquisa
+            ]) }}"
+            class="categoria-btn
+                {{ (!$categoria && $item === 'Todos') || $categoria === $item ? 'ativo' : '' }}"
+        >
+            @switch($item)
+
+                @case('Todos')
+                    
+                    @break
+
+                @case('Cabelo')
+                    
+                    @break
+
+                @case('Maquiagem')
+                    
+                    @break
+
+                @case('Perfumaria')
+                    
+                    @break
+
+                @case('Skincare')
+                    
+                    @break
+
+                @case('Unhas')
+                    
+                    @break
+
+            @endswitch
+
+            {{ $item }}
+
+        </a>
+
+    @endforeach
+
+</div>
+
+</div>
 
     @if($vitrine->count() > 0)
 
@@ -85,22 +161,29 @@
 
                     @if($produto->imagem)
 
-                        <img
-                            src="{{ asset(
-                                'storage/' . $produto->imagem
-                            ) }}"
-                            alt="{{ $produto->nome }}"
-                            class="produto-imagem"
-                        >
+                    <img src="{{ $produto->imagem }}" alt="{{ $produto->nome }}">
 
                     @else
 
-                        <div class="sem-imagem">
+                    <div class="sem-produtos">
 
-                            Sem imagem
+@if($pesquisa || ($categoria && $categoria !== 'Todos'))
 
-                        </div>
+    Nenhum produto encontrado para sua pesquisa.
 
+    <br>
+
+    <a href="{{ route('vitrine.index') }}">
+        Ver todos os produtos
+    </a>
+
+@else
+
+    Nenhum produto disponível no momento.
+
+@endif
+
+</div>
                     @endif
 
 
@@ -114,7 +197,15 @@
 
                         </span>
 
+                        @if($produto->categoria)
 
+<span class="categoria-produto">
+
+    {{ $produto->categoria }}
+
+</span>
+
+@endif
                         <h3>
 
                             {{ $produto->nome }}

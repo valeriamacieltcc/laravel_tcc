@@ -51,6 +51,12 @@ class VitrineController extends Controller
                 'max:255',
             ],
 
+            'categoria' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+
             'imagem' => [
                 'required',
                 'image',
@@ -122,6 +128,12 @@ class VitrineController extends Controller
             ],
 
             'marca' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+
+            'categoria' => [
                 'required',
                 'string',
                 'max:255',

@@ -163,7 +163,13 @@
 
                 @endif
 
+                @if($produto->categoria)
 
+<p class="vitrine-categoria">
+    {{ $produto->categoria }}
+</p>
+
+@endif
 
                 <!-- DESCRIÇÃO -->
 

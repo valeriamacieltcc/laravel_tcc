@@ -198,7 +198,70 @@
                         >
 
                     </div>
+<!-- CATEGORIA -->
 
+<div class="vm-produto-field">
+
+    <label for="categoria">
+        Categoria
+    </label>
+
+    <select
+        name="categoria"
+        id="categoria"
+        required
+    >
+
+        <option value="">
+            Selecione uma categoria
+        </option>
+
+        <option
+            value="Cabelo"
+            {{ old('categoria', $vitrine->categoria) === 'Cabelo' ? 'selected' : '' }}
+        >
+            Cabelo
+        </option>
+
+        <option
+            value="Maquiagem"
+            {{ old('categoria', $vitrine->categoria) === 'Maquiagem' ? 'selected' : '' }}
+        >
+            Maquiagem
+        </option>
+
+        <option
+            value="Perfumaria"
+            {{ old('categoria', $vitrine->categoria) === 'Perfumaria' ? 'selected' : '' }}
+        >
+            Perfumaria
+        </option>
+
+        <option
+            value="Skincare"
+            {{ old('categoria', $vitrine->categoria) === 'Skincare' ? 'selected' : '' }}
+        >
+            Skincare
+        </option>
+
+        <option
+            value="Unhas"
+            {{ old('categoria', $vitrine->categoria) === 'Unhas' ? 'selected' : '' }}
+        >
+            Unhas
+        </option>
+
+    </select>
+
+    @error('categoria')
+
+        <span class="vm-produto-error">
+            {{ $message }}
+        </span>
+
+    @enderror
+
+</div>
 
                     <!-- DESCRIÇÃO -->
 
