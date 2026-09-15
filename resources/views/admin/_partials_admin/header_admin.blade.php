@@ -19,7 +19,7 @@
     <ul>
 
         <li>
-            <a href="{{ route('admin.home') }}">
+            <a href="{{ route('admin.home.index') }}">
                 HOME
             </a>
         </li>
@@ -139,7 +139,7 @@
         <div class="menu-links">
 
 
-            <a href="{{ route('admin.home') }}">
+            <a href="{{ route('admin.home.index') }}">
                 HOME
             </a>
 
