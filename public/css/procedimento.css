@@ -1419,3 +1419,170 @@ body > img {
 .btn-favorito:hover {
     transform: scale(1.1);
 }
+
+/* =====================================================
+   FILTROS DA VITRINE
+===================================================== */
+
+.vitrine-filtros {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+.form-pesquisa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.campo-pesquisa {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #d8d4c8;
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.campo-pesquisa:focus-within {
+    border-color: #2c7771;
+    box-shadow: 0 4px 15px rgba(44, 119, 113, 0.12);
+}
+
+
+/* Campo de texto */
+
+.campo-pesquisa input {
+    flex: 1;
+
+    height: 48px;
+
+    border: none;
+    outline: none;
+
+    padding: 0 20px;
+
+    background: transparent;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 13px;
+
+    color: #3e3e3e;
+}
+
+.campo-pesquisa input::placeholder {
+    color: #999;
+}
+
+
+/* Botão da lupa */
+
+.campo-pesquisa button {
+    width: 55px;
+    height: 48px;
+
+    border: none;
+
+    background: #2c7771;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.campo-pesquisa button:hover {
+    background: #245f5a;
+}
+
+
+/* =========================
+   CATEGORIAS
+========================= */
+
+.categorias {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Botões das categorias */
+
+.categoria-btn {
+    min-width: 110px;
+
+    padding: 10px 20px;
+
+    border: 1px solid #cfcabe;
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #4c4c4c;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.categoria-btn:hover {
+    background: #2c7771;
+    border-color: #2c7771;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* Categoria selecionada */
+
+.categoria-btn.ativo {
+    background: #2c7771;
+    border-color: #2c7771;
+    color: #ffffff;
+
+    box-shadow: 0 4px 10px rgba(44, 119, 113, 0.15);
+}
+
