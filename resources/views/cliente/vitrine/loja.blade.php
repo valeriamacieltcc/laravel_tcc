@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
 <title>vitrine</title>
 <link rel="stylesheet" href="{{ asset('css/procedimento.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -6,9 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-
-<html lang="pt-br">
+  
 
 <head>
 

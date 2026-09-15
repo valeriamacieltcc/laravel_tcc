@@ -3,6 +3,9 @@
 
 <head>
 
+
+@include('admin._partials_admin.header_admin')
+
     <meta charset="UTF-8">
 
     <meta
@@ -10,27 +13,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Novo Procedimento | Admin</title>
+    <title>Agenda | Valéria Maciel Estética</title>
 
-    <!-- FONTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
-        rel="stylesheet"
-    >
 
     <!-- BOOTSTRAP -->
 
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-<<<<<<< HEAD
-    <!-- CSS -->
-=======
 
     <!-- FONTES -->
 
@@ -47,20 +39,19 @@
 
     <!-- CSS DO SITE -->
 
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
     <link
         rel="stylesheet"
-        href="{{ asset('css/admin.css') }}"
+        href="{{ asset('css/style.css') }}"
     >
 
-<<<<<<< HEAD
-=======
     <link
         rel="stylesheet"
         href="{{ asset('css/agenda(admin).css') }}"
     >
-
-
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
     <!-- FULLCALENDAR -->
 
     <link
@@ -72,153 +63,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js"></script>
 
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 </head>
 
- 
+
 <body>
 
 
-<<<<<<< HEAD
-    <!-- =====================================================
-         HEADER ADMINISTRATIVO
-         A NAVBAR FICA DENTRO DO INCLUDE
-    ====================================================== -->
-
-    @include('admin._partials_admin.header_admin')
-
-
-    <!-- =====================================================
-         CONTEÚDO PRINCIPAL
-    ====================================================== -->
-
-    <main class="agenda-container">
-
-
-        <!-- =================================================
-             TÍTULO
-        ================================================== -->
-
-        <div class="titulo-agenda">
-
-            <h1>Agenda</h1>
-
-            <p>
-                Acompanhe os agendamentos das clientes
-                e os seus compromissos.
-            </p>
-
-        </div>
-
-
-        <!-- =================================================
-             MENSAGEM DE SUCESSO
-        ================================================== -->
-
-        @if(session('sucesso'))
-
-            <div class="alert alert-success">
-
-                {{ session('sucesso') }}
-
-            </div>
-
-        @endif
-
-
-        <!-- =================================================
-             ERROS
-        ================================================== -->
-
-        @if($errors->any())
-
-            <div class="alert alert-danger">
-
-                @foreach($errors->all() as $erro)
-
-                    <p class="mb-1">
-                        {{ $erro }}
-                    </p>
-
-                @endforeach
-
-            </div>
-
-        @endif
-
-
-        <!-- =================================================
-             LEGENDA
-        ================================================== -->
-
-        <div class="legenda-agenda">
-
-            <div>
-
-                <span class="legenda-cliente"></span>
-
-                <span>
-                    Agendamento de cliente
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <span class="legenda-compromisso"></span>
-
-                <span>
-                    Compromisso
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             CALENDÁRIO + NOVO COMPROMISSO
-        ================================================== -->
-
-        <div class="area-agenda">
-
-
-            <!-- =============================================
-                 CALENDÁRIO
-            ============================================== -->
-
-            <section class="calendario-area">
-
-                <div id="calendar"></div>
-
-            </section>
-
-
-            <!-- =============================================
-                 NOVO COMPROMISSO
-            ============================================== -->
-
-            <aside class="novo-compromisso">
-
-
-                <h2>
-                    Novo compromisso
-                </h2>
-
-
-                <form
-                    method="POST"
-                    action="{{ route('admin.agenda.store') }}"
-                >
-
-                    @csrf
-
-
-                    <!-- =====================================
-                         COMPROMISSO
-                    ====================================== -->
-=======
 <!-- =====================================================
      NAVBAR
 ====================================================== -->
@@ -242,47 +92,6 @@
         >
 
     </button>
-
-
-    <!-- LINKS PRINCIPAIS -->
-
-    <ul>
-
-        <li>
-            <a href="{{ route('admin.home') }}">
-                HOME
-            </a>
-        </li>
-
-
-        <li>
-            <a href="{{ route('admin.procedimentos.index') }}">
-                PROCEDIMENTOS
-            </a>
-        </li>
-
-
-        <li>
-            <a href="{{ route('admin.agenda.index') }}">
-                AGENDA
-            </a>
-        </li>
-
-
-        <li>
-            <a href="{{ route('admin.vitrine.index') }}">
-                LOJA
-            </a>
-        </li>
-
-
-        <li>
-            <a href="#">
-                BLOG
-            </a>
-        </li>
-
-    </ul>
 
 
     <!-- PERFIL -->
@@ -335,344 +144,214 @@
 <!-- =====================================================
      AGENDA
 ====================================================== -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                    <div class="campo">
-
-                        <label for="titulo">
-                            Compromisso
-                        </label>
-
-                        <input
-                            type="text"
-                            name="titulo"
-                            id="titulo"
-                            value="{{ old('titulo') }}"
-                            placeholder="Ex: Almoço, reunião..."
-                            required
-                        >
-
-                    </div>
+<main class="agenda-container">
 
 
-                    <!-- =====================================
-                         DATA
-                    ====================================== -->
+    <!-- TÍTULO -->
 
-                    <div class="campo">
+    <div class="titulo-agenda">
 
-<<<<<<< HEAD
-                        <label for="data">
-                            Data
-                        </label>
-=======
         <h1>
             Agenda
         </h1>
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        <input
-                            type="date"
-                            name="data"
-                            id="data"
-                            value="{{ old('data') }}"
-                            required
-                        >
+        <p>
+            Acompanhe os agendamentos das clientes
+            e os seus compromissos.
+        </p>
 
-                    </div>
+    </div>
 
 
-<<<<<<< HEAD
-                    <!-- =====================================
-                         HORÁRIO INICIAL
-                    ====================================== -->
-
-                    <div class="campo">
-=======
     <!-- MENSAGEM DE SUCESSO -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        <label for="hora_inicio">
-                            Horário inicial
-                        </label>
+    @if(session('sucesso'))
 
-                        <input
-                            type="time"
-                            name="hora_inicio"
-                            id="hora_inicio"
-                            value="{{ old('hora_inicio') }}"
-                            required
-                        >
+        <div class="alert alert-success">
 
-                    </div>
+            {{ session('sucesso') }}
+
+        </div>
+
+    @endif
 
 
-<<<<<<< HEAD
-                    <!-- =====================================
-                         HORÁRIO FINAL
-                    ====================================== -->
-
-                    <div class="campo">
-=======
     <!-- ERROS -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        <label for="hora_fim">
-                            Horário final
-                        </label>
+    @if($errors->any())
 
-                        <input
-                            type="time"
-                            name="hora_fim"
-                            id="hora_fim"
-                            value="{{ old('hora_fim') }}"
-                            required
-                        >
+        <div class="alert alert-danger">
 
-                    </div>
+            @foreach($errors->all() as $erro)
+
+                <p class="mb-1">
+                    {{ $erro }}
+                </p>
+
+            @endforeach
+
+        </div>
+
+    @endif
 
 
-<<<<<<< HEAD
-                    <!-- =====================================
-                         OBSERVAÇÃO
-                    ====================================== -->
-
-                    <div class="campo">
-=======
     <!-- LEGENDA -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        <label for="descricao">
-                            Observação
-                        </label>
+    <div class="legenda-agenda">
 
-                        <textarea
-                            name="descricao"
-                            id="descricao"
-                            placeholder="Opcional"
-                        >{{ old('descricao') }}</textarea>
+        <div>
 
-                    </div>
+            <span class="legenda-cliente"></span>
 
-
-                    <!-- =====================================
-                         BOTÃO
-                    ====================================== -->
-
-                    <button
-                        type="submit"
-                        class="btn-salvar"
-                    >
-                        Adicionar compromisso
-                    </button>
-
-
-                </form>
-
-
-            </aside>
-
+            Agendamento de cliente
 
         </div>
 
 
-    </main>
+        <div>
+
+            <span class="legenda-compromisso"></span>
+
+            Compromisso
+
+        </div>
+
+    </div>
 
 
-    <!-- =====================================================
-         FOOTER ADMINISTRATIVO
-    ====================================================== -->
-
-    @include('admin._partials_admin.footer_admin')
-
-
-    <!-- =====================================================
-         BOOTSTRAP JS
-    ====================================================== -->
-
-<<<<<<< HEAD
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-    </script>
-=======
     <!-- =====================================================
          ÁREA DA AGENDA
     ====================================================== -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
+
+    <div class="area-agenda">
 
 
-    <!-- =====================================================
-         CALENDÁRIO
-    ====================================================== -->
-
-<<<<<<< HEAD
-    <script>
-=======
         <!-- =================================================
              CALENDÁRIO
         ================================================== -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-        document.addEventListener('DOMContentLoaded', function () {
+        <section class="calendario-area">
+
+            <div id="calendar"></div>
+
+        </section>
 
 
-            const calendarEl =
-                document.getElementById('calendar');
-
-
-<<<<<<< HEAD
-            const calendar =
-                new FullCalendar.Calendar(calendarEl, {
-
-=======
         <!-- =================================================
              NOVO COMPROMISSO
         ================================================== -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                    /* ========================================
-                       IDIOMA
-                    ======================================== */
-
-                    locale: 'pt-br',
+        <aside class="novo-compromisso">
 
 
-                    /* ========================================
-                       VISUAL INICIAL
-                    ======================================== */
-
-                    initialView: 'dayGridMonth',
+            <h2>
+                Novo compromisso
+            </h2>
 
 
-                    /* ========================================
-                       CABEÇALHO
-                    ======================================== */
+            <form
+                method="POST"
+                action="{{ route('admin.agenda.store') }}"
+            >
 
-                    headerToolbar: {
-
-                        left:
-                            'prev,next today',
-
-                        center:
-                            'title',
-
-                        right:
-                            'dayGridMonth,timeGridWeek,timeGridDay'
-
-                    },
+                @csrf
 
 
-<<<<<<< HEAD
-                    /* ========================================
-                       NOMES DOS BOTÕES
-                    ======================================== */
+                <!-- TÍTULO -->
 
-                    buttonText: {
-=======
+                <div class="campo">
+
+                    <label for="titulo">
+                        Compromisso
+                    </label>
+
+                    <input
+                        type="text"
+                        name="titulo"
+                        id="titulo"
+                        value="{{ old('titulo') }}"
+                        placeholder="Ex: Almoço, reunião..."
+                        required
+                    >
+
+                </div>
+
+
                 <!-- DATA -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        today: 'Hoje',
+                <div class="campo">
 
-                        month: 'Mês',
+                    <label for="data">
+                        Data
+                    </label>
 
-                        week: 'Semana',
+                    <input
+                        type="date"
+                        name="data"
+                        id="data"
+                        value="{{ old('data') }}"
+                        required
+                    >
 
-                        day: 'Dia'
+                </div>
 
-                    },
 
-<<<<<<< HEAD
-
-                    /* ========================================
-                       HORÁRIOS
-                    ======================================== */
-=======
                 <!-- HORÁRIO INICIAL -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                    slotMinTime: '07:00:00',
+                <div class="campo">
 
-                    slotMaxTime: '22:00:00',
+                    <label for="hora_inicio">
+                        Horário inicial
+                    </label>
+
+                    <input
+                        type="time"
+                        name="hora_inicio"
+                        id="hora_inicio"
+                        value="{{ old('hora_inicio') }}"
+                        required
+                    >
+
+                </div>
 
 
-                    /* ========================================
-                       FORMATO DO HORÁRIO
-                    ======================================== */
-
-                    eventTimeFormat: {
-
-<<<<<<< HEAD
-                        hour: '2-digit',
-
-                        minute: '2-digit',
-=======
                 <!-- HORÁRIO FINAL -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        hour12: false
+                <div class="campo">
 
-                    },
+                    <label for="hora_fim">
+                        Horário final
+                    </label>
+
+                    <input
+                        type="time"
+                        name="hora_fim"
+                        id="hora_fim"
+                        value="{{ old('hora_fim') }}"
+                        required
+                    >
+
+                </div>
 
 
-                    /* ========================================
-                       EVENTOS
-                    ======================================== */
-
-                    events:
-                        "{{ route('admin.agenda.eventos') }}",
-
-<<<<<<< HEAD
-
-                    /* ========================================
-                       CLICAR EM UMA DATA
-                    ======================================== */
-=======
                 <!-- DESCRIÇÃO -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                    dateClick: function(info) {
+                <div class="campo">
 
+                    <label for="descricao">
+                        Observação
+                    </label>
 
-                        document
-                            .getElementById('data')
-                            .value = info.dateStr;
+                    <textarea
+                        name="descricao"
+                        id="descricao"
+                        placeholder="Opcional"
+                    >{{ old('descricao') }}</textarea>
 
-
-                        document
-                            .getElementById('titulo')
-                            .focus();
-
-<<<<<<< HEAD
-                    },
+                </div>
 
 
-                    /* ========================================
-                       CORES DOS EVENTOS
-                    ======================================== */
-
-                    eventDidMount: function(info) {
-
-
-                        const tipo =
-                            info.event.extendedProps.tipo;
-
-
-                        if (tipo === 'agendamento') {
-
-                            info.el.classList.add(
-                                'evento-cliente'
-                            );
-
-                        }
-
-
-                        if (tipo === 'compromisso') {
-
-                            info.el.classList.add(
-                                'evento-compromisso'
-                            );
-=======
                 <!-- BOTÃO -->
 
                 <button
@@ -689,29 +368,8 @@
     </div>
 
 </main>
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
-
-                        }
-
-<<<<<<< HEAD
-                    },
 
 
-                    /* ========================================
-                       CLICAR NO EVENTO
-                    ======================================== */
-
-                    eventClick: function(info) {
-
-
-                        const tipo =
-                            info.event.extendedProps.tipo;
-
-
-                        /* ====================================
-                           AGENDAMENTO DA CLIENTE
-                        ==================================== */
-=======
 <!-- =====================================================
      MODAL DE CANCELAMENTO
 ====================================================== -->
@@ -913,68 +571,12 @@
 <!-- =====================================================
      JAVASCRIPT DA AGENDA
 ====================================================== -->
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
-                        if (tipo === 'agendamento') {
+<script>
 
-
-                            const cliente =
-                                info.event.extendedProps.cliente;
-
-<<<<<<< HEAD
-
-                            const procedimento =
-                                info.event.extendedProps.procedimento;
+document.addEventListener('DOMContentLoaded', function () {
 
 
-                            alert(
-                                'AGENDAMENTO\n\n'
-                                +
-                                'Cliente: '
-                                +
-                                cliente
-                                +
-                                '\n'
-                                +
-                                'Procedimento: '
-                                +
-                                procedimento
-                            );
-
-                        }
-
-
-                        /* ====================================
-                           COMPROMISSO
-                        ==================================== */
-
-                        if (tipo === 'compromisso') {
-
-
-                            const descricao =
-                                info.event.extendedProps.descricao;
-
-
-                            let mensagem =
-                                'COMPROMISSO\n\n'
-                                +
-                                info.event.title;
-
-
-                            if (descricao) {
-
-                                mensagem +=
-                                    '\n\nObservação: '
-                                    +
-                                    descricao;
-
-                            }
-
-
-                            alert(mensagem);
-
-                        }
-=======
     /* =====================================================
        CALENDÁRIO
     ====================================================== */
@@ -1139,14 +741,10 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
                         info.el.classList.add(
                             'evento-cliente'
                         );
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
                     }
 
 
-<<<<<<< HEAD
-                });
-=======
                     if (
                         tipo ===
                         'compromisso'
@@ -1172,17 +770,9 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
                     abrirModalCancelamento(
                         info.event
                     );
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
+                }
 
-<<<<<<< HEAD
-            calendar.render();
-
-
-        });
-
-    </script>
-=======
             }
         );
 
@@ -1777,10 +1367,8 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
 });
 
 </script>
->>>>>>> b79d0a7f86d2079569773157bc29562bdbf27935
 
 
 </body>
 
 </html>
-
