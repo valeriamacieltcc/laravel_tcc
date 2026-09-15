@@ -39,7 +39,10 @@
         href="{{ asset('css/procedimento.css') }}"
     >
     
-
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 </head>
 
 
@@ -57,32 +60,30 @@
 
 </section>
 
-<!-- CARDS -->
-
-<section class="cards">
+<!-- CARDS --><section class="cards">
     @foreach($procedimentos as $procedimento)
 
-    <div class="card">
+<div class="card">
 
-    <img src="{{ asset('storage/' . $procedimento->imagem) }}">
+    <img src="{{ $procedimento->imagem }}" alt="{{ $procedimento->nome }}">
 
-        <div class="card-body">
+    <div class="card-body">
 
-            <h3>{{ $procedimento->nome }}</h3>
+        <h3>{{ $procedimento->nome }}</h3>
 
-            <p>{{ $procedimento->descricao }}</p> 
+        <p>{{ $procedimento->descricao }}</p> 
 
-            <a class="btn" href="http://localhost:8000/procedimento/{{ $procedimento->id }}">
-                VER MAIS
-            </a>
-
-        </div>
+        <a class="btn" href="http://localhost:8000/procedimento/{{ $procedimento->id }}">
+            VER MAIS
+        </a>
 
     </div>
 
-    @endforeach
-    
+</div>
+
+@endforeach
 </section>
+
 <div class="paginacao">
     {{ $procedimentos->links() }}
 

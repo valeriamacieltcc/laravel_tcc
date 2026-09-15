@@ -1586,3 +1586,21 @@ body > img {
     box-shadow: 0 4px 10px rgba(44, 119, 113, 0.15);
 }
 
+/* =========================================================
+   CORREÇÃO FINAL DO RODAPÉ - DETALHES DO PROCEDIMENTO
+   ========================================================= */
+
+   @media (min-width: 901px) {
+
+    body > .footer {
+        margin-top: 390px !important;
+        position: relative;
+        z-index: 1;
+    }
+
+    body > .footer-copy {
+        position: relative;
+        z-index: 1;
+    }
+
+}
