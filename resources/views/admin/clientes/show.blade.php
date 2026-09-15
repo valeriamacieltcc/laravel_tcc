@@ -604,20 +604,13 @@
 
 
                     </div>
+                    @endforeach
 
-                @endforeach
-
-                {{-- PAGINAÇÃO --}}
-@if($clientes->hasPages())
-
-    <div class="admin-paginacao">
-        {{ $clientes->links() }}
-    </div>
-
-@endif
-            </div>
+</div>
 
 
+
+    <div class="sem-dados">
         @else
 
 

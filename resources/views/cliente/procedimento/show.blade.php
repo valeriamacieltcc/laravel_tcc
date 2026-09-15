@@ -87,7 +87,9 @@
     </a>
 
 
-    <img src="{{ asset('storage/' . $procedimento->imagem) }}">
+    <img src="{{ Str::startsWith($procedimento->imagem, ['http://', 'https://']) 
+    ? $procedimento->imagem 
+    : asset('storage/' . $procedimento->imagem) }}">
 
 
     <h3>Cuidados</h3>

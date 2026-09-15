@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CategoriaProcedimentoSeeder::class,
             ClienteSeeder::class,
             VitrineSeeder::class,
+            ProcedimentoSeeder::class,
         ]);
     }
 }
