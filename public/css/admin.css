@@ -7148,149 +7148,227 @@ body{
 
 
 
+
 /* =========================================================
-   PÁGINA INDIVIDUAL DO CLIENTE - ADMIN
+   CLIENTE ADMIN
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
    ========================================================= */
 
 
 /* =========================================================
-   BASE
+   RESET
    ========================================================= */
 
-   .cliente-admin-container {
-    width: 90%;
-    max-width: 1250px;
-
-    margin: 0 auto;
-    padding: 40px 0 80px;
-
-    background: #f5f2e9;
-    color: #444;
-
-    font-family: "Playfair Display SC", serif;
-
+.cliente-admin-container,
+.cliente-admin-container * {
     box-sizing: border-box;
 }
 
 
 /* =========================================================
-   VOLTAR
+   CONTAINER PRINCIPAL
    ========================================================= */
 
-.voltar-clientes {
-    margin-bottom: 30px;
-}
+.cliente-admin-container {
 
-.btn-voltar-admin {
-    display: inline-flex;
-    align-items: center;
+    width: 90%;
 
-    padding: 10px 16px;
+    max-width: 1250px;
 
-    background: #7d958d;
-    color: #ffffff;
+    margin: 0 auto;
 
-    border: none;
-    border-radius: 5px;
+    padding: 40px 0 80px;
 
-    font-family: "Playfair Display SC", serif;
-    font-size: 11px;
-    font-weight: 400;
+    color: #444;
 
-    letter-spacing: .6px;
-    text-transform: uppercase;
-
-    text-decoration: none;
-
-    transition: .2s ease;
-}
-
-.btn-voltar-admin:hover {
-    background: #2f6d67;
-    color: #ffffff;
 }
 
 
 /* =========================================================
-   CABEÇALHO DO CLIENTE
+   BOTÃO VOLTAR
    ========================================================= */
 
-.cliente-admin-cabecalho {
-    display: flex;
-    align-items: center;
+.voltar-clientes {
+    margin: 0 0 35px;
+}
 
-    gap: 25px;
+/* =========================================================
+   BOTÃO VOLTAR — ABAIXO DO E-MAIL
+   ========================================================= */
 
-    margin-bottom: 45px;
+   .btn-voltar-admin {
 
-    padding-bottom: 30px;
+    display: inline-block;
 
-    border-bottom: 1px solid rgba(47, 109, 103, .15);
+    min-width: 170px;
+
+    padding: 10px 22px;
+
+    margin-top: 20px;
+
+    background: #7d958d;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 0;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: .7px;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition: .3s;
+
 }
 
 
-/* FOTO */
+.btn-voltar-admin:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+}
+
+/* =========================================================
+   CABEÇALHO DA CLIENTE
+   ========================================================= */
+
+.cliente-admin-cabecalho {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 45px;
+
+    margin-bottom: 65px;
+
+}
+
+
+/* =========================================================
+   FOTO
+   ========================================================= */
 
 .cliente-admin-foto {
-    width: 105px;
-    height: 105px;
+
+    width: 190px;
+
+    height: 190px;
 
     flex-shrink: 0;
 
     overflow: hidden;
 
-    border: 3px solid #d6c5a6;
-    border-radius: 8px;
+    border: 5px solid #d6c5a6;
 
-    background: #e9ebe3;
+    border-radius: 50%;
+
+    background: #d9ded2;
+
 }
 
+
 .cliente-admin-foto img {
+
     width: 100%;
+
     height: 100%;
 
     display: block;
 
     object-fit: cover;
+
 }
 
 
-/* NOME */
+/* =========================================================
+   IDENTIFICAÇÃO DA CLIENTE
+   ========================================================= */
 
-.cliente-admin-nome span {
-    display: block;
+.cliente-admin-nome {
 
-    margin-bottom: 5px;
+    display: flex;
 
-    color: #7d958d;
+    flex-direction: column;
 
-    font-size: 11px;
-    letter-spacing: 1px;
+    align-items: flex-start;
+
+}
+
+
+/* "CLIENTE" MAIS DESTACADO */
+
+.cliente-admin-nome > span {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    padding-bottom: 5px;
+
+    color: #2f6d67;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
 
     text-transform: uppercase;
+
+    border-bottom: 1px solid #d6c5a6;
+
 }
 
+
 .cliente-admin-nome h1 {
-    margin: 0 0 6px;
+
+    margin: 0 0 10px;
 
     color: #3e746d;
 
-    font-family: "Playfair Display SC", serif;
-    font-size: 38px;
+    font-family: "Parisienne", cursive;
+
+    font-size: 64px;
+
     font-weight: 400;
 
-    line-height: 1.1;
+    line-height: 1;
 
-    text-transform: uppercase;
 }
 
+
 .cliente-admin-nome p {
+
     margin: 0;
 
-    color: #777;
+    color: #666;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 14px;
+
+    letter-spacing: .7px;
+
 }
 
 
@@ -7299,31 +7377,110 @@ body{
    ========================================================= */
 
 .cliente-admin-bloco {
-    width: 100%;
 
-    margin-bottom: 45px;
+    margin-bottom: 60px;
 
-    padding: 0;
-
-    background: transparent;
-
-    box-sizing: border-box;
 }
 
 
-/* TÍTULOS */
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
 
-.cliente-admin-bloco h2 {
+.cliente-admin-bloco > h2 {
+
     margin: 0 0 25px;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 28px;
+
+    font-size: 36px;
+
     font-weight: 400;
 
+    letter-spacing: 1.2px;
+
+    line-height: 1.2;
+
     text-transform: uppercase;
-    letter-spacing: .7px;
+
+}
+
+
+.cliente-admin-titulo {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.cliente-admin-titulo > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+/* "FICHA" E "ACOMPANHAMENTO" */
+
+.cliente-admin-titulo span {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding-bottom: 5px;
+
+    color: #2f6d67;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid #d6c5a6;
+
+}
+
+
+.cliente-admin-titulo h2 {
+
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
 }
 
 
@@ -7332,81 +7489,76 @@ body{
    ========================================================= */
 
 .cliente-admin-dados {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    gap: 1px;
+    gap: 15px 20px;
 
-    background: rgba(47, 109, 103, .12);
+    padding: 25px;
 
-    border-radius: 7px;
-    overflow: hidden;
+    background: #d9ded2;
+
+    border-radius: 10px;
+
 }
+
+
+/* CADA DADO TEM SEU PRÓPRIO BLOCO */
 
 .cliente-admin-dado {
-    min-height: 90px;
 
-    padding: 18px 20px;
+    min-width: 0;
+
+    padding: 17px 20px;
 
     background: #f5f2e9;
+
+    border-radius: 6px;
+
 }
 
+
 .cliente-admin-dado span {
+
     display: block;
 
     margin-bottom: 7px;
 
-    color: #7d958d;
+    color: #3e746d;
 
-    font-size: 10px;
-    font-weight: 400;
+    font-family: "Playfair Display SC", serif;
 
-    letter-spacing: .9px;
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.3px;
+
+    line-height: 1.2;
+
     text-transform: uppercase;
+
 }
 
+
 .cliente-admin-dado p {
+
     margin: 0;
 
     color: #555;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 17px;
-    line-height: 1.3;
-}
+    font-family: "Playfair Display SC", serif;
 
+    font-size: 14px;
 
-/* =========================================================
-   TÍTULO DE SEÇÃO
-   ========================================================= */
+    font-weight: 400;
 
-.cliente-admin-titulo {
-    display: flex;
+    line-height: 1.5;
 
-    align-items: flex-end;
-    justify-content: space-between;
+    overflow-wrap: break-word;
 
-    gap: 20px;
-
-    margin-bottom: 25px;
-}
-
-.cliente-admin-titulo > div span {
-    display: block;
-
-    margin-bottom: 4px;
-
-    color: #7d958d;
-
-    font-size: 10px;
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-}
-
-.cliente-admin-titulo h2 {
-    margin: 0;
 }
 
 
@@ -7415,36 +7567,48 @@ body{
    ========================================================= */
 
 .btn-admin-principal {
-    display: inline-flex;
 
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
 
-    padding: 11px 18px;
+    padding: 11px 22px;
 
     background: #7d958d;
+
     color: #ffffff;
 
     border: none;
-    border-radius: 5px;
+
+    border-radius: 0;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 11px;
+
+    font-size: 12px;
+
     font-weight: 400;
 
     letter-spacing: .7px;
-    text-transform: uppercase;
+
+    line-height: 1.3;
+
+    text-align: center;
 
     text-decoration: none;
 
-    white-space: nowrap;
+    text-transform: uppercase;
 
-    transition: .2s ease;
+    cursor: pointer;
+
+    transition: .3s;
+
 }
 
+
 .btn-admin-principal:hover {
+
     background: #2f6d67;
+
     color: #ffffff;
+
 }
 
 
@@ -7453,46 +7617,77 @@ body{
    ========================================================= */
 
 .anamnese-status {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 30px;
 
-    padding: 22px 24px;
+    padding: 25px 28px;
 
-    background: #e9ebe3;
+    background: #d9ded2;
 
-    border-left: 4px solid #7d958d;
-    border-radius: 7px;
+    border-radius: 10px;
+
 }
 
-.anamnese-status.anamnese-ok {
-    border-left-color: #2f6d67;
+
+.anamnese-status > div {
+
+    min-width: 0;
+
 }
+
+
+/* TEXTO DA ANAMNESE SEM NEGRITO */
 
 .anamnese-status strong {
+
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 
-    color: #3e746d;
+    color: #4f746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 14px;
+
+    font-size: 16px;
+
     font-weight: 400;
 
+    letter-spacing: .8px;
+
+    line-height: 1.4;
+
     text-transform: uppercase;
+
 }
 
+
 .anamnese-status p {
+
     margin: 0;
 
-    color: #777;
+    color: #666;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* FICHA CADASTRADA */
+
+.anamnese-ok {
+
+    border-left: 4px solid #3e746d;
+
 }
 
 
@@ -7500,189 +7695,245 @@ body{
    AGENDAMENTOS
    ========================================================= */
 
-.bloco-info {
-    width: 100%;
+.cliente-admin-container .bloco-info {
 
-    margin-bottom: 45px;
+    margin-bottom: 60px;
 
-    padding: 0;
 }
 
-.bloco-info > h3 {
+
+.cliente-admin-container .bloco-info > h3 {
+
     margin: 0 0 25px;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 28px;
+
+    font-size: 36px;
+
     font-weight: 400;
 
-    letter-spacing: .7px;
+    letter-spacing: 1.2px;
+
+    line-height: 1.2;
 
     text-transform: uppercase;
+
 }
 
 
-/* LISTA */
+/* =========================================================
+   LISTA DE AGENDAMENTOS
+   ========================================================= */
 
 .lista-agendamentos {
+
     display: flex;
 
     flex-direction: column;
 
     gap: 18px;
+
 }
 
-
-/* ITEM */
 
 .agendamento-item {
-    padding: 22px 24px;
 
-    background: #e9ebe3;
+    padding: 25px 28px;
 
-    border-radius: 7px;
+    background: #d9ded2;
 
-    border-left: 4px solid #7d958d;
+    border-radius: 10px;
 
-    box-sizing: border-box;
 }
 
+
 .agendamento-item p {
-    margin: 0 0 9px;
+
+    margin: 0 0 10px;
 
     color: #555;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    font-family: "Playfair Display SC", serif;
 
-    line-height: 1.4;
+    font-size: 13px;
+
+    line-height: 1.6;
+
 }
+
 
 .agendamento-item p:last-of-type {
+
     margin-bottom: 0;
+
 }
 
+
 .agendamento-item strong {
+
     color: #3e746d;
 
-    font-family: "Playfair Display SC", serif;
-    font-size: 11px;
-    font-weight: 400;
+    font-weight: 600;
 
-    letter-spacing: .4px;
+    letter-spacing: .5px;
+
 }
 
 
 /* =========================================================
-   STATUS DOS AGENDAMENTOS
+   STATUS
    ========================================================= */
 
 .status-agendamento {
+
     display: inline-block;
 
-    margin-left: 5px;
+    padding: 4px 10px;
 
-    padding: 5px 9px;
-
-    border-radius: 4px;
+    margin-left: 4px;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 10px;
 
+    font-weight: 600;
+
+    letter-spacing: .7px;
+
     text-transform: uppercase;
-    letter-spacing: .5px;
+
 }
+
 
 .status-pendente {
-    background: #e6dcc4;
-    color: #765f32;
+
+    background: #e7dfc9;
+
+    color: #806f3e;
+
 }
+
 
 .status-confirmado {
-    background: #d5e1dc;
-    color: #2f6d67;
+
+    background: #d4e3da;
+
+    color: #3e746d;
+
 }
+
 
 .status-concluido {
-    background: #cbdad2;
-    color: #285e56;
+
+    background: #cbded4;
+
+    color: #35665f;
+
 }
 
+
 .status-cancelado {
-    background: #e5d5d2;
-    color: #87554d;
+
+    background: #ead4d3;
+
+    color: #873836;
+
 }
 
 
 /* =========================================================
-   BOTÕES DE STATUS
+   AÇÕES DE STATUS
    ========================================================= */
 
 .admin-status-acoes {
+
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 8px;
 
-    margin-top: 20px;
+    margin-top: 22px;
 
-    padding-top: 18px;
+    padding-top: 20px;
 
-    border-top: 1px solid rgba(47, 109, 103, .12);
+    border-top: 1px solid rgba(62, 116, 109, .18);
+
 }
+
 
 .admin-status-acoes form {
+
     margin: 0;
+
 }
 
+
 .btn-status {
-    padding: 8px 13px;
+
+    padding: 9px 16px;
 
     border: none;
-    border-radius: 4px;
+
+    border-radius: 0;
+
+    color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 10px;
-    font-weight: 400;
 
-    letter-spacing: .5px;
+    font-size: 10px;
+
+    letter-spacing: .6px;
 
     text-transform: uppercase;
 
     cursor: pointer;
 
-    transition: .2s ease;
+    transition: .3s;
+
 }
 
-.btn-pendente {
-    background: #d6c9a9;
-    color: #665329;
-}
-
-.btn-confirmado {
-    background: #b8cbc4;
-    color: #2f6d67;
-}
-
-.btn-concluido {
-    background: #9fb9ae;
-    color: #285e56;
-}
-
-.btn-cancelado {
-    background: #d5b8b3;
-    color: #764a43;
-}
-
-.btn-status:hover:not(:disabled) {
-    opacity: .8;
-}
 
 .btn-status:disabled {
-    cursor: not-allowed;
+
     opacity: .45;
+
+    cursor: default;
+
+}
+
+
+.btn-pendente,
+.btn-confirmado,
+.btn-concluido {
+
+    background: #7d958d;
+
+}
+
+
+.btn-pendente:hover:not(:disabled),
+.btn-confirmado:hover:not(:disabled),
+.btn-concluido:hover:not(:disabled) {
+
+    background: #2f6d67;
+
+}
+
+
+.btn-cancelado {
+
+    background: #a94442;
+
+}
+
+
+.btn-cancelado:hover:not(:disabled) {
+
+    background: #873836;
+
 }
 
 
@@ -7690,171 +7941,347 @@ body{
    SEM DADOS
    ========================================================= */
 
-.sem-dados {
-    padding: 25px;
+.cliente-admin-container .sem-dados {
 
-    background: #e9ebe3;
+    padding: 28px;
 
-    border-radius: 7px;
+    background: #d9ded2;
+
+    border-radius: 10px;
 
     text-align: center;
+
 }
 
-.sem-dados p {
+
+.cliente-admin-container .sem-dados p {
+
     margin: 0;
 
-    color: #777;
+    color: #666;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 17px;
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 13px;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+
 }
 
 
 /* =========================================================
-   FOTOS - ANTES E DEPOIS
+   PAGINAÇÃO
    ========================================================= */
 
-.cliente-admin-titulo-fotos {
-    align-items: center;
+.admin-paginacao {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 30px;
+
 }
 
+
+.admin-paginacao .pagination {
+
+    margin: 0;
+
+    gap: 5px;
+
+}
+
+
+.admin-paginacao .page-link {
+
+    min-width: 38px;
+
+    padding: 8px 11px;
+
+    border: none;
+
+    border-radius: 0 !important;
+
+    background: #d9ded2;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    text-align: center;
+
+}
+
+
+.admin-paginacao .page-link:hover {
+
+    background: #7d958d;
+
+    color: #ffffff;
+
+}
+
+
+.admin-paginacao .page-item.active .page-link {
+
+    background: #3e746d;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   FOTOS DE ACOMPANHAMENTO
+   ========================================================= */
+
 .acompanhamentos-admin {
+
     display: flex;
 
     flex-direction: column;
 
     gap: 25px;
+
 }
 
-
-/* CARD */
 
 .acompanhamento-card-admin {
-    padding: 25px;
 
-    background: #e9ebe3;
+    padding: 28px;
 
-    border-radius: 8px;
+    background: #d9ded2;
 
-    box-sizing: border-box;
-}
+    border-radius: 10px;
 
-
-/* CABEÇALHO */
-
-.acompanhamento-cabecalho {
-    display: flex;
-
-    align-items: flex-start;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    margin-bottom: 22px;
-
-    padding-bottom: 16px;
-
-    border-bottom: 1px solid rgba(47, 109, 103, .12);
-}
-
-.acompanhamento-cabecalho span {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: #7d958d;
-
-    font-size: 10px;
-    letter-spacing: .9px;
-
-    text-transform: uppercase;
-}
-
-.acompanhamento-cabecalho h3 {
-    margin: 0;
-
-    color: #3e746d;
-
-    font-family: "Playfair Display SC", serif;
-    font-size: 18px;
-    font-weight: 400;
-
-    text-transform: uppercase;
-}
-
-.acompanhamento-data {
-    color: #777;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
 }
 
 
 /* =========================================================
-   COMPARAÇÃO DAS FOTOS
+   CABEÇALHO DO ACOMPANHAMENTO
    ========================================================= */
 
-.comparacao-fotos-admin {
-    display: grid;
+.acompanhamento-cabecalho {
 
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
 
-    gap: 20px;
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+
 }
 
-.comparacao-foto-admin {
-    min-width: 0;
-}
 
-.foto-titulo {
-    margin-bottom: 9px;
+.acompanhamento-cabecalho span {
 
-    color: #3e746d;
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #2f6d67;
+
+    font-family: "Playfair Display SC", serif;
 
     font-size: 11px;
-    letter-spacing: .8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.acompanhamento-cabecalho h3 {
+    margin: 0;
+
+    color: #285e58;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
 
     text-transform: uppercase;
 }
 
-.comparacao-foto-admin img {
+
+.acompanhamento-data {
+
+    flex-shrink: 0;
+
+    color: #4f746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    letter-spacing: .8px;
+
+}
+
+/* =========================================================
+   ÁREA DAS FOTOS
+   ========================================================= */
+
+   .comparacao-fotos-admin {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
     width: 100%;
-    height: 300px;
+
+}
+
+
+/* =========================================================
+   CADA FOTO
+   ========================================================= */
+
+.comparacao-foto-admin {
+
+    width: 100%;
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.comparacao-foto-admin img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 425px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #f8f7f1;
+
+    border: 4px solid #d6c5a6;
+
+    border-radius: 5px;
+
+    image-rendering: auto;
+
+    
+
+}
+
+
+
+ /* =========================================================
+   TÍTULO DAS FOTOS
+   ========================================================= */
+
+
+
+    .foto-titulo {
+        display: block;
+    
+        width: 100%;
+    
+        margin: 0 0 10px;
+    
+        color: #2f6d67;
+    
+        font-family: "Playfair Display SC", serif;
+    
+        font-size: 14px;
+    
+        font-weight: 500;
+    
+        letter-spacing: 1.5px;
+    
+        line-height: 1.3;
+    
+        text-align: center;
+    
+        text-transform: uppercase;
+    
+
+
+}
+
+
+.comparacao-foto-admin img {
+
+    width: 100%;
+
+    height: 350px;
 
     display: block;
 
     object-fit: cover;
 
-    border: 3px solid #d6c5a6;
-    border-radius: 7px;
+    border: 4px solid #d6c5a6;
 
-    box-sizing: border-box;
+    border-radius: 6px;
+
+    background: #f5f2e9;
+
 }
 
+
+/* =========================================================
+   FOTO VAZIA
+   ========================================================= */
+
 .foto-vazia-admin {
+
     width: 100%;
-    height: 300px;
+
+    height: 350px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
 
     background: #f5f2e9;
 
-    border: 1px solid rgba(47, 109, 103, .15);
-    border-radius: 7px;
+    border: 4px solid #d6c5a6;
 
-    color: #999;
+    border-radius: 6px;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    color: #777;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
 
     text-align: center;
 
-    box-sizing: border-box;
+    text-transform: uppercase;
+
 }
 
 
@@ -7863,196 +8290,469 @@ body{
    ========================================================= */
 
 .observacao-foto-admin {
-    margin-top: 20px;
 
-    padding-top: 18px;
+    margin-top: 22px;
 
-    border-top: 1px solid rgba(47, 109, 103, .12);
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(62, 116, 109, .18);
+
 }
+
 
 .observacao-foto-admin span {
+
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 
-    color: #7d958d;
+    color: #3e746d;
 
-    font-size: 10px;
-    letter-spacing: .9px;
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
 
     text-transform: uppercase;
+
 }
 
+
 .observacao-foto-admin p {
+
     margin: 0;
 
-    color: #555;
+    color: #666;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    font-family: "Playfair Display SC", serif;
 
-    line-height: 1.5;
+    font-size: 13px;
+
+    line-height: 1.6;
+
 }
 
 
 /* =========================================================
-   EXCLUIR FOTO
+   BOTÃO EXCLUIR
    ========================================================= */
 
 .acoes-foto-admin {
+
     display: flex;
 
     justify-content: flex-end;
 
     margin-top: 20px;
+
 }
 
-.btn-excluir-admin {
-    padding: 9px 15px;
 
-    background: #d5b8b3;
-    color: #764a43;
+.btn-excluir-admin {
+
+    padding: 10px 18px;
 
     border: none;
-    border-radius: 4px;
+
+    border-radius: 0;
+
+    background: #a94442;
+
+    color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 10px;
-    font-weight: 400;
 
-    letter-spacing: .6px;
+    font-size: 11px;
+
+    letter-spacing: .7px;
 
     text-transform: uppercase;
 
     cursor: pointer;
 
-    transition: .2s ease;
+    transition: .3s;
+
 }
 
+
 .btn-excluir-admin:hover {
-    background: #b88982;
-    color: #ffffff;
+
+    background: #873836;
+
 }
 
 
 /* =========================================================
-   NENHUMA FOTO
+   SEM FOTOS
    ========================================================= */
 
 .sem-fotos-admin {
-    padding: 35px 25px;
 
-    background: #e9ebe3;
+    padding: 45px 30px;
 
-    border-radius: 7px;
+    background: #d9ded2;
+
+    border-radius: 10px;
 
     text-align: center;
+
 }
 
+
 .sem-fotos-admin h3 {
-    margin: 0 0 8px;
+
+    margin: 0 0 10px;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 18px;
-    font-weight: 400;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
 
     text-transform: uppercase;
+
 }
 
+
 .sem-fotos-admin p {
+
     max-width: 650px;
 
     margin: 0 auto;
 
-    color: #777;
+    color: #666;
 
-    font-family: "Cormorant Garamond", serif;
-    font-size: 16px;
+    font-family: "Playfair Display SC", serif;
 
-    line-height: 1.5;
+    font-size: 13px;
+
+    line-height: 1.7;
+
 }
-
-
-
 
 
 /* =========================================================
-   RESPONSIVO
+   TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 992px) {
 
-    .cliente-admin-dados {
-        grid-template-columns: repeat(2, 1fr);
+    .cliente-admin-cabecalho {
+
+        gap: 35px;
+
     }
 
-    .comparacao-fotos-admin {
-        grid-template-columns: 1fr;
+
+    .cliente-admin-nome h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .comparacao-foto-admin img,
+    .foto-vazia-admin {
+
+        height: 300px;
+
     }
 
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 768px) {
 
     .cliente-admin-container {
-        width: 92%;
+
+        width: 90%;
 
         padding-top: 30px;
+
     }
+
 
     .cliente-admin-cabecalho {
-        align-items: flex-start;
 
-        gap: 18px;
+        flex-direction: column;
 
-        margin-bottom: 35px;
+        align-items: center;
+
+        gap: 25px;
+
+        text-align: center;
+
+        margin-bottom: 50px;
+
     }
+
 
     .cliente-admin-foto {
-        width: 80px;
-        height: 80px;
+
+        width: 165px;
+
+        height: 165px;
+
     }
+
+
+    .cliente-admin-nome {
+
+        align-items: center;
+
+        width: 100%;
+
+    }
+
 
     .cliente-admin-nome h1 {
-        font-size: 27px;
+
+        font-size: 50px;
+
     }
+
+
+    .cliente-admin-bloco > h2,
+    .cliente-admin-titulo h2,
+    .cliente-admin-container .bloco-info > h3 {
+
+        font-size: 30px;
+
+    }
+
 
     .cliente-admin-dados {
+
         grid-template-columns: 1fr;
+
+        padding: 20px;
+
     }
+
 
     .cliente-admin-titulo {
+
         align-items: flex-start;
 
         flex-direction: column;
+
     }
+
+
+    .cliente-admin-titulo-fotos {
+
+        align-items: flex-start;
+
+    }
+
 
     .anamnese-status {
+
         align-items: flex-start;
 
         flex-direction: column;
+
+        padding: 23px;
+
     }
 
-    .acompanhamento-cabecalho {
-        flex-direction: column;
+
+    .anamnese-status .btn-admin-principal {
+
+        width: 100%;
+
     }
+
+
+    .admin-status-acoes {
+
+        flex-direction: column;
+
+    }
+
+
+    .admin-status-acoes form {
+
+        width: 100%;
+
+    }
+
+
+    .btn-status {
+
+        width: 100%;
+
+    }
+
+
+    .comparacao-fotos-admin {
+
+        grid-template-columns: 1fr;
+
+    }
+
 
     .comparacao-foto-admin img,
     .foto-vazia-admin {
-        height: 240px;
+
+        height: 330px;
+
     }
 
-    .admin-status-acoes {
+
+    .acompanhamento-cabecalho {
+
+        align-items: flex-start;
+
         flex-direction: column;
-        align-items: stretch;
+
+        gap: 10px;
+
     }
 
-    .admin-status-acoes form,
-    .btn-status {
+
+    .acoes-foto-admin,
+    .acoes-foto-admin form,
+    .btn-excluir-admin {
+
         width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .cliente-admin-container {
+
+        width: 90%;
+
+        padding-top: 25px;
+
+    }
+
+
+    .btn-voltar-admin {
+
+        width: 100%;
+
+    }
+
+
+    .cliente-admin-foto {
+
+        width: 145px;
+
+        height: 145px;
+
+    }
+
+
+    .cliente-admin-nome h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .cliente-admin-nome > span,
+    .cliente-admin-titulo span {
+
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .cliente-admin-bloco > h2,
+    .cliente-admin-titulo h2,
+    .cliente-admin-container .bloco-info > h3 {
+
+        font-size: 25px;
+
+    }
+
+
+    .cliente-admin-dados {
+
+        padding: 16px;
+
+        gap: 12px;
+
+    }
+
+
+    .cliente-admin-dado {
+
+        padding: 15px 16px;
+
+    }
+
+
+    .cliente-admin-dado span {
+
+        font-size: 10px;
+
+    }
+
+
+    .cliente-admin-dado p {
+
+        font-size: 12px;
+
+    }
+
+
+    .btn-admin-principal {
+
+        width: 100%;
+
+    }
+
+
+    .agendamento-item {
+
+        padding: 20px;
+
+    }
+
+
+    .acompanhamento-card-admin {
+
+        padding: 20px;
+
+    }
+
+
+    .comparacao-foto-admin img,
+    .foto-vazia-admin {
+
+        height: 280px;
+
+    }
+
+
+    .sem-fotos-admin {
+
+        padding: 35px 20px;
+
     }
 
 }
@@ -8907,6 +9607,852 @@ body{
 
 
 
+/* =========================================================
+   ADICIONAR FOTOS
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+   ========================================================= */
+
+   .admin-fotos-body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #f5f2e9;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
+
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.admin-fotos-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 0 80px;
+
+    background: #f5f2e9;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.admin-fotos-container {
+
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.admin-fotos-header {
+
+    margin-bottom: 55px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.admin-fotos-subtitle {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.admin-fotos-title {
+
+    margin: 0 0 16px;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.admin-fotos-description {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   ALERTA DE ERRO
+   ========================================================= */
+
+.admin-fotos-alert {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding: 16px 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 4px;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .8px;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+
+}
+
+
+.admin-fotos-alert-erro {
+
+    background: #eee0dc;
+
+    border-left: 4px solid #9b6258;
+
+    color: #754c45;
+
+}
+
+
+.admin-fotos-alert strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.admin-fotos-alert ul {
+
+    margin: 5px 0 0 18px;
+
+    padding: 0;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.admin-fotos-form {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.admin-fotos-section {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    padding: 30px 35px 35px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-fotos-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
+
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.admin-fotos-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background: #2f6d67;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA SEÇÃO
+   ========================================================= */
+
+.admin-fotos-section-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================================
+   SUBTÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-fotos-section-info small {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #819d96;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+   ========================================================= */
+
+.admin-fotos-section-info h2 {
+
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.admin-fotos-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.admin-fotos-field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAMPO COMPLETO
+   ========================================================= */
+
+.admin-fotos-field-full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.admin-fotos-field label {
+
+    display: block;
+
+    margin: 0 0 9px;
+
+    color: #52635f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   INPUT / TEXTAREA
+   ========================================================= */
+
+.admin-fotos-field input,
+.admin-fotos-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: #f8f7f1;
+
+    border: 1px solid #c7cec8;
+
+    border-radius: 3px;
+
+    color: #414744;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        background-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.admin-fotos-field input[type="text"],
+.admin-fotos-field input[type="date"] {
+
+    height: 46px;
+
+    padding: 0 14px;
+
+}
+
+
+/* =========================================================
+   INPUT FILE
+   ========================================================= */
+
+.admin-fotos-field input[type="file"] {
+
+    height: auto;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.admin-fotos-field textarea {
+
+    min-height: 125px;
+
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   FOCO
+   ========================================================= */
+
+.admin-fotos-field input:focus,
+.admin-fotos-field textarea:focus {
+
+    background: #ffffff;
+
+    border-color: #2f6d67;
+
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.admin-fotos-field input::placeholder,
+.admin-fotos-field textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .5px;
+
+}
+
+
+/* =========================================================
+   TEXTO AUXILIAR
+   ========================================================= */
+
+.admin-fotos-help {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #6f7975;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.admin-fotos-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(47, 109, 103, .15);
+
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
+
+.admin-fotos-back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 150px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #7d958d;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.admin-fotos-back:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   BOTÃO SALVAR
+   ========================================================= */
+
+.admin-fotos-save {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 180px;
+
+    min-height: 45px;
+
+    padding: 12px 25px;
+
+    box-sizing: border-box;
+
+    background: #2f6d67;
+
+    border: none;
+
+    border-radius: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+
+}
+
+
+.admin-fotos-save:hover {
+
+    background: #3e746d;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .admin-fotos-page {
+
+        padding: 35px 0 60px;
+
+    }
+
+
+    .admin-fotos-container {
+
+        width: 92%;
+
+    }
+
+
+    .admin-fotos-title {
+
+        font-size: 34px;
+
+    }
+
+
+    .admin-fotos-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .admin-fotos-field-full {
+
+        grid-column: auto;
+
+    }
+
+
+    .admin-fotos-section {
+
+        padding: 25px 22px 28px;
+
+    }
+
+
+    .admin-fotos-actions {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .admin-fotos-container {
+
+        width: 94%;
+
+    }
+
+
+    .admin-fotos-title {
+
+        font-size: 29px;
+
+    }
+
+
+    .admin-fotos-description {
+
+        font-size: 11px;
+
+    }
+
+
+    .admin-fotos-section {
+
+        padding: 22px 18px 25px;
+
+    }
+
+
+    .admin-fotos-section-title {
+
+        gap: 12px;
+
+    }
+
+
+    .admin-fotos-number {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 10px;
+
+    }
+
+
+    .admin-fotos-section-info h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .admin-fotos-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .admin-fotos-back,
+    .admin-fotos-save {
+
+        width: 100%;
+
+    }
+
+}
 
 
 
