@@ -1,117 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Cliente | Administração</title>
+    <title>Cliente | Admin</title>
 
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- FONTES -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
+        rel="stylesheet"
+    >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/admin.css') }}"
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Parisienne&family=Playfair+Display+SC&display=swap"
-    rel="stylesheet"
->
-
-
-<!-- BOOTSTRAP -->
-
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
->
-
-
-<!-- CSS -->
-
-<link
-    rel="stylesheet"
-    href="{{ asset('css/style.css') }}"
->
-
-<link
-    rel="stylesheet"
-    href="{{ asset('css/admin.css') }}"
->
-
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
 
 </head>
 
+
 <body>
-
-
-<!-- =========================
-     NAVBAR ADMIN
-========================= -->
-
-<nav class="navbar">
-
-    <button
-        class="menu-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-        aria-controls="menuLateral"
-    >
-        <img
-            src="{{ asset('imagem/menu.png') }}"
-            alt="Menu"
-        >
-    </button>
-
-
-    <ul>
-
-        <li>
-            <a href="{{ route('admin.home.index') }}">
-                HOME
-            </a>
-        </li>
-
-        <li>
-            <a href="{{ route('admin.procedimentos.index') }}">
-                PROCEDIMENTOS
-            </a>
-        </li>
-
-        <li>
-            <a href="{{ route('admin.agenda.index') }}">
-                AGENDA
-            </a>
-        </li>
-
-        <li>
-            <a href="{{ route('admin.vitrine.index') }}">
-                LOJA
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                BLOG
-            </a>
-        </li>
-
-    </ul>
-
-</nav>
-
+    
+{{-- HEADER DO ADMIN --}}
+    @include('admin._partials_admin.header_admin')
 
 
 <!-- =========================
@@ -119,20 +52,6 @@
 ========================= -->
 
 <main class="cliente-admin-container">
-
-
-    <!-- VOLTAR -->
-
-    <div class="voltar-clientes">
-
-        <a
-            href="{{ route('admin.clientes.index') }}"
-            class="btn-voltar-admin"
-        >
-             Voltar para clientes
-        </a>
-
-    </div>
 
 
 
@@ -175,9 +94,25 @@
                 {{ $cliente->user->email ?? 'E-mail não informado' }}
             </p>
 
+            <div class="voltar-clientes">
+
+    <a
+        href="{{ route('admin.clientes.index') }}"
+        class="btn-voltar-admin"
+    >
+        Voltar para clientes
+    </a>
+
+</div>
+
         </div>
 
+        
+
     </section>
+
+
+    
 
 
 
@@ -368,6 +303,7 @@
 
     <section class="bloco-info">
 
+      
         <h3>Agendamentos</h3>
 
 
@@ -922,8 +858,7 @@
 
 
 
-@include('_partials.footer')
-
+@include('admin._partials_admin.footer_admin')
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
