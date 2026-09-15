@@ -2,20 +2,47 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meus Favoritos</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <title> procedimentos- Valéria Maciel</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- BOOTSTRAP -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
     <link
         rel="stylesheet"
-        href="{{ asset('css/procedimento.css') }}"
+        href="{{ asset('css/home.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
+    
+
 </head>
 
 <body>
@@ -23,8 +50,22 @@
 @include('_partials.header')
 
 <div class="container mt-5">
+<div class="meus-agendamentos-header">
 
-    <h1>Meus Favoritos ❤️</h1>
+                <div class="meus-agendamentos-header-info">
+
+                    <h1 class="meus-agendamentos-title">
+                        Meus Favoritos
+                    </h1>
+
+                    <p class="meus-agendamentos-description">
+                      Visualize seus procedimentos favoritados
+                    </p>
+
+                </div>
+
+            </div>
+
 
     @if($favoritos->isEmpty())
 
@@ -32,61 +73,70 @@
 
     @else
 
-        <div class="row">
+    <div class="vm-favoritos-grid">
 
-            @foreach($favoritos as $favorito)
+@foreach($favoritos as $favorito)
 
-                <div class="col-md-4 mb-4">
+    <div class="vm-favorito-card">
 
-                    <div class="card">
+        @if($favorito->procedimento->imagem)
+            <div class="vm-favorito-imagem">
+                <img
+                    src="{{ asset('storage/' . $favorito->procedimento->imagem) }}"
+                    alt="{{ $favorito->procedimento->nome }}"
+                >
+            </div>
+        @endif
 
-                        @if($favorito->procedimento->imagem)
-                            <img
-                                src="{{ asset('storage/' . $favorito->procedimento->imagem) }}"
-                                class="card-img-top"
-                            >
-                        @endif
+        <div class="vm-favorito-conteudo">
 
-                        <div class="card-body">
+            <span class="vm-favorito-label">
+                PROCEDIMENTO
+            </span>
 
-                            <h3>
-                                {{ $favorito->procedimento->nome }}
-                            </h3>
+            <h2 class="vm-favorito-titulo">
+                {{ $favorito->procedimento->nome }}
+            </h2>
 
-                            <p>
-                                {{ $favorito->procedimento->descricao }}
-                            </p>
+            <div class="vm-favorito-linha"></div>
 
-                            <a
-                                href="{{ route('procedimentos.show', $favorito->procedimento->id) }}"
-                                class="btn btn-primary"
-                            >
-                                Ver procedimento
-                            </a>
+            <p class="vm-favorito-descricao">
+                {{ $favorito->procedimento->descricao }}
+            </p>
 
-                            <form
-                                action="{{ route('cliente.favoritos.toggle', $favorito->procedimento->id) }}"
-                                method="POST"
-                                class="mt-2"
-                            >
-                                @csrf
+            <div class="vm-favorito-acoes">
 
-                                <button
-                                    type="submit"
-                                    class="btn btn-danger"
-                                >
-                                    ❤️ Remover dos favoritos
-                                </button>
+                <a
+                    href="{{ route('procedimentos.show', $favorito->procedimento->id) }}"
+                    class="vm-favorito-ver"
+                >
+                    VER PROCEDIMENTO
+                </a>
 
-                            </form>
+                <form
+                    action="{{ route('cliente.favoritos.toggle', $favorito->procedimento->id) }}"
+                    method="POST"
+                >
+                    @csrf
 
-                        </div>
+                    <button
+                        type="submit"
+                        class="vm-favorito-remover"
+                    >
+                        REMOVER DOS FAVORITOS
+                    </button>
 
-                    </div>
+                </form>
 
-                </div>
+            </div>
 
-            @endforeach
+        </div>
+
+    </div>
+
+@endforeach
+
+</div>
 
         </div>
 

@@ -593,6 +593,7 @@ body > img{
     object-fit: cover;
 
     border-radius: 10px;
+    margin-bottom: 80px;
 }
 
 
@@ -617,6 +618,7 @@ body > img{
     color: #2c7771;
 
     border-bottom: 1px solid #d7d5bd;
+    margin-bottom: 80px;
 }
 
 
@@ -715,6 +717,7 @@ body > img{
         margin-right: 0 !important;
 
         border-radius: 10px;
+        margin-bottom: 80px;
     }
 
 
@@ -1418,4 +1421,8 @@ body > img {
 
 .btn-favorito:hover {
     transform: scale(1.1);
+}
+/* ESPAÇO ANTES DO FOOTER */
+body > footer {
+    margin-top: 80px !important;
 }
