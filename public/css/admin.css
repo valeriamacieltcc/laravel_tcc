@@ -8762,110 +8762,148 @@ body{
 
 
 /* =========================================================
-    AGENDA ÁREA PRINCIPAL
+   AGENDA - ADMIN
+   PADRÃO VISUAL - VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   PÁGINA
    ========================================================= */
 
    .agenda-container {
+
     width: 100%;
-    min-height: 100vh;
 
     margin: 0;
-    padding: 40px 0 70px;
+    padding: 40px 0 80px;
 
     background: #f5f2e9;
+
+    color: #444;
+
+    font-family: "Playfair Display SC", serif;
 
     box-sizing: border-box;
 }
 
 
 /* =========================================================
-   TÍTULO
+   TÍTULO DA AGENDA
    ========================================================= */
 
 .titulo-agenda {
+
     width: 90%;
+
     max-width: 1250px;
 
-    margin: 0 auto 40px;
+    margin: 0 auto 38px;
 
-    text-align: left;
+    padding: 0;
+
+    box-sizing: border-box;
 }
 
+
 .titulo-agenda h1 {
-    margin: 0;
+
+    margin: 0 0 8px;
+
+    padding: 0;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 48px;
+
+    font-size: 42px;
+
     font-weight: 400;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+
     line-height: 1.2;
 
     text-transform: uppercase;
 }
 
-.titulo-agenda p {
-    margin: 8px 0 0;
 
-    color: #777;
+.titulo-agenda p {
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #77766f;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 12px;
+
     font-weight: 400;
 
-    letter-spacing: .5px;
+    letter-spacing: .7px;
+
     line-height: 1.6;
 }
 
 
 /* =========================================================
-   ALERTAS
+   MENSAGENS
    ========================================================= */
 
 .agenda-container .alert {
+
     width: 90%;
+
     max-width: 1250px;
 
     margin: 0 auto 25px;
+
     padding: 14px 20px;
 
     box-sizing: border-box;
 
-    border-radius: 4px;
+    border: none;
+
+    border-left: 4px solid #3e746d;
+
+    border-radius: 0;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 11px;
 
-    letter-spacing: .5px;
+    font-weight: 400;
+
+    letter-spacing: .6px;
+
     line-height: 1.5;
 }
 
-.agenda-container .alert-success {
-    background: #d9ded2;
 
-    border: none;
-    border-left: 4px solid #3e746d;
+.agenda-container .alert-success {
+
+    background: #d9ded2;
 
     color: #3e746d;
 }
 
+
 .agenda-container .alert-danger {
-    background: #eee0dc;
 
-    border: none;
-    border-left: 4px solid #9b6258;
+    background: #f3dddd;
 
-    color: #754c45;
+    border-left-color: #a94442;
+
+    color: #873836;
 }
+
 
 .agenda-container .alert p {
-    margin: 0 0 5px;
-}
 
-.agenda-container .alert p:last-child {
-    margin-bottom: 0;
+    margin: 0 0 4px;
+
 }
 
 
@@ -8874,71 +8912,118 @@ body{
    ========================================================= */
 
 .legenda-agenda {
+
     width: 90%;
+
     max-width: 1250px;
 
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
+
+    padding: 0;
 
     display: flex;
+
     align-items: center;
 
-    gap: 25px;
+    gap: 28px;
 
     color: #666;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 10px;
 
+    font-weight: 400;
+
     letter-spacing: .6px;
+
+    text-transform: uppercase;
 }
+
 
 .legenda-agenda > div {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
 }
 
-
-/* bolinhas da legenda */
 
 .legenda-cliente,
 .legenda-compromisso {
+
     display: inline-block;
 
-    width: 10px;
-    height: 10px;
+    width: 12px;
+
+    height: 12px;
 
     flex-shrink: 0;
 
-    border-radius: 50%;
+    border-radius: 2px;
 }
 
+
 .legenda-cliente {
+
     background: #2f6d67;
 }
 
+
 .legenda-compromisso {
-    background: #819d96;
+
+    background: #7d958d;
 }
 
 
 /* =========================================================
-   ÁREA DO CALENDÁRIO + FORMULÁRIO
+   ÁREA PRINCIPAL
    ========================================================= */
 
 .area-agenda {
+
     width: 90%;
+
     max-width: 1250px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-columns: minmax(0, 1fr) 310px;
 
     gap: 30px;
 
     align-items: start;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ÁREA DO CALENDÁRIO
+   ========================================================= */
+
+.calendario-area {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 22px;
+
+    background: #d9ded2;
+
+    border: none;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 
@@ -8946,16 +9031,15 @@ body{
    CALENDÁRIO
    ========================================================= */
 
-.calendario-area {
+#calendar {
+
     width: 100%;
 
-    padding: 25px;
+    margin: 0;
 
-    box-sizing: border-box;
+    padding: 0;
 
-    background: #d9ded2;
-
-    border-radius: 10px;
+    font-family: "Playfair Display SC", serif;
 }
 
 
@@ -8963,46 +9047,61 @@ body{
    FULLCALENDAR
    ========================================================= */
 
-#calendar {
-    width: 100%;
-
-    background: #f8f7f1;
-
-    font-family: "Playfair Display SC", serif;
-}
-
-
-/* fundo geral */
-
 .fc {
-    --fc-border-color: rgba(47, 109, 103, .15);
-    --fc-page-bg-color: #f8f7f1;
-    --fc-neutral-bg-color: #eef0ea;
 
-    color: #555;
+    --fc-border-color: rgba(47, 109, 103, .15);
+
+    --fc-button-bg-color: #7d958d;
+
+    --fc-button-border-color: #7d958d;
+
+    --fc-button-hover-bg-color: #2f6d67;
+
+    --fc-button-hover-border-color: #2f6d67;
+
+    --fc-button-active-bg-color: #2f6d67;
+
+    --fc-button-active-border-color: #2f6d67;
+
+    --fc-today-bg-color: rgba(47, 109, 103, .08);
+
+    --fc-neutral-bg-color: #f5f2e9;
+
+    --fc-page-bg-color: #f5f2e9;
 
     font-family: "Playfair Display SC", serif;
+
+    color: #444;
 }
 
 
 /* =========================================================
-   CABEÇALHO DO CALENDÁRIO
+   TOOLBAR
    ========================================================= */
 
 .fc .fc-toolbar {
-    margin-bottom: 20px;
 
-    gap: 15px;
+    margin-bottom: 18px;
+
+    gap: 12px;
 }
 
+
 .fc .fc-toolbar-title {
+
+    margin: 0;
+
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 24px;
+
+    font-size: 22px;
+
     font-weight: 400;
 
     letter-spacing: 1px;
+
+    line-height: 1.2;
 
     text-transform: uppercase;
 }
@@ -9013,79 +9112,103 @@ body{
    ========================================================= */
 
 .fc .fc-button {
+
+    min-height: 34px;
+
     padding: 8px 13px;
 
     background: #7d958d;
 
-    border: 1px solid #7d958d;
-    border-radius: 0;
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
 
     color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 10px;
+
+    font-size: 9px;
+
     font-weight: 400;
 
     letter-spacing: .7px;
 
-    box-shadow: none;
+    line-height: 1.2;
+
+    text-transform: uppercase;
 
     transition:
-        background-color .2s ease,
-        border-color .2s ease,
+        background-color .25s ease,
         transform .2s ease;
 }
 
+
 .fc .fc-button:hover {
+
     background: #2f6d67;
-    border-color: #2f6d67;
 
     color: #ffffff;
 
     transform: translateY(-1px);
 }
 
-.fc .fc-button:focus,
-.fc .fc-button:active {
-    background: #2f6d67 !important;
-    border-color: #2f6d67 !important;
+
+.fc .fc-button:focus {
 
     box-shadow: none !important;
 }
 
 
-/* botão selecionado */
+.fc .fc-button:active,
+.fc .fc-button-active {
 
-.fc .fc-button-primary:not(:disabled).fc-button-active,
-.fc .fc-button-primary:not(:disabled):active {
-    background: #2f6d67;
+    background: #2f6d67 !important;
 
-    border-color: #2f6d67;
+    border: none !important;
 
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 
 /* =========================================================
-   DIAS DA SEMANA
+   CABEÇALHO DOS DIAS
    ========================================================= */
 
-.fc .fc-col-header-cell {
-    background: #2f6d67;
+.fc .fc-col-header {
 
-    border-color: #2f6d67;
+    background: #2f6d67;
 }
 
+
+.fc .fc-col-header-cell {
+
+    padding: 0;
+
+    background: #2f6d67;
+
+    border-color: rgba(255, 255, 255, .15);
+}
+
+
 .fc .fc-col-header-cell-cushion {
-    padding: 10px 5px;
+
+    display: block;
+
+    padding: 9px 4px;
 
     color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 10px;
+
+    font-size: 9px;
+
     font-weight: 400;
 
-    letter-spacing: 1px;
+    letter-spacing: .8px;
+
+    line-height: 1.3;
 
     text-decoration: none;
 
@@ -9094,41 +9217,67 @@ body{
 
 
 /* =========================================================
-   CÉLULAS DOS DIAS
+   CÉLULAS DO CALENDÁRIO
    ========================================================= */
 
 .fc .fc-daygrid-day {
-    background: #f8f7f1;
+
+    background: #f5f2e9;
+
+    border-color: rgba(47, 109, 103, .15);
 
     transition: background-color .2s ease;
 }
 
+
 .fc .fc-daygrid-day:hover {
-    background: #eef0ea;
+
+    background: #eeeee6;
 }
 
-.fc .fc-daygrid-day-number {
-    padding: 8px;
 
-    color: #52635f;
+.fc .fc-daygrid-day-number {
+
+    padding: 7px 8px;
+
+    color: #555;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 11px;
+
+    font-size: 10px;
+
+    font-weight: 400;
 
     text-decoration: none;
 }
 
 
-/* dia atual */
+/* =========================================================
+   DIA ATUAL
+   ========================================================= */
 
-.fc .fc-day-today {
-    background: rgba(47, 109, 103, .08) !important;
+.fc .fc-daygrid-day.fc-day-today {
+
+    background: rgba(47, 109, 103, .08);
 }
 
+
 .fc .fc-day-today .fc-daygrid-day-number {
+
     color: #2f6d67;
 
-    font-weight: 600;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BORDAS
+   ========================================================= */
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+
+    border-color: rgba(47, 109, 103, .15);
 }
 
 
@@ -9137,109 +9286,148 @@ body{
    ========================================================= */
 
 .fc-event {
-    border: none !important;
-    border-radius: 3px;
 
-    padding: 3px 5px;
+    border: none !important;
+
+    border-radius: 2px !important;
+
+    padding: 2px 4px;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 9px;
 
-    letter-spacing: .2px;
+    font-size: 8px;
+
+    font-weight: 400;
+
+    line-height: 1.3;
 
     cursor: pointer;
+
+    box-shadow: none !important;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
 }
 
 
-/* agendamento da cliente */
+.fc-event:hover {
 
-.fc-event.evento-cliente {
-    background: #2f6d67 !important;
+    opacity: .88;
 
-    border-left: 3px solid #1f5752 !important;
-
-    color: #ffffff !important;
-}
-
-
-/* compromisso */
-
-.fc-event.evento-compromisso {
-    background: #819d96 !important;
-
-    border-left: 3px solid #657f78 !important;
-
-    color: #ffffff !important;
+    transform: translateY(-1px);
 }
 
 
 /* =========================================================
-   VISÃO SEMANAL / DIÁRIA
+   EVENTO - CLIENTE
+   ========================================================= */
+
+.fc-event.evento-cliente {
+
+    background: #2f6d67 !important;
+
+    border-left: 3px solid #285d58 !important;
+
+    color: #ffffff !important;
+}
+
+
+.fc-event.evento-cliente .fc-event-title,
+.fc-event.evento-cliente .fc-event-time {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   EVENTO - COMPROMISSO
+   ========================================================= */
+
+.fc-event.evento-compromisso {
+
+    background: #7d958d !important;
+
+    border-left: 3px solid #657d75 !important;
+
+    color: #ffffff !important;
+}
+
+
+.fc-event.evento-compromisso .fc-event-title,
+.fc-event.evento-compromisso .fc-event-time {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   HORÁRIOS - SEMANA / DIA
    ========================================================= */
 
 .fc .fc-timegrid-slot {
-    height: 42px;
 
-    background: #f8f7f1;
+    height: 30px;
 }
+
 
 .fc .fc-timegrid-slot-label {
-    color: #777;
+
+    color: #77766f;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 9px;
-}
-
-.fc .fc-timegrid-axis-cushion {
-    color: #777;
 
     font-size: 9px;
 }
+
 
 .fc .fc-timegrid-event {
-    border-radius: 4px;
 
-    padding: 3px;
+    border-radius: 2px !important;
 }
 
 
 /* =========================================================
-   FORMULÁRIO - NOVO COMPROMISSO
+   NOVO COMPROMISSO
    ========================================================= */
 
 .novo-compromisso {
+
     width: 100%;
 
-    padding: 30px 28px 32px;
+    margin: 0;
 
-    box-sizing: border-box;
+    padding: 25px 25px 28px;
 
     background: #d9ded2;
 
-    border-radius: 10px;
+    border: none;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
 }
 
 
-/* =========================================================
-   TÍTULO DO FORMULÁRIO
-   ========================================================= */
-
 .novo-compromisso h2 {
+
     margin: 0 0 25px;
 
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid rgba(47, 109, 103, .20);
+    padding: 0;
 
     color: #3e746d;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 22px;
+
     font-weight: 400;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 
-    line-height: 1.3;
+    line-height: 1.2;
 
     text-transform: uppercase;
 }
@@ -9250,16 +9438,18 @@ body{
    ========================================================= */
 
 .novo-compromisso .campo {
-    display: flex;
-    flex-direction: column;
 
     width: 100%;
 
-    margin-bottom: 20px;
+    margin: 0 0 18px;
+
+    padding: 0;
 }
 
+
 .novo-compromisso .campo:last-of-type {
-    margin-bottom: 25px;
+
+    margin-bottom: 22px;
 }
 
 
@@ -9267,18 +9457,23 @@ body{
    LABEL
    ========================================================= */
 
-.novo-compromisso .campo label {
+.novo-compromisso label {
+
     display: block;
 
     margin: 0 0 8px;
 
+    padding: 0;
+
     color: #52635f;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 10px;
+
     font-weight: 600;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1px;
 
     line-height: 1.3;
 
@@ -9287,11 +9482,12 @@ body{
 
 
 /* =========================================================
-   INPUTS / TEXTAREA
+   INPUTS
    ========================================================= */
 
-.novo-compromisso .campo input,
-.novo-compromisso .campo textarea {
+.novo-compromisso input,
+.novo-compromisso textarea {
+
     width: 100%;
 
     box-sizing: border-box;
@@ -9299,17 +9495,20 @@ body{
     background: #f8f7f1;
 
     border: 1px solid #c7cec8;
-    border-radius: 4px;
 
-    color: #414744;
+    border-radius: 3px;
+
+    outline: none;
+
+    color: #444;
 
     font-family: "Playfair Display SC", serif;
-    font-size: 11px;
+
+    font-size: 10px;
+
     font-weight: 400;
 
     letter-spacing: .4px;
-
-    outline: none;
 
     transition:
         border-color .2s ease,
@@ -9318,21 +9517,19 @@ body{
 }
 
 
-/* inputs */
+.novo-compromisso input {
 
-.novo-compromisso .campo input {
-    height: 44px;
+    height: 43px;
 
-    padding: 0 13px;
+    padding: 0 12px;
 }
 
 
-/* textarea */
+.novo-compromisso textarea {
 
-.novo-compromisso .campo textarea {
-    min-height: 105px;
+    min-height: 90px;
 
-    padding: 12px 13px;
+    padding: 12px;
 
     resize: vertical;
 
@@ -9341,61 +9538,75 @@ body{
 
 
 /* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.novo-compromisso input::placeholder,
+.novo-compromisso textarea::placeholder {
+
+    color: #999891;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    letter-spacing: .4px;
+}
+
+
+/* =========================================================
    FOCO
    ========================================================= */
 
-.novo-compromisso .campo input:focus,
-.novo-compromisso .campo textarea:focus {
+.novo-compromisso input:focus,
+.novo-compromisso textarea:focus {
+
     background: #ffffff;
 
     border-color: #2f6d67;
 
     box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
+
 }
 
 
 /* =========================================================
-   PLACEHOLDER
-   ========================================================= */
-
-.novo-compromisso .campo input::placeholder,
-.novo-compromisso .campo textarea::placeholder {
-    color: #999891;
-
-    font-family: "Playfair Display SC", serif;
-    font-size: 10px;
-
-    letter-spacing: .3px;
-}
-
-
-/* =========================================================
-   BOTÃO SALVAR
+   BOTÃO ADICIONAR
    ========================================================= */
 
 .btn-salvar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
     width: 100%;
 
-    min-height: 45px;
+    min-height: 43px;
 
-    padding: 12px 20px;
+    padding: 11px 18px;
 
     box-sizing: border-box;
 
     background: #7d958d;
 
     border: none;
+
     border-radius: 0;
 
     color: #ffffff;
 
     font-family: "Playfair Display SC", serif;
+
     font-size: 10px;
+
     font-weight: 400;
 
     letter-spacing: 1px;
 
-    line-height: 1.2;
+    line-height: 1.3;
 
     text-align: center;
 
@@ -9408,7 +9619,9 @@ body{
         transform .2s ease;
 }
 
+
 .btn-salvar:hover {
+
     background: #2f6d67;
 
     color: #ffffff;
@@ -9418,34 +9631,447 @@ body{
 
 
 /* =========================================================
+   MODAL DE CANCELAMENTO
+   ========================================================= */
+
+.modal-cancelamento {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(47, 58, 54, .48);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CAIXA DO MODAL
+   ========================================================= */
+
+.caixa-cancelamento {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0;
+
+    padding: 32px 35px 30px;
+
+    box-sizing: border-box;
+
+    background: #f5f2e9;
+
+    border: none;
+
+    border-radius: 6px;
+
+    box-shadow: 0 12px 35px rgba(47, 58, 54, .20);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FECHAR
+   ========================================================= */
+
+.fechar-cancelamento {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 14px;
+
+    width: 30px;
+
+    height: 30px;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 300;
+
+    line-height: 30px;
+
+    cursor: pointer;
+}
+
+
+.fechar-cancelamento:hover {
+
+    color: #2f6d67;
+}
+
+
+/* =========================================================
+   ÍCONE
+   ========================================================= */
+
+.icone-cancelamento {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    margin: 0 auto 15px;
+
+    background: #eee0dc;
+
+    border: 1px solid #d9c1bd;
+
+    border-radius: 50%;
+
+    color: #873836;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   TÍTULO MODAL
+   ========================================================= */
+
+.caixa-cancelamento h2 {
+
+    margin: 0 0 10px;
+
+    padding: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    letter-spacing: 1.3px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.texto-confirmacao {
+
+    margin: 0 0 22px;
+
+    padding: 0;
+
+    color: #77766f;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    letter-spacing: .5px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.informacoes-cancelamento {
+
+    width: 100%;
+
+    margin: 0 0 24px;
+
+    padding: 5px 18px;
+
+    box-sizing: border-box;
+
+    background: #d9ded2;
+
+    border-radius: 6px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   ITEM DE INFORMAÇÃO
+   ========================================================= */
+
+.informacao-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid rgba(47, 109, 103, .15);
+}
+
+
+.informacao-item:last-child {
+
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.informacao-label {
+
+    flex-shrink: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   VALOR
+   ========================================================= */
+
+.informacao-valor {
+
+    max-width: 65%;
+
+    color: #555;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: .4px;
+
+    line-height: 1.4;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BOTÕES DO MODAL
+   ========================================================= */
+
+.botoes-cancelamento {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.btn-voltar,
+.btn-confirmar-cancelamento {
+
+    min-width: 145px;
+
+    min-height: 40px;
+
+    padding: 10px 18px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 0;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: .8px;
+
+    line-height: 1.3;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+   ========================================================= */
+
+.btn-voltar {
+
+    background: #7d958d;
+
+    color: #ffffff;
+}
+
+
+.btn-voltar:hover {
+
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BOTÃO CANCELAR
+   ========================================================= */
+
+.btn-confirmar-cancelamento {
+
+    background: #a94442;
+
+    color: #ffffff;
+}
+
+
+.btn-confirmar-cancelamento:hover {
+
+    background: #873836;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
    RESPONSIVIDADE - TABLET
    ========================================================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1000px) {
 
     .agenda-container {
-        padding: 35px 0 60px;
+
+        padding: 35px 0 70px;
     }
 
-    .titulo-agenda,
-    .legenda-agenda,
-    .area-agenda {
-        width: 90%;
-    }
 
     .area-agenda {
-        grid-template-columns: 1fr;
 
-        gap: 25px;
+        grid-template-columns: minmax(0, 1fr) 280px;
+
+        gap: 22px;
     }
 
-    .novo-compromisso {
-        padding: 28px 30px 30px;
-    }
 
     .calendario-area {
-        padding: 20px;
+
+        padding: 17px;
     }
+
+
+    .novo-compromisso {
+
+        padding: 22px 20px 24px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET PEQUENO
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .area-agenda {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .novo-compromisso {
+
+        width: 100%;
+    }
+
+
+    .fc .fc-toolbar {
+
+        flex-wrap: wrap;
+    }
+
 }
 
 
@@ -9453,77 +10079,180 @@ body{
    RESPONSIVIDADE - CELULAR
    ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .agenda-container {
-        padding: 30px 0 50px;
+
+        padding: 28px 0 55px;
     }
 
+
+    .titulo-agenda,
+    .legenda-agenda,
+    .area-agenda,
+    .agenda-container .alert {
+
+        width: 92%;
+    }
+
+
     .titulo-agenda {
+
         margin-bottom: 30px;
     }
 
+
     .titulo-agenda h1 {
-        font-size: 40px;
+
+        font-size: 34px;
+
+        letter-spacing: 1.5px;
     }
 
+
     .titulo-agenda p {
+
         font-size: 10px;
     }
 
+
     .legenda-agenda {
-        flex-direction: column;
 
-        align-items: flex-start;
+        flex-wrap: wrap;
 
-        gap: 10px;
-
-        margin-bottom: 18px;
-    }
-
-    .calendario-area {
-        padding: 15px;
-    }
-
-    .novo-compromisso {
-        padding: 25px 20px 28px;
-    }
-
-    .novo-compromisso h2 {
-        font-size: 19px;
-    }
-
-    .fc .fc-toolbar {
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 10px;
-    }
-
-    .fc .fc-toolbar-chunk {
-        display: flex;
-
-        justify-content: center;
-    }
-
-    .fc .fc-toolbar-title {
-        font-size: 20px;
-    }
-
-    .fc .fc-button {
-        padding: 7px 10px;
+        gap: 10px 20px;
 
         font-size: 9px;
     }
 
-    .fc .fc-col-header-cell-cushion {
+
+    .calendario-area {
+
+        padding: 10px;
+
+        border-radius: 6px;
+    }
+
+
+    .fc .fc-toolbar {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 9px;
+    }
+
+
+    .fc .fc-toolbar-chunk {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
+
+
+    .fc .fc-toolbar-title {
+
+        font-size: 18px;
+    }
+
+
+    .fc .fc-button {
+
+        min-height: 31px;
+
+        padding: 7px 9px;
+
         font-size: 8px;
     }
 
+
+    .fc .fc-col-header-cell-cushion {
+
+        padding: 8px 2px;
+
+        font-size: 7px;
+    }
+
+
     .fc .fc-daygrid-day-number {
+
+        padding: 5px;
+
         font-size: 9px;
     }
+
+
+    .fc-event {
+
+        font-size: 7px;
+    }
+
+
+    .novo-compromisso {
+
+        padding: 22px 18px 24px;
+    }
+
+
+    .novo-compromisso h2 {
+
+        font-size: 19px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .caixa-cancelamento {
+
+        max-width: calc(100% - 20px);
+
+        padding: 28px 20px 24px;
+    }
+
+
+    .caixa-cancelamento h2 {
+
+        font-size: 19px;
+    }
+
+
+    .informacao-item {
+
+        gap: 12px;
+    }
+
+
+    .informacao-label,
+    .informacao-valor {
+
+        font-size: 8px;
+    }
+
+
+    .botoes-cancelamento {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .btn-voltar,
+    .btn-confirmar-cancelamento {
+
+        width: 100%;
+    }
+
 }
 
 
@@ -9531,81 +10260,52 @@ body{
    CELULAR PEQUENO
    ========================================================= */
 
-@media (max-width: 480px) {
-
-    .agenda-container {
-        padding: 25px 0 45px;
-    }
-
-    .titulo-agenda,
-    .legenda-agenda,
-    .area-agenda {
-        width: 92%;
-    }
-
-    .titulo-agenda {
-        margin-bottom: 25px;
-    }
+@media (max-width: 400px) {
 
     .titulo-agenda h1 {
-        font-size: 32px;
+
+        font-size: 29px;
     }
 
-    .titulo-agenda p {
-        font-size: 10px;
+
+    .area-agenda {
+
+        width: 94%;
     }
+
 
     .calendario-area {
-        padding: 10px;
+
+        padding: 7px;
     }
 
-    .novo-compromisso {
-        padding: 22px 16px 25px;
-    }
-
-    .novo-compromisso h2 {
-        margin-bottom: 22px;
-
-        font-size: 17px;
-    }
-
-    .novo-compromisso .campo {
-        margin-bottom: 17px;
-    }
-
-    .novo-compromisso .campo input {
-        height: 42px;
-    }
-
-    .novo-compromisso .campo textarea {
-        min-height: 95px;
-    }
-
-    .fc .fc-toolbar-title {
-        font-size: 17px;
-    }
 
     .fc .fc-button {
-        padding: 6px 8px;
 
-        font-size: 8px;
-    }
-
-    .fc .fc-col-header-cell-cushion {
-        padding: 8px 2px;
+        padding: 6px 7px;
 
         font-size: 7px;
     }
 
+
+    .fc .fc-toolbar-title {
+
+        font-size: 16px;
+    }
+
+
     .fc .fc-daygrid-day-number {
-        padding: 5px;
 
         font-size: 8px;
     }
+
+
+    .fc-event {
+
+        font-size: 6px;
+    }
+
 }
-
-
-
 
 /* =========================================================
    ADICIONAR FOTOS

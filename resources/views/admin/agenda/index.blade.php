@@ -3,8 +3,7 @@
 
 <head>
 
-
-@include('admin._partials_admin.header_admin')
+    @include('admin._partials_admin.header_admin')
 
     <meta charset="UTF-8">
 
@@ -16,7 +15,9 @@
     <title>Agenda | Valéria Maciel Estética</title>
 
 
-    <!-- BOOTSTRAP -->
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -24,7 +25,14 @@
     >
 
 
-    <!-- FONTES -->
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
@@ -37,31 +45,42 @@
     >
 
 
-    <!-- CSS DO SITE -->
+    <!-- =====================================================
+         CSS DO SITE
+    ====================================================== -->
 
-    <link
+    <!-- <link
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
-    >
+    > -->
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/agenda(admin).css') }}"
-    >
     <link
         rel="stylesheet"
         href="{{ asset('css/admin.css') }}"
     >
-    <!-- FULLCALENDAR -->
+
+    <!-- <link
+        rel="stylesheet"
+        href="{{ asset('css/agenda(admin).css') }}"
+    > -->
+
+
+    <!-- =====================================================
+         FULLCALENDAR
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/skeleton.css"
     >
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/all/global.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/all/global.js">
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js">
+    </script>
 
 </head>
 
@@ -69,92 +88,20 @@
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-====================================================== -->
-
-<nav class="navbar">
-
-
-    <!-- BOTÃO MENU -->
-
-    <button
-        class="menu-button"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#menuLateral"
-        aria-controls="menuLateral"
-    >
-
-        <img
-            src="{{ asset('imagem/menu.png') }}"
-            alt="Menu"
-        >
-
-    </button>
-
-
-    <!-- PERFIL -->
-
-    <div class="cart-icon">
-
-        @auth
-
-            <a href="{{ route('cliente.perfil.show') }}">
-
-                @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
-
-                    <img
-                        src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
-                        alt="Meu perfil"
-                        class="foto-navbar"
-                    >
-
-                @else
-
-                    <img
-                        src="{{ asset('imagem/perfil-padrao.png') }}"
-                        alt="Meu perfil"
-                        class="foto-navbar"
-                    >
-
-                @endif
-
-            </a>
-
-        @else
-
-            <a href="{{ route('login') }}">
-
-                <img
-                    src="{{ asset('imagem/perfil-padrao.png') }}"
-                    alt="Entrar"
-                    class="foto-navbar"
-                >
-
-            </a>
-
-        @endauth
-
-    </div>
-
-</nav>
-
-
-<!-- =====================================================
+<!-- =========================================================
      AGENDA
-====================================================== -->
+========================================================= -->
 
 <main class="agenda-container">
 
 
-    <!-- TÍTULO -->
+    <!-- =====================================================
+         TÍTULO
+    ====================================================== -->
 
     <div class="titulo-agenda">
 
-        <h1>
-            Agenda
-        </h1>
+        <h1>Agenda</h1>
 
         <p>
             Acompanhe os agendamentos das clientes
@@ -164,7 +111,9 @@
     </div>
 
 
-    <!-- MENSAGEM DE SUCESSO -->
+    <!-- =====================================================
+         MENSAGEM DE SUCESSO
+    ====================================================== -->
 
     @if(session('sucesso'))
 
@@ -177,7 +126,9 @@
     @endif
 
 
-    <!-- ERROS -->
+    <!-- =====================================================
+         ERROS
+    ====================================================== -->
 
     @if($errors->any())
 
@@ -196,7 +147,9 @@
     @endif
 
 
-    <!-- LEGENDA -->
+    <!-- =====================================================
+         LEGENDA
+    ====================================================== -->
 
     <div class="legenda-agenda">
 
@@ -204,7 +157,9 @@
 
             <span class="legenda-cliente"></span>
 
-            Agendamento de cliente
+            <span>
+                Agendamento de cliente
+            </span>
 
         </div>
 
@@ -213,7 +168,9 @@
 
             <span class="legenda-compromisso"></span>
 
-            Compromisso
+            <span>
+                Compromisso
+            </span>
 
         </div>
 
@@ -221,7 +178,7 @@
 
 
     <!-- =====================================================
-         ÁREA DA AGENDA
+         ÁREA PRINCIPAL
     ====================================================== -->
 
     <div class="area-agenda">
@@ -258,7 +215,7 @@
                 @csrf
 
 
-                <!-- TÍTULO -->
+                <!-- COMPROMISSO -->
 
                 <div class="campo">
 
@@ -335,7 +292,7 @@
                 </div>
 
 
-                <!-- DESCRIÇÃO -->
+                <!-- OBSERVAÇÃO -->
 
                 <div class="campo">
 
@@ -370,9 +327,9 @@
 </main>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MODAL DE CANCELAMENTO
-====================================================== -->
+========================================================= -->
 
 <div
     id="modalCancelamento"
@@ -531,7 +488,6 @@
 
         <div class="botoes-cancelamento">
 
-
             <button
                 type="button"
                 class="btn-voltar"
@@ -559,18 +515,18 @@
 @include('_partials.footer')
 
 
-<!-- =====================================================
-     BOOTSTRAP
-====================================================== -->
+<!-- =========================================================
+     BOOTSTRAP JS
+========================================================= -->
 
 <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-></script>
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
 
 
-<!-- =====================================================
+<!-- =========================================================
      JAVASCRIPT DA AGENDA
-====================================================== -->
+========================================================= -->
 
 <script>
 
@@ -581,42 +537,55 @@ document.addEventListener('DOMContentLoaded', function () {
        CALENDÁRIO
     ====================================================== */
 
-    const calendarEl = document.getElementById('calendar');
-const calendar = new FullCalendar.Calendar(calendarEl,{
+    const calendarEl =
+        document.getElementById('calendar');
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | IDIOMA
-                |--------------------------------------------------------------------------
-                */
+    const calendar =
+        new FullCalendar.Calendar(
+            calendarEl,
+            {
+
+                /* =================================================
+                   IDIOMA
+                ================================================== */
 
                 locale: 'pt-br',
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | VISUAL INICIAL
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   VISUAL INICIAL
+                ================================================== */
 
                 initialView: 'dayGridMonth',
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | PRIMEIRO DIA
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   PRIMEIRO DIA DA SEMANA
+                ================================================== */
 
                 firstDay: 1,
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | CABEÇALHO
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   TAMANHO
+                   
+                   O calendário NÃO irá ocupar a altura inteira
+                   da página.
+                ================================================== */
+
+                height: 455,
+
+                contentHeight: 410,
+
+                expandRows: false,
+
+                aspectRatio: 1.8,
+
+
+                /* =================================================
+                   CABEÇALHO
+                ================================================== */
 
                 headerToolbar: {
 
@@ -632,11 +601,9 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
                 },
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | BOTÕES
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   BOTÕES
+                ================================================== */
 
                 buttonText: {
 
@@ -655,24 +622,29 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
                 },
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | HORÁRIOS
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   HORÁRIOS
+                ================================================== */
 
                 slotMinTime:
-                    '07:00:00',
+                    '08:00:00',
 
                 slotMaxTime:
-                    '22:00:00',
+                    '20:00:00',
+
+                slotDuration:
+                    '00:30:00',
+
+                slotLabelInterval:
+                    '01:00:00',
+
+                allDaySlot:
+                    false,
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | FORMATO
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   FORMATO DOS HORÁRIOS
+                ================================================== */
 
                 eventTimeFormat: {
 
@@ -688,90 +660,85 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
                 },
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | EVENTOS
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   EVENTOS
+                ================================================== */
 
                 events:
                     "{{ route('admin.agenda.eventos') }}",
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | CLICAR EM UMA DATA
-                |--------------------------------------------------------------------------
-                */
+                /* =================================================
+                   CLICAR EM UMA DATA
+                ================================================== */
 
-                dateClick: function (info) {
+                dateClick:
+                    function (info) {
 
-                    document
-                        .getElementById('data')
-                        .value =
-                        info.dateStr;
-
-
-                    document
-                        .getElementById('titulo')
-                        .focus();
-
-                },
+                        document
+                            .getElementById('data')
+                            .value =
+                            info.dateStr;
 
 
-                /*
-                |--------------------------------------------------------------------------
-                | CORES DOS EVENTOS
-                |--------------------------------------------------------------------------
-                */
+                        document
+                            .getElementById('titulo')
+                            .focus();
 
-                eventDidMount: function (info) {
-
-                    const tipo =
-                        info.event
-                            .extendedProps
-                            .tipo;
+                    },
 
 
-                    if (
-                        tipo ===
-                        'agendamento'
-                    ) {
+                /* =================================================
+                   CORES DOS EVENTOS
+                ================================================== */
 
-                        info.el.classList.add(
-                            'evento-cliente'
+                eventDidMount:
+                    function (info) {
+
+                        const tipo =
+                            info.event
+                                .extendedProps
+                                .tipo;
+
+
+                        if (
+                            tipo ===
+                            'agendamento'
+                        ) {
+
+                            info.el.classList.add(
+                                'evento-cliente'
+                            );
+
+                        }
+
+
+                        if (
+                            tipo ===
+                            'compromisso'
+                        ) {
+
+                            info.el.classList.add(
+                                'evento-compromisso'
+                            );
+
+                        }
+
+                    },
+
+
+                /* =================================================
+                   CLICAR NO EVENTO
+                ================================================== */
+
+                eventClick:
+                    function (info) {
+
+                        abrirModalCancelamento(
+                            info.event
                         );
 
                     }
-
-
-                    if (
-                        tipo ===
-                        'compromisso'
-                    ) {
-
-                        info.el.classList.add(
-                            'evento-compromisso'
-                        );
-
-                    }
-
-                },
-
-
-                /*
-                |--------------------------------------------------------------------------
-                | CLICAR NO EVENTO
-                |--------------------------------------------------------------------------
-                */
-
-                eventClick: function (info) {
-
-                    abrirModalCancelamento(
-                        info.event
-                    );
-
-                }
 
             }
         );
@@ -936,7 +903,6 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
             'agendamento'
         ) {
 
-
             titulo.textContent =
                 'Cancelar agendamento';
 
@@ -985,7 +951,6 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
             tipoSelecionado ===
             'compromisso'
         ) {
-
 
             titulo.textContent =
                 'Cancelar compromisso';
@@ -1126,7 +1091,7 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
 
 
     /* =====================================================
-       CLICAR FORA
+       CLICAR FORA DO MODAL
     ====================================================== */
 
     modal.addEventListener(
@@ -1303,7 +1268,9 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
             'none';
 
 
-        /* CSRF */
+        /* =================================================
+           CSRF
+        ================================================== */
 
         const csrf =
             document.createElement(
@@ -1328,7 +1295,9 @@ const calendar = new FullCalendar.Calendar(calendarEl,{
         );
 
 
-        /* MÉTODO DELETE */
+        /* =================================================
+           MÉTODO DELETE
+        ================================================== */
 
         const method =
             document.createElement(
