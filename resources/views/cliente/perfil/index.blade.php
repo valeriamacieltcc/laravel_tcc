@@ -484,8 +484,8 @@
 <div class="conteudo-bloco anamnese-resumo">
 
     <p>
-        Acesse sua ficha de anamnese para visualizar
-        ou preencher suas informações.
+    Acesse rapidamente os procedimentos
+     que você mais gostou!
     </p>
 
 </div>

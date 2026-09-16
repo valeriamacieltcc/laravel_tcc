@@ -3101,6 +3101,52 @@ font-size: 16px;
 .botao-sair:hover {
 background: #873836;
 }
+/* =========================================================
+   BOTÃO PREENCHER FICHA
+   PADRÃO DOS BOTÕES DA ANAMNESE
+   ========================================================= */
+
+   .anamnese-alert .btn-salvar-ficha {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 190px;
+    height: 44px;
+
+    padding: 0 24px;
+
+    background-color: #2f6d67;
+    border: 1px solid #2f6d67;
+    border-radius: 3px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display SC", serif;
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 1.5px;
+    line-height: 1;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* HOVER */
+
+.anamnese-alert .btn-salvar-ficha:hover {
+    background-color: #275d58;
+    border-color: #275d58;
+    color: #ffffff;
+}
 
 /* =========================================================
    FORMULÁRIO DE EDIÇÃO - EDITAR DO PERFIL
