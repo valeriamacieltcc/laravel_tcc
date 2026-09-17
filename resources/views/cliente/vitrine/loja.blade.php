@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title> procedimentos- Valéria Maciel</title>
+    <title> Loja - Valéria Maciel</title>
 
     <link
         rel="preconnect"
@@ -36,13 +36,14 @@
 
     <link
         rel="stylesheet"
-        href="{{ asset('css/procedimento.css') }}"
+        href="{{ asset('css/home.css') }}"
     >
     
     <link
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
     >
+    
 </head>
 
 <body>
@@ -78,9 +79,9 @@
             placeholder="Pesquisar produto..."
         >
 
-        <button type="submit">
-            🔍
-        </button>
+        <button type="submit" class="botao-pesquisa">
+    <img src="{{ asset('imagem/lupa-arredondada.png') }}" alt="Pesquisar">
+</button>
     </div>
 
     @if($categoria && $categoria !== 'Todos')
@@ -236,23 +237,33 @@
 
                             @if($produto->link_contato)
 
-                                <a
-                                    href="{{ $produto->link_contato }}"
-                                    target="_blank"
-                                    class="botao-contato"
-                                >
-                                    CONTATO
-                                </a>
-
-
-                            @else
+                            <div class="produto-footer">
 
                                 <a
                                     href="#"
                                     class="botao-contato"
                                 >
-                                    CONTATO
+                                    VER MAIS
                                 </a>
+
+                                </div>
+
+                                </div>
+
+                            @else
+
+                            <div class="produto-footer">
+
+                            <a
+                                href="#"
+                                class="botao-contato"
+                            >
+                                VER MAIS
+                            </a>
+
+                            </div>
+
+                    </div>
 
                             @endif
 

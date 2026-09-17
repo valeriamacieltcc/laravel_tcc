@@ -92,17 +92,19 @@
     : asset('storage/' . $procedimento->imagem) }}">
 
 
-    <h3>Cuidados</h3>
+    <div class="vm-procedimento-conteudo">
 
-    <p>{{ $procedimento->cuidados }}</p>
+<h3>Cuidados</h3>
+<p>{{ $procedimento->cuidados }}</p>
 
+<h3>Contraindicações</h3>
+<p>{{ $procedimento->contraindicacoes }}</p>
 
-    <h3>Contraindicações</h3>
+</div>
 
-    <p>{{ $procedimento->contraindicacoes }}</p>
+<div class="vm-espaco-footer"></div>
 
-
-    @include('_partials.footer')
+@include('_partials.footer')
 
 
     <script

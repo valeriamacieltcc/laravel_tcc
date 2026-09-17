@@ -604,142 +604,771 @@ body{
 } */
 
 
-/* CSS PAGINA VITRINE */
+/* =========================================================
+   VITRINE - VALÉRIA MACIEL ESTÉTICA
+   PÁGINA DE LISTAGEM
+   ========================================================= */
 
-/* GRID */
 
-.produtos{
+/* =========================================================
+   PÁGINA PRINCIPAL
+   ========================================================= */
 
-    width:90%;
-    margin:40px auto 80px;
+   .container-vitrine {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0 90px;
 
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
+    font-family: 'Playfair Display SC', serif;
+    color: #444;
 }
 
-/* CARD */
 
-.produto-card{
+/* =========================================================
+   TOPO
+   ========================================================= */
 
-    background:#d8e1da;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    box-shadow:0 2px 5px rgba(0,0,0,.15);
-
-    transition:.3s;
+.container-vitrine .topo-vitrine {
+    width: 100%;
+    margin: 20px auto 35px;
+    text-align: center;
 }
 
-.produto-card:hover{
+.container-vitrine .topo-vitrine h1 {
+    margin: 0 0 10px;
 
-    transform:translateY(-5px);
+    color: #3e746d;
 
+    font-family: 'Playfair Display SC', serif;
+    font-size: 55px;
+    font-weight: 400;
+
+    line-height: 1.2;
 }
 
-.produto-card img{
+.container-vitrine .topo-vitrine p {
+    margin: 0;
 
-    width:100%;
+    color: #444;
 
-    height:170px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 16px;
+    font-weight: 400;
 
-    object-fit:contain;
-
-    background:white;
-
+    line-height: 1.6;
 }
 
-/* corpo */
 
-.produto-body{
+/* =========================================================
+   ÁREA DOS FILTROS
+   ========================================================= */
 
-    padding:15px;
+.container-vitrine .vitrine-filtros {
+    width: 100%;
 
-    text-align:center;
+    margin: 0 auto 45px;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 22px;
 }
 
-.produto-body h3{
+.botao-pesquisa {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+}
+/* =========================================================
+   PESQUISA
+   ========================================================= */
 
-    font-size:25px;
+.container-vitrine .form-pesquisa {
+    width: 100%;
 
-    color:#444;
-
-    margin-bottom:8px;
-
+    display: flex;
+    justify-content: center;
 }
 
-.produto-body p{
+.container-vitrine .campo-pesquisa {
+    width: 100%;
+    max-width: 600px;
 
-    font-size:14px;
+    display: flex;
+    align-items: center;
 
-    color:#555;
+    background: #ffffff;
 
-    margin-bottom:8px;
+    border: 1px solid #d6c5a6;
+    border-radius: 5px;
 
+    overflow: hidden;
 }
 
-.produto-body h2{
+.container-vitrine .campo-pesquisa input {
+    width: 100%;
+    height: 45px;
 
-    color:#4d847c;
+    padding: 10px 15px;
 
-    font-size:28px;
+    border: none;
+    outline: none;
 
-    margin-bottom:15px;
+    background: transparent;
 
+    color: #444;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-/* botão */
+.container-vitrine .campo-pesquisa input::placeholder {
+    color: #777;
 
-.produto-footer{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:12px;
-
+    font-family: 'Playfair Display SC', serif;
 }
 
-.sacola{
+.container-vitrine .campo-pesquisa button {
+    width: 50px;
+    height: 45px;
 
-    width:22px !important;
+    border: none;
 
-    height:22px !important;
+    background: #7d958d;
+    color: #ffffff;
 
-    background:none !important;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 16px;
+    font-weight: 400;
 
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-.produto-footer button{
-
-    background:#7c9890;
-
-    color:white;
-
-    border:none;
-
-    padding:8px 20px;
-
-    cursor:pointer;
-
-    font-family:'Playfair Display SC', serif;
-
-    transition:.3s;
-
+.container-vitrine .campo-pesquisa button:hover {
+    background: #2f6d67;
+}
+.botao-pesquisa {
+    border: none;
+    background: transparent;
+    color: #3e746d;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.produto-footer button:hover{
+.botao-pesquisa:hover {
+    color: #2f6d67;
+}
 
-    background:#2f6d67;
 
+/* =========================================================
+   CATEGORIAS
+   ========================================================= */
+
+.container-vitrine .categorias {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.container-vitrine .categoria-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    background: transparent;
+
+    border: 1px solid #7d958d;
+    border-radius: 0;
+
+    color: #2f6d67;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    transition: 0.3s;
+}
+
+.container-vitrine .categoria-btn:hover {
+    background: #7d958d;
+    color: #ffffff;
+}
+
+.container-vitrine .categoria-btn.ativo {
+    background: #7d958d;
+    color: #ffffff;
+}
+
+.container-vitrine .categoria-btn.ativo:hover {
+    background: #2f6d67;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GRID DOS PRODUTOS
+   ========================================================= */
+
+.container-vitrine .produtos {
+    width: 100%;
+
+    margin: 0 auto 80px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.container-vitrine .produto-card {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #d9ded2;
+
+    border-radius: 12px;
+
+    box-shadow: none;
+
+    transition: 0.3s;
+}
+
+.container-vitrine .produto-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.container-vitrine .produto-card > img {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    padding: 15px;
+
+    object-fit: contain;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CORPO DO CARD
+   ========================================================= */
+
+.container-vitrine .produto-body {
+    flex: 1;
+
+    padding: 18px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.container-vitrine .produto-body .marca {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2f6d67;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CATEGORIA
+   ========================================================= */
+
+.container-vitrine .produto-body .categoria-produto {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #666;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   NOME DO PRODUTO
+   ========================================================= */
+
+.container-vitrine .produto-body h3 {
+    width: 100%;
+
+    margin: 0 0 10px;
+
+    color: #444;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+   .container-vitrine .produto-body .descricao {
+    width: 100%;
+
+    margin: 0 0 12px;
+
+    color: #666;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+
+    line-clamp: 4;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+.container-vitrine .produto-body .preco {
+    width: 100%;
+
+    margin: auto 0 15px;
+
+    color: #4d847c;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 26px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   RODAPÉ DO CARD
+   ========================================================= */
+
+.container-vitrine .produto-footer {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   BOTÃO CONTATO
+   ========================================================= */
+
+.container-vitrine .produto-footer .botao-contato {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+    min-height: 42px;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 0;
+
+    background: #7d958d;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.container-vitrine .produto-footer .botao-contato:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ÍCONE SACOLA
+   ========================================================= */
+
+.container-vitrine .sacola {
+    width: 22px !important;
+    height: 22px !important;
+
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   SEM PRODUTOS
+   ========================================================= */
+
+.container-vitrine > .sem-produtos {
+    width: 100%;
+
+    margin: 40px auto 80px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #555;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.8;
+}
+
+.container-vitrine .sem-produtos a {
+    color: #2f6d67;
+
+    text-decoration: none;
+
+    font-weight: 400;
+}
+
+.container-vitrine .sem-produtos a:hover {
+    color: #7d958d;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+
+.container-vitrine .paginacao {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.container-vitrine .paginacao nav {
+    display: flex;
+
+    justify-content: center;
+}
+
+.container-vitrine .paginacao .pagination {
+    margin: 0;
+
+    display: flex;
+
+    gap: 5px;
+}
+
+.container-vitrine .paginacao .page-link {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 12px;
+
+    border: 1px solid #d6c5a6;
+    border-radius: 0 !important;
+
+    background: transparent;
+
+    color: #2f6d67;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    box-shadow: none;
+}
+
+.container-vitrine .paginacao .page-link:hover {
+    background: #7d958d;
+
+    border-color: #7d958d;
+
+    color: #ffffff;
+}
+
+.container-vitrine .paginacao .page-item.active .page-link {
+    background: #2f6d67;
+
+    border-color: #2f6d67;
+
+    color: #ffffff;
+}
+
+.container-vitrine .paginacao .page-item.disabled .page-link {
+    background: transparent;
+
+    border-color: #ddd6c7;
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .container-vitrine {
+        width: 90%;
+    }
+
+    .container-vitrine .topo-vitrine h1 {
+        font-size: 48px;
+    }
+
+    .container-vitrine .produtos {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+    .container-vitrine .produto-card > img {
+        height: 210px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR / TABLET PEQUENO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container-vitrine {
+        width: 88%;
+
+        padding-top: 30px;
+    }
+
+    .container-vitrine .topo-vitrine h1 {
+        font-size: 43px;
+    }
+
+    .container-vitrine .topo-vitrine p {
+        font-size: 14px;
+    }
+
+    .container-vitrine .vitrine-filtros {
+        margin-bottom: 35px;
+    }
+
+    .container-vitrine .produto-card > img {
+        height: 200px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container-vitrine {
+        width: 88%;
+
+        padding-top: 25px;
+        padding-bottom: 60px;
+    }
+
+    .container-vitrine .topo-vitrine {
+        margin: 10px auto 30px;
+    }
+
+    .container-vitrine .topo-vitrine h1 {
+        font-size: 38px;
+    }
+
+    .container-vitrine .topo-vitrine p {
+        font-size: 13px;
+    }
+
+    .container-vitrine .campo-pesquisa {
+        max-width: 100%;
+    }
+
+    .container-vitrine .campo-pesquisa input {
+        height: 43px;
+
+        font-size: 13px;
+    }
+
+    .container-vitrine .campo-pesquisa button {
+        width: 48px;
+        height: 43px;
+    }
+
+    .container-vitrine .categorias {
+        gap: 8px;
+    }
+
+    .container-vitrine .categoria-btn {
+        padding: 8px 13px;
+
+        font-size: 12px;
+    }
+
+    .container-vitrine .produtos {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-bottom: 55px;
+    }
+
+    .container-vitrine .produto-card > img {
+        height: 220px;
+    }
+
+    .container-vitrine .produto-body {
+        padding: 18px;
+    }
+
+    .container-vitrine .produto-body h3 {
+        font-size: 19px;
+    }
+
+    .container-vitrine .produto-body .descricao {
+        font-size: 13px;
+    }
+
+    .container-vitrine .produto-body .preco {
+        font-size: 25px;
+    }
+
+    .container-vitrine .produto-footer .botao-contato {
+        min-width: 130px;
+
+        padding: 10px 20px;
+
+        font-size: 13px;
+    }
+
+    .container-vitrine .paginacao .page-link {
+        min-width: 34px;
+        height: 34px;
+
+        padding: 5px 9px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .container-vitrine .topo-vitrine h1 {
+        font-size: 34px;
+    }
+
+    .container-vitrine .categoria-btn {
+        padding: 7px 10px;
+
+        font-size: 11px;
+    }
+
+    .container-vitrine .produto-card > img {
+        height: 200px;
+    }
 }
 
 
