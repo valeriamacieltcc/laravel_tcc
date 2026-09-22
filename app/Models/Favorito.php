@@ -14,6 +14,7 @@ class Favorito extends Model
     protected $fillable = [
         'user_id',
         'procedimento_id',
+        'vitrine_id',
     ];
 
     public function usuario()
@@ -24,5 +25,10 @@ class Favorito extends Model
     public function procedimento()
     {
         return $this->belongsTo(Procedimento::class, 'procedimento_id');
+    }
+
+    public function vitrine()
+    {
+        return $this->belongsTo(Vitrine::class, 'vitrine_id');
     }
 }

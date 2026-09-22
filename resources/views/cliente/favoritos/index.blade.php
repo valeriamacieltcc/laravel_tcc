@@ -19,7 +19,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -33,10 +33,12 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+
     <link
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
+
     <link
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
@@ -76,6 +78,10 @@
     <div class="vm-favoritos-grid">
 
 @foreach($favoritos as $favorito)
+
+    {{-- PROCEDIMENTO — ORIGINAL --}}
+
+    @if($favorito->procedimento)
 
     <div class="vm-favorito-card">
 
@@ -133,6 +139,72 @@
         </div>
 
     </div>
+
+    @endif
+
+
+    {{-- PRODUTO / VITRINE — ADICIONADO --}}
+
+    @if($favorito->vitrine)
+
+    <div class="vm-favorito-card">
+
+        @if($favorito->vitrine->imagem)
+            <div class="vm-favorito-imagem">
+                <img
+                    src="{{ asset('storage/' . $favorito->vitrine->imagem) }}"
+                    alt="{{ $favorito->vitrine->nome }}"
+                >
+            </div>
+        @endif
+
+        <div class="vm-favorito-conteudo">
+
+            <span class="vm-favorito-label">
+                PRODUTO
+            </span>
+
+            <h2 class="vm-favorito-titulo">
+                {{ $favorito->vitrine->nome }}
+            </h2>
+
+            <div class="vm-favorito-linha"></div>
+
+            <p class="vm-favorito-descricao">
+                {{ $favorito->vitrine->descricao }}
+            </p>
+
+            <div class="vm-favorito-acoes">
+
+                <a
+                    href="{{ route('vitrine.show', $favorito->vitrine->id) }}"
+                    class="vm-favorito-ver"
+                >
+                    VER PRODUTO
+                </a>
+
+                <form
+                    action="{{ route('cliente.favoritos.vitrine.toggle', $favorito->vitrine->id) }}"
+                    method="POST"
+                >
+                    @csrf
+
+                    <button
+                        type="submit"
+                        class="vm-favorito-remover"
+                    >
+                        REMOVER DOS FAVORITOS
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    @endif
 
 @endforeach
 

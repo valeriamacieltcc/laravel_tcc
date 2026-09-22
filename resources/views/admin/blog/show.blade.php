@@ -59,18 +59,86 @@
         href="{{ asset('css/admin.css') }}"
     >
 
-    <!-- <link
-        rel="stylesheet"
-        href="{{ asset('css/agenda(admin).css') }}"
-    > -->
 
+<div class="container py-5">
 
+    <a
+        href="{{ route('admin.blog.index') }}"
+        class="btn btn-secondary mb-4"
+    >
+        ← VOLTAR
+    </a>
 
-</head>
+    <div class="card shadow-sm">
 
+        @if($post->imagem)
 
-<body>
+            <img
+                src="{{ asset('storage/' . $post->imagem) }}"
+                class="card-img-top"
+                style="max-height:500px; object-fit:cover;"
+                alt="{{ $post->titulo }}"
+            >
 
+        @endif
+
+        <div class="card-body">
+
+            <span class="badge bg-secondary">
+                {{ $post->categoria ?? 'Sem categoria' }}
+            </span>
+
+            <h1 class="mt-3">
+                {{ $post->titulo }}
+            </h1>
+
+            <p class="text-muted">
+                Publicado por {{ $post->autor->name }}
+            </p>
+
+            <hr>
+
+            <p style="white-space: pre-line;">
+                {{ $post->conteudo }}
+            </p>
+
+            <hr>
+
+            <h4>
+                ❤️ {{ $post->curtidas_count }} curtidas
+            </h4>
+
+            <h4 class="mt-4">
+                💬 Comentários
+            </h4>
+
+            @forelse($post->comentarios as $comentario)
+
+                <div class="border rounded p-3 mt-3">
+
+                    <strong>
+                        {{ $comentario->usuario->name }}
+                    </strong>
+
+                    <p class="mb-0 mt-2">
+                        {{ $comentario->comentario }}
+                    </p>
+
+                </div>
+
+            @empty
+
+                <p class="text-muted mt-3">
+                    Ainda não há comentários.
+                </p>
+
+            @endforelse
+
+        </div>
+
+    </div>
+
+</div>
 
 @include('_partials.footer')
 

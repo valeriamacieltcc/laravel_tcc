@@ -24,12 +24,14 @@ use App\Http\Controllers\Admin\FotoAcompanhamentoController;
 use App\Http\Controllers\Cliente\AvaliacaoProcedimentoController;
 use App\Http\Controllers\Cliente\FavoritoController;
 
+use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Cliente\PostInteracaoController;
+use App\Http\Controllers\Cliente\BlogController;
+
 
 Route::prefix('/home')->group(function () {
     Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 });
-
-Route::get('/procedimento/index', [ProcedimentoController::class,'index'])->name('procedimento.index');
 
 
 
@@ -62,8 +64,21 @@ Route::prefix('/procedimento')->group(function () {
 });
 
 
-Route::get('/vitrine',[ClienteVitrineController::class, 'index'])->name('vitrine.index');
 
+Route::get('/vitrine', [ClienteVitrineController::class, 'index'])
+    ->name('vitrine.index');
+
+Route::get('/vitrine/{id}', [ClienteVitrineController::class, 'show'])
+    ->name('vitrine.show');
+
+
+    
+    Route::get('/blog', [BlogController::class, 'index'])
+    ->name('blog.index');
+
+Route::get('/blog/{post}', [BlogController::class, 'show'])
+    ->name('blog.show');
+    
 Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
 
         Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
@@ -81,22 +96,15 @@ Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function (
         Route::post('/agendamentos', [ClienteAgendamentoController::class,'store'])->name('agendamentos.store');
         Route::patch('/agendamentos/{agendamento}/cancelar', [ClienteAgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
 
-        Route::post('/favoritos/{procedimento}', [FavoritoController::class, 'toggle'])
-        ->name('favoritos.toggle');
-
-    Route::get('/favoritos', [FavoritoController::class, 'index'])
-        ->name('favoritos.index');
-
-        Route::get(
-            '/agendamentos/{agendamento}/avaliar',
-            [AvaliacaoProcedimentoController::class, 'create']
-        )->name('agendamentos.avaliar');
-        
-        Route::post(
-            '/agendamentos/{agendamento}/avaliar',
-            [AvaliacaoProcedimentoController::class, 'store']
-        )->name('agendamentos.avaliar.store');
-});
+        Route::post('/favoritos/{procedimento}',[FavoritoController::class, 'toggle'])->name('favoritos.toggle');
+        Route::post('/favoritos/vitrine/{produto}',[FavoritoController::class, 'toggleVitrine'])->name('favoritos.vitrine.toggle');
+        Route::get('/favoritos',[FavoritoController::class, 'index'])->name('favoritos.index');
+        Route::get('/agendamentos/{agendamento}/avaliar',[AvaliacaoProcedimentoController::class, 'create'])->name('agendamentos.avaliar');
+        Route::post('/agendamentos/{agendamento}/avaliar',[AvaliacaoProcedimentoController::class, 'store'])->name('agendamentos.avaliar.store');
+        Route::post('/blog/{post}/curtir', [PostInteracaoController::class, 'curtir'])->name('blog.curtir');
+        Route::post('/blog/{post}/comentar', [PostInteracaoController::class, 'comentar'])->name('blog.comentar');
+     
+    });
 
 
 
@@ -110,13 +118,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda.index');
         Route::get('/agenda/eventos',[AgendaController::class, 'eventos'])->name('agenda.eventos');
         Route::post('/agenda/compromissos',[AgendaController::class, 'store'])->name('agenda.store');
-        Route::delete('/agenda/compromissos/{compromisso}', [AgendaController::class, 'destroy'])
-        ->name('agenda.destroy');
-
-        Route::get('/clientes', [ClienteController::class, 'index'])
-        ->name('clientes.index');
-    Route::delete('/agenda/agendamento/{agendamento}', [AgendaController::class, 'destroyAgendamento'])
-        ->name('agenda.agendamento.destroy');
+        Route::delete('/agenda/compromissos/{compromisso}', [AgendaController::class, 'destroy'])->name('agenda.destroy');
+    Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
+    Route::delete('/agenda/agendamento/{agendamento}', [AgendaController::class, 'destroyAgendamento'])->name('agenda.agendamento.destroy');
     Route::get('/clientes/{cliente}',[ClienteController::class, 'show'])->name('clientes.show');
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class,'edit'] )->name('clientes.anamnese.edit');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
@@ -126,12 +130,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/clientes/{cliente}/anamnese',[AnamneseController::class, 'index'])->name('clientes.anamnese.index');
     Route::get('/clientes/{cliente}/anamnese/edit',[AnamneseController::class, 'edit'])->name('clientes.anamnese.edit_anamnese');
     Route::put('/clientes/{cliente}/anamnese',[AnamneseController::class, 'update'])->name('clientes.anamnese.update');
-
-    Route::patch(
-        '/agendamentos/{agendamento}/status',
-        [AdminAgendamentoController::class, 'updateStatus']
-    )->name('agendamentos.status');
-
+    Route::patch('/agendamentos/{agendamento}/status',[AdminAgendamentoController::class, 'updateStatus'])->name('agendamentos.status');
+    Route::resource('/blog', AdminPostController::class);
 
 });
 

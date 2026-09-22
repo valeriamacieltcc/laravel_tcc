@@ -52,6 +52,12 @@
             </a>
         </li>
 
+        <li>
+    <a href="{{ route('admin.blog.index') }}">
+        Blog
+    </a>
+</li>
+
     </ul>
 
 

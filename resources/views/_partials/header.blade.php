@@ -91,7 +91,7 @@
 
         <!-- BLOG -->
         <li>
-            <a href="#">
+            <a href="{{ route('blog.index') }}">
                 BLOG
             </a>
         </li>

@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title> Loja - Valéria Maciel</title>
+    <title>Loja - Valéria Maciel</title>
 
     <link
         rel="preconnect"
@@ -19,7 +19,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -38,22 +38,24 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
-    
+
     <link
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
     >
-    
+
 </head>
 
-<body>
 
+<body>
 
 @include('_partials.header')
 
 
 <main class="container-vitrine">
 
+
+    <!-- TOPO -->
 
     <div class="topo-vitrine">
 
@@ -67,143 +69,140 @@
 
     </div>
 
+
+    <!-- PESQUISA E CATEGORIAS -->
+
     <div class="vitrine-filtros">
 
-<form action="{{ route('vitrine.index') }}" method="GET" class="form-pesquisa">
 
-    <div class="campo-pesquisa">
-        <input
-            type="text"
-            name="pesquisa"
-            value="{{ $pesquisa }}"
-            placeholder="Pesquisar produto..."
+        <form
+            action="{{ route('vitrine.index') }}"
+            method="GET"
+            class="form-pesquisa"
         >
 
-        <button type="submit" class="botao-pesquisa">
-    <img src="{{ asset('imagem/lupa-arredondada.png') }}" alt="Pesquisar">
-</button>
+            <div class="campo-pesquisa">
+
+                <input
+                    type="text"
+                    name="pesquisa"
+                    value="{{ $pesquisa }}"
+                    placeholder="Pesquisar produto..."
+                >
+
+                <button
+                    type="submit"
+                    class="botao-pesquisa"
+                >
+
+                    <img
+                        src="{{ asset('imagem/lupa-arredondada.png') }}"
+                        alt="Pesquisar"
+                    >
+
+                </button>
+
+            </div>
+
+
+            @if($categoria && $categoria !== 'Todos')
+
+                <input
+                    type="hidden"
+                    name="categoria"
+                    value="{{ $categoria }}"
+                >
+
+            @endif
+
+        </form>
+
+
+        <!-- CATEGORIAS -->
+
+        <div class="categorias">
+
+            @foreach($categorias as $item)
+
+                <a
+                    href="{{ route('vitrine.index', [
+                        'categoria' => $item === 'Todos' ? null : $item,
+                        'pesquisa' => $pesquisa
+                    ]) }}"
+                    class="categoria-btn
+                        {{ (!$categoria && $item === 'Todos') || $categoria === $item ? 'ativo' : '' }}"
+                >
+
+                    {{ $item }}
+
+                </a>
+
+            @endforeach
+
+        </div>
+
     </div>
 
-    @if($categoria && $categoria !== 'Todos')
-        <input
-            type="hidden"
-            name="categoria"
-            value="{{ $categoria }}"
-        >
-    @endif
 
-</form>
-
-
-<div class="categorias">
-
-    @foreach($categorias as $item)
-
-        <a
-            href="{{ route('vitrine.index', [
-                'categoria' => $item === 'Todos' ? null : $item,
-                'pesquisa' => $pesquisa
-            ]) }}"
-            class="categoria-btn
-                {{ (!$categoria && $item === 'Todos') || $categoria === $item ? 'ativo' : '' }}"
-        >
-            @switch($item)
-
-                @case('Todos')
-                    
-                    @break
-
-                @case('Cabelo')
-                    
-                    @break
-
-                @case('Maquiagem')
-                    
-                    @break
-
-                @case('Perfumaria')
-                    
-                    @break
-
-                @case('Skincare')
-                    
-                    @break
-
-                @case('Unhas')
-                    
-                    @break
-
-            @endswitch
-
-            {{ $item }}
-
-        </a>
-
-    @endforeach
-
-</div>
-
-</div>
+    <!-- PRODUTOS -->
 
     @if($vitrine->count() > 0)
-
 
         <section class="produtos">
 
 
             @foreach($vitrine as $produto)
 
-
                 <div class="produto-card">
 
 
+                    <!-- IMAGEM -->
+
                     @if($produto->imagem)
 
-                    <img src="{{ $produto->imagem }}" alt="{{ $produto->nome }}">
+                        <img
+                            src="{{ $produto->imagem }}"
+                            alt="{{ $produto->nome }}"
+                        >
 
                     @else
 
-                    <div class="sem-produtos">
+                        <div class="sem-produtos">
 
-@if($pesquisa || ($categoria && $categoria !== 'Todos'))
+                            Imagem não disponível.
 
-    Nenhum produto encontrado para sua pesquisa.
+                        </div>
 
-    <br>
-
-    <a href="{{ route('vitrine.index') }}">
-        Ver todos os produtos
-    </a>
-
-@else
-
-    Nenhum produto disponível no momento.
-
-@endif
-
-</div>
                     @endif
 
 
+                    <!-- INFORMAÇÕES -->
 
                     <div class="produto-body">
 
 
-                        <span class="marca">
+                        @if($produto->marca)
 
-                            {{ $produto->marca }}
+                            <span class="marca">
 
-                        </span>
+                                {{ $produto->marca }}
+
+                            </span>
+
+                        @endif
+
 
                         @if($produto->categoria)
 
-<span class="categoria-produto">
+                            <span class="categoria-produto">
 
-    {{ $produto->categoria }}
+                                {{ $produto->categoria }}
 
-</span>
+                            </span>
 
-@endif
+                        @endif
+
+
                         <h3>
 
                             {{ $produto->nome }}
@@ -211,11 +210,15 @@
                         </h3>
 
 
-                        <p class="descricao">
+                        @if($produto->descricao)
 
-                            {{ $produto->descricao }}
+                            <p class="descricao">
 
-                        </p>
+                                {{ $produto->descricao }}
+
+                            </p>
+
+                        @endif
 
 
                         <h2 class="preco">
@@ -231,51 +234,25 @@
                         </h2>
 
 
+                        <!-- BOTÃO VER MAIS -->
 
                         <div class="produto-footer">
 
-
-                            @if($produto->link_contato)
-
-                            <div class="produto-footer">
-
-                                <a
-                                    href="#"
-                                    class="botao-contato"
-                                >
-                                    VER MAIS
-                                </a>
-
-                                </div>
-
-                                </div>
-
-                            @else
-
-                            <div class="produto-footer">
-
                             <a
-                                href="#"
+                                href="{{ route('vitrine.show', ['id' => $produto->id]) }}"
                                 class="botao-contato"
                             >
+
                                 VER MAIS
+
                             </a>
-
-                            </div>
-
-                    </div>
-
-                            @endif
-
 
                         </div>
 
 
                     </div>
 
-
                 </div>
-
 
             @endforeach
 
@@ -286,18 +263,43 @@
     @else
 
 
+        <!-- NENHUM PRODUTO -->
+
         <div class="sem-produtos">
 
-            Nenhum produto disponível no momento.
+            @if($pesquisa || ($categoria && $categoria !== 'Todos'))
+
+                Nenhum produto encontrado para sua pesquisa.
+
+                <br>
+
+                <a href="{{ route('vitrine.index') }}">
+
+                    Ver todos os produtos
+
+                </a>
+
+            @else
+
+                Nenhum produto disponível no momento.
+
+            @endif
 
         </div>
 
 
     @endif
 
+
+    <!-- PAGINAÇÃO -->
+
     <div class="paginacao">
-    {{ $vitrine->links() }}
-</div>
+
+        {{ $vitrine->links() }}
+
+    </div>
+
+
 </main>
 
 

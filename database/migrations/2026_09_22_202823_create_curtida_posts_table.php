@@ -8,26 +8,25 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('curtidas_posts', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('post_id')
+                ->constrained('posts')
+                ->cascadeOnDelete();
 
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->cascadeOnDelete();
 
-            $table->string('titulo');
-            $table->string('slug')->unique();
-            $table->string('imagem')->nullable();
-            $table->string('categoria')->nullable();
-            $table->text('conteudo');
-            $table->boolean('publicado')->default(true);
-
             $table->timestamps();
+
+            $table->unique(['post_id', 'user_id']);
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('curtidas_posts');
     }
 };

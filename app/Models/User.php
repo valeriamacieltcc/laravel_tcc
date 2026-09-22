@@ -17,12 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-   protected $fillable = [
-    'name',
-    'email',
-    'password',
-    'tipo',
-];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'tipo',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,12 +44,31 @@ class User extends Authenticatable
     ];
 
     public function cliente()
-{
-    return $this->hasOne(Cliente::class);
-}
+    {
+        return $this->hasOne(Cliente::class);
+    }
 
-public function isAdmin(): bool
-{
-    return $this->tipo === 'admin';
-}
+    public function isAdmin(): bool
+    {
+        return $this->tipo === 'admin';
+    }
+
+    // ==========================
+    // BLOG
+    // ==========================
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id');
+    }
+
+    public function curtidasPosts()
+    {
+        return $this->hasMany(CurtidaPost::class, 'user_id');
+    }
+
+    public function comentariosPosts()
+    {
+        return $this->hasMany(ComentarioPost::class, 'user_id');
+    }
 }

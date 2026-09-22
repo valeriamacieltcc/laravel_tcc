@@ -56,4 +56,11 @@ class VitrineController extends Controller
             )
         );
     }
+
+    public function show($id)
+    {
+        $produto = Vitrine::findOrFail($id);
+    
+        return view('cliente.vitrine.show', compact('produto'));
+    }
 }

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{{ $produto->nome }} - Valéria Maciel</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/vitrine-show.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+@include('_partials.header')
+
+
+<main class="produto-detalhe">
+
+    <div class="produto-container">
+
+        <!-- IMAGEM -->
+
+        <div class="produto-imagem">
+
+            @if($produto->imagem)
+
+                <img
+                    src="{{ $produto->imagem }}"
+                    alt="{{ $produto->nome }}"
+                >
+
+            @else
+
+                <div class="sem-imagem">
+                    Imagem não disponível
+                </div>
+
+            @endif
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="produto-info">
+
+            @if($produto->marca)
+
+                <span class="marca">
+                    {{ $produto->marca }}
+                </span>
+
+            @endif
+
+
+            @if($produto->categoria)
+
+                <span class="categoria">
+                    {{ $produto->categoria }}
+                </span>
+
+            @endif
+
+
+            <h1>
+                {{ $produto->nome }}
+            </h1>
+
+
+            @if($produto->descricao)
+
+                <p class="descricao">
+                    {{ $produto->descricao }}
+                </p>
+
+            @endif
+
+
+            <div class="linha"></div>
+
+
+            <div class="preco">
+
+                R$
+                {{ number_format(
+                    $produto->preco,
+                    2,
+                    ',',
+                    '.'
+                ) }}
+
+            </div>
+            {{-- FAVORITOS --}}
+
+@auth
+
+    @php
+
+        $favoritado = \App\Models\Favorito::where('user_id', auth()->id())
+            ->where('vitrine_id', $produto->id)
+            ->exists();
+
+    @endphp
+
+
+    <form
+        action="{{ route('cliente.favoritos.vitrine.toggle', $produto->id) }}"
+        method="POST"
+    >
+
+        @csrf
+
+        <button
+            type="submit"
+            class="botao-favorito"
+        >
+
+            {{ $favoritado ? '♥ Favoritado' : '♡ Favoritar' }}
+
+        </button>
+
+    </form>
+
+@endauth
+
+            @if($produto->link_contato)
+
+                <a
+                    href="{{ $produto->link_contato }}"
+                    target="_blank"
+                    class="botao-contato"
+                >
+                    CONTATO
+                </a>
+
+            @endif
+
+
+            <a
+                href="{{ route('vitrine.index') }}"
+                class="voltar"
+            >
+                 vitrine
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+@include('_partials.footer')
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+></script>
+
+</body>
+
+</html>
