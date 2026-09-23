@@ -83,75 +83,119 @@
 
     <div class="row g-4">
 
-        @forelse($posts as $post)
 
-            <div class="col-md-6 col-lg-4">
+@forelse($posts as $post)
 
-                <div class="card h-100 shadow-sm">
+    <div class="col-md-6 col-lg-4">
 
-                    @if($post->imagem)
+        <div class="card h-100 shadow-sm">
 
-                        <img
-                            src="{{ asset('storage/' . $post->imagem) }}"
-                            class="card-img-top"
-                            style="height:280px; object-fit:cover;"
-                            alt="{{ $post->titulo }}"
-                        >
+            {{-- ÁREA CLICÁVEL DO CARD --}}
+            <a
+    href="{{ route('blog.show', $post->id) }}"
+    class="text-decoration-none text-dark"
+>
+
+                @if($post->imagem)
+
+                    <img
+                        src="{{ asset('storage/' . $post->imagem) }}"
+                        class="card-img-top"
+                        style="height:280px; object-fit:cover;"
+                        alt="{{ $post->titulo }}"
+                    >
+
+                @endif
+
+                <div class="card-body">
+
+                    @if($post->categoria)
+
+                        <span class="badge bg-secondary">
+                            {{ $post->categoria }}
+                        </span>
 
                     @endif
 
-                    <div class="card-body">
+                    <h3 class="mt-2">
+                        {{ $post->titulo }}
+                    </h3>
 
-                        @if($post->categoria)
+                    <p>
+                        {{ Str::limit($post->conteudo, 150) }}
+                    </p>
 
-                            <span class="badge bg-secondary">
-                                {{ $post->categoria }}
-                            </span>
+                </div>
 
-                        @endif
+            </a>
 
-                        <h3 class="mt-2">
-                            {{ $post->titulo }}
-                        </h3>
 
-                        <p>
-                            {{ Str::limit($post->conteudo, 150) }}
-                        </p>
+            {{-- AÇÕES DO CARD --}}
+            <div class="card-body pt-0">
 
-                        <div class="mb-3">
+                <div class="d-flex align-items-center gap-3">
 
-                            ❤️ {{ $post->curtidas_count }}
+                    {{-- CURTIDAS --}}
+                    @auth
 
-                            &nbsp;&nbsp;
+                        @php
+                            $curtiu = $post->curtidas()
+                                ->where('user_id', auth()->id())
+                                ->exists();
+                        @endphp
 
-                            💬 {{ $post->comentarios->count() }}
-
-                        </div>
-
-                        <a
-                            href="{{ route('blog.show', $post->id) }}"
-                            class="btn btn-outline-primary"
+                        <form
+                            action="{{ route('cliente.blog.curtir', $post->id) }}"
+                            method="POST"
                         >
-                            VER PUBLICAÇÃO
-                        </a>
 
-                    </div>
+                            @csrf
+
+                            <button
+                                type="submit"
+                                class="btn btn-sm {{ $curtiu ? 'btn-danger' : 'btn-outline-danger' }}"
+                            >
+                                {{ $curtiu ? '❤️ Curtido' : '♡ Curtir' }}
+                                {{ $post->curtidas_count }}
+                            </button>
+
+                        </form>
+
+                    @else
+
+                        <span>
+                            ❤️ {{ $post->curtidas_count }}
+                        </span>
+
+                    @endauth
+
+
+                    {{-- COMENTÁRIOS --}}
+
+                    <span>
+                        💬 {{ $post->comentarios->count() }}
+                    </span>
 
                 </div>
 
             </div>
 
-        @empty
+        </div>
 
-            <div class="text-center">
+    </div>
 
-                <h3>
-                    Nenhuma publicação disponível.
-                </h3>
+@empty
 
-            </div>
+    <div class="text-center">
 
-        @endforelse
+        <h3>
+            Nenhuma publicação disponível.
+        </h3>
+
+    </div>
+
+@endforelse
+
 
     </div>
 

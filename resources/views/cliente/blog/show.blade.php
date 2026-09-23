@@ -70,6 +70,12 @@
 
 
 <div class="container py-5">
+<a
+    href="javascript:history.back()"
+    class="btn btn-secondary mb-4"
+>
+    ← VOLTAR
+</a>
 
     <div class="row justify-content-center">
 

@@ -29,9 +29,6 @@ use App\Http\Controllers\Cliente\PostInteracaoController;
 use App\Http\Controllers\Cliente\BlogController;
 
 
-Route::prefix('/home')->group(function () {
-    Route::get('/index',[App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-});
 
 
 

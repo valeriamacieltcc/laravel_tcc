@@ -52,15 +52,15 @@ class PostController extends Controller
             ->with('sucesso', 'Publicação criada com sucesso!');
     }
 
-    public function show(Post $post)
+    public function show($id)
     {
-        $post->load([
+        $post = Post::with([
             'autor',
             'comentarios.usuario',
-        ]);
-
-        $post->loadCount('curtidas');
-
+        ])
+        ->withCount('curtidas')
+        ->findOrFail($id);
+    
         return view('admin.blog.show', compact('post'));
     }
 
