@@ -507,33 +507,314 @@ class VitrineSeeder extends Seeder
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
-            // =====================================================
-            // O BOTICÁRIO - BOTIK
-            // =====================================================
+           
+// =====================================================
+// O BOTICÁRIO - BOTIK
+// =====================================================
+[
+    'nome' => 'Botik Ácido Poliglutâmico Loção Hidratante Antioleosidade',
+    'descricao' => 'Botik Ácido Poliglutâmico Loção Hidratante Antioleosidade 110 ml.',
+    'preco' => 71.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_744601-MLA109090421986_042026-O-botik-locao-antioleosidade-poliglutamico-cha-verde-boticario.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+[
+    'nome' => 'Botik Sérum de Alta Potência Ácido Hialurônico',
+    'descricao' => 'Botik Sérum de Alta Potência Ácido Hialurônico 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://i.pinimg.com/736x/15/03/cd/1503cd13f0878eb8c631375c821a9d1b.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
 
-            [
-                'nome' => 'Botik Ácido Poliglutâmico Loção Hidratante Antioleosidade',
-                'descricao' => 'Botik Ácido Poliglutâmico Loção Hidratante Antioleosidade 110 ml.',
-                'preco' => 71.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
-                'marca' => 'O Boticário',
-                'disponivel' => true,
-                'link_contato' => 'https://w.app/valeriamaciel',
-            ],
+[
+    'nome' => 'Botik Sérum de Alta Potência Vitamina C 10%',
+    'descricao' => 'Botik Sérum de Alta Potência Vitamina C 10% 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_682108-MLU71656913616_092023-O.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
 
-            // =====================================================
-            // O BOTICÁRIO - CUIDE-SE BEM
-            // =====================================================
+[
+    'nome' => 'Botik Gel de Limpeza Facial Antioxidante Vitamina C',
+    'descricao' => 'Botik Gel de Limpeza Facial Antioxidante Vitamina C 200 g.',
+    'preco' => 87.90,
+    'imagem' => 'https://a-static.mlcdn.com.br/%7Bw%7Dx%7Bh%7D/gel-de-limpeza-facial-antioxidante-botik-vitamina-c-200g-cuidados-para-pele/perfeicaoperfumescosmeticos/8daddb84691511eebf764201ac185056/19f5d82be056f1e77fb815630b2646be.jpeg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
 
-            [
-                'nome' => 'Cuide-se Bem Antitranspirante Rosa e Algodão',
-                'descricao' => 'Antitranspirante Desodorante em Creme Rosa e Algodão 80 g.',
-                'preco' => 25.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
-                'marca' => 'O Boticário',
-                'disponivel' => true,
-                'link_contato' => 'https://w.app/valeriamaciel',
-            ],
+[
+    'nome' => 'Botik Sérum de Alta Potência Ácido Glicólico 8%',
+    'descricao' => 'Botik Sérum de Alta Potência Ácido Glicólico 8% 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_avif,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B87600/0183f69c-c850-4545-8c48-44f755839d75-b87600-2.png',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Gel Creme Redutor de Rugas Retinol Puro',
+    'descricao' => 'Botik Gel Creme Redutor de Rugas Retinol Puro 30 g.',
+    'preco' => 209.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_920193-MLU72628082332_112023-O.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Sérum Preenchedor de Rugas Ácido Hialurônico',
+    'descricao' => 'Botik Sérum Preenchedor de Rugas Ácido Hialurônico 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://i.pinimg.com/736x/b7/e4/6b/b7e46b2b251fe1d88e01653dd804587b.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Máscara Facial Reset Noturno Ácido Glicólico',
+    'descricao' => 'Botik Máscara Facial Reset Noturno Ácido Glicólico 40 g.',
+    'preco' => 174.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_avif,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B83768/93d9a028-5957-44fa-b815-3fc650dc6ec0-bot-83768-content-boost-mascara-acido-glicolico-ambientada.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Balm Labial Hidratante Ácido Hialurônico FPS 15',
+    'descricao' => 'Botik Balm Labial Hidratante Ácido Hialurônico FPS 15 3,2 g.',
+    'preco' => 47.90,
+    'imagem' => 'https://i.pinimg.com/736x/fb/93/79/fb93796014a6d22b6f91468f0f770723.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+[
+    'nome' => 'Botik Ácido Mandélico + Salicílico Sérum de Alta Potência',
+    'descricao' => 'Botik Ácido Mandélico + Salicílico Sérum de Alta Potência 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/41+Rl8MRj1L._AC_UF1000,1000_QL80_.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Ácido Mandélico + Tranexâmico 5% Sérum de Alta Potência',
+    'descricao' => 'Botik Ácido Mandélico + Tranexâmico 5% Sérum de Alta Potência 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://cdn.shopify.com/s/files/1/0632/5511/8040/files/47321-1-SERUM-DE-ALTA-POTENCIA-ACIDO-MANDELICO-_-TRANEXAMICO-5_-30ML-BOTIK-min.jpg?v=1751562719',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Sérum de Alta Potência Resveratrol e Silício',
+    'descricao' => 'Botik Sérum de Alta Potência Resveratrol e Silício 30 ml.',
+    'preco' => 204.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_726631-MLA80099975066_102024-O.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Sérum Facial Lifting Firmador Peptídeos Pró-Elastina',
+    'descricao' => 'Botik Sérum Facial Lifting Firmador Peptídeos Pró-Elastina 30 ml.',
+    'preco' => 219.90,
+    'imagem' => 'https://i.pinimg.com/736x/63/fd/58/63fd580fbf4aaafdbe3b4eea26667a2e.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Creme Firmador para Olhos Peptídeos Pró-Elastina',
+    'descricao' => 'Botik Creme Firmador para Olhos Peptídeos Pró-Elastina 15 g.',
+    'preco' => 159.90,
+    'imagem' => 'https://i.pinimg.com/736x/3c/03/1b/3c031bb539e9087883c25508ad5a2fe6.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Botik Cica Pantenol e Ceramidas Creme Multirreparador Facial Calmante',
+    'descricao' => 'Botik Cica Pantenol e Ceramidas Creme Multirreparador Facial Calmante 30 g.',
+    'preco' => 89.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B59876/ead2694a-fcef-4f76-8694-fd0d716915a0-bot-59876-botik-cica-pantenol-ceramidas-creme-multiprotetor-06.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+
+   
+ // =====================================================
+// O BOTICÁRIO - CUIDE-SE BEM
+// =====================================================
+[
+    'nome' => 'Cuide-se Bem Antitranspirante Rosa e Algodão',
+    'descricao' => 'Antitranspirante Desodorante aerosol Rosa e Algodão 80 g.',
+    'preco' => 25.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_850312-MLB107185623521_022026-O-o-boticario-cuidese-bem-rosa-e-algodao-desodorante-aerossol.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+[
+    'nome' => 'Cuide-se Bem Loção Desodorante Hidratante Corporal Melancia',
+    'descricao' => 'Loção Desodorante Hidratante Corporal Cuide-se Bem Melancia 400 ml.',
+    'preco' => 78.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/41ZEXUykOEL._AC_UF1000,1000_QL80_.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Loção Hidratante Desodorante Corporal Nuvem',
+    'descricao' => 'Loção Hidratante Desodorante Corporal Cuide-se Bem Nuvem 400 ml.',
+    'preco' => 78.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49888/5dc26e4f-91a9-4ade-9fd8-b4a12290038b-bot-49888-cuide-se-bem-nuvem-locao-400ml-segredinho-02.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Loção Desodorante Hidratante Corporal Deleite',
+    'descricao' => 'Loção Desodorante Hidratante Corporal Cuide-se Bem Deleite 400 ml.',
+    'preco' => 78.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B85124/508c333f-ab09-4ced-9559-c0ea601ee0a4-bot-85124-cuide-se-bem-de-leite-creme-hidratante-400ml-frontal-02.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Loção Hidratante Desodorante Corporal Deleite Caramelizado',
+    'descricao' => 'Loção Hidratante Desodorante Corporal Cuide-se Bem Deleite Caramelizado 400 ml.',
+    'preco' => 78.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/51kisn21aGL._AC_UF1000,1000_QL80_.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Loção Desodorante Hidratante Corporal Cereja De Fases',
+    'descricao' => 'Loção Desodorante Hidratante Corporal Cuide-se Bem Cereja De Fases 400 ml.',
+    'preco' => 78.90,
+    'imagem' => 'https://a-static.mlcdn.com.br/420x420/locao-desodorante-hidratante-corporal-cuide-se-bem-cereja-de-fases-400ml-o-boticario/arimakeecosmeticos/85671/5e3c8406455b4bec1647173a31a0e566.jpeg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Beijinho',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Beijinho 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_964190-MLU79169698857_092024-O.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Manteiga Hidratante Desodorante Corporal Deleite',
+    'descricao' => 'Manteiga Hidratante Desodorante Corporal Cuide-se Bem Deleite 200 g.',
+    'preco' => 72.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B89658/5db2b803-ce2c-46f8-a0ae-905a1a2cacc3-bot-89658-cuide-se-bem-deleite-manteiga-hidratante-03.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Manteiga Hidratante Desodorante Corporal Deleite Caramelizado',
+    'descricao' => 'Manteiga Hidratante Desodorante Corporal Cuide-se Bem Deleite Caramelizado 200 g.',
+    'preco' => 72.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/61UuWjeGeEL._AC_UF1000,1000_QL80_.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+// =====================================================
+// O BOTICÁRIO - CUIDE-SE BEM - BODY SPLASH
+// =====================================================
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Deleite',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Deleite 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/61mFRcbYy2L.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Deleite Caramelizado',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Deleite Caramelizado 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlzHFxWTlr85ZqQVtMip0gvpxcGwaN49tuPQ0oCjeSoiYW0jUUj_MKlDVW&s=10',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Deleite Chocolatudo',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Deleite Chocolatudo 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B58132/1883be72-1846-4750-a983-b6d3da1ba676-bot-58132-cuide-se-bem-de-leite-chocolatudo-body-splash-segredinho-02.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Nuvem de Alegria',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Nuvem de Alegria 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://acdn-us.mitiendanube.com/stores/004/803/660/products/nuvem-alegria-2-78b1e44328cbecf41017447394237684-640-0.webp',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Cereja de Fases',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Bem Cereja de Fases 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://m.media-amazon.com/images/I/51LZBtnurHL._AC_UF1000,1000_QL80_.jpg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
+[
+    'nome' => 'Cuide-se Bem Body Splash Desodorante Colônia Cachos de Uva',
+    'descricao' => 'Body Splash Desodorante Colônia Cuide-se Feira Cachos de Uva 200 ml.',
+    'preco' => 94.90,
+    'imagem' => 'https://a-static.mlcdn.com.br/420x420/body-splash-desodorante-colonia-cuide-se-bem-feira-cachos-de-uva-200ml-o-boticario/lidipresentes/17d37d64917311f0993142010a480899/ab07cc4ca2764d613b7639023b139735.jpeg',
+    'marca' => 'O Boticário',
+    'disponivel' => true,
+    'link_contato' => 'https://w.app/valeriamaciel',
+],
+
 
             // =====================================================
             // O BOTICÁRIO - CABELOS
