@@ -16,8 +16,7 @@ class PostController extends Controller
         $posts = Post::with('autor')
             ->withCount(['curtidas', 'comentarios'])
             ->latest()
-            ->get();
-
+            ->paginate(9);
         return view('admin.blog.index', compact('posts'));
     }
 

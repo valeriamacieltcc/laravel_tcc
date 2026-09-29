@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             ClienteSeeder::class,
             VitrineSeeder::class,
             ProcedimentoSeeder::class,
+            PostSeeder::class,
+            
         ]);
     }
 }

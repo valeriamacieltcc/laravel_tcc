@@ -113,7 +113,7 @@
             <div class="vm-favorito-acoes">
 
                 <a
-                    href="{{ route('procedimentos.show', $favorito->procedimento->id) }}"
+                    href="{{ route('cliente.procedimentos.show', $favorito->procedimento->id) }}"
                     class="vm-favorito-ver"
                 >
                     VER PROCEDIMENTO

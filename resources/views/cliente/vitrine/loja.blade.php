@@ -76,7 +76,7 @@
 
 
         <form
-            action="{{ route('vitrine.index') }}"
+            action="{{ route('cliente.vitrine.index') }}"
             method="GET"
             class="form-pesquisa"
         >
@@ -125,7 +125,7 @@
             @foreach($categorias as $item)
 
                 <a
-                    href="{{ route('vitrine.index', [
+                    href="{{ route('cliente.vitrine.index', [
                         'categoria' => $item === 'Todos' ? null : $item,
                         'pesquisa' => $pesquisa
                     ]) }}"
@@ -239,7 +239,7 @@
                         <div class="produto-footer">
 
                             <a
-                                href="{{ route('vitrine.show', ['id' => $produto->id]) }}"
+                                href="{{ route('cliente.vitrine.show', ['id' => $produto->id]) }}"
                                 class="botao-contato"
                             >
 
@@ -273,7 +273,7 @@
 
                 <br>
 
-                <a href="{{ route('vitrine.index') }}">
+                <a href="{{ route('cliente.vitrine.index') }}">
 
                     Ver todos os produtos
 

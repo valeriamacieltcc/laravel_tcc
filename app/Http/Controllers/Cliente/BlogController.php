@@ -16,7 +16,7 @@ class BlogController extends Controller
             ])
             ->withCount('curtidas')
             ->latest()
-            ->get();
+            ->paginate(9);
 
         return view('cliente.blog.index', compact('posts'));
     }

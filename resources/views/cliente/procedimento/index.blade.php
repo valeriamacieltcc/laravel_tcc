@@ -73,7 +73,7 @@
 
         <p>{{ $procedimento->descricao }}</p> 
 
-        <a class="btn" href="http://localhost:8000/procedimento/{{ $procedimento->id }}">
+        <a class="btn" href="{{ route('cliente.procedimento.show', ['id' => $procedimento->id]) }}">
             VER MAIS
         </a>
 

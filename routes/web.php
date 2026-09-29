@@ -1,36 +1,33 @@
 <?php
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\HomeController as AdminHomeController;
-
-use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
-use App\Http\Controllers\Cliente\ProcedimentoController;
-use App\Http\Middleware\LogAcessoMiddleware;
-
 use App\Http\Controllers\Auth\CadastroController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Middleware\LogAcessoMiddleware;
 
+// CLIENTE
+
+use App\Http\Controllers\Cliente\ProcedimentoController;
 use App\Http\Controllers\Cliente\FichaController;
 use App\Http\Controllers\Cliente\PerfilController as ClientePerfilController;
 use App\Http\Controllers\Cliente\AgendamentoController as ClienteAgendamentoController;
+use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
+use App\Http\Controllers\Cliente\AvaliacaoProcedimentoController;
+use App\Http\Controllers\Cliente\FavoritoController;
+use App\Http\Controllers\Cliente\PostInteracaoController;
+use App\Http\Controllers\Cliente\BlogController;
+
+// ADMIN
+
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ProcedimentoController as AdminProcedimentoController;
 use App\Http\Controllers\Admin\AgendamentoController as AdminAgendamentoController;
 use App\Http\Controllers\Admin\AgendaController;
-use App\Http\Controllers\Cliente\VitrineController as ClienteVitrineController;
 use App\Http\Controllers\Admin\VitrineController as AdminVitrineController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\AnamneseController;
 use App\Http\Controllers\Admin\FotoAcompanhamentoController;
-use App\Http\Controllers\Cliente\AvaliacaoProcedimentoController;
-use App\Http\Controllers\Cliente\FavoritoController;
-
 use App\Http\Controllers\Admin\PostController as AdminPostController;
-use App\Http\Controllers\Cliente\PostInteracaoController;
-use App\Http\Controllers\Cliente\BlogController;
-
-
-
-
 
 
 
@@ -42,67 +39,59 @@ Route::prefix('/home')->group(function () {
 });
 
 
-/*
-|--------------------------------------------------------------------------
-| PROCEDIMENTOS
-|--------------------------------------------------------------------------
-*/
-
-Route::prefix('/procedimento')->group(function () {
-
-    Route::get('/index', [ProcedimentoController::class, 'index'])
-        ->name('procedimento.index');
-
-    Route::get('/{slug}', [ProcedimentoController::class, 'show'])
-        ->name('procedimentos.show');
-
-        Route::get('/procedimento/{id}', [ProcedimentoController::class,'detalhe'])->name('procedimento.detalhe');
-
-});
-
-
-
-Route::get('/vitrine', [ClienteVitrineController::class, 'index'])
-    ->name('vitrine.index');
-
-Route::get('/vitrine/{id}', [ClienteVitrineController::class, 'show'])
-    ->name('vitrine.show');
-
-
-    
     Route::get('/blog', [BlogController::class, 'index'])
     ->name('blog.index');
 
 Route::get('/blog/{post}', [BlogController::class, 'show'])
     ->name('blog.show');
-    
-Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
 
+
+    Route::middleware('auth')->prefix('cliente')->name('cliente.')->group(function () {
+
+        // PROCEDIMENTOS
+        Route::get('/procedimento/index', [ProcedimentoController::class, 'index'])->name('procedimento.index');
+        Route::get('/procedimento/{slug}', [ProcedimentoController::class, 'show'])->name('procedimentos.show');
+        Route::get('/procedimento/show/{id}', [ProcedimentoController::class, 'show'])->name('procedimento.show');
+    
+        // VITRINE
+        Route::get('/vitrine', [ClienteVitrineController::class, 'index'])->name('vitrine.index');
+        Route::get('/vitrine/{id}', [ClienteVitrineController::class, 'show'])->name('vitrine.show');
+    
+        // PERFIL
         Route::get('/perfil', [ClientePerfilController::class,'show'])->name('perfil.show');
         Route::get('/perfil/editar', [ClientePerfilController::class,'edit'])->name('perfil.edit');
         Route::put('/perfil', [ClientePerfilController::class,'update'])->name('perfil.update');
-        Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');  
+        Route::put('/perfil/senha', [ClientePerfilController::class,'updatePassword'])->name('perfil.password');
+    
+        // ANAMNESE
         Route::get('/perfil/anamnese',[FichaController::class, 'index'])->name('perfil.anamnese.index');
         Route::post('/perfil/anamnese',[FichaController::class, 'store'])->name('perfil.anamnese.store');
         Route::put('/perfil/anamnese',[FichaController::class, 'update'])->name('perfil.anamnese.update');
         Route::get('/perfil/anamnese/editar',[FichaController::class, 'edit'])->name('perfil.anamnese.edit');
         Route::delete('/perfil/anamnese',[FichaController::class, 'destroy'])->name('perfil.anamnese.destroy');
+    
+        // AGENDAMENTOS
         Route::get('/agendamentos/horarios-disponiveis', [ClienteAgendamentoController::class,'horariosDisponiveis'])->name('agendamentos.horarios');
         Route::get('/agendamentos', [ClienteAgendamentoController::class,'index'])->name('agendamentos.index');
         Route::get('/agendamentos/criar', [ClienteAgendamentoController::class,'create'])->name('agendamentos.create');
         Route::post('/agendamentos', [ClienteAgendamentoController::class,'store'])->name('agendamentos.store');
         Route::patch('/agendamentos/{agendamento}/cancelar', [ClienteAgendamentoController::class,'cancelar'])->name('agendamentos.cancelar');
-
+    
+        // FAVORITOS
         Route::post('/favoritos/{procedimento}',[FavoritoController::class, 'toggle'])->name('favoritos.toggle');
         Route::post('/favoritos/vitrine/{produto}',[FavoritoController::class, 'toggleVitrine'])->name('favoritos.vitrine.toggle');
         Route::get('/favoritos',[FavoritoController::class, 'index'])->name('favoritos.index');
+    
+        // AVALIAÇÕES
         Route::get('/agendamentos/{agendamento}/avaliar',[AvaliacaoProcedimentoController::class, 'create'])->name('agendamentos.avaliar');
         Route::post('/agendamentos/{agendamento}/avaliar',[AvaliacaoProcedimentoController::class, 'store'])->name('agendamentos.avaliar.store');
+    
+        // BLOG
         Route::post('/blog/{post}/curtir', [PostInteracaoController::class, 'curtir'])->name('blog.curtir');
         Route::post('/blog/{post}/comentar', [PostInteracaoController::class, 'comentar'])->name('blog.comentar');
-     
+    
+        Route::get('/perfil/antes-depois', [ClientePerfilController::class, 'antesDepois'])->name('perfil.antes-depois');
     });
-
 
 
       

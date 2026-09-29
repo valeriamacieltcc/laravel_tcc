@@ -28,7 +28,7 @@
 
         <!-- PROCEDIMENTOS -->
         <li>
-            <a href="{{ route('procedimento.index') }}">
+            <a href="{{ route('cliente.procedimento.index') }}">
                 PROCEDIMENTOS
             </a>
         </li>
@@ -44,7 +44,7 @@
 
         <!-- LOJA -->
         <li>
-            <a href="{{ route('vitrine.index') }}">
+            <a href="{{ route('cliente.vitrine.index') }}">
                 LOJA
             </a>
         </li>

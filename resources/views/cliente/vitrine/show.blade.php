@@ -173,7 +173,7 @@
 
 
             <a
-                href="{{ route('vitrine.index') }}"
+                href="{{ route('cliente.vitrine.index') }}"
                 class="voltar"
             >
                  vitrine
