@@ -289,69 +289,22 @@
      GALERIA ANTES E DEPOIS
      ===================================================== --}}
 
-<section class="galeria-perfil">
+     <section class="bloco-info">
 
-    <h3>
-        Histórico dos Antes & Depois
-    </h3>
+<a
+    href="{{ route('cliente.perfil.antes-depois') }}"
+    class="titulo-bloco botao-anamnese"
+>
+    Antes e Depois
+</a>
 
-    <div class="galeria-perfil-grid">
+<div class="conteudo-bloco anamnese-resumo">
 
-        @if(
-            isset($cliente->fotosAcompanhamento)
-            && $cliente->fotosAcompanhamento->count() > 0
-        )
+    <p>
+        Veja o histórico dos seus resultados de antes e depois.
+    </p>
 
-            @foreach($cliente->fotosAcompanhamento as $foto)
-
-                @if($foto->foto_antes)
-
-                    <div class="foto-galeria-perfil">
-
-                        <span>Antes</span>
-
-                        <img
-                            src="{{ asset('storage/' . $foto->foto_antes) }}"
-                            alt="Antes"
-                        >
-
-                    </div>
-
-                @endif
-
-
-                @if($foto->foto_depois)
-
-                    <div class="foto-galeria-perfil">
-
-                        <span>Depois</span>
-
-                        <img
-                            src="{{ asset('storage/' . $foto->foto_depois) }}"
-                            alt="Depois"
-                        >
-
-                    </div>
-
-                @endif
-
-            @endforeach
-
-        @else
-
-            <div class="sem-dados-galeria">
-
-                <span>♡</span>
-
-                <p>
-                    Nenhuma foto cadastrada ainda.
-                </p>
-
-            </div>
-
-        @endif
-
-    </div>
+</div>
 
 </section>
     {{-- =====================================================

@@ -161,7 +161,19 @@ public function edit()
             ->route('cliente.perfil.show')
             ->with('sucesso', 'Perfil atualizado com sucesso!');
     }
-
+    public function antesDepois()
+    {
+        $user = Auth::user();
+    
+        $cliente = $user->cliente;
+    
+        $cliente->load('fotosAcompanhamento');
+    
+        return view(
+            'cliente.perfil.antes-depois.antes-depois',
+            compact('user', 'cliente')
+        );
+    }
     public function updatePassword(Request $request)
     {
         $request->validate([

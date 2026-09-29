@@ -170,7 +170,9 @@
             </div>
 
         @endforelse
-
+        <div class="paginacao">
+    {{ $posts->links() }}
+</div>
     </div>
 
 </div>

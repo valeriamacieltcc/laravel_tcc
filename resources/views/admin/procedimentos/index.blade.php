@@ -147,7 +147,7 @@
                                     @if($procedimento->imagem)
 
                                         <img
-                                            src="{{ asset('storage/' . $procedimento->imagem) }}"
+                                            src="{{ $procedimento->imagem }}"
                                             class="admin-procedimentos-imagem"
                                             alt="{{ $procedimento->nome }}"
                                         >
