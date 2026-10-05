@@ -63,13 +63,17 @@ class PostController extends Controller
         return view('admin.blog.show', compact('post'));
     }
 
-    public function edit(Post $post)
+    public function edit(Post $blog)
     {
+        $post = $blog;
+    
         return view('admin.blog.edit', compact('post'));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $blog)
     {
+        $post = $blog;
+    
         $dados = $request->validate([
             'titulo' => ['required', 'string', 'max:255'],
             'categoria' => ['nullable', 'string', 'max:100'],
@@ -77,35 +81,37 @@ class PostController extends Controller
             'imagem' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
             'publicado' => ['nullable', 'boolean'],
         ]);
-
+    
         if ($request->hasFile('imagem')) {
-
+    
             if ($post->imagem) {
                 Storage::disk('public')->delete($post->imagem);
             }
-
+    
             $dados['imagem'] = $request->file('imagem')
                 ->store('posts', 'public');
         }
-
+    
         $dados['slug'] = Str::slug($dados['titulo']);
         $dados['publicado'] = $request->boolean('publicado');
-
+    
         $post->update($dados);
-
+    
         return redirect()
             ->route('admin.blog.index')
             ->with('sucesso', 'Publicação atualizada com sucesso!');
     }
 
-    public function destroy(Post $post)
+    public function destroy(Post $blog)
     {
+        $post = $blog;
+    
         if ($post->imagem) {
             Storage::disk('public')->delete($post->imagem);
         }
-
+    
         $post->delete();
-
+    
         return redirect()
             ->route('admin.blog.index')
             ->with('sucesso', 'Publicação excluída com sucesso!');

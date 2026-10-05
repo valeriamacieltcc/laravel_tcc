@@ -67,10 +67,10 @@
     </h1>
 
     <form
-        action="{{ route('admin.blog.update', $post->id) }}"
-        method="POST"
-        enctype="multipart/form-data"
-    >
+    action="{{ route('admin.blog.update', ['blog' => $post->id]) }}"
+    method="POST"
+    enctype="multipart/form-data"
+>
 
         @csrf
         @method('PUT')
@@ -93,16 +93,18 @@
 
         <div class="mb-3">
 
-            <label class="form-label">
-                Categoria
-            </label>
+        <select name="categoria" class="form-control" required>
+    <option value="">Selecione uma categoria</option>
+    <option value="Dicas">Dicas</option>
+    <option value="Pele">Pele</option>
+    <option value="Cabelo">Cabelo</option>
+    <option value="Unhas">Unhas</option>
+    <option value="Maquiagem">Maquiagem</option>
+    <option value="Estética">Estética</option>
+    <option value="Estética">Cuidados</option>
+</select>
 
-            <input
-                type="text"
-                name="categoria"
-                class="form-control"
-                value="{{ old('categoria', $post->categoria) }}"
-            >
+          
 
         </div>
 

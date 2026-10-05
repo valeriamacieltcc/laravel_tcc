@@ -59,6 +59,8 @@
         href="{{ asset('css/admin.css') }}"
     >
 
+
+
 <div class="container py-5">
 
     <h1 class="mb-4">
@@ -95,17 +97,18 @@
 
         <div class="mb-3">
 
-            <label class="form-label">
-                Categoria
-            </label>
+        <select name="categoria" class="form-control" required>
+    <option value="">Selecione uma categoria</option>
+    <option value="Dicas">Dicas</option>
+    <option value="Pele">Pele</option>
+    <option value="Cabelo">Cabelo</option>
+    <option value="Unhas">Unhas</option>
+    <option value="Maquiagem">Maquiagem</option>
+    <option value="Estética">Estética</option>
+    <option value="Estética">Cuidados</option>
+</select>
 
-            <input
-                type="text"
-                name="categoria"
-                class="form-control"
-                value="{{ old('categoria') }}"
-                placeholder="Ex.: Dicas de beleza"
-            >
+        
 
         </div>
 

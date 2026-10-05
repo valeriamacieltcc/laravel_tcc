@@ -60,44 +60,43 @@
 
     </ul>
 
-
-    <!-- PERFIL -->
     <div class="cart-icon">
 
-        @auth
+@auth
 
-            <a href="{{ route('cliente.perfil.show') }}">
+    <a href="{{ route('cliente.perfil.show') }}">
 
-                @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
+        @if(Auth::user()->foto_perfil)
 
-                    <img
-                        src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
-                        alt="Meu perfil"
-                        class="foto-navbar">
-
-                @else
-
-                    <img
-                        src="{{ asset('imagem/perfil-padrao.png') }}"
-                        alt="Meu perfil"
-                        class="foto-navbar">
-
-                @endif
-
-            </a>
+            <img
+                src="{{ asset('storage/' . Auth::user()->foto_perfil) }}"
+                alt="Meu perfil"
+                class="foto-navbar">
 
         @else
 
-            <a href="{{ route('login') }}">
+            <img
+                src="{{ asset('imagem/perfil-padrao.png') }}"
+                alt="Meu perfil"
+                class="foto-navbar">
 
-                <img
-                    src="{{ asset('imagem/perfil-padrao.png') }}"
-                    alt="Entrar"
-                    class="foto-navbar">
+        @endif
 
-            </a>
+    </a>
 
-        @endauth
+@else
+
+    <a href="{{ route('login') }}">
+
+        <img
+            src="{{ asset('imagem/perfil-padrao.png') }}"
+            alt="Entrar"
+            class="foto-navbar">
+
+    </a>
+
+@endauth
+
 
     </div>
 

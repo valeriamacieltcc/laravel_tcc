@@ -3,35 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\HomeConfig;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $home = [
-            'banner' => [
-                ['imagem' => 'imagem/banner1.jpg'],
-                ['imagem' => 'imagem/banner2.jpg'],
-            ],
+        $home = HomeConfig::first();
 
-            'sobre' => [
-                'imagem' => 'imagem/perfil.png',
-                'titulo' => 'Valéria Maciel',
-                'texto' => 'Texto sobre a clínica.'
-            ],
-
-            'categorias' => [
-                [
-                    'titulo' => 'Botox',
-                    'imagem' => 'imagem/botox.png'
-                ],
-                [
-                    'titulo' => 'Limpeza de Pele',
-                    'imagem' => 'imagem/limpeza.png'
-                ]
-            ]
-        ];
-
-        return view('home.index');
+        return view('home.index', compact('home'));
     }
 }

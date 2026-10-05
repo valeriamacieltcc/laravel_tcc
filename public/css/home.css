@@ -7320,3 +7320,106 @@ PÁGINA
 
 }
 
+
+
+/* ADMIN */
+.admin-edit {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.admin-edit-btn {
+    background: #2c7771;
+    color: white;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.admin-edit-btn:hover {
+    opacity: 0.85;
+}
+
+.admin-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.admin-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-edit-area {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.admin-edit-area label {
+    font-size: 13px;
+    margin-top: 12px;
+    display: block;
+}
+
+.btn-salvar {
+    background: #2c7771;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.admin-home-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.btn-editar,
+.btn-voltar {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.btn-editar {
+    background-color: #2c7771;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #225e59;
+    color: white;
+}
+
+.btn-voltar {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-voltar:hover {
+    background-color: #ccc;
+    color: #333;
+}

@@ -56,7 +56,7 @@
 
     <link
         rel="stylesheet"
-        href="{{ asset('css/avaliacao.css') }}"
+        href="{{ asset('css/blog.css') }}"
     >
 
 </head>
@@ -83,7 +83,21 @@
 
     <div class="row g-4">
 
+    <div class="blog-filtros">
 
+<a href="{{ route('blog.index') }}"
+   class="filtro-btn {{ empty($categoria) || $categoria === 'todos' ? 'ativo' : '' }}">
+    Todos
+</a>
+
+@foreach($categorias as $cat)
+    <a href="{{ route('blog.index', ['categoria' => $cat]) }}"
+       class="filtro-btn {{ $categoria === $cat ? 'ativo' : '' }}">
+        {{ $cat }}
+    </a>
+@endforeach
+
+</div>
 @forelse($posts as $post)
 
     <div class="col-md-6 col-lg-4">

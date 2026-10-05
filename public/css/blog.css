@@ -1,0 +1,710 @@
+/* =========================================================
+   BLOG - VALÉRIA MACIEL ESTÉTICA
+   SEGUINDO O PADRÃO DA VITRINE
+   ========================================================= */
+
+
+/* =========================================================
+   ÁREA PRINCIPAL DO BLOG
+   ========================================================= */
+
+   body:has(.blog-filtros) {
+    background-color: #f5f2e9;
+}
+
+
+/* =========================================================
+   CONTAINER DO BLOG
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 40px 0 90px !important;
+
+    font-family: 'Playfair Display SC', serif;
+    color: #444;
+}
+
+
+/* =========================================================
+   TOPO DO BLOG
+   MESMO PADRÃO DA VITRINE
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 > .text-center {
+    width: 100%;
+
+    margin: 20px auto 35px !important;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 > .text-center h1 {
+    margin: 0 0 10px;
+
+    color: #3e746d;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 55px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 > .text-center p {
+    margin: 0;
+
+    color: #444;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LINHA DOS FILTROS
+   ========================================================= */
+
+body:has(.blog-filtros) .blog-filtros {
+    width: 100%;
+
+    margin: 0 auto 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   BOTÕES DOS FILTROS
+   MESMO ESTILO DA VITRINE
+   ========================================================= */
+
+body:has(.blog-filtros) .blog-filtros .filtro-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    background: transparent;
+
+    border: 1px solid #7d958d;
+    border-radius: 0;
+
+    color: #2f6d67;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+body:has(.blog-filtros) .blog-filtros .filtro-btn:hover {
+    background: #7d958d;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FILTRO ATIVO
+   ========================================================= */
+
+body:has(.blog-filtros) .blog-filtros .filtro-btn.ativo {
+    background: #7d958d;
+
+    color: #ffffff;
+}
+
+
+body:has(.blog-filtros) .blog-filtros .filtro-btn.ativo:hover {
+    background: #2f6d67;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GRID DOS POSTS
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 > .row.g-4 {
+    width: 100%;
+
+    margin: 0 auto;
+
+    --bs-gutter-x: 30px;
+    --bs-gutter-y: 30px;
+}
+
+
+/* =========================================================
+   COLUNAS
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 > .row.g-4 > .col-md-6 {
+    display: flex;
+}
+
+
+/* =========================================================
+   CARD DO BLOG
+   PADRÃO SEMELHANTE AO CARD DA VITRINE
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #d9ded2;
+
+    border: none;
+    border-radius: 12px;
+
+    box-shadow: none !important;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   HOVER DO CARD
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) !important;
+}
+
+
+/* =========================================================
+   LINK PRINCIPAL DO CARD
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card > a {
+    display: block;
+
+    width: 100%;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   IMAGEM DO POST
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .card-img-top {
+    display: block;
+
+    width: 100%;
+
+    height: 220px !important;
+
+    object-fit: cover;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: none;
+
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   CORPO DO POST
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card > a .card-body {
+    width: 100%;
+
+    padding: 18px;
+
+    text-align: center;
+
+    background: #d9ded2;
+}
+
+
+/* =========================================================
+   CATEGORIA
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .badge {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding: 0;
+
+    background: transparent !important;
+
+    color: #2f6d67 !important;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO DO POST
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card h3 {
+    width: 100%;
+
+    margin: 0 0 10px;
+
+    color: #444;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESUMO
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card > a .card-body p {
+    width: 100%;
+
+    margin: 0;
+
+    color: #666;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ÁREA DE CURTIDAS E COMENTÁRIOS
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card > .card-body.pt-0 {
+    width: 100%;
+
+    padding: 0 18px 18px !important;
+
+    background: #d9ded2;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .d-flex.align-items-center {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px !important;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORMULÁRIO DE CURTIDA
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card form {
+    margin: 0;
+}
+
+
+/* =========================================================
+   BOTÃO CURTIR
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .btn {
+    min-height: 32px;
+
+    padding: 6px 12px;
+
+    border-radius: 0;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================================
+   BOTÃO CURTIR NORMAL
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .btn-outline-danger {
+    background: transparent !important;
+
+    border: 1px solid #7d958d !important;
+
+    color: #2f6d67 !important;
+}
+
+
+body:has(.blog-filtros) .container.py-5 .card .btn-outline-danger:hover {
+    background: #7d958d !important;
+
+    border-color: #7d958d !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   BOTÃO CURTIDO
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .btn-danger {
+    background: #7d958d !important;
+
+    border: 1px solid #7d958d !important;
+
+    color: #ffffff !important;
+}
+
+
+body:has(.blog-filtros) .container.py-5 .card .btn-danger:hover {
+    background: #2f6d67 !important;
+
+    border-color: #2f6d67 !important;
+}
+
+
+/* =========================================================
+   CONTADOR DE COMENTÁRIOS
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .card .d-flex span {
+    color: #666;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO
+   ========================================================= */
+
+body:has(.blog-filtros) .paginacao {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 45px;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO BOOTSTRAP
+   ========================================================= */
+
+body:has(.blog-filtros) .paginacao .pagination {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+}
+
+
+body:has(.blog-filtros) .paginacao .page-item {
+    margin: 0;
+}
+
+
+body:has(.blog-filtros) .paginacao .page-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 35px;
+    height: 35px;
+
+    padding: 0 10px;
+
+    border: 1px solid #7d958d !important;
+
+    border-radius: 0 !important;
+
+    background: transparent;
+
+    color: #2f6d67;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+body:has(.blog-filtros) .paginacao .page-link:hover {
+    background: #7d958d;
+
+    border-color: #7d958d !important;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PÁGINA ATIVA
+   ========================================================= */
+
+body:has(.blog-filtros) .paginacao .page-item.active .page-link {
+    background: #7d958d;
+
+    border-color: #7d958d !important;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PAGINAÇÃO DESABILITADA
+   ========================================================= */
+
+body:has(.blog-filtros) .paginacao .page-item.disabled .page-link {
+    background: transparent;
+
+    border-color: #d6c5a6 !important;
+
+    color: #aaa;
+}
+
+
+/* =========================================================
+   NENHUMA PUBLICAÇÃO
+   ========================================================= */
+
+body:has(.blog-filtros) .container.py-5 .row.g-4 > .text-center {
+    width: 100%;
+
+    padding: 50px 20px;
+}
+
+
+body:has(.blog-filtros) .container.py-5 .row.g-4 > .text-center h3 {
+    margin: 0;
+
+    color: #3e746d;
+
+    font-family: 'Playfair Display SC', serif;
+
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    body:has(.blog-filtros) .container.py-5 {
+        width: 88%;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .text-center h1 {
+        font-size: 48px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .row.g-4 {
+        --bs-gutter-x: 22px;
+        --bs-gutter-y: 25px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 .card .card-img-top {
+        height: 210px !important;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE - CELULAR
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    body:has(.blog-filtros) .container.py-5 {
+        width: 90%;
+
+        padding-top: 30px !important;
+        padding-bottom: 60px !important;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .text-center {
+        margin-top: 10px;
+        margin-bottom: 25px !important;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .text-center h1 {
+        font-size: 40px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .text-center p {
+        font-size: 13px;
+    }
+
+
+    body:has(.blog-filtros) .blog-filtros {
+        gap: 7px;
+
+        margin-bottom: 30px;
+    }
+
+
+    body:has(.blog-filtros) .blog-filtros .filtro-btn {
+        padding: 8px 13px;
+
+        font-size: 10px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .row.g-4 {
+        --bs-gutter-x: 15px;
+        --bs-gutter-y: 25px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 .card .card-img-top {
+        height: 220px !important;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 .card h3 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    body:has(.blog-filtros) .container.py-5 > .text-center h1 {
+        font-size: 35px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 > .text-center p {
+        font-size: 12px;
+    }
+
+
+    body:has(.blog-filtros) .blog-filtros .filtro-btn {
+        padding: 7px 10px;
+
+        font-size: 9px;
+    }
+
+
+    body:has(.blog-filtros) .container.py-5 .card h3 {
+        font-size: 20px;
+    }
+
+}

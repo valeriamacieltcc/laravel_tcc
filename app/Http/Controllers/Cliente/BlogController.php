@@ -3,22 +3,40 @@
 namespace App\Http\Controllers\Cliente;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Post;
 
 class BlogController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $categoria = $request->categoria;
+    
         $posts = Post::where('publicado', true)
-            ->with([
-                'autor',
-                'comentarios.usuario',
-            ])
+            ->with('autor')
             ->withCount('curtidas')
+            ->when($categoria && $categoria !== 'todos', function ($query) use ($categoria) {
+                $query->where('categoria', $categoria);
+            })
             ->latest()
-            ->paginate(9);
-
-        return view('cliente.blog.index', compact('posts'));
+            ->paginate(6)
+            ->withQueryString();
+    
+        $categorias = [
+            'Dicas',
+            'Pele',
+            'Cabelo',
+            'Unhas',
+            'Maquiagem',
+            'Estética',
+            'Cuidados'
+        ];
+    
+        return view('cliente.blog.index', compact(
+            'posts',
+            'categorias',
+            'categoria'
+        ));
     }
 
     public function show(Post $post)

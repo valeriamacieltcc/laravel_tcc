@@ -98,7 +98,10 @@ Route::get('/blog/{post}', [BlogController::class, 'show'])
 // Procedimentos(admin)
 Route::prefix('admin')->name('admin.')->group(function () {
     
-         Route::get('/home', [AdminHomeController::class, 'index'])->name('home.index');
+        
+         Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home.index');
+         Route::get('/home/editar', [\App\Http\Controllers\Admin\HomeController::class, 'edit']) ->name('home.edit');
+         Route::put('/home', [\App\Http\Controllers\Admin\HomeController::class, 'update'])->name('home.update');
         Route::resource('procedimentos',AdminProcedimentoController::class);
         Route::resource('vitrine',AdminVitrineController::class);
         Route::get('/agenda',[AgendaController::class, 'index'])->name('agenda.index');
