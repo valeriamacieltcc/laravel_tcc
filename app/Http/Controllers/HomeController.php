@@ -7,10 +7,20 @@ use App\Models\HomeConfig;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        $home = HomeConfig::first();
+   
+public function index()
+{
+    $home = \App\Models\HomeConfig::first();
 
-        return view('home.index', compact('home'));
+    if (!$home) {
+        $home = new \App\Models\HomeConfig();
+
+        $home->banner_1 = '';
+        $home->banner_2 = '';
+        $home->banner_3 = '';
     }
+
+    return view('home.index', compact('home'));
+}
+
 }

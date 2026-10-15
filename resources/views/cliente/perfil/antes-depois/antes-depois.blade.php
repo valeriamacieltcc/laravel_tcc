@@ -37,6 +37,10 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/antes-depois.css') }}"
+    >
 
 </head>
 
@@ -50,9 +54,11 @@
 
 @include('_partials.header')
 
-@foreach($cliente->fotosAcompanhamento as $foto)
+<div class="grade-antes-depois">
 
-    <div class="card-antes-depois">
+    @foreach($cliente->fotosAcompanhamento as $foto)
+
+        <div class="card-antes-depois">
 
         {{-- NOME DO PROCEDIMENTO --}}
         @if($foto->procedimento)
@@ -92,10 +98,11 @@
 
         </div>
 
-    </div>
+        </div>
 
-@endforeach
+    @endforeach
 
+</div>
 
 {{-- =====================================================
      FOOTER

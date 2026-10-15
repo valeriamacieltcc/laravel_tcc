@@ -35,20 +35,23 @@
 
     <link
         rel="stylesheet"
-        href="{{ asset('css/vitrine-show.css') }}"
+        href="{{ asset('css/vitrine(show).css') }}"
     >
 
     <link
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/home.css') }}"
+    >
 
 </head>
 
 <body>
 
-@include('_partials.header')
-
+    @include('_partials.header')
 
 <main class="produto-detalhe">
 

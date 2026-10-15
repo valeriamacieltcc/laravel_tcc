@@ -1,0 +1,481 @@
+
+/* =========================================================
+   PÁGINA DE DETALHES DO PRODUTO - VITRINE
+   VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+/* CONTEÚDO PRINCIPAL */
+
+.produto-detalhe {
+    width: 100%;
+    min-height: 600px;
+    padding: 65px 5% 100px;
+    box-sizing: border-box;
+}
+
+/* CONTAINER: IMAGEM À ESQUERDA E INFORMAÇÕES À DIREITA */
+
+.produto-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+    align-items: center;
+    gap: 75px;
+}
+
+/* =========================================================
+   IMAGEM DO PRODUTO
+   ========================================================= */
+
+.produto-imagem {
+    width: 100%;
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f6f5e5;
+    border-radius: 10px;
+}
+
+.produto-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 6px;
+}
+
+.sem-imagem {
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    color: #777;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    text-align: center;
+}
+
+/* =========================================================
+   INFORMAÇÕES DO PRODUTO
+   ========================================================= */
+
+.produto-info {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* MARCA */
+
+.produto-info .marca {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* CATEGORIA */
+
+.produto-info .categoria {
+    display: inline-block;
+
+    margin-bottom: 20px;
+    padding: 7px 15px;
+
+    color: #2c7771;
+    background-color: #eeedda;
+
+    border-radius: 3px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* NOME DO PRODUTO */
+
+.produto-info h1 {
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 0;
+
+    color: #2c7771 !important;
+
+    font-family: 'Playfair Display SC', serif !important;
+    font-size: 42px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.3;
+    text-align: left;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* DESCRIÇÃO */
+
+.produto-info .descricao {
+    margin: 0 0 25px;
+
+    color: #3b3b3b;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.9;
+    text-align: left;
+
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* LINHA DECORATIVA */
+
+.produto-info .linha {
+    width: 100%;
+    height: 1px;
+
+    margin: 25px 0;
+
+    background-color: #d7d5bd;
+}
+
+/* =========================================================
+   PREÇO
+   ========================================================= */
+
+.produto-info .preco {
+    margin-bottom: 30px;
+
+    color: #2c7771;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+/* =========================================================
+   BOTÃO FAVORITAR
+   ========================================================= */
+
+.produto-info form {
+    margin: 0 0 18px;
+}
+
+.produto-info .botao-favorito {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+    min-height: 46px;
+
+    padding: 12px 24px;
+
+    background-color: transparent;
+    border: 1px solid #2c7771;
+    border-radius: 0;
+
+    color: #2c7771;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.produto-info .botao-favorito:hover {
+    background-color: #eeedda;
+    color: #245f5a;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   BOTÃO DE CONTATO
+   ========================================================= */
+
+.produto-info .botao-contato {
+    display: flex;
+    width: fit-content;
+    min-width: 210px;
+    min-height: 48px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px 0;
+    padding: 15px 35px;
+
+    box-sizing: border-box;
+
+    background-color: #7d958d;
+    border: none;
+    border-radius: 0;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.produto-info .botao-contato:hover {
+    background-color: #2f6d67;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   LINK PARA VOLTAR À VITRINE
+   ========================================================= */
+
+.produto-info .voltar {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding-bottom: 5px;
+
+    color: #2c7771;
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.produto-info .voltar:hover {
+    color: #245f5a;
+    border-bottom-color: #2c7771;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .produto-detalhe {
+        padding: 45px 5% 70px;
+    }
+
+    .produto-container {
+        max-width: 650px;
+
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .produto-imagem {
+        width: 100%;
+        max-width: 430px;
+        height: 400px;
+
+        margin: 0 auto;
+    }
+
+    .produto-info {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .produto-info h1 {
+        font-size: 36px !important;
+        text-align: center;
+    }
+
+    .produto-info .marca,
+    .produto-info .categoria {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .produto-info .descricao {
+        text-align: center;
+    }
+
+    .produto-info .preco {
+        text-align: center;
+    }
+
+    .produto-info .linha {
+        margin: 22px 0;
+    }
+
+    .produto-info form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .produto-info .botao-contato {
+        margin: 20px auto;
+    }
+
+    .produto-info .voltar {
+        display: table;
+        margin: 15px auto 0;
+    }
+}
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .produto-detalhe {
+        padding: 30px 6% 55px;
+    }
+
+    .produto-container {
+        gap: 28px;
+    }
+
+    .produto-imagem {
+        width: 100%;
+        height: 310px;
+
+        padding: 14px;
+        border-radius: 8px;
+    }
+
+    .produto-info {
+        padding: 0;
+    }
+
+    .produto-info .marca {
+        margin-bottom: 10px;
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    .produto-info .categoria {
+        margin-bottom: 15px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .produto-info h1 {
+        margin-bottom: 18px;
+        font-size: 30px !important;
+        line-height: 1.35;
+    }
+
+    .produto-info .descricao {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .produto-info .linha {
+        margin: 20px 0;
+    }
+
+    .produto-info .preco {
+        margin-bottom: 25px;
+        font-size: 32px;
+    }
+
+    .produto-info .botao-favorito {
+        width: 100%;
+        max-width: 260px;
+        min-height: 45px;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .produto-info .botao-contato {
+        width: 100%;
+        max-width: 260px;
+        min-width: 0;
+        min-height: 46px;
+
+        margin: 18px auto;
+        padding: 14px 20px;
+
+        font-size: 13px;
+    }
+
+    .produto-info .voltar {
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .produto-detalhe {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .produto-imagem {
+        height: 260px;
+        padding: 10px;
+    }
+
+    .produto-info h1 {
+        font-size: 26px !important;
+    }
+
+    .produto-info .preco {
+        font-size: 29px;
+    }
+}
