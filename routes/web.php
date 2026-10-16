@@ -91,6 +91,8 @@ Route::get('/blog/{post}', [BlogController::class, 'show'])
         Route::post('/blog/{post}/comentar', [PostInteracaoController::class, 'comentar'])->name('blog.comentar');
     
         Route::get('/perfil/antes-depois', [ClientePerfilController::class, 'antesDepois'])->name('perfil.antes-depois');
+
+        Route::get('/perfil/historico', [ClientePerfilController::class, 'historico'])->name('perfil.historico');
     });
 
 

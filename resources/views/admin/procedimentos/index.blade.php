@@ -146,12 +146,11 @@
 
                                     @if($procedimento->imagem)
 
-                                        <img
-                                            src="{{ $procedimento->imagem }}"
-                                            class="admin-procedimentos-imagem"
-                                            alt="{{ $procedimento->nome }}"
-                                        >
-
+                                    <img
+    src="{{ asset($procedimento->imagem) }}"   class="admin-procedimentos-imagem"
+    alt="{{ $procedimento->nome }}"
+>
+                                     
                                     @else
 
                                         <span class="admin-procedimentos-sem-imagem">
@@ -307,7 +306,8 @@
         </div>
 
     </main>
-
+<br>
+<br>
 
     @include('admin._partials_admin.footer_admin')
 

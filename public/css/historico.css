@@ -1,0 +1,397 @@
+
+/* ========================================
+   HISTÓRICO DE PROCEDIMENTOS
+   VALÉRIA MACIEL ESTÉTICA
+======================================== */
+
+.historico-header {
+    background: #f6f5e5;
+    padding: 25px 7%;
+    border-bottom: none;
+}
+
+.voltar {
+    display: inline-block;
+    color: #2c7771;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.voltar:hover {
+    color: #1e5753;
+    text-decoration: underline;
+}
+
+.historico-titulo {
+    text-align: center;
+    padding: 20px 0 12px;
+}
+
+.historico-titulo h1 {
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+.historico-titulo p {
+    margin: 0;
+    color: #666;
+    font-family: "Playfair Display SC", serif;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.historico-container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 45px auto;
+}
+
+.historico-intro {
+    margin-bottom: 30px;
+}
+
+.historico-intro h2 {
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.historico-intro p {
+    color: #6d6d65;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ========================================
+   RESUMO DO HISTÓRICO
+======================================== */
+
+.historico-resumo {
+    margin: 0;
+    color: #666;
+    font-family: "Playfair Display SC", serif;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ========================================
+   LISTA DE PROCEDIMENTOS
+======================================== */
+
+.historico-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.historico-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e7e5d9;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(44, 119, 113, 0.05);
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.historico-card:hover {
+    border-color: #c8d9d3;
+    box-shadow: 0 5px 16px rgba(44, 119, 113, 0.09);
+}
+
+/* ========================================
+   DATA DO PROCEDIMENTO
+======================================== */
+
+.historico-data {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f6f5e5;
+    border: 1px solid #eeecde;
+    border-radius: 8px;
+    color: #2c7771;
+}
+
+.historico-data .dia {
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.historico-data .mes {
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   INFORMAÇÕES DO PROCEDIMENTO
+======================================== */
+
+.historico-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.historico-info h3 {
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.historico-info p {
+    color: #686860;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+.historico-info strong {
+    color: #454840;
+    font-weight: 600;
+}
+
+.historico-observacao {
+    margin-top: 10px !important;
+}
+
+/* ========================================
+   STATUS CONCLUÍDO
+======================================== */
+
+.historico-status {
+    flex-shrink: 0;
+}
+
+.historico-status span {
+    display: inline-block;
+    padding: 9px 13px;
+    background: #edf4eb;
+    color: #2c7771;
+    border: 1px solid #dce9dc;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ========================================
+   ESTADO VAZIO
+======================================== */
+
+.historico-vazio {
+    padding: 45px 25px;
+    background: #fff;
+    border: 1px solid #e7e5d9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.historico-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    background: #f6f5e5;
+    border: 1px solid #eeecde;
+    border-radius: 50%;
+    color: #2c7771;
+    font-size: 26px;
+}
+
+.historico-vazio h3 {
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.historico-vazio p {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #6d6d65;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   BOTÃO DE ACESSO À AGENDA
+======================================== */
+
+.btn-historico {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 22px;
+    background: #2c7771;
+    color: #fff;
+    border: 1px solid #2c7771;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.btn-historico:hover {
+    background: #225e59;
+    border-color: #225e59;
+}
+
+/* ========================================
+   PAGINAÇÃO
+======================================== */
+
+.historico-paginacao {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.historico-paginacao nav {
+    display: flex;
+    justify-content: center;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+    .historico-header {
+        padding: 22px 5%;
+    }
+
+    .historico-titulo {
+        padding: 20px 0 10px;
+    }
+
+    .historico-titulo h1 {
+        font-size: 36px;
+    }
+
+    .historico-container {
+        width: 92%;
+        margin: 32px auto;
+    }
+
+    .historico-intro h2 {
+        font-size: 27px;
+    }
+
+    .historico-card {
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .historico-data {
+        width: 66px;
+        height: 66px;
+    }
+
+    .historico-data .dia {
+        font-size: 25px;
+    }
+
+    .historico-info h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 520px) {
+    .historico-titulo h1 {
+        font-size: 32px;
+    }
+
+    .historico-titulo p {
+        font-size: 12px;
+    }
+
+    .historico-container {
+        margin: 25px auto;
+    }
+
+    .historico-intro h2 {
+        font-size: 25px;
+    }
+
+    .historico-intro p {
+        font-size: 14px;
+    }
+
+    .historico-card {
+        display: grid;
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .historico-data {
+        width: 62px;
+        height: 62px;
+    }
+
+    .historico-data .dia {
+        font-size: 24px;
+    }
+
+    .historico-data .mes {
+        font-size: 10px;
+    }
+
+    .historico-info h3 {
+        font-size: 21px;
+        margin-bottom: 9px;
+    }
+
+    .historico-info p {
+        font-size: 13px;
+    }
+
+    .historico-status {
+        grid-column: 2;
+    }
+
+    .historico-status span {
+        padding: 7px 11px;
+    }
+
+    .historico-vazio {
+        padding: 35px 18px;
+    }
+
+    .historico-vazio h3 {
+        font-size: 24px;
+    }
+}

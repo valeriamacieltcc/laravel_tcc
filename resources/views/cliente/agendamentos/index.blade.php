@@ -42,6 +42,10 @@
         rel="stylesheet"
         href="{{ asset('css/style.css') }}"
     >
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/avaliacao.css') }}"
+    >
 
 </head>
 
@@ -86,6 +90,11 @@
                     </p>
 
                 </div>
+
+                <a href="{{ route('cliente.agendamentos.create') }}"
+   class="meus-agendamentos-empty-button">
+    + Agendar novo procedimento
+</a>
 
             </div>
 
@@ -390,7 +399,7 @@
                 class="meus-agendamentos-avaliar"
             >
 
-                ★
+                
                 Avaliar procedimento
 
             </a>

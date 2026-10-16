@@ -14,7 +14,7 @@ class ProcedimentoController extends Controller
     public function index() {
        
             $procedimentos = Procedimento::orderBy('id', 'desc')
-                ->paginate(6);
+                ->paginate(8);
     
             return view(
                 'cliente.procedimento.index',

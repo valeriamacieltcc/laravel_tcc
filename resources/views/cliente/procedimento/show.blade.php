@@ -87,9 +87,10 @@
     </a>
 
 
-    <img src="{{ Str::startsWith($procedimento->imagem, ['http://', 'https://']) 
-    ? $procedimento->imagem 
-    : asset('storage/' . $procedimento->imagem) }}">
+    <img
+    src="{{ asset($procedimento->imagem) }}"
+    alt="{{ $procedimento->nome }}"
+>
 
 
     <div class="vm-procedimento-conteudo">

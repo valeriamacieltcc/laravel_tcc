@@ -1,340 +1,299 @@
-/* =========================================================
-   PÁGINA DE AVALIAÇÃO
-========================================================= */
+/* ========================================
+   AVALIAÇÃO DE PROCEDIMENTO
+   Valéria Maciel Estética
+======================================== */
 
 .pagina-avaliacao {
-    min-height: 70vh;
-
-    padding: 60px 20px;
+    background-color: #f6f5e5;
+    min-height: 75vh;
+    padding: 65px 20px 85px;
+    font-family: 'Cormorant Garamond', serif;
+    color: #3f4943;
 }
 
+/* CONTAINER PRINCIPAL */
 
 .avaliacao-container {
-    width: 92%;
-    max-width: 800px;
-
+    width: 100%;
+    max-width: 850px;
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   CABEÇALHO
-========================================================= */
+/* CABEÇALHO */
 
 .avaliacao-header {
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 38px;
 }
-
 
 .avaliacao-header small {
+    display: block;
+    color: #2c7771;
+    font-family: 'Playfair Display SC', serif;
     font-size: 12px;
-
-    letter-spacing: 2px;
-
-    color: #9b7a84;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
 }
-
 
 .avaliacao-header h1 {
-    margin: 7px 0;
-
-    font-family:
-        'Playfair Display SC',
-        serif;
-
-    font-size: 38px;
-
-    color: #5e3d48;
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 600;
+    margin: 0 0 12px;
 }
-
 
 .avaliacao-header p {
+    color: #77786e;
+    font-size: 19px;
     margin: 0;
-
-    font-size: 16px;
-
-    color: #777;
 }
 
-
-/* =========================================================
-   CARD
-========================================================= */
+/* CARD */
 
 .avaliacao-card {
-    background: #fff;
-
-    border-radius: 18px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.07);
-
-    border: 1px solid #eee;
+    background-color: #fffef8;
+    border: 1px solid #e4e5d6;
+    border-radius: 5px;
+    padding: 42px 48px;
+    box-shadow: 0 12px 35px rgba(44, 119, 113, 0.07);
 }
 
-
-/* =========================================================
-   PROCEDIMENTO
-========================================================= */
+/* INFORMAÇÕES DO PROCEDIMENTO */
 
 .avaliacao-procedimento {
-    padding-bottom: 25px;
-
-    margin-bottom: 25px;
-
-    border-bottom: 1px solid #eee;
+    background-color: #f6f5e5;
+    border-left: 3px solid #2c7771;
+    padding: 22px 25px;
+    margin-bottom: 35px;
 }
-
 
 .avaliacao-procedimento small {
+    display: block;
+    color: #77786e;
+    font-family: 'Playfair Display SC', serif;
     font-size: 11px;
-
-    letter-spacing: 1.5px;
-
-    color: #aa8a93;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
 }
-
 
 .avaliacao-procedimento h2 {
-    margin: 8px 0 12px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
-
-    color: #593b45;
+    font-weight: 600;
+    margin: 0 0 15px;
 }
-
 
 .avaliacao-dados {
     display: flex;
-
-    gap: 25px;
-
-    color: #777;
-
-    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    color: #656b63;
+    font-size: 17px;
 }
 
+/* CAMPOS DO FORMULÁRIO */
 
-/* =========================================================
-   CAMPOS
-========================================================= */
+.form-avaliacao {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
 
 .campo-avaliacao {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
 }
-
 
 .campo-avaliacao > label {
-    display: block;
-
-    margin-bottom: 12px;
-
-    font-size: 15px;
-
+    color: #2c7771;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
     font-weight: 600;
-
-    color: #555;
 }
 
-
-/* =========================================================
-   ESTRELAS
-========================================================= */
+/* ESTRELAS */
 
 .estrelas-avaliacao {
     display: flex;
-
     flex-direction: row-reverse;
-
     justify-content: flex-end;
-
+    align-items: center;
     gap: 5px;
 }
 
-
 .estrelas-avaliacao input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
 }
-
 
 .estrelas-avaliacao label {
-    font-size: 42px;
-
-    color: #d8c9cd;
-
+    color: #d8d5c9;
+    font-size: 39px;
+    line-height: 1;
     cursor: pointer;
-
-    transition: 0.2s;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
-
 
 .estrelas-avaliacao label:hover,
 .estrelas-avaliacao label:hover ~ label,
 .estrelas-avaliacao input:checked ~ label {
-    color: #c69a59;
-
-    transform: scale(1.05);
+    color: #c5a45b;
 }
 
+.estrelas-avaliacao label:hover {
+    transform: scale(1.08);
+}
 
-/* =========================================================
-   TEXTAREA
-========================================================= */
+.estrelas-avaliacao input:focus-visible + label {
+    outline: 2px solid #2c7771;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* COMENTÁRIO */
 
 .campo-avaliacao textarea {
     width: 100%;
-
-    padding: 14px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 10px;
-
-    background: #fafafa;
-
+    min-height: 145px;
+    padding: 16px 18px;
+    background-color: #fffefb;
+    border: 1px solid #dcded1;
+    border-radius: 4px;
+    color: #454d46;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
     resize: vertical;
-
     outline: none;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    box-sizing: border-box;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.campo-avaliacao textarea::placeholder {
+    color: #aaa99d;
+}
 
 .campo-avaliacao textarea:focus {
-    border-color: #c9aab4;
-
-    background: #fff;
-
-    box-shadow:
-        0 0 0 3px rgba(201, 170, 180, 0.12);
+    border-color: #2c7771;
+    box-shadow: 0 0 0 3px rgba(44, 119, 113, 0.09);
 }
 
-
-/* =========================================================
-   ERRO
-========================================================= */
+/* MENSAGENS DE ERRO */
 
 .erro-avaliacao {
-    margin-top: 7px;
-
-    color: #b54e61;
-
+    color: #a94442;
+    font-family: Arial, sans-serif;
     font-size: 13px;
+    margin-top: 2px;
 }
 
-
-/* =========================================================
-   BOTÕES
-========================================================= */
+/* BOTÕES */
 
 .acoes-avaliacao {
     display: flex;
-
-    gap: 12px;
-
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 8px;
 }
-
 
 .botao-voltar-avaliacao,
 .botao-enviar-avaliacao {
-    flex: 1;
-
-    min-height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
+    min-height: 47px;
+    display: inline-flex;
     justify-content: center;
-
-    border-radius: 9px;
-
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 3px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-align: center;
     text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
     cursor: pointer;
-
-    transition: 0.2s;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
 }
-
 
 .botao-voltar-avaliacao {
-    border: 1px solid #d8c7cd;
-
-    color: #704b58;
-
-    background: #fff;
+    color: #2c7771;
+    background-color: transparent;
+    border: 1px solid #2c7771;
 }
-
 
 .botao-voltar-avaliacao:hover {
-    background: #faf5f7;
+    color: #fffef8;
+    background-color: #2c7771;
 }
-
 
 .botao-enviar-avaliacao {
-    border: none;
-
-    background: #a85c70;
-
-    color: #fff;
+    color: #fffef8;
+    background-color: #2c7771;
+    border: 1px solid #2c7771;
 }
-
 
 .botao-enviar-avaliacao:hover {
-    background: #914b5e;
+    background-color: #225e59;
+    border-color: #225e59;
 }
 
-
-/* =========================================================
-   CELULAR
-========================================================= */
+/* RESPONSIVIDADE */
 
 @media (max-width: 600px) {
-
     .pagina-avaliacao {
-        padding: 35px 15px;
+        padding: 40px 15px 55px;
     }
 
-
-    .avaliacao-header h1 {
-        font-size: 30px;
+    .avaliacao-header {
+        margin-bottom: 27px;
     }
 
+    .avaliacao-header small {
+        letter-spacing: 3px;
+    }
+
+    .avaliacao-header p {
+        font-size: 17px;
+    }
 
     .avaliacao-card {
         padding: 25px 20px;
     }
 
+    .avaliacao-procedimento {
+        padding: 18px;
+    }
+
+    .avaliacao-procedimento h2 {
+        font-size: 26px;
+    }
 
     .avaliacao-dados {
         flex-direction: column;
-
         gap: 5px;
+        font-size: 16px;
     }
 
+    .campo-avaliacao > label {
+        font-size: 20px;
+    }
 
     .estrelas-avaliacao label {
         font-size: 35px;
     }
 
-
     .acoes-avaliacao {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: stretch;
     }
 
+    .botao-voltar-avaliacao,
+    .botao-enviar-avaliacao {
+        width: 100%;
+    }
 }

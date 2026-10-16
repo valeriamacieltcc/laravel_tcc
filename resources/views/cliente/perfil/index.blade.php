@@ -307,80 +307,24 @@
 </div>
 
 </section>
-    {{-- =====================================================
-         HISTÓRICO DOS PROCEDIMENTOS
-         ===================================================== --}}
+<!-- HISTORICO -->
+{{-- =====================================================
+     HISTÓRICO DOS PROCEDIMENTOS
+     ===================================================== --}}
+     <section class="bloco-info">
+    <a href="{{ route('cliente.perfil.historico') }}"
+       class="titulo-bloco botao-anamnese">
+        Histórico dos Procedimentos
+    </a>
 
-    <section class="bloco-info">
+    <div class="conteudo-bloco anamnese-resumo">
+        <p>
+            Acesse seu histórico para visualizar os procedimentos
+            que você já realizou.
+        </p>
+    </div>
+</section>
 
-
-        <div class="titulo-bloco">
-            Histórico dos Procedimentos
-        </div>
-
-
-        <div class="conteudo-bloco">
-
-
-            {{-- MESMA VERIFICAÇÃO DO CÓDIGO DELA --}}
-
-            @if(
-                isset($cliente->procedimentos)
-                && count($cliente->procedimentos) > 0
-            )
-
-
-                @foreach($cliente->procedimentos as $procedimento)
-
-
-                    <div class="procedimento-perfil">
-
-
-                        <h4>
-
-                            {{ is_array($procedimento)
-                                ? $procedimento['nome']
-                                : $procedimento->nome }}
-
-                        </h4>
-
-
-                        {{-- DADOS EXATAMENTE NO FORMATO DELA --}}
-
-                        @if(is_array($procedimento))
-
-                            <small>
-                                {{ $procedimento['data'] ?? '' }}
-                            </small>
-
-
-                            <p>
-                                {{ $procedimento['observacao'] ?? '' }}
-                            </p>
-
-                        @endif
-
-
-                    </div>
-
-
-                @endforeach
-
-
-            @else
-
-
-                <div class="sem-dados">
-
-                    Nenhum procedimento realizado ainda.
-
-                </div>
-
-
-            @endif
-
-
-        </div>
 
     </section>
 

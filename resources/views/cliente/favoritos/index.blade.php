@@ -87,10 +87,12 @@
 
         @if($favorito->procedimento->imagem)
             <div class="vm-favorito-imagem">
-                <img
-                    src="{{ asset('storage/' . $favorito->procedimento->imagem) }}"
-                    alt="{{ $favorito->procedimento->nome }}"
-                >
+            <img
+    src="{{ Str::startsWith($favorito->procedimento->imagem, ['http://', 'https://'])
+        ? $favorito->procedimento->imagem
+        : asset('storage/' . ltrim($favorito->procedimento->imagem, '/')) }}"
+    alt="{{ $favorito->procedimento->nome }}"
+>
             </div>
         @endif
 
@@ -151,10 +153,12 @@
 
         @if($favorito->vitrine->imagem)
             <div class="vm-favorito-imagem">
-                <img
-                    src="{{ asset('storage/' . $favorito->vitrine->imagem) }}"
-                    alt="{{ $favorito->vitrine->nome }}"
-                >
+            <img
+    src="{{ Str::startsWith($favorito->vitrine->imagem, ['http://', 'https://'])
+        ? $favorito->vitrine->imagem
+        : asset('storage/' . ltrim($favorito->vitrine->imagem, '/')) }}"
+    alt="{{ $favorito->vitrine->nome }}"
+>
             </div>
         @endif
 
@@ -177,7 +181,7 @@
             <div class="vm-favorito-acoes">
 
                 <a
-                    href="{{ route('vitrine.show', $favorito->vitrine->id) }}"
+                    href="{{ route('cliente.vitrine.show', $favorito->vitrine->id) }}"
                     class="vm-favorito-ver"
                 >
                     VER PRODUTO

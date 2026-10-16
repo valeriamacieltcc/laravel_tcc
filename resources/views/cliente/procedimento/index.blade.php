@@ -65,7 +65,10 @@
 
 <div class="card">
 
-    <img src="{{ $procedimento->imagem }}" alt="{{ $procedimento->nome }}">
+<img
+    src="{{ asset($procedimento->imagem) }}"
+    alt="{{ $procedimento->nome }}"
+>
 
     <div class="card-body">
 

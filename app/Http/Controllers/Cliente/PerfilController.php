@@ -174,6 +174,23 @@ public function edit()
             compact('user', 'cliente')
         );
     }
+    public function historico()
+{
+    $user = Auth::user();
+    $cliente = $user->cliente;
+
+    $agendamentos = \App\Models\Agendamento::with('procedimento')
+        ->where('cliente_id', $cliente->id)
+        ->where('status', 'concluido')
+        ->orderByDesc('data_agendamento')
+        ->orderByDesc('hora_agendamento')
+        ->paginate(10);
+
+    return view(
+        'cliente.perfil.historico.historico',
+        compact('user', 'cliente', 'agendamentos')
+    );
+}
     public function updatePassword(Request $request)
     {
         $request->validate([
