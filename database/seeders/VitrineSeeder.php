@@ -821,60 +821,114 @@ class VitrineSeeder extends Seeder
             // =====================================================
 
             [
-                'nome' => 'Shampoo Hidratante',
-                'descricao' => 'Shampoo Hidratante 250 ml.',
+                'nome' => 'Shampoo Match Escudo De Hidratação',
+                'descricao' => 'Shampoo Match Escudo De Hidratação',
                 'preco' => 37.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B89693/a420fbee-2938-42e7-8ccb-ae562eefb88d-b89693-match-escudo-hidratacao-shampoo-1.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
             [
-                'nome' => 'Máscara Capilar Hidratante',
-                'descricao' => 'Máscara Capilar Hidratante 250 g.',
+                'nome' => 'Leave-In Multibenefícios Match Escudo De Hidratação',
+                'descricao' => 'Leave-In Multibenefícios Match Escudo De Hidratação 100ml',
                 'preco' => 54.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B90750/5d45e057-34ae-402b-9bab-b71d1e4a808d-bt-09-26-match-escudo-hidratacao-leavein-300ml-90750-1.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
             [
-                'nome' => 'Condicionador',
-                'descricao' => 'Condicionador 250 ml.',
+                'nome' => 'Condicionador Match Escudo De Hidratação',
+                'descricao' => 'Condicionador Match. Escudo De Hidratação',
                 'preco' => 37.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B89694/e608c063-0bcc-40d1-839b-8a3fb331b6b1-untitled-1.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
             [
-                'nome' => 'Shampoo Pasta de Abacate',
-                'descricao' => 'Shampoo Pasta de Abacate 230 ml.',
+                'nome' => 'Shampoo Cuide-se Bem feira Pasta de Abacate ',
+                'descricao' => 'Shampoo Cuide-se Bem feira Pasta de Abacate ',
                 'preco' => 27.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B87079/8573bfbd-3d4f-4317-a465-44670eac705a-bot-87079-cuide-se-bem-feira-pasta-abacate-01.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
             [
-                'nome' => 'Máscara Pasta de Abacate',
-                'descricao' => 'Máscara Pasta de Abacate 250 ml.',
-                'preco' => 42.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
-                'marca' => 'O Boticário',
-                'disponivel' => true,
-                'link_contato' => 'https://w.app/valeriamaciel',
-            ],
-
-            [
-                'nome' => 'Condicionador Pasta de Abacate',
-                'descricao' => 'Condicionador Pasta de Abacate 170 ml.',
+                'nome' => 'Condicionador Pasta de Abacate Cuide-se Bem Feira',
+                'descricao' => 'Condicionador Pasta de Abacate Cuide-se Bem Feira',
                 'preco' => 32.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B59197/da133935-c978-4870-a1e5-55497f14e8a8-bt-14-26-59197-condicionador-pasta-de-abacate-cuide-se-bem-feira-170ml-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+                        
+            // =====================================================
+            // O BOTICÁRIO - CABELOS (OUTRAS LINHAS)
+            // =====================================================
+
+            [
+                'nome' => 'Máscara Capilar Nativa SPA Quinoa 200g',
+                'descricao' => 'Máscara capilar nutritiva que ajuda a recuperar a aparência dos fios opacos e quebradiços, proporcionando resistência e luminosidade.',
+                'preco' => 46.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B48994/NSPA_MASC_CAP_QUINOA_200g-V3-B48994-Planta.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Shampoo Cuide-se Bem Feira Vinagre de Framboesa 230ml',
+                'descricao' => 'Shampoo purificante que ajuda a equilibrar o excesso de oleosidade dos cabelos, deixando os fios limpos e leves.',
+                'preco' => 27.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B55104/6d9e60e0-dc83-4836-81ce-1c499e3ef414-bot-55104-cuide-se-bem-feira-vinagre-framboesa-shampoo-frontal-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Shampoo Cuide-se Bem Feira Vinagre de Maçã 230ml',
+                'descricao' => 'Shampoo de limpeza micelar que ajuda a purificar os cabelos e remover impurezas sem deixar os fios ressecados.',
+                'preco' => 27.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B57091/45b94736-68c0-4622-bbd3-31d6729e60ac-bot-57091-cuide-se-bem-feira-vinagre-de-maca-shampoo-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Creme para Pentear Cuide-se Bem Feira Cachos de Uva 300ml',
+                'descricao' => 'Creme para pentear para cabelos cacheados, que auxilia na definição dos cachos, no controle do frizz e na maciez dos fios.',
+                'preco' => 42.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B87068/5de428a7-5c1c-4f6b-9f30-eafad74a240b-bot-87068-cuide-se-bem-cachos-de-uva-creme-pentear-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Condicionador Cuide-se Bem Feira Cachos de Uva 250ml',
+                'descricao' => 'Condicionador para cabelos cacheados que ajuda a desembaraçar, hidratar e deixar os fios macios.',
+                'preco' => 29.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B87066/fa252d33-1c62-4863-8853-35002f9344f6-bot-87066-cuide-se-bem-condicionador-cachos-de-uva-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Combo Sophie Shampoo 200ml + Condicionador 200ml',
+                'descricao' => 'Kit de cuidados capilares para a rotina diária, com shampoo e condicionador que ajudam a limpar, desembaraçar e deixar os cabelos macios.',
+                'preco' => 99.80,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B2024091430/d69f8a5e-f26b-4d97-80d6-f803b7e56b4b-bot-2024091430-sophie-shampoo-condicionador.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -888,11 +942,94 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Boti.Sun Protetor Solar Facial Antioleosidade',
                 'descricao' => 'Boti.Sun Protetor Solar Facial Antioleosidade Acqua Fluido FPS 70 40 ml.',
                 'preco' => 63.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/products/B47598/BotiSun_Antioleosidade_FPS30_40ml_B47598_conceito.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
+                
             ],
+              
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Facial Antioleosidade FPS 30 Acqua Fluido 40ml',
+                    'descricao' => 'Protetor solar facial com FPS 30, textura ultraleve e toque seco, ideal para a rotina de cuidados com a pele oleosa.',
+                    'preco' => 76.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/products/B47598/Boti_Sun_Protetor_Facial_FPS30_Antiol_B47598_MAO.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Facial Antioxidante FPS 70 Ultra Fluido 40ml',
+                    'descricao' => 'Protetor solar facial com FPS 70 e ação antioxidante, desenvolvido para proteger a pele contra os efeitos da exposição solar.',
+                    'preco' => 79.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B47962/6eaa94ed-65e3-4883-8748-23df99ce1ec6-bot-47962-boti-sun-ultra-fluido-fps-70-ambientado-04.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Facial Antioxidante FPS 30 Ultra Fluido 40ml',
+                    'descricao' => 'Protetor solar facial FPS 30 com ação antioxidante, indicado para complementar a rotina diária de proteção solar.',
+                    'preco' => 76.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B50396/a9597ad3-2dc1-4da6-a42f-2eb8a7d48653-bot-50396-boti-sun-ultra-fluido-fps-30-ambientado-04.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Facial FPS 30 10ml',
+                    'descricao' => 'Protetor solar facial em tamanho compacto, prático para levar na bolsa e utilizar na rotina diária de proteção solar.',
+                    'preco' => 19.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B50018/BotiSun_10ml_B50018_conceito.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Corporal FPS 70 200g',
+                    'descricao' => 'Protetor solar corporal com FPS 70, textura gel creme e rápida absorção, desenvolvido para proteger a pele contra os raios UVA e UVB.',
+                    'preco' => 119.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B52342/83726906-3591-4c3b-8931-06084d7c8e84-bot-52342-boti-sun-protetor-solar-corporal-gem-creme-fps-70-ambientada-04.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Corporal FPS 50 200g',
+                    'descricao' => 'Protetor solar corporal FPS 50 com textura gel creme e rápida absorção para os cuidados com a pele durante a exposição solar.',
+                    'preco' => 109.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B47963/79d1f123-2768-4d2f-b66a-d83cc6344580-bot-47963-boti-sun-protetor-solar-corporal-gem-creme-fps-50-maos-03.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar Corporal FPS 50 120g',
+                    'descricao' => 'Protetor solar corporal em embalagem prática, com FPS 50 e textura de rápida absorção.',
+                    'preco' => 79.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B86866/e9839846-e805-4bc5-a2d1-d2bdc03ba99d-bot-86866-make-b-boti-sun-protetor-solar-ambientado-03.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+    
+                [
+                    'nome' => 'Boti.Sun Protetor Solar para as Mãos FPS 30 45g',
+                    'descricao' => 'Protetor solar específico para as mãos, em embalagem compacta para facilitar a aplicação e a reaplicação ao longo do dia.',
+                    'preco' => 54.90,
+                    'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B59480/316dbc5f-8e3c-466e-9472-4458d515279b-bt-15-26-botisun-protetor-para-maos-fps30-45g-59480-2.jpg',
+                    'marca' => 'O Boticário',
+                    'disponivel' => true,
+                    'link_contato' => 'https://w.app/valeriamaciel',
+                ],
+            
 
             // =====================================================
             // O BOTICÁRIO - NATIVA SPA
@@ -902,17 +1039,107 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Nativa SPA Sabonete em Barra Ameixa',
                 'descricao' => 'Nativa SPA Sabonete em Barra Ameixa. 3 unidades de 90 g.',
                 'preco' => 42.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B88468/ea569bbd-4b2b-4b13-932a-4856ab1d775c-nspa-sabonete-barra-corporal-ameixa-90g-v6-52225-principal-1.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
             ],
 
             [
-                'nome' => 'Sabonete em Barra Ameixa',
-                'descricao' => 'Sabonete em Barra Ameixa 90 g.',
+                'nome' => 'Nativa SPA Loção Hidratante Desodorante Corporal Ameixa 400ml',
+                'descricao' => 'Loção hidratante corporal com fragrância de ameixa, que proporciona hidratação intensa e ajuda a manter a pele macia e perfumada.',
+                'preco' => 89.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B48282/8ed3365a-2f89-485e-b3ee-b19b222489ac-sem-titulo-1.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Óleo Hidratante Desodorante Corporal Ameixa 200ml',
+                'descricao' => 'Óleo corporal com fragrância marcante de ameixa, que ajuda a manter a hidratação natural da pele e proporciona toque aveludado.',
+                'preco' => 99.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/products/B48997/Nspa-Ol-Des-Hid-Cpo-Amei-200Ml-V3_B48997_conceito.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Creme Hidratante para Mãos Ameixa 75g',
+                'descricao' => 'Creme hidratante para as mãos com fragrância de ameixa, ideal para ajudar a manter a pele macia, hidratada e perfumada.',
+                'preco' => 59.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B88073/7451ec0c-d77d-4107-8c05-1d7374b8e42f-bot-88073-nativa-spa-ameixa-creme-maos-03.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Loção Hidratante Corporal Ameixa 200ml',
+                'descricao' => 'Loção corporal com gotas purificadas de quinoa e fragrância de ameixa, desenvolvida para hidratar e perfumar a pele.',
+                'preco' => 69.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B88079/845f66d1-8df2-4077-a9e4-c63158f7673e-b88079-nspa-loc-des-hid-cpo-ameixa-v6-200ml-segredinho.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Óleo Bifásico Hidratante Corporal Uva Merlot 200ml',
+                'descricao' => 'Óleo bifásico corporal com fragrância de Uva Merlot, ideal para complementar o ritual de banho e deixar a pele macia e perfumada.',
+                'preco' => 99.90,
+                'imagem' => 'https://m.media-amazon.com/images/I/51zSZj8yZWL.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Óleo Glorioso Hidratante Corporal Ameixa Intensa 200ml',
+                'descricao' => 'Óleo corporal perfumado da linha Ameixa Intensa, formulado para proporcionar nutrição e hidratação à pele com uma fragrância marcante.',
+                'preco' => 99.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B95801/cb504938-aa43-44a0-9d8f-d5218e345180-bt-13-26-95801-nspa-oleo-hidratante-corporal-ameixa-intensa-200ml-4.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Sabonete Líquido Perfumado Corporal Rosas Secretas 250ml',
+                'descricao' => 'Sabonete líquido corporal com fragrância floral de Rosas Secretas, desenvolvido para limpar delicadamente e deixar a pele macia e perfumada.',
+                'preco' => 59.90,
+                'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_937067-MLA108819976496_032026-O.webp',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Sabonete Líquido Perfumado Uva Merlot 250ml',
+                'descricao' => 'Sabonete líquido corporal com fragrância de Uva Merlot, ideal para transformar o banho em um momento de cuidado e perfumação.',
+                'preco' => 59.90,
+                'imagem' => 'https://dcdn-us.mitiendanube.com/stores/004/272/506/products/sabonete-liquido-perfumado-nativa-spa-uva-merlot-250ml-2-216e66aca618c4547417428470259692-1024-1024.webp',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Sabonete em Barra Ameixa Intensa 90g',
+                'descricao' => 'Sabonete em barra com fragrância de Ameixa Intensa e espuma cremosa, desenvolvido para limpar suavemente a pele.',
                 'preco' => 16.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B95803/4508f443-0729-4b16-912b-16b94a070de8-bt-13-26-95803-nativa-spa-sabonete-barra-ameixa-intensa-90g-3.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Nativa SPA Creme Hidratante para Mãos e Pés Lilac 50g',
+                'descricao' => 'Creme hidratante para mãos e pés com fragrância floral Lilac, indicado para complementar os cuidados diários da pele.',
+                'preco' => 44.90,
+                'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_689761-MLA84554050606_052025-O.webp',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -926,7 +1153,7 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Kit Her Code',
                 'descricao' => 'Kit Her Code.',
                 'preco' => 268.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B86206/c056a45d-2712-42c0-84e4-277748f45190-bot-86206-kit-her-code-regular-02.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -936,7 +1163,7 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Kit Cuide-se Bem Deleite',
                 'descricao' => 'Kit Cuide-se Bem Deleite.',
                 'preco' => 72.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B89318/afca9709-289d-43da-a008-e5af35e81963-bot-89318-cuide-se-bem-deleite-kit-maes-2026-01.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -945,8 +1172,8 @@ class VitrineSeeder extends Seeder
             [
                 'nome' => 'Kit Floratta Blue',
                 'descricao' => 'Kit Floratta Blue.',
-                'preco' => 215.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'preco' => 315.90,
+                'imagem' => 'https://m.magazineluiza.com.br/a-static/420x420/kit-presente-floratta-blue-o-boticario-neidebotelhocosmeticos-neidebotelhocosmeticos/drikamodasevariedades/51ac17e4f20511ee9f174201ac185034/50999117d6d1b65e7c1895c5e394a50a.jpeg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -956,7 +1183,7 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Kit Nativa SPA Ameixa',
                 'descricao' => 'Kit Nativa SPA Ameixa.',
                 'preco' => 132.90,
-                'imagem' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL3hOkKQ78-QP2Pc3GF7jUP1xNWeOxRzdSnmmk1SJjwPIDEVzD2EWnIqY1&s=10',
+                'imagem' => 'https://m.media-amazon.com/images/I/51jbcjtF1oL.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
@@ -966,7 +1193,103 @@ class VitrineSeeder extends Seeder
                 'nome' => 'Kit Lily Jumbo',
                 'descricao' => 'Kit Lily Jumbo.',
                 'preco' => 309.90,
-                'imagem' => 'https://http2.mlstatic.com/D_NQ_NP_797826-MLB89122476873_082025-O-kit-lily-tradicional.webp',
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B86167/22fe5f14-5d58-4bd6-be56-620a85093cbd-bot-86167-kit-lily-regular-01.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+                        
+            // =====================================================
+            // O BOTICÁRIO - KITS (NOVOS PRODUTOS)
+            // =====================================================
+
+            [
+                'nome' => 'Kit Presente Egeo Dolce (3 itens)',
+                'descricao' => 'Kit presente Egeo Dolce com três itens para complementar a rotina de perfumação e cuidados pessoais.',
+                'preco' => 194.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B89309/dbb8990e-9c45-4e7c-b024-6e7473cc6fd7-bot-89309-egeo-dolce-kit-makes-2026-02.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Combo Egeo Blue Colônia 90ml + Body Spray 100ml',
+                'descricao' => 'Combo Egeo Blue com desodorante colônia e body spray para prolongar a perfumação ao longo do dia.',
+                'preco' => 155.80,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B2025050808/23b4bc94-d4eb-4208-9c79-0c9e85bddeed-b2025050808.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Combo Egeo Dolce Illusion Colônia + Hidratante Corporal',
+                'descricao' => 'Combo com desodorante colônia Egeo Dolce Illusion e creme desodorante corporal para perfumar e hidratar a pele.',
+                'preco' => 178.80,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B202604062347/b2386701-9e4b-4adc-a885-e6552961b645-b202604062347.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Kit Presente Egeo Blue (2 itens)',
+                'descricao' => 'Kit presente masculino com desodorante colônia Egeo Blue 50ml e shower gel 100g, ideal para presentear.',
+                'preco' => 169.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B86191/433d427c-1ffb-421a-92fd-7478a31bf001-bot-86191-egeo-blue-kit-natal-02.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Kit Presente Floratta Flowers (3 itens)',
+                'descricao' => 'Kit presente Floratta Flowers com três itens de perfumaria inspirados em fragrâncias florais. Uma opção delicada para presentear.',
+                'preco' => 190.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B90800/09a80271-b185-4249-b25c-eb9eb5ee94ab-bt-15-26-floratta-flowers-estojo-90800-2.png',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Combo Floratta Rose Sucrée Eau de Parfum + Hidratante Corporal',
+                'descricao' => 'Combo Floratta Rose Sucrée com Eau de Parfum 75ml e creme hidratante desodorante corporal 200g, combinando perfumação e hidratação.',
+                'preco' => 349.80,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B202604063047/d71fd0f6-4644-4a3e-8558-e3c99ada6060-b202604063047.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Kit Presente Cuide-se Bem Nuvem (2 itens)',
+                'descricao' => 'Kit presente Cuide-se Bem Nuvem com dois itens para uma rotina de autocuidado com fragrância suave e delicada.',
+                'preco' => 69.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B90812/30a5b7a6-6dcf-4a07-a05c-c9fdec92b096-bt-12-26-estojo-cbem-nuvem-90812-1.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+          
+
+            [
+                'nome' => 'Combo Cuide-se Bem Boa Noite',
+                'descricao' => 'Combo com body splash 200ml e hidratante desodorante corporal 400ml, ideal para uma rotina de autocuidado com fragrância relaxante.',
+                'preco' => 173.80,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_webp,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B202604061647/f421a53b-83a5-44bd-9352-cce1fca38d81-b202604061647.jpg',
+                'marca' => 'O Boticário',
+                'disponivel' => true,
+                'link_contato' => 'https://w.app/valeriamaciel',
+            ],
+
+            [
+                'nome' => 'Kit Presente Malbec Colônia + Loção Corporal + Sabonete Líquido',
+                'descricao' => 'Kit masculino com desodorante colônia Malbec 100ml, loção corporal 250ml e sabonete líquido corporal 250ml.',
+                'preco' => 269.90,
+                'imagem' => 'https://cdn.gbmedia.com.br/images/w_1500,f_auto,fl_progressive,q_auto:eco,c_limit/e_trim/v1/imagens/product/B53025/84f68b00-42c1-445f-ab16-a76fcdfaa025-estojo-malbec-jumbo-b53025-planta-2.jpg',
                 'marca' => 'O Boticário',
                 'disponivel' => true,
                 'link_contato' => 'https://w.app/valeriamaciel',
