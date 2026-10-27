@@ -59,46 +59,58 @@
 </li>
 
     </ul>
+<div class="cart-icon">
 
-    <div class="cart-icon">
+    @auth
+        <a href="{{ route('cliente.perfil.show') }}">
 
-@auth
+            @if(Auth::user()->cliente && Auth::user()->cliente->foto_perfil)
 
-    <a href="{{ route('cliente.perfil.show') }}">
+                {{-- FOTO DE PERFIL --}}
+                <img
+                    src="{{ asset('storage/' . Auth::user()->cliente->foto_perfil) }}"
+                    alt="Meu perfil"
+                    class="foto-navbar"
+                >
 
-        @if(Auth::user()->foto_perfil)
+            @else
 
-            <img
-                src="{{ asset('storage/' . Auth::user()->foto_perfil) }}"
-                alt="Meu perfil"
-                class="foto-navbar">
+                {{-- INICIAIS DO NOME --}}
+                @php
+                    $nome = trim(Auth::user()->name);
+                    $nomes = preg_split('/\s+/', $nome);
 
-        @else
+                    $iniciais = mb_strtoupper(
+                        mb_substr($nomes[0], 0, 1)
+                        .
+                        (isset($nomes[1])
+                            ? mb_substr($nomes[1], 0, 1)
+                            : '')
+                    );
+                @endphp
 
+                <span class="iniciais-navbar">
+                    {{ $iniciais }}
+                </span>
+
+            @endif
+
+        </a>
+
+    @else
+
+        {{-- USUÁRIO NÃO LOGADO --}}
+        <a href="{{ route('login') }}">
             <img
                 src="{{ asset('imagem/perfil-padrao.png') }}"
-                alt="Meu perfil"
-                class="foto-navbar">
+                alt="Entrar"
+                class="foto-navbar"
+            >
+        </a>
 
-        @endif
+    @endauth
 
-    </a>
-
-@else
-
-    <a href="{{ route('login') }}">
-
-        <img
-            src="{{ asset('imagem/perfil-padrao.png') }}"
-            alt="Entrar"
-            class="foto-navbar">
-
-    </a>
-
-@endauth
-
-
-    </div>
+</div>
 
 </nav>
 
