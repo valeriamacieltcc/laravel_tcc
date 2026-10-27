@@ -99,26 +99,41 @@
                                 <tr>
 
                                     {{-- FOTO --}}
-                                    <td>
 
-                                        @if($cliente->foto_perfil)
+<td>
 
-                                            <img
-                                                src="{{ asset('storage/' . $cliente->foto_perfil) }}"
-                                                class="admin-clientes-imagem"
-                                                alt="Foto de {{ $cliente->user->name }}"
-                                            >
+    @if($cliente->foto_perfil)
 
-                                        @else
+        <img
+            src="{{ asset('storage/' . $cliente->foto_perfil) }}"
+            class="admin-clientes-imagem"
+            alt="Foto de {{ $cliente->user->name }}"
+        >
 
-                                            <span class="admin-clientes-sem-imagem">
-                                                Sem foto
-                                            </span>
+    @else
 
-                                        @endif
+        @php
+            $nome = trim($cliente->user->name);
+            $nomes = preg_split('/\s+/', $nome);
 
-                                    </td>
+            $iniciais = mb_strtoupper(
+                mb_substr($nomes[0], 0, 1) .
+                (isset($nomes[1])
+                    ? mb_substr($nomes[1], 0, 1)
+                    : '')
+            );
+        @endphp
 
+        <span
+            class="admin-clientes-iniciais"
+            title="{{ $nome }}"
+        >
+            {{ $iniciais }}
+        </span>
+
+    @endif
+
+</td>
 
                                     {{-- NOME --}}
                                     <td>

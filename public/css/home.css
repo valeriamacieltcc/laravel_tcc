@@ -7423,3 +7423,47 @@ PÁGINA
     background-color: #ccc;
     color: #333;
 }
+
+
+/* INICIAIS DO PERFIL NA NAVBAR */
+.iniciais-navbar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #2c7771;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+
+    text-transform: uppercase;
+
+    border: 2px solid #f6f5e5;
+
+    box-sizing: border-box;
+}
+
+/* Mantém o ícone alinhado */
+.cart-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+/* Mantém o tamanho da foto */
+.foto-navbar {
+    width: 42px;
+    height: 42px;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
