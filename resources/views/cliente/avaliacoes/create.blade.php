@@ -78,10 +78,7 @@
 
         <div class="avaliacao-header">
 
-            <small>
-                VALÉRIA MACIEL
-            </small>
-
+        
             <h1>
                 Avaliar procedimento
             </h1>

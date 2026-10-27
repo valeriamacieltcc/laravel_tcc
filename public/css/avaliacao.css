@@ -1,290 +1,320 @@
-/* ========================================
-   AVALIAÇÃO DE PROCEDIMENTO
-   Valéria Maciel Estética
-======================================== */
 
-.pagina-avaliacao {
-    background-color: #f6f5e5;
-    min-height: 75vh;
-    padding: 65px 20px 85px;
-    font-family: 'Cormorant Garamond', serif;
-    color: #3f4943;
+/* =========================================================
+   AVALIAÇÃO DE PROCEDIMENTO
+   VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+   .pagina-avaliacao {
+    width: 100%;
+    padding: 40px 0 80px;
+    background: #f5f2e9;
+    color: #444;
+    font-family: "Playfair Display SC", serif;
 }
 
-/* CONTAINER PRINCIPAL */
-
 .avaliacao-container {
-    width: 100%;
-    max-width: 850px;
+    width: 90%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-/* CABEÇALHO */
+/* =========================================================
+   CABEÇALHO
+   PADRÃO DA PÁGINA DE AGENDAMENTO
+   ========================================================= */
 
 .avaliacao-header {
+    margin-bottom: 45px;
     text-align: center;
-    margin-bottom: 38px;
 }
 
 .avaliacao-header small {
     display: block;
-    color: #2c7771;
-    font-family: 'Playfair Display SC', serif;
-    font-size: 12px;
-    letter-spacing: 4px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
+    color: #819d96;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
 }
 
 .avaliacao-header h1 {
-    color: #2c7771;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(34px, 5vw, 48px);
-    font-weight: 600;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
+    color: #3e746d;
+    font-family: "Playfair Display SC", serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
 }
 
 .avaliacao-header p {
-    color: #77786e;
-    font-size: 19px;
     margin: 0;
+    color: #77766f;
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .8px;
+    line-height: 1.7;
 }
 
-/* CARD */
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
 
 .avaliacao-card {
-    background-color: #fffef8;
-    border: 1px solid #e4e5d6;
-    border-radius: 5px;
-    padding: 42px 48px;
-    box-shadow: 0 12px 35px rgba(44, 119, 113, 0.07);
+    width: 100%;
+    padding: 35px;
+    background: #d9ded2;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
 }
 
-/* INFORMAÇÕES DO PROCEDIMENTO */
+/* =========================================================
+   PROCEDIMENTO REALIZADO
+   ========================================================= */
 
 .avaliacao-procedimento {
-    background-color: #f6f5e5;
-    border-left: 3px solid #2c7771;
-    padding: 22px 25px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+    padding: 0 0 25px;
+    border-bottom: 1px solid rgba(47, 109, 103, .20);
 }
 
-.avaliacao-procedimento small {
+.avaliacao-procedimento > small {
     display: block;
-    color: #77786e;
-    font-family: 'Playfair Display SC', serif;
-    font-size: 11px;
+    margin-bottom: 10px;
+    color: #819d96;
+    font-size: 9px;
+    font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 9px;
+    text-transform: uppercase;
 }
 
 .avaliacao-procedimento h2 {
-    color: #2c7771;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    font-weight: 600;
     margin: 0 0 15px;
+    color: #3e746d;
+    font-family: "Playfair Display SC", serif;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .avaliacao-dados {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 28px;
-    color: #656b63;
-    font-size: 17px;
+    gap: 10px 30px;
 }
 
-/* CAMPOS DO FORMULÁRIO */
+.avaliacao-dados span {
+    color: #666;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
 
 .form-avaliacao {
     display: flex;
     flex-direction: column;
-    gap: 27px;
+    gap: 28px;
 }
 
 .campo-avaliacao {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    width: 100%;
 }
 
 .campo-avaliacao > label {
-    color: #2c7771;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    display: block;
+    margin: 0 0 12px;
+    color: #52635f;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    text-transform: uppercase;
 }
 
-/* ESTRELAS */
+/* =========================================================
+   ESTRELAS
+   ========================================================= */
 
 .estrelas-avaliacao {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    align-items: center;
+    align-self: flex-start;
     gap: 5px;
 }
 
 .estrelas-avaliacao input {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    overflow: hidden;
+    opacity: 0;
 }
 
 .estrelas-avaliacao label {
-    color: #d8d5c9;
-    font-size: 39px;
-    line-height: 1;
+    margin: 0;
+    color: #b8bdb2;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    line-height: 1.3;
     cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: color .2s ease;
 }
 
 .estrelas-avaliacao label:hover,
 .estrelas-avaliacao label:hover ~ label,
 .estrelas-avaliacao input:checked ~ label {
-    color: #c5a45b;
-}
-
-.estrelas-avaliacao label:hover {
-    transform: scale(1.08);
+    color: #b49a63;
 }
 
 .estrelas-avaliacao input:focus-visible + label {
-    outline: 2px solid #2c7771;
-    outline-offset: 4px;
-    border-radius: 3px;
+    outline: 2px solid #2f6d67;
+    outline-offset: 3px;
 }
 
-/* COMENTÁRIO */
+/* =========================================================
+   CAMPO DE COMENTÁRIO
+   PADRÃO DOS INPUTS DO SITE
+   ========================================================= */
 
 .campo-avaliacao textarea {
+    display: block;
     width: 100%;
-    min-height: 145px;
-    padding: 16px 18px;
-    background-color: #fffefb;
-    border: 1px solid #dcded1;
-    border-radius: 4px;
-    color: #454d46;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    line-height: 1.6;
-    resize: vertical;
+    min-height: 125px;
+    padding: 13px 14px;
+    background: #f8f7f1;
+    border: 1px solid #c7cec8;
+    border-radius: 3px;
+    color: #414744;
+    font-family: "Playfair Display SC", serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 1.7;
     outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    resize: vertical;
+    transition: border-color .2s ease, background-color .2s ease;
 }
 
 .campo-avaliacao textarea::placeholder {
-    color: #aaa99d;
+    color: #999891;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    letter-spacing: .5px;
 }
 
 .campo-avaliacao textarea:focus {
-    border-color: #2c7771;
-    box-shadow: 0 0 0 3px rgba(44, 119, 113, 0.09);
+    background: #fff;
+    border-color: #2f6d67;
+    box-shadow: 0 0 0 2px rgba(47, 109, 103, .08);
 }
 
-/* MENSAGENS DE ERRO */
+/* =========================================================
+   ERROS DE VALIDAÇÃO
+   ========================================================= */
 
 .erro-avaliacao {
-    color: #a94442;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    margin-top: 2px;
+    margin-top: 8px;
+    color: #873836;
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    letter-spacing: .5px;
 }
 
-/* BOTÕES */
+/* =========================================================
+   BOTÕES
+   PADRÃO DOS BOTÕES DO SITE
+   ========================================================= */
 
 .acoes-avaliacao {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    gap: 15px;
-    padding-top: 8px;
+    gap: 12px;
+    margin-top: 5px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(47, 109, 103, .15);
 }
 
 .botao-voltar-avaliacao,
 .botao-enviar-avaliacao {
-    min-height: 47px;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    min-height: 45px;
     padding: 12px 25px;
-    border-radius: 3px;
-    font-family: 'Playfair Display SC', serif;
+    border: none;
+    border-radius: 0;
+    background: #7d958d;
+    color: #fff;
+    font-family: "Playfair Display SC", serif;
     font-size: 11px;
+    font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.25s ease,
-                color 0.25s ease,
-                border-color 0.25s ease;
+    transition: background-color .25s ease, transform .2s ease;
 }
 
-.botao-voltar-avaliacao {
-    color: #2c7771;
-    background-color: transparent;
-    border: 1px solid #2c7771;
-}
-
-.botao-voltar-avaliacao:hover {
-    color: #fffef8;
-    background-color: #2c7771;
-}
-
-.botao-enviar-avaliacao {
-    color: #fffef8;
-    background-color: #2c7771;
-    border: 1px solid #2c7771;
-}
-
+.botao-voltar-avaliacao:hover,
 .botao-enviar-avaliacao:hover {
-    background-color: #225e59;
-    border-color: #225e59;
+    background: #2f6d67;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
-/* RESPONSIVIDADE */
+.botao-voltar-avaliacao:focus-visible,
+.botao-enviar-avaliacao:focus-visible {
+    outline: 2px solid #2f6d67;
+    outline-offset: 3px;
+}
 
-@media (max-width: 600px) {
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
     .pagina-avaliacao {
-        padding: 40px 15px 55px;
+        padding: 35px 0 55px;
+    }
+
+    .avaliacao-container {
+        width: 90%;
     }
 
     .avaliacao-header {
-        margin-bottom: 27px;
+        margin-bottom: 35px;
     }
 
-    .avaliacao-header small {
-        letter-spacing: 3px;
-    }
-
-    .avaliacao-header p {
-        font-size: 17px;
+    .avaliacao-header h1 {
+        font-size: 32px;
     }
 
     .avaliacao-card {
-        padding: 25px 20px;
-    }
-
-    .avaliacao-procedimento {
-        padding: 18px;
+        padding: 25px 22px;
     }
 
     .avaliacao-procedimento h2 {
-        font-size: 26px;
+        font-size: 21px;
     }
 
     .avaliacao-dados {
         flex-direction: column;
-        gap: 5px;
-        font-size: 16px;
-    }
-
-    .campo-avaliacao > label {
-        font-size: 20px;
-    }
-
-    .estrelas-avaliacao label {
-        font-size: 35px;
+        gap: 8px;
     }
 
     .acoes-avaliacao {
@@ -295,5 +325,29 @@
     .botao-voltar-avaliacao,
     .botao-enviar-avaliacao {
         width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .avaliacao-header h1 {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+
+    .avaliacao-header p {
+        font-size: 11px;
+    }
+
+    .avaliacao-card {
+        padding: 22px 17px;
+    }
+
+    .avaliacao-procedimento h2 {
+        font-size: 19px;
+    }
+
+    .campo-avaliacao > label {
+        font-size: 10px;
     }
 }

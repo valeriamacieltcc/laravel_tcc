@@ -32,11 +32,7 @@
         rel="stylesheet"
         href="{{ asset('css/home.css') }}"
     >
- <!-- CSS DO PERFIL -->
- <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    >
+
 
 </head>
 

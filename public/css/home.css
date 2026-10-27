@@ -2672,6 +2672,9 @@ ALERTAS
 ========================================================= */
 
 .anamnese-alert {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     margin-bottom: 30px;
     padding: 16px 20px;
@@ -3166,7 +3169,7 @@ TERMO DE RESPONSABILIDADE
     padding: 0 24px;
 
     border: 1px solid #2f6d67;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 
     background-color: #2f6d67;
     color: #ffffff;
@@ -3527,7 +3530,7 @@ PADRÃO DOS BOTÕES DE PROCEDIMENTOS
     background: #2E614D;
     color: #fff;
     border: none;
-    border-radius: 999px;
+    /* border-radius: 999px; */
     padding: 14px 28px;
     font-weight: 700;
     cursor: pointer;
@@ -3735,19 +3738,22 @@ background: #873836;
    PADRÃO DOS BOTÕES DA ANAMNESE
    ========================================================= */
 
+
    .anamnese-alert .btn-salvar-ficha {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    min-width: 190px;
+    width: fit-content;
+    min-width: 200px;
     height: 44px;
 
+    margin: 0 auto;
     padding: 0 24px;
 
     background-color: #2f6d67;
-    border: 1px solid #2f6d67;
-    border-radius: 3px;
+    border: none;
+    
 
     color: #ffffff;
 
@@ -3767,6 +3773,7 @@ background: #873836;
         background-color 0.2s ease,
         border-color 0.2s ease;
 }
+
 
 
 /* HOVER */
@@ -4260,44 +4267,43 @@ background: #873836;
 
 .meus-agendamentos-avaliar {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
-    gap: 8px;
+    min-width: 220px;
+    min-height: 48px;
+    padding: 14px 28px;
 
-    padding: 10px 16px;
+    background-color: #2f6d67;
+    color: #ffffff;
 
-    border-radius: 8px;
+    border: none !important;
+    outline: none;
+    box-shadow: none;
 
-    background: #a85c70;
+    border-radius: 0;
 
-    color: #fff;
-
+    font-family: "Playfair Display SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition: 0.2s;
 }
-
 
 .meus-agendamentos-avaliar:hover {
-    background: #914b5e;
-
-    color: #fff;
-
-    transform: translateY(-1px);
+    background-color: #244f4b;
+    color: #ffffff;
+    border: none !important;
+    box-shadow: none;
 }
+
 
 
 .avaliacao-existente {
     padding: 15px;
 
-    border-radius: 10px;
+    /* border-radius: 10px; */
 
     background: #faf7f8;
 }
@@ -5624,30 +5630,29 @@ background: #873836;
    BOTÃO DO ESTADO VAZIO
    ========================================================= */
 
-.meus-agendamentos-empty-button {
+   .meus-agendamentos-empty-button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     min-width: 165px;
     min-height: 42px;
-
     padding: 10px 20px;
 
     background-color: #7d958d;
-
     color: #ffffff;
+
+    border: none !important;
+    outline: none;
+    box-shadow: none;
 
     font-family: "Playfair Display SC", serif;
     font-size: 10px;
     font-weight: 400;
-
     letter-spacing: 1px;
 
     text-align: center;
     text-decoration: none;
-
     text-transform: uppercase;
 
     transition:
@@ -5655,14 +5660,17 @@ background: #873836;
         transform .2s ease;
 }
 
-
 .meus-agendamentos-empty-button:hover {
     background-color: #2f6d67;
-
     color: #ffffff;
+
+    border: none !important;
+    box-shadow: none;
 
     transform: translateY(-2px);
 }
+
+
 
 
 /* =========================================================
@@ -7423,3 +7431,19 @@ PÁGINA
     background-color: #ccc;
     color: #333;
 }
+
+
+/* =========================================
+   CORREÇÃO DO FUNDO — FICHA DE ANAMNESE
+   Mantém uma única cor em toda a área principal
+========================================= */
+
+.anamnese-page {
+    background: #f5f2e9 !important;
+}
+
+.anamnese-page .anamnese-container {
+    background: #f5f2e9 !important;
+}
+
+

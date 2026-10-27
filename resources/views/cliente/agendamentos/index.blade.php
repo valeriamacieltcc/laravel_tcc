@@ -1,21 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Meus Agendamentos - Valéria Maciel</title>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -34,51 +28,27 @@
         rel="stylesheet"
     >
 
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/home.css') }}"
-    >
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    >
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/avaliacao.css') }}"
-    >
-
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/avaliacao.css') }}">
 </head>
 
 <body>
 
-
-    {{-- =====================================================
-         HEADER PADRÃO DO SITE
-         ===================================================== --}}
-
+    {{-- HEADER --}}
     @include('_partials.header')
 
-
-    {{-- =====================================================
-         CONTEÚDO
-         ===================================================== --}}
-
+    {{-- CONTEÚDO --}}
     <main class="meus-agendamentos-page">
 
         <div class="meus-agendamentos-container">
 
-
-            {{-- =================================================
-                 CABEÇALHO DA PÁGINA
-                 ================================================= --}}
-
+            {{-- CABEÇALHO --}}
             <div class="meus-agendamentos-header">
 
                 <div class="meus-agendamentos-header-info">
 
-                    <small>
-                        Valéria Maciel
-                    </small>
+                
 
                     <h1 class="meus-agendamentos-title">
                         Meus agendamentos
@@ -91,80 +61,49 @@
 
                 </div>
 
-                <a href="{{ route('cliente.agendamentos.create') }}"
-   class="meus-agendamentos-empty-button">
-    + Agendar novo procedimento
-</a>
+                <a
+                    href="{{ route('cliente.agendamentos.create') }}"
+                    class="meus-agendamentos-empty-button"
+                >
+                    + Agendar novo procedimento
+                </a>
 
             </div>
 
-
-            {{-- =================================================
-                 MENSAGEM DE SUCESSO
-                 ================================================= --}}
-
+            {{-- MENSAGEM DE SUCESSO --}}
             @if(session('sucesso'))
-
                 <div class="meus-agendamentos-message-success">
-
                     {{ session('sucesso') }}
-
                 </div>
-
             @endif
 
-
-            {{-- =================================================
-                 MENSAGEM DE ERRO
-                 ================================================= --}}
-
+            {{-- MENSAGEM DE ERRO --}}
             @if(session('erro'))
-
                 <div class="meus-agendamentos-message-error">
-
                     {{ session('erro') }}
-
                 </div>
-
             @endif
 
-
-            {{-- =================================================
-                 LISTA DE AGENDAMENTOS
-                 ================================================= --}}
-
+            {{-- LISTA DE AGENDAMENTOS --}}
             <div class="meus-agendamentos-list">
-
 
                 @forelse($agendamentos as $agendamento)
 
-
-                    {{-- =========================================
-                         CARD DO AGENDAMENTO
-                         ========================================= --}}
-
+                    {{-- CARD DO AGENDAMENTO --}}
                     <article class="meus-agendamentos-card">
 
-
                         {{-- CABEÇALHO DO CARD --}}
-
                         <div class="meus-agendamentos-card-header">
 
                             <div>
-
-                                <small>
-                                    Procedimento
-                                </small>
+                                <small>Procedimento</small>
 
                                 <h2 class="meus-agendamentos-procedure">
                                     {{ $agendamento->procedimento->nome ?? 'Não informado' }}
                                 </h2>
-
                             </div>
 
-
-                            {{-- STATUS VISÍVEL PARA O CLIENTE --}}
-
+                            {{-- STATUS --}}
                             @if($agendamento->status == 'pendente')
 
                                 <span class="meus-agendamentos-status status-pendente">
@@ -199,11 +138,8 @@
 
                         </div>
 
-
                         {{-- INFORMAÇÕES --}}
-
                         <div class="meus-agendamentos-info-grid">
-
 
                             <div class="meus-agendamentos-info">
 
@@ -217,7 +153,6 @@
 
                             </div>
 
-
                             <div class="meus-agendamentos-info">
 
                                 <span class="meus-agendamentos-info-label">
@@ -230,19 +165,14 @@
 
                             </div>
 
-
                         </div>
 
-
                         {{-- OBSERVAÇÕES DO CLIENTE --}}
-
                         @if($agendamento->observacoes_cliente)
 
                             <div class="meus-agendamentos-observacoes">
 
-                                <span>
-                                    Observações
-                                </span>
+                                <span>Observações</span>
 
                                 <p>
                                     {{ $agendamento->observacoes_cliente }}
@@ -252,16 +182,12 @@
 
                         @endif
 
-
-                        {{-- OBSERVAÇÕES DA ADMIN --}}
-
+                        {{-- OBSERVAÇÕES DA CLÍNICA --}}
                         @if($agendamento->observacoes_admin)
 
                             <div class="meus-agendamentos-observacoes">
 
-                                <span>
-                                    Observações da clínica
-                                </span>
+                                <span>Observações da clínica</span>
 
                                 <p>
                                     {{ $agendamento->observacoes_admin }}
@@ -271,9 +197,7 @@
 
                         @endif
 
-
                         {{-- MOTIVO DO CANCELAMENTO --}}
-
                         @if(
                             $agendamento->status == 'cancelado'
                             && $agendamento->motivo_cancelamento
@@ -281,9 +205,7 @@
 
                             <div class="meus-agendamentos-observacoes">
 
-                                <span>
-                                    Motivo do cancelamento
-                                </span>
+                                <span>Motivo do cancelamento</span>
 
                                 <p>
                                     {{ $agendamento->motivo_cancelamento }}
@@ -293,20 +215,7 @@
 
                         @endif
 
-
-                        {{-- =================================================
-                             CANCELAMENTO PELO CLIENTE
-                             =================================================
-
-                             O cliente NÃO altera o status manualmente.
-
-                             Ele apenas pode cancelar enquanto o agendamento
-                             não estiver cancelado nem concluído.
-
-                             Quem altera pendente / confirmado / concluído
-                             é a ADMIN.
-                             ================================================= --}}
-
+                        {{-- CANCELAMENTO PELO CLIENTE --}}
                         @if(
                             $agendamento->status !== 'cancelado'
                             && $agendamento->status !== 'concluido'
@@ -315,19 +224,14 @@
                             <div class="meus-agendamentos-actions">
 
                                 <form
-                                    action="{{ route(
-                                        'cliente.agendamentos.cancelar',
-                                        $agendamento
-                                    ) }}"
+                                    action="{{ route('cliente.agendamentos.cancelar', $agendamento) }}"
                                     method="POST"
                                     class="meus-agendamentos-cancel-form"
                                     onsubmit="return confirm('Deseja cancelar este agendamento?')"
                                 >
 
                                     @csrf
-
                                     @method('PATCH')
-
 
                                     <button
                                         type="submit"
@@ -342,104 +246,92 @@
 
                         @endif
 
-
                     </article>
-                    {{-- =================================================
-     AVALIAÇÃO DO PROCEDIMENTO
-================================================= --}}
 
-@if($agendamento->status === 'concluido')
+                    {{-- AVALIAÇÃO DO PROCEDIMENTO --}}
+                    @if($agendamento->status === 'concluido')
 
-    <div class="meus-agendamentos-avaliacao">
+                        <div class="meus-agendamentos-avaliacao">
 
-        @if($agendamento->avaliacao)
+                            {{-- AVALIAÇÃO JÁ REALIZADA --}}
+                            @if($agendamento->avaliacao)
 
-            <div class="avaliacao-existente">
+                                <div class="avaliacao-existente">
 
-                <div class="avaliacao-existente-topo">
+                                    <div class="avaliacao-existente-topo">
 
-                    <span>
-                        Sua avaliação
-                    </span>
+                                        <span>Sua avaliação</span>
 
-                    <div class="estrelas-pequenas">
+                                        <div class="estrelas-pequenas">
 
-                        @for($i = 1; $i <= 5; $i++)
+                                            @for($i = 1; $i <= 5; $i++)
 
-                            @if($i <= $agendamento->avaliacao->nota)
-                                <span class="estrela-preenchida">★</span>
+                                                @if($i <= $agendamento->avaliacao->nota)
+                                                    <span class="estrela-preenchida">★</span>
+                                                @else
+                                                    <span class="estrela-vazia">★</span>
+                                                @endif
+
+                                            @endfor
+
+                                        </div>
+
+                                    </div>
+
+                                    @if($agendamento->avaliacao->comentario)
+
+                                        <p>
+                                            "{{ $agendamento->avaliacao->comentario }}"
+                                        </p>
+
+                                    @endif
+
+                                </div>
+
                             @else
-                                <span class="estrela-vazia">★</span>
+
+                                {{-- BOTÃO AVALIAR --}}
+                                <a
+                                    href="{{ route('cliente.agendamentos.avaliar', $agendamento) }}"
+                                    class="meus-agendamentos-empty-button"
+                                >
+                                    Avaliar procedimento
+                                </a>
+
                             @endif
 
-                        @endfor
+                            {{-- BOTÃO VOLTAR AO LADO DA AVALIAÇÃO --}}
+                            <a
+                                href="{{ route('home.index') }}"
+                                class="meus-agendamentos-back"
+                            >
+                                Voltar para Home
+                            </a>
 
-                    </div>
+                        </div>
 
-                </div>
-
-
-                @if($agendamento->avaliacao->comentario)
-
-                    <p>
-                        "{{ $agendamento->avaliacao->comentario }}"
-                    </p>
-
-                @endif
-
-            </div>
-
-        @else
-
-            <a
-                href="{{ route(
-                    'cliente.agendamentos.avaliar',
-                    $agendamento
-                ) }}"
-                class="meus-agendamentos-avaliar"
-            >
-
-                
-                Avaliar procedimento
-
-            </a>
-
-        @endif
-
-    </div>
-
-@endif
+                    @endif
 
                 @empty
 
-
-                    {{-- =========================================
-                         SEM AGENDAMENTOS
-                         ========================================= --}}
-
+                    {{-- NENHUM AGENDAMENTO --}}
                     <div class="meus-agendamentos-empty">
 
                         <div class="meus-agendamentos-empty-number">
                             01
                         </div>
 
-
                         <div>
 
-                            <small>
-                                Sua agenda
-                            </small>
+                            <small>Sua agenda</small>
 
-                            <h2>
-                                Nenhum agendamento
-                            </h2>
+                            <h2>Nenhum agendamento</h2>
 
                             <p>
                                 Você ainda não possui nenhum agendamento realizado.
                             </p>
 
                         </div>
-
 
                         <a
                             href="{{ route('cliente.agendamentos.create') }}"
@@ -450,50 +342,26 @@
 
                     </div>
 
-
                 @endforelse
+
+                {{-- PAGINAÇÃO --}}
                 <div class="paginacao">
-    {{ $agendamentos->links() }}
-</div>
+                    {{ $agendamentos->links() }}
+                </div>
 
             </div>
-
-
-            {{-- =================================================
-                 VOLTAR PARA HOME
-                 ================================================= --}}
-
-            <div class="meus-agendamentos-back-area">
-
-                <a
-                    href="{{ route('home.index') }}"
-                    class="meus-agendamentos-back"
-                >
-                    Voltar para Home
-                </a>
-
-            </div>
-
 
         </div>
 
     </main>
 
-
-    {{-- =====================================================
-         FOOTER PADRÃO DO SITE
-         ===================================================== --}}
-
+    {{-- FOOTER --}}
     @include('_partials.footer')
 
-
     <!-- BOOTSTRAP JS -->
-
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     ></script>
 
-
 </body>
-
 </html>
