@@ -85,12 +85,13 @@
 
                 @if($post->imagem)
 
-                    <img
-                        src="{{ asset('storage/' . $post->imagem) }}"
-                        class="card-img-top"
-                        style="max-height:600px; object-fit:cover;"
-                        alt="{{ $post->titulo }}"
-                    >
+          
+<img
+    src="{{ $post->imagem }}"
+    class="card-img-top"
+    style="height:280px; object-fit:cover;"
+    alt="{{ $post->titulo }}"
+>
 
                 @endif
 
