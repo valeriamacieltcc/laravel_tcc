@@ -115,6 +115,7 @@
 </nav>
 
 
+
 <!-- =====================================================
      MENU LATERAL BOOTSTRAP
 ===================================================== -->
@@ -125,19 +126,13 @@
     id="menuLateral"
     aria-labelledby="menuLateralLabel">
 
-
     <!-- CABEÇALHO -->
 
     <div class="offcanvas-header">
 
-        <h5
-            class="offcanvas-title"
-            id="menuLateralLabel">
-
+        <h5 class="offcanvas-title" id="menuLateralLabel">
             MENU
-
         </h5>
-
 
         <button
             type="button"
@@ -148,30 +143,29 @@
 
     </div>
 
-
     <!-- CONTEÚDO -->
 
     <div class="offcanvas-body">
 
         <div class="menu-links">
 
-            <a href="#">
+            <a href="{{ route('home.index') }}">
                 HOME
             </a>
 
-            <a href="../procedimento/index">
+            <a href="{{ route('cliente.procedimento.index') }}">
                 PROCEDIMENTOS
             </a>
 
-            <a href="#">
+            <a href="{{ route('cliente.agendamentos.index') }}">
                 AGENDAR
             </a>
 
-            <a href="../vitrine/index">
+            <a href="{{ route('cliente.vitrine.index') }}">
                 LOJA
             </a>
 
-            <a href="#">
+            <a href="{{ route('blog.index') }}">
                 BLOG
             </a>
 
@@ -180,6 +174,7 @@
     </div>
 
 </div>
+
 
 
 <!-- =====================================================

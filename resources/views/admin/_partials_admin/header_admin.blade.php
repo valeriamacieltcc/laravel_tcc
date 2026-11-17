@@ -54,7 +54,7 @@
 
         <li>
     <a href="{{ route('admin.blog.index') }}">
-        Blog
+        BLOG
     </a>
 </li>
 

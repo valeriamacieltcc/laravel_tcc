@@ -42,7 +42,8 @@
     >
 
 </head>
-
+{{-- HEADER DO ADMIN --}}
+@include('admin._partials_admin.header_admin')
 
 <body>
 

@@ -9007,6 +9007,8 @@ body{
    ÁREA DO CALENDÁRIO
    ========================================================= */
 
+   
+
 .calendario-area {
 
     width: 100%;
@@ -9381,6 +9383,7 @@ body{
 
     font-size: 9px;
 }
+
 
 
 .fc .fc-timegrid-event {
@@ -11936,3 +11939,6 @@ body{
     text-transform: uppercase;
     box-sizing: border-box;
 }
+
+
+

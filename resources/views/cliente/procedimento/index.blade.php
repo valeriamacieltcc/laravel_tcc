@@ -10,7 +10,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title> procedimentos- Valéria Maciel</title>
+    <title>Procedimento - Valéria Maciel</title>
 
     <link
         rel="preconnect"
@@ -19,7 +19,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -44,6 +44,8 @@
         href="{{ asset('css/style.css') }}"
     >
 </head>
+
+   
 
 
 <body>

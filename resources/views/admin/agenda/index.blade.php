@@ -1,34 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
 
-    @include('admin._partials_admin.header_admin')
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Agenda | Valéria Maciel Estética</title>
 
-
-    <!-- =====================================================
-         BOOTSTRAP
-    ====================================================== -->
-
+    <!-- BOOTSTRAP -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-
-    <!-- =====================================================
-         FONTES
-    ====================================================== -->
-
+    <!-- FONTES -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
         rel="stylesheet"
@@ -44,48 +32,31 @@
         rel="stylesheet"
     >
 
-
-    <!-- =====================================================
-         CSS DO SITE
-    ====================================================== -->
-
-    <!-- <link
-        rel="stylesheet"
-        href="{{ asset('css/style.css') }}"
-    > -->
-
+    <!-- CSS DO SITE -->
     <link
         rel="stylesheet"
         href="{{ asset('css/admin.css') }}"
     >
 
-    <!-- <link
-        rel="stylesheet"
-        href="{{ asset('css/agenda(admin).css') }}"
-    > -->
-
-
-    <!-- =====================================================
-         FULLCALENDAR
-    ====================================================== -->
-
+    <!-- FULLCALENDAR -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/skeleton.css"
     >
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/all/global.js">
-    </script>
+    <!-- SCRIPTS ORIGINAIS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/all/global.js"></script>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js"></script>
 
 </head>
 
 
+
+
 <body>
+
+@include('admin._partials_admin.header_admin')
 
 
 <!-- =========================================================

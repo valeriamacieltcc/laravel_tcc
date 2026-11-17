@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,6 +21,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('css/editar.css') }}">
 </head>
 
 <body>
@@ -174,21 +176,19 @@
                     value="{{ $home->categoria_4_nome }}"
                     class="admin-input">
 
-
-                <div class="admin-home-actions">
-
-                    <a href="{{ route('admin.home.index') }}" class="btn-voltar">
-                        VOLTAR
-                    </a>
-
-                    <button type="submit" class="btn-salvar">
-                        SALVAR ALTERAÇÕES
-                    </button>
-
-                </div>
-
             </form>
 
+            <div class="admin-home-actions">
+
+<a href="{{ route('admin.home.index') }}" class="btn-voltar">
+    VOLTAR
+</a>
+
+<button type="submit" class="btn-salvar">
+    SALVAR ALTERAÇÕES
+</button>
+
+</div>
         </section>
 
     </main>
@@ -198,4 +198,4 @@
 </body>
 
 </html>
-```
+

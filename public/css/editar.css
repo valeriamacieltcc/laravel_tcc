@@ -1,0 +1,29 @@
+
+.admin-home-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.admin-home-actions .btn-voltar,
+.admin-home-actions .btn-salvar {
+    box-sizing: border-box;
+    height: 45px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    .admin-home-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-home-actions .btn-voltar,
+    .admin-home-actions .btn-salvar {
+        width: 100%;
+    }
+}

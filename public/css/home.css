@@ -7475,7 +7475,325 @@ PÁGINA
 }
 
 
-<<<<<<< HEAD
+/* =========================================================
+   EDITAR PÁGINA INICIAL — VALÉRIA MACIEL ESTÉTICA
+   ========================================================= */
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+   .home-container {
+    width: 90%;
+    max-width: 1120px;
+    min-height: 400px;
+
+    margin: 0 auto;
+    padding: 55px 0 80px;
+
+    color: #444;
+    font-family: 'Playfair Display SC', serif;
+}
+
+
+/* =========================================================
+   ÁREA DE EDIÇÃO
+   ========================================================= */
+
+.admin-edit-area {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 45px 50px;
+
+    background-color: #d9ded2;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+.admin-edit-area h2 {
+    margin: 0 0 38px;
+
+    color: #3e746d;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TÍTULOS DAS CATEGORIAS
+   ========================================================= */
+
+.admin-edit-area h4 {
+    margin: 30px 0 18px;
+
+    color: #3e746d;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.admin-edit-area label {
+    display: block;
+
+    margin: 20px 0 8px;
+
+    color: #52635f;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 11px;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAMPOS DE EDIÇÃO
+   ========================================================= */
+
+.admin-input {
+    display: block;
+    width: 100%;
+    min-height: 43px;
+
+    padding: 10px 14px;
+
+    background-color: #f5f2e9;
+    border: 1px solid rgba(47, 109, 103, .2);
+    border-radius: 0;
+
+    color: #626963;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+
+    outline: none;
+    box-shadow: none;
+
+    transition: border-color .25s ease;
+}
+
+.admin-input:focus {
+    background-color: #f5f2e9;
+    border-color: #2f6d67;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.admin-textarea {
+    min-height: 150px;
+    padding: 12px 14px;
+
+    line-height: 1.7;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   SEPARADOR
+   ========================================================= */
+
+.admin-edit-area hr {
+    margin: 42px 0 32px;
+
+    border: none;
+    border-top: 1px solid rgba(47, 109, 103, .2);
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+   ========================================================= */
+
+.success-message {
+    margin-bottom: 30px;
+    padding: 14px 18px;
+
+    background-color: #f5f2e9;
+    border-left: 3px solid #2f6d67;
+
+    color: #3e746d;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.admin-home-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 45px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(47, 109, 103, .2);
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.btn-voltar,
+.btn-salvar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+    padding: 12px 24px;
+
+    border-radius: 0;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: all .3s ease;
+}
+
+
+/* VOLTAR */
+
+.btn-voltar {
+    background-color: transparent;
+    border: 1px solid #819d96;
+
+    color: #3e746d;
+}
+
+.btn-voltar:hover {
+    background-color: #2f6d67;
+    border-color: #2f6d67;
+    color: #f5f2e9;
+}
+
+
+/* SALVAR */
+
+.btn-salvar {
+    background-color: #7d958d;
+    border: none;
+
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-salvar:hover {
+    background-color: #2f6d67;
+    color: #fff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .home-container {
+        width: 90%;
+        padding: 40px 0 60px;
+    }
+
+    .admin-edit-area {
+        padding: 35px 30px;
+    }
+
+    .admin-edit-area h2 {
+        font-size: 26px;
+    }
+
+    .admin-edit-area h4 {
+        font-size: 19px;
+    }
+
+    .admin-home-actions {
+        gap: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .home-container {
+        width: 92%;
+        padding: 32px 0 45px;
+    }
+
+    .admin-edit-area {
+        padding: 28px 18px;
+    }
+
+    .admin-edit-area h2 {
+        font-size: 23px;
+        letter-spacing: .5px;
+    }
+
+    .admin-edit-area h4 {
+        font-size: 18px;
+    }
+
+    .admin-edit-area label {
+        font-size: 10px;
+    }
+
+    .admin-input {
+        font-size: 16px;
+    }
+
+    .admin-home-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        margin-top: 32px;
+    }
+
+    .btn-voltar,
+    .btn-salvar {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
 /* =========================================
    CORREÇÃO DO FUNDO — FICHA DE ANAMNESE
    Mantém uma única cor em toda a área principal
@@ -7490,7 +7808,7 @@ PÁGINA
 }
 
 
-=======
+
 /* INICIAIS DO PERFIL NA NAVBAR */
 .iniciais-navbar {
     width: 42px;
@@ -7533,4 +7851,3 @@ PÁGINA
     object-fit: cover;
     border-radius: 50%;
 }
->>>>>>> b9bbf6bc0fc6a4f04403b1e2d3bfc9543d1a12cd
