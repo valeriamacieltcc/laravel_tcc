@@ -110,17 +110,16 @@
     class="text-decoration-none text-dark"
 >
 
-                @if($post->imagem)
+@if($post->imagem)
 
-                    <img
-                        src="{{ asset('storage/' . $post->imagem) }}"
-                        class="card-img-top"
-                        style="height:280px; object-fit:cover;"
-                        alt="{{ $post->titulo }}"
-                    >
+<img
+    src="{{ $post->imagem }}"
+    class="card-img-top"
+    style="height:280px; object-fit:cover;"
+    alt="{{ $post->titulo }}"
+>
 
-                @endif
-
+@endif
                 <div class="card-body">
 
                     @if($post->categoria)
