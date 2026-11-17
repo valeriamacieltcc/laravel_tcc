@@ -89,20 +89,20 @@
 
             <div class="vitrine-detalhe-imagem">
 
-                @if($vitrine->imagem)
+            @if($vitrine->imagem)
 
-                    <img
-                        src="{{ asset('storage/' . $vitrine->imagem) }}"
-                        alt="{{ $vitrine->nome }}"
-                    >
+<img
+    src="{{ $vitrine->imagem }}"
+    alt="{{ $vitrine->nome }}"
+>
 
-                @else
+@else
 
-                    <div class="vitrine-detalhe-sem-imagem">
-                        Sem imagem
-                    </div>
+<div class="sem-imagem">
+    Imagem não disponível
+</div>
 
-                @endif
+@endif
 
             </div>
 

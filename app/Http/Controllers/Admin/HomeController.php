@@ -18,7 +18,7 @@ class HomeController extends Controller
                 'banner_2' => 'https://i.pinimg.com/1200x/a2/ca/36/a2ca365239e8894df6fa487e31d3a89e.jpg',
                 'banner_3' => 'https://i.pinimg.com/736x/b5/c2/31/b5c2318a43b336e87875193bf0fc15b5.jpg',
 
-                'sobre_imagem' => 'https://i.pinimg.com/736x/c5/ac/77/c5ac77654151b0712c786a7174c85912.jpg',
+                'sobre_imagem' => 'https://i.pinimg.com/736x/37/48/6a/37486ab744f29130663b13151991a4f3.jpg',
                 'sobre_titulo' => 'QUEM SOU?',
                 'sobre_texto' => 'Valéria Maciel Estética é um espaço dedicado ao cuidado, bem-estar e autoestima. Com profissionais especializados, oferecemos serviços personalizados para elevar sua beleza natural e proporcionar uma experiência acolhedora.',
 
