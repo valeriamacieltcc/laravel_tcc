@@ -194,17 +194,7 @@ class ProcedimentoSeeder extends Seeder
                 'ativo' => true,
             ],
             
-            [
-                'categoria_procedimento_id' => 1,
-                'nome' => 'Depilação de Queixo',
-                'descricao' => 'Remoção dos pelos da região do queixo por técnica adequada ao tipo de pelo e às condições da pele. O procedimento busca proporcionar acabamento uniforme, respeitando a sensibilidade local e os cuidados necessários para reduzir o risco de irritação.',
-                'preco' => 20.00,
-                'duracao_minutos' => 15,
-                'imagem' => 'imagem/procedimentos/depilacao-queixo.jpg',
-                'cuidados' => 'Evitar exposição solar intensa, esfoliantes e produtos irritantes enquanto houver sensibilidade. Não manipular pelos encravados e manter a região limpa. Procurar orientação se houver vermelhidão persistente ou reação incomum.',
-                'contraindicacoes' => 'Infecções, feridas, irritação intensa ou lesões na região. Informar sobre alergias e tratamentos dermatológicos que possam fragilizar a pele antes de escolher a técnica.',
-                'ativo' => true,
-            ],
+    
             
             [
                 'categoria_procedimento_id' => 1,
@@ -220,6 +210,31 @@ class ProcedimentoSeeder extends Seeder
 
 
             // CORPO
+
+            [
+                'categoria_procedimento_id' => 2,
+                'nome' => 'Depilação de Costas',
+                'descricao' => 'Procedimento de remoção dos pelos da região das costas, utilizando técnica adequada para proporcionar uma pele mais lisa e uniforme. Realizado com cuidados de higiene e atenção à sensibilidade individual da pele.',
+                'preco' => 60.00,
+                'duracao_minutos' => 30,
+                'imagem' => 'imagem/procedimentos/depilacao-costas.jpg',
+                'cuidados' => 'Evitar exposição solar intensa, banhos muito quentes e fricção na região após o procedimento. Manter a pele limpa e hidratada com produtos suaves. Evitar esfoliação enquanto a pele estiver sensibilizada.',
+                'contraindicacoes' => 'Feridas, irritação intensa, infecções, queimaduras ou inflamações na região. Informar sobre alergias e uso de produtos ou medicamentos que possam sensibilizar a pele.',
+                'ativo' => true,
+            ],
+            
+            [
+                'categoria_procedimento_id' => 2,
+                'nome' => 'Depilação de Tórax',
+                'descricao' => 'Procedimento de remoção dos pelos da região do tórax, realizado com técnica adequada à sensibilidade da pele. Proporciona um aspecto mais uniforme e uma sensação de pele mais lisa, respeitando as características individuais de cada cliente.',
+                'preco' => 50.00,
+                'duracao_minutos' => 25,
+                'imagem' => 'imagem/procedimentos/depilacao-torax.jpg',
+                'cuidados' => 'Evitar exposição solar intensa, banhos muito quentes, roupas apertadas e fricção na região após o procedimento. Manter a pele limpa e hidratada com produtos suaves. Evitar esfoliação enquanto a pele estiver sensibilizada.',
+                'contraindicacoes' => 'Feridas, irritação intensa, infecções, queimaduras ou inflamações na região. Informar sobre alergias e uso de produtos ou medicamentos que possam sensibilizar a pele.',
+                'ativo' => true,
+            ],
+
             [
                 'categoria_procedimento_id' => 2,
                 'nome' => 'Depilação de Axilas',

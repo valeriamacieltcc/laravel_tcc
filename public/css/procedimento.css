@@ -1566,3 +1566,75 @@ body > img {
 body > footer {
     margin-top: 0 !important;
 }
+/* FILTRO DE PROCEDIMENTOS */
+
+.filtro-procedimentos {
+    width: 100%;
+    margin: 0 auto 45px;
+}
+
+.filtro-procedimentos .categorias {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.filtro-procedimentos .categoria-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 20px;
+
+    background: transparent;
+
+    border: 1px solid #7d958d;
+    border-radius: 0;
+
+    color: #2f6d67;
+
+    text-decoration: none;
+
+    font-family: 'Playfair Display SC', serif;
+    font-size: 13px;
+    font-weight: 400;
+
+    transition: 0.3s;
+}
+
+.filtro-procedimentos .categoria-btn:hover {
+    background: #7d958d;
+    color: #ffffff;
+}
+
+.filtro-procedimentos .categoria-btn.ativo {
+    background: #7d958d;
+    color: #ffffff;
+}
+
+.filtro-procedimentos .categoria-btn.ativo:hover {
+    background: #2f6d67;
+    color: #ffffff;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .filtro-procedimentos .categorias {
+        gap: 8px;
+    }
+
+    .filtro-procedimentos .categoria-btn {
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+
+}
