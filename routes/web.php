@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\FotoAcompanhamentoController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 
 
+use App\Http\Controllers\ChatbotController;
 
 Route::prefix('/home')->group(function () {
 
@@ -137,3 +138,12 @@ Route::post('/login', [LoginController::class,'store'])->name('login.store');
 // logout
 Route::post('/logout', [LoginController::class,'destroy'])->middleware('auth')->name('logout');
 
+
+Route::post('/chatbox/mensagem', [ChatbotController::class, 'enviar'])
+    ->middleware('throttle:20,1')
+    ->name('chatbot.enviar');
+
+    // Página inicial: redireciona para o login
+Route::get('/', function () {
+    return redirect()->route('login');
+});

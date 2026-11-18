@@ -1,5 +1,5 @@
 
-
+@include('_partials.chatbox')
 <nav class="navbar">
 
     <!-- BOTÃO MENU -->
