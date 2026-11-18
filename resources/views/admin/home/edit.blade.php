@@ -175,10 +175,7 @@
                     name="categoria_4_nome"
                     value="{{ $home->categoria_4_nome }}"
                     class="admin-input">
-
-            </form>
-
-            <div class="admin-home-actions">
+                    <div class="admin-home-actions">
 
 <a href="{{ route('admin.home.index') }}" class="btn-voltar">
     VOLTAR
@@ -189,6 +186,9 @@
 </button>
 
 </div>
+            </form>
+
+
         </section>
 
     </main>
