@@ -3,293 +3,261 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Agenda | Valéria Maciel Estética</title>
 
-    <!-- BOOTSTRAP -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- FONTES -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
-        rel="stylesheet"
-    >
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/skeleton.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap"
-        rel="stylesheet"
-    >
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="{{ asset('css/agenda(admin).css') }}?v=3">
 
-    <!-- CSS DO SITE -->
-    <link
-        rel="stylesheet"
-        href="{{ asset('css/admin.css') }}"
-    >
-
-    <!-- FULLCALENDAR -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/skeleton.css"
-    >
-
-    <!-- SCRIPTS ORIGINAIS -->
+    <!-- Scripts FullCalendar -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/all/global.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@7.0.2/locales/pt-br/global.js"></script>
 
 </head>
-
-
-
 
 <body>
 
 @include('admin._partials_admin.header_admin')
 
-
-<!-- =========================================================
-     AGENDA
-========================================================= -->
-
 <main class="agenda-container">
 
+    <!-- CABEÇALHO -->
+    <header class="titulo-agenda">
 
-    <!-- =====================================================
-         TÍTULO
-    ====================================================== -->
+        <div class="titulo-conteudo">
+            <span class="agenda-subtitulo">GESTÃO E ORGANIZAÇÃO</span>
 
-    <div class="titulo-agenda">
+            <h1>Agenda</h1>
 
-        <h1>Agenda</h1>
-
-        <p>
-            Acompanhe os agendamentos das clientes
-            e os seus compromissos.
-        </p>
-
-    </div>
-
-
-    <!-- =====================================================
-         MENSAGEM DE SUCESSO
-    ====================================================== -->
-
-    @if(session('sucesso'))
-
-        <div class="alert alert-success">
-
-            {{ session('sucesso') }}
-
+            <p>
+                Acompanhe os agendamentos das clientes e organize seus compromissos.
+            </p>
         </div>
 
+        <div class="agenda-identidade">
+            <span class="identidade-linha"></span>
+            <span>VALÉRIA MACIEL</span>
+            <small>ESTÉTICA</small>
+        </div>
+
+    </header>
+
+
+    <!-- MENSAGENS -->
+    @if(session('sucesso'))
+        <div class="alerta-agenda alerta-sucesso">
+            <span class="alerta-icone">✓</span>
+            {{ session('sucesso') }}
+        </div>
     @endif
-
-
-    <!-- =====================================================
-         ERROS
-    ====================================================== -->
 
     @if($errors->any())
+        <div class="alerta-agenda alerta-erro">
+            <span class="alerta-icone">!</span>
 
-        <div class="alert alert-danger">
-
-            @foreach($errors->all() as $erro)
-
-                <p class="mb-1">
-                    {{ $erro }}
-                </p>
-
-            @endforeach
-
+            <div>
+                @foreach($errors->all() as $erro)
+                    <p>{{ $erro }}</p>
+                @endforeach
+            </div>
         </div>
-
     @endif
 
 
-    <!-- =====================================================
-         LEGENDA
-    ====================================================== -->
-
+    <!-- LEGENDA -->
     <div class="legenda-agenda">
 
-        <div>
+        <span class="legenda-titulo">LEGENDA</span>
 
-            <span class="legenda-cliente"></span>
-
-            <span>
-                Agendamento de cliente
-            </span>
-
+        <div class="legenda-item">
+            <span class="legenda-cor legenda-cliente"></span>
+            <span>Agendamento de cliente</span>
         </div>
 
-
-        <div>
-
-            <span class="legenda-compromisso"></span>
-
-            <span>
-                Compromisso
-            </span>
-
+        <div class="legenda-item">
+            <span class="legenda-cor legenda-compromisso"></span>
+            <span>Compromisso</span>
         </div>
 
     </div>
 
 
-    <!-- =====================================================
-         ÁREA PRINCIPAL
-    ====================================================== -->
-
+    <!-- CONTEÚDO PRINCIPAL -->
     <div class="area-agenda">
 
 
-        <!-- =================================================
-             CALENDÁRIO
-        ================================================== -->
-
+        <!-- CALENDÁRIO -->
         <section class="calendario-area">
 
-            <div id="calendar"></div>
+            <div class="calendario-topo">
+
+                <div>
+                    <span class="calendario-label">VISÃO GERAL</span>
+
+                    <h2>Calendário</h2>
+
+                    <p>Visualize e acompanhe seus horários.</p>
+                </div>
+
+                <div class="calendario-status">
+                    <span class="status-ponto"></span>
+                    Agenda atualizada
+                </div>
+
+            </div>
+
+
+            <div class="calendario-conteudo">
+
+                <!-- CALENDÁRIO -->
+                <div id="calendar" class="agenda-calendar"></div>
+
+            </div>
+
+
+            <div class="calendario-rodape">
+                <span>VALÉRIA MACIEL ESTÉTICA</span>
+                <span>ORGANIZAÇÃO • CUIDADO • BEM-ESTAR</span>
+            </div>
 
         </section>
 
 
-        <!-- =================================================
-             NOVO COMPROMISSO
-        ================================================== -->
 
+        <!-- FORMULÁRIO -->
         <aside class="novo-compromisso">
 
+            <div class="formulario-topo">
 
-            <h2>
-                Novo compromisso
-            </h2>
+                <div class="formulario-icone">+</div>
+
+                <div>
+                    <span class="calendario-label">ORGANIZAÇÃO</span>
+                    <h2>Novo compromisso</h2>
+                </div>
+
+            </div>
 
 
-            <form
-                method="POST"
-                action="{{ route('admin.agenda.store') }}"
-            >
+            <p class="formulario-descricao">
+                Registre seus compromissos e mantenha sua rotina organizada.
+            </p>
+
+
+            <div class="formulario-divisor"></div>
+
+
+            <form method="POST" action="{{ route('admin.agenda.store') }}">
 
                 @csrf
 
-
-                <!-- COMPROMISSO -->
-
                 <div class="campo">
 
-                    <label for="titulo">
-                        Compromisso
-                    </label>
+                    <label for="titulo">Nome do compromisso</label>
 
                     <input
                         type="text"
                         name="titulo"
                         id="titulo"
                         value="{{ old('titulo') }}"
-                        placeholder="Ex: Almoço, reunião..."
-                        required
-                    >
+                        placeholder="Ex.: Reunião, almoço..."
+                        required>
 
                 </div>
 
 
-                <!-- DATA -->
-
                 <div class="campo">
 
-                    <label for="data">
-                        Data
-                    </label>
+                    <label for="data">Data</label>
 
                     <input
                         type="date"
                         name="data"
                         id="data"
                         value="{{ old('data') }}"
-                        required
-                    >
+                        required>
 
                 </div>
 
 
-                <!-- HORÁRIO INICIAL -->
+                <div class="campo-horarios">
 
-                <div class="campo">
+                    <div class="campo">
 
-                    <label for="hora_inicio">
-                        Horário inicial
-                    </label>
+                        <label for="hora_inicio">Horário inicial</label>
 
-                    <input
-                        type="time"
-                        name="hora_inicio"
-                        id="hora_inicio"
-                        value="{{ old('hora_inicio') }}"
-                        required
-                    >
+                        <input
+                            type="time"
+                            name="hora_inicio"
+                            id="hora_inicio"
+                            value="{{ old('hora_inicio') }}"
+                            required>
 
-                </div>
+                    </div>
 
 
-                <!-- HORÁRIO FINAL -->
+                    <div class="campo">
 
-                <div class="campo">
+                        <label for="hora_fim">Horário final</label>
 
-                    <label for="hora_fim">
-                        Horário final
-                    </label>
+                        <input
+                            type="time"
+                            name="hora_fim"
+                            id="hora_fim"
+                            value="{{ old('hora_fim') }}"
+                            required>
 
-                    <input
-                        type="time"
-                        name="hora_fim"
-                        id="hora_fim"
-                        value="{{ old('hora_fim') }}"
-                        required
-                    >
+                    </div>
 
                 </div>
 
-
-                <!-- OBSERVAÇÃO -->
 
                 <div class="campo">
 
                     <label for="descricao">
-                        Observação
+                        Observação <span>(opcional)</span>
                     </label>
 
                     <textarea
                         name="descricao"
                         id="descricao"
-                        placeholder="Opcional"
-                    >{{ old('descricao') }}</textarea>
+                        rows="4"
+                        placeholder="Adicione detalhes sobre o compromisso...">{{ old('descricao') }}</textarea>
 
                 </div>
 
 
-                <!-- BOTÃO -->
+                <button type="submit" class="btn-salvar">
 
-                <button
-                    type="submit"
-                    class="btn-salvar"
-                >
-                    Adicionar compromisso
+                    <span>Adicionar compromisso</span>
+
+                    <span class="btn-salvar-seta">→</span>
+
                 </button>
 
             </form>
+
+
+            <div class="formulario-nota">
+
+                <span class="nota-icone">✦</span>
+
+                <p>
+                    Organize seus horários com praticidade e mantenha tudo sob controle.
+                </p>
+
+            </div>
 
         </aside>
 
@@ -298,182 +266,95 @@
 </main>
 
 
-<!-- =========================================================
-     MODAL DE CANCELAMENTO
-========================================================= -->
 
-<div
-    id="modalCancelamento"
-    class="modal-cancelamento"
-    aria-hidden="true"
->
+<!-- =====================================================
+     MODAL DE CANCELAMENTO
+===================================================== -->
+
+<div id="modalCancelamento" class="modal-cancelamento" aria-hidden="true">
 
     <div
         class="caixa-cancelamento"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="modalTitulo"
-    >
+        aria-labelledby="modalTitulo">
 
-
-        <!-- FECHAR -->
 
         <button
             type="button"
             class="fechar-cancelamento"
             id="fecharCancelamento"
-            aria-label="Fechar"
-        >
+            aria-label="Fechar">
+
             &times;
+
         </button>
 
 
-        <!-- ÍCONE -->
+        <div class="icone-cancelamento">!</div>
 
-        <div class="icone-cancelamento">
-            !
-        </div>
+        <span class="modal-subtitulo">CONFIRMAÇÃO</span>
 
-
-        <!-- TÍTULO -->
-
-        <h2 id="modalTitulo">
-            Cancelar agendamento
-        </h2>
-
-
-        <!-- TEXTO -->
+        <h2 id="modalTitulo">Cancelar agendamento</h2>
 
         <p class="texto-confirmacao">
             Tem certeza que deseja cancelar este item?
         </p>
 
 
-        <!-- INFORMAÇÕES -->
-
         <div class="informacoes-cancelamento">
 
-
-            <!-- CLIENTE -->
-
-            <div
-                class="informacao-item"
-                id="linhaCliente"
-            >
-
-                <span class="informacao-label">
-                    Cliente
-                </span>
-
-                <span
-                    class="informacao-valor"
-                    id="modalCliente"
-                >
-                    -
-                </span>
-
+            <div class="informacao-item" id="linhaCliente">
+                <span class="informacao-label">Cliente</span>
+                <span class="informacao-valor" id="modalCliente">-</span>
             </div>
 
 
-            <!-- PROCEDIMENTO -->
-
-            <div
-                class="informacao-item"
-                id="linhaProcedimento"
-            >
-
-                <span class="informacao-label">
-                    Procedimento
-                </span>
-
-                <span
-                    class="informacao-valor"
-                    id="modalProcedimento"
-                >
-                    -
-                </span>
-
+            <div class="informacao-item" id="linhaProcedimento">
+                <span class="informacao-label">Procedimento</span>
+                <span class="informacao-valor" id="modalProcedimento">-</span>
             </div>
 
-
-            <!-- DATA -->
 
             <div class="informacao-item">
-
-                <span class="informacao-label">
-                    Data
-                </span>
-
-                <span
-                    class="informacao-valor"
-                    id="modalData"
-                >
-                    -
-                </span>
-
+                <span class="informacao-label">Data</span>
+                <span class="informacao-valor" id="modalData">-</span>
             </div>
 
-
-            <!-- HORÁRIO -->
 
             <div class="informacao-item">
-
-                <span class="informacao-label">
-                    Horário
-                </span>
-
-                <span
-                    class="informacao-valor"
-                    id="modalHorario"
-                >
-                    -
-                </span>
-
+                <span class="informacao-label">Horário</span>
+                <span class="informacao-valor" id="modalHorario">-</span>
             </div>
 
 
-            <!-- OBSERVAÇÃO -->
-
-            <div
-                class="informacao-item"
-                id="linhaObservacao"
-            >
-
-                <span class="informacao-label">
-                    Observação
-                </span>
-
-                <span
-                    class="informacao-valor"
-                    id="modalObservacao"
-                >
-                    -
-                </span>
-
+            <div class="informacao-item" id="linhaObservacao">
+                <span class="informacao-label">Observação</span>
+                <span class="informacao-valor" id="modalObservacao">-</span>
             </div>
 
         </div>
 
-
-        <!-- BOTÕES -->
 
         <div class="botoes-cancelamento">
 
             <button
                 type="button"
                 class="btn-voltar"
-                id="btnVoltarCancelamento"
-            >
+                id="btnVoltarCancelamento">
+
                 Voltar
+
             </button>
 
 
             <button
                 type="button"
                 class="btn-confirmar-cancelamento"
-                id="btnConfirmarCancelamento"
-            >
+                id="btnConfirmarCancelamento">
+
                 Cancelar
+
             </button>
 
         </div>
@@ -483,822 +364,504 @@
 </div>
 
 
+
 @include('_partials.footer')
 
 
-<!-- =========================================================
-     BOOTSTRAP JS
-========================================================= -->
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-</script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      JAVASCRIPT DA AGENDA
-========================================================= -->
+===================================================== -->
 
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    const calendarEl = document.getElementById('calendar');
+
 
     /* =====================================================
-       CALENDÁRIO
-    ====================================================== */
+       CONFIGURAÇÃO DO CALENDÁRIO
+    ===================================================== */
 
-    const calendarEl =
-        document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
 
+        locale: 'pt-br',
 
-    const calendar =
-        new FullCalendar.Calendar(
-            calendarEl,
-            {
+        initialView: 'dayGridMonth',
 
-                /* =================================================
-                   IDIOMA
-                ================================================== */
+        firstDay: 1,
 
-                locale: 'pt-br',
 
+        /* CLASSES PERSONALIZADAS DO FULLCALENDAR 7 */
 
-                /* =================================================
-                   VISUAL INICIAL
-                ================================================== */
+        toolbarClass: 'agenda-calendar-toolbar',
 
-                initialView: 'dayGridMonth',
+        toolbarSectionClass: 'agenda-calendar-toolbar-section',
 
+        toolbarTitleClass: 'agenda-calendar-toolbar-title',
 
-                /* =================================================
-                   PRIMEIRO DIA DA SEMANA
-                ================================================== */
+        buttonClass: 'agenda-calendar-button',
 
-                firstDay: 1,
+        dayHeaderClass: 'agenda-calendar-day-header',
 
+        dayHeaderInnerClass: 'agenda-calendar-day-header-inner',
 
-                /* =================================================
-                   TAMANHO
-                   
-                   O calendário NÃO irá ocupar a altura inteira
-                   da página.
-                ================================================== */
+        dayCellClass: 'agenda-calendar-day-cell',
 
-                height: 455,
+        dayCellTopClass: 'agenda-calendar-day-top',
 
-                contentHeight: 410,
+        dayCellInnerClass: 'agenda-calendar-day-content',
 
-                expandRows: false,
+        dayRowClass: 'agenda-calendar-day-row',
 
-                aspectRatio: 1.8,
+        dayHeaderDividerClass: 'agenda-calendar-header-divider',
 
+        dayLaneClass: 'agenda-calendar-day-lane',
 
-                /* =================================================
-                   CABEÇALHO
-                ================================================== */
 
-                headerToolbar: {
+        /* CLASSES DOS EVENTOS */
 
-                    left:
-                        'prev,next today',
+        eventClass: function(info) {
 
-                    center:
-                        'title',
+            const tipo = info.event.extendedProps.tipo;
 
-                    right:
-                        'dayGridMonth,timeGridWeek,timeGridDay'
-
-                },
-
-
-                /* =================================================
-                   BOTÕES
-                ================================================== */
-
-                buttonText: {
-
-                    today:
-                        'Hoje',
-
-                    month:
-                        'Mês',
-
-                    week:
-                        'Semana',
-
-                    day:
-                        'Dia'
-
-                },
-
-
-                /* =================================================
-                   HORÁRIOS
-                ================================================== */
-
-                slotMinTime:
-                    '08:00:00',
-
-                slotMaxTime:
-                    '20:00:00',
-
-                slotDuration:
-                    '00:30:00',
-
-                slotLabelInterval:
-                    '01:00:00',
-
-                allDaySlot:
-                    false,
-
-
-                /* =================================================
-                   FORMATO DOS HORÁRIOS
-                ================================================== */
-
-                eventTimeFormat: {
-
-                    hour:
-                        '2-digit',
-
-                    minute:
-                        '2-digit',
-
-                    hour12:
-                        false
-
-                },
-
-
-                /* =================================================
-                   EVENTOS
-                ================================================== */
-
-                events:
-                    "{{ route('admin.agenda.eventos') }}",
-
-
-                /* =================================================
-                   CLICAR EM UMA DATA
-                ================================================== */
-
-                dateClick:
-                    function (info) {
-
-                        document
-                            .getElementById('data')
-                            .value =
-                            info.dateStr;
-
-
-                        document
-                            .getElementById('titulo')
-                            .focus();
-
-                    },
-
-
-                /* =================================================
-                   CORES DOS EVENTOS
-                ================================================== */
-
-                eventDidMount:
-                    function (info) {
-
-                        const tipo =
-                            info.event
-                                .extendedProps
-                                .tipo;
-
-
-                        if (
-                            tipo ===
-                            'agendamento'
-                        ) {
-
-                            info.el.classList.add(
-                                'evento-cliente'
-                            );
-
-                        }
-
-
-                        if (
-                            tipo ===
-                            'compromisso'
-                        ) {
-
-                            info.el.classList.add(
-                                'evento-compromisso'
-                            );
-
-                        }
-
-                    },
-
-
-                /* =================================================
-                   CLICAR NO EVENTO
-                ================================================== */
-
-                eventClick:
-                    function (info) {
-
-                        abrirModalCancelamento(
-                            info.event
-                        );
-
-                    }
-
+            if (tipo === 'agendamento') {
+                return 'evento-cliente';
             }
-        );
+
+            if (tipo === 'compromisso') {
+                return 'evento-compromisso';
+            }
+
+            return '';
+
+        },
+
+
+        height: 'auto',
+
+        contentHeight: 'auto',
+
+        expandRows: true,
+
+
+        /* BARRA DE NAVEGAÇÃO */
+
+        headerToolbar: {
+
+            left: 'prev,next today',
+
+            center: 'title',
+
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+
+        },
+
+
+        buttonText: {
+
+            today: 'Hoje',
+
+            month: 'Mês',
+
+            week: 'Semana',
+
+            day: 'Dia'
+
+        },
+
+
+        /* HORÁRIOS */
+
+        slotMinTime: '08:00:00',
+
+        slotMaxTime: '20:00:00',
+
+        slotDuration: '00:30:00',
+
+        slotLabelInterval: '01:00:00',
+
+        allDaySlot: false,
+
+
+        eventTimeFormat: {
+
+            hour: '2-digit',
+
+            minute: '2-digit',
+
+            hour12: false
+
+        },
+
+
+        /* EVENTOS DO BANCO DE DADOS */
+
+        events: "{{ route('admin.agenda.eventos') }}",
+
+
+        /* CLIQUE EM UMA DATA */
+
+        dateClick: function (info) {
+
+            document.getElementById('data').value = info.dateStr;
+
+            document.getElementById('titulo').focus();
+
+        },
+
+
+        /* CLIQUE EM UM EVENTO */
+
+        eventClick: function (info) {
+
+            abrirModalCancelamento(info.event);
+
+        }
+
+    });
 
 
     calendar.render();
 
 
+
     /* =====================================================
        ELEMENTOS DO MODAL
-    ====================================================== */
+    ===================================================== */
 
-    const modal =
-        document.getElementById(
-            'modalCancelamento'
-        );
+    const modal = document.getElementById('modalCancelamento');
 
+    const btnFechar = document.getElementById('fecharCancelamento');
 
-    const btnFechar =
-        document.getElementById(
-            'fecharCancelamento'
-        );
+    const btnVoltar = document.getElementById('btnVoltarCancelamento');
+
+    const btnConfirmar = document.getElementById('btnConfirmarCancelamento');
 
 
-    const btnVoltar =
-        document.getElementById(
-            'btnVoltarCancelamento'
-        );
+    let eventoSelecionado = null;
 
+    let tipoSelecionado = null;
 
-    const btnConfirmar =
-        document.getElementById(
-            'btnConfirmarCancelamento'
-        );
-
-
-    let eventoSelecionado =
-        null;
-
-
-    let tipoSelecionado =
-        null;
 
 
     /* =====================================================
        ABRIR MODAL
-    ====================================================== */
+    ===================================================== */
 
     function abrirModalCancelamento(evento) {
 
-        eventoSelecionado =
-            evento;
+        eventoSelecionado = evento;
+
+        tipoSelecionado = evento.extendedProps.tipo;
 
 
-        tipoSelecionado =
-            evento.extendedProps.tipo;
+        const titulo = document.getElementById('modalTitulo');
+
+        const cliente = document.getElementById('modalCliente');
+
+        const procedimento = document.getElementById('modalProcedimento');
+
+        const data = document.getElementById('modalData');
+
+        const horario = document.getElementById('modalHorario');
+
+        const observacao = document.getElementById('modalObservacao');
 
 
-        const titulo =
-            document.getElementById(
-                'modalTitulo'
-            );
+        const linhaCliente = document.getElementById('linhaCliente');
+
+        const linhaProcedimento = document.getElementById('linhaProcedimento');
+
+        const linhaObservacao = document.getElementById('linhaObservacao');
 
 
-        const cliente =
-            document.getElementById(
-                'modalCliente'
-            );
-
-
-        const procedimento =
-            document.getElementById(
-                'modalProcedimento'
-            );
-
-
-        const data =
-            document.getElementById(
-                'modalData'
-            );
-
-
-        const horario =
-            document.getElementById(
-                'modalHorario'
-            );
-
-
-        const observacao =
-            document.getElementById(
-                'modalObservacao'
-            );
-
-
-        const linhaCliente =
-            document.getElementById(
-                'linhaCliente'
-            );
-
-
-        const linhaProcedimento =
-            document.getElementById(
-                'linhaProcedimento'
-            );
-
-
-        const linhaObservacao =
-            document.getElementById(
-                'linhaObservacao'
-            );
-
-
-        /* =================================================
-           DATA
-        ================================================== */
-
-        let dataFormatada =
-            '-';
-
+        let dataFormatada = '-';
 
         if (evento.start) {
 
-            dataFormatada =
-                evento.start.toLocaleDateString(
-                    'pt-BR'
-                );
+            dataFormatada = evento.start.toLocaleDateString('pt-BR');
 
         }
 
 
-        /* =================================================
-           HORÁRIO INICIAL
-        ================================================== */
-
-        let horarioInicial =
-            '-';
-
+        let horarioInicial = '-';
 
         if (evento.start) {
 
-            horarioInicial =
-                evento.start.toLocaleTimeString(
-                    'pt-BR',
-                    {
-                        hour:
-                            '2-digit',
+            horarioInicial = evento.start.toLocaleTimeString('pt-BR', {
 
-                        minute:
-                            '2-digit'
-                    }
-                );
+                hour: '2-digit',
+
+                minute: '2-digit'
+
+            });
 
         }
 
 
-        /* =================================================
-           AGENDAMENTO
-        ================================================== */
+        /* AGENDAMENTO DE CLIENTE */
 
-        if (
-            tipoSelecionado ===
-            'agendamento'
-        ) {
+        if (tipoSelecionado === 'agendamento') {
 
-            titulo.textContent =
-                'Cancelar agendamento';
+            titulo.textContent = 'Cancelar agendamento';
 
+            cliente.textContent = evento.extendedProps.cliente || 'Cliente';
 
-            cliente.textContent =
-                evento.extendedProps.cliente
-                || 'Cliente';
+            procedimento.textContent = evento.extendedProps.procedimento || 'Procedimento';
+
+            data.textContent = dataFormatada;
+
+            horario.textContent = horarioInicial;
 
 
-            procedimento.textContent =
-                evento.extendedProps.procedimento
-                || 'Procedimento';
+            linhaCliente.style.display = 'flex';
+
+            linhaProcedimento.style.display = 'flex';
+
+            linhaObservacao.style.display = 'none';
 
 
-            data.textContent =
-                dataFormatada;
-
-
-            horario.textContent =
-                horarioInicial;
-
-
-            linhaCliente.style.display =
-                'flex';
-
-
-            linhaProcedimento.style.display =
-                'flex';
-
-
-            linhaObservacao.style.display =
-                'none';
-
-
-            btnConfirmar.textContent =
-                'Cancelar agendamento';
+            btnConfirmar.textContent = 'Cancelar agendamento';
 
         }
 
 
-        /* =================================================
-           COMPROMISSO
-        ================================================== */
+        /* COMPROMISSO */
 
-        if (
-            tipoSelecionado ===
-            'compromisso'
-        ) {
+        if (tipoSelecionado === 'compromisso') {
 
-            titulo.textContent =
-                'Cancelar compromisso';
+            titulo.textContent = 'Cancelar compromisso';
+
+            linhaCliente.style.display = 'none';
 
 
-            linhaCliente.style.display =
-                'none';
+            procedimento.textContent = evento.title || 'Compromisso';
+
+            data.textContent = dataFormatada;
 
 
-            procedimento.textContent =
-                evento.title
-                || 'Compromisso';
-
-
-            data.textContent =
-                dataFormatada;
-
-
-            let horarioFinal =
-                '';
-
+            let horarioFinal = '';
 
             if (evento.end) {
 
-                horarioFinal =
-                    evento.end.toLocaleTimeString(
-                        'pt-BR',
-                        {
-                            hour:
-                                '2-digit',
+                horarioFinal = evento.end.toLocaleTimeString('pt-BR', {
 
-                            minute:
-                                '2-digit'
-                        }
-                    );
+                    hour: '2-digit',
+
+                    minute: '2-digit'
+
+                });
 
             }
 
 
             if (horarioFinal) {
 
-                horarioFinal =
-                    horarioInicial +
-                    ' às ' +
-                    horarioFinal;
+                horarioFinal = horarioInicial + ' às ' + horarioFinal;
 
             } else {
 
-                horarioFinal =
-                    horarioInicial;
+                horarioFinal = horarioInicial;
 
             }
 
 
-            horario.textContent =
-                horarioFinal;
+            horario.textContent = horarioFinal;
 
 
-            const descricao =
-                evento.extendedProps.descricao;
+            const descricao = evento.extendedProps.descricao;
 
 
             if (descricao) {
 
-                observacao.textContent =
-                    descricao;
+                observacao.textContent = descricao;
 
-
-                linhaObservacao.style.display =
-                    'flex';
+                linhaObservacao.style.display = 'flex';
 
             } else {
 
-                linhaObservacao.style.display =
-                    'none';
+                linhaObservacao.style.display = 'none';
 
             }
 
 
-            linhaProcedimento.style.display =
-                'flex';
+            linhaProcedimento.style.display = 'flex';
 
-
-            btnConfirmar.textContent =
-                'Cancelar compromisso';
+            btnConfirmar.textContent = 'Cancelar compromisso';
 
         }
 
 
-        modal.style.display =
-            'flex';
+        modal.style.display = 'flex';
 
-
-        modal.setAttribute(
-            'aria-hidden',
-            'false'
-        );
+        modal.setAttribute('aria-hidden', 'false');
 
     }
+
 
 
     /* =====================================================
        FECHAR MODAL
-    ====================================================== */
+    ===================================================== */
 
     function fecharModalCancelamento() {
 
-        modal.style.display =
-            'none';
+        modal.style.display = 'none';
+
+        modal.setAttribute('aria-hidden', 'true');
 
 
-        modal.setAttribute(
-            'aria-hidden',
-            'true'
-        );
+        eventoSelecionado = null;
 
-
-        eventoSelecionado =
-            null;
-
-
-        tipoSelecionado =
-            null;
+        tipoSelecionado = null;
 
     }
 
 
-    btnFechar.addEventListener(
-        'click',
-        fecharModalCancelamento
-    );
+    btnFechar.addEventListener('click', fecharModalCancelamento);
+
+    btnVoltar.addEventListener('click', fecharModalCancelamento);
 
 
-    btnVoltar.addEventListener(
-        'click',
-        fecharModalCancelamento
-    );
+    modal.addEventListener('click', function (event) {
 
+        if (event.target === modal) {
 
-    /* =====================================================
-       CLICAR FORA DO MODAL
-    ====================================================== */
-
-    modal.addEventListener(
-        'click',
-        function (event) {
-
-            if (
-                event.target ===
-                modal
-            ) {
-
-                fecharModalCancelamento();
-
-            }
+            fecharModalCancelamento();
 
         }
-    );
+
+    });
 
 
-    /* =====================================================
-       ESC
-    ====================================================== */
+    document.addEventListener('keydown', function (event) {
 
-    document.addEventListener(
-        'keydown',
-        function (event) {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
 
-            if (
-                event.key ===
-                'Escape' &&
-                modal.style.display ===
-                'flex'
-            ) {
-
-                fecharModalCancelamento();
-
-            }
+            fecharModalCancelamento();
 
         }
-    );
+
+    });
+
 
 
     /* =====================================================
        CONFIRMAR CANCELAMENTO
-    ====================================================== */
+    ===================================================== */
 
-    btnConfirmar.addEventListener(
-        'click',
-        function () {
+    btnConfirmar.addEventListener('click', function () {
 
+        if (!eventoSelecionado || !tipoSelecionado) {
 
-            if (
-                !eventoSelecionado ||
-                !tipoSelecionado
-            ) {
-
-                return;
-
-            }
-
-
-            if (
-                tipoSelecionado ===
-                'agendamento'
-            ) {
-
-                cancelarAgendamento(
-                    eventoSelecionado.id
-                );
-
-                return;
-
-            }
-
-
-            if (
-                tipoSelecionado ===
-                'compromisso'
-            ) {
-
-                cancelarCompromisso(
-                    eventoSelecionado.id
-                );
-
-            }
+            return;
 
         }
-    );
+
+
+        if (tipoSelecionado === 'agendamento') {
+
+            cancelarAgendamento(eventoSelecionado.id);
+
+            return;
+
+        }
+
+
+        if (tipoSelecionado === 'compromisso') {
+
+            cancelarCompromisso(eventoSelecionado.id);
+
+        }
+
+    });
+
 
 
     /* =====================================================
        CANCELAR AGENDAMENTO
-    ====================================================== */
+    ===================================================== */
 
     function cancelarAgendamento(eventId) {
 
-        const id =
-            eventId.replace(
-                'agendamento-',
-                ''
-            );
+        const id = eventId.replace('agendamento-', '');
 
 
-        const url =
-            "{{ route(
-                'admin.agenda.agendamento.destroy',
-                ['agendamento' => '__ID__']
-            ) }}"
-            .replace(
-                '__ID__',
-                id
-            );
+        const url = "{{ route('admin.agenda.agendamento.destroy', ['agendamento' => '__ID__']) }}"
+
+            .replace('__ID__', id);
 
 
-        enviarFormularioDelete(
-            url
-        );
+        enviarFormularioDelete(url);
 
     }
+
 
 
     /* =====================================================
        CANCELAR COMPROMISSO
-    ====================================================== */
+    ===================================================== */
 
     function cancelarCompromisso(eventId) {
 
-        const id =
-            eventId.replace(
-                'compromisso-',
-                ''
-            );
+        const id = eventId.replace('compromisso-', '');
 
 
-        const url =
-            "{{ route(
-                'admin.agenda.destroy',
-                ['compromisso' => '__ID__']
-            ) }}"
-            .replace(
-                '__ID__',
-                id
-            );
+        const url = "{{ route('admin.agenda.destroy', ['compromisso' => '__ID__']) }}"
+
+            .replace('__ID__', id);
 
 
-        enviarFormularioDelete(
-            url
-        );
+        enviarFormularioDelete(url);
 
     }
 
 
+
     /* =====================================================
-       ENVIA DELETE
-    ====================================================== */
+       ENVIO DELETE
+    ===================================================== */
 
     function enviarFormularioDelete(url) {
 
-        const form =
-            document.createElement(
-                'form'
-            );
+        const form = document.createElement('form');
+
+        form.method = 'POST';
+
+        form.action = url;
+
+        form.style.display = 'none';
 
 
-        form.method =
-            'POST';
+        const csrf = document.createElement('input');
+
+        csrf.type = 'hidden';
+
+        csrf.name = '_token';
+
+        csrf.value = '{{ csrf_token() }}';
+
+        form.appendChild(csrf);
 
 
-        form.action =
-            url;
+        const method = document.createElement('input');
+
+        method.type = 'hidden';
+
+        method.name = '_method';
+
+        method.value = 'DELETE';
+
+        form.appendChild(method);
 
 
-        form.style.display =
-            'none';
-
-
-        /* =================================================
-           CSRF
-        ================================================== */
-
-        const csrf =
-            document.createElement(
-                'input'
-            );
-
-
-        csrf.type =
-            'hidden';
-
-
-        csrf.name =
-            '_token';
-
-
-        csrf.value =
-            '{{ csrf_token() }}';
-
-
-        form.appendChild(
-            csrf
-        );
-
-
-        /* =================================================
-           MÉTODO DELETE
-        ================================================== */
-
-        const method =
-            document.createElement(
-                'input'
-            );
-
-
-        method.type =
-            'hidden';
-
-
-        method.name =
-            '_method';
-
-
-        method.value =
-            'DELETE';
-
-
-        form.appendChild(
-            method
-        );
-
-
-        document
-            .body
-            .appendChild(
-                form
-            );
-
+        document.body.appendChild(form);
 
         form.submit();
 
@@ -1308,7 +871,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 
-
 </body>
-
 </html>
