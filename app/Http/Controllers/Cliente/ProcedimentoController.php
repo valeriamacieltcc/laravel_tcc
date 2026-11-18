@@ -11,16 +11,24 @@ class ProcedimentoController extends Controller
 
 {
 
-    public function index() {
-       
-            $procedimentos = Procedimento::orderBy('id', 'desc')
-                ->paginate(8);
+
+    public function index(Request $request)
+    {
+        $query = Procedimento::orderBy('id', 'desc');
     
-            return view(
-                'cliente.procedimento.index',
-                compact('procedimentos')
-            );
+        // Filtrar pela área selecionada
+        if ($request->filled('categoria')) {
+            $query->where('categoria_procedimento_id', $request->categoria);
+        }
+    
+        $procedimentos = $query->paginate(8)->withQueryString();
+    
+        return view(
+            'cliente.procedimento.index',
+            compact('procedimentos')
+        );
     }
+    
 
   
     public function show($id)

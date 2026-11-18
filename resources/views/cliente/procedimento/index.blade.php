@@ -60,9 +60,51 @@
         <h1>PROCEDIMENTOS &<br> CUIDADOS</h1>
     </div>
 
+    </section>
+
+<!-- FILTRO POR ÁREA -->
+<!-- FILTRO POR ÁREA -->
+<div class="filtro-procedimentos">
+
+    <div class="categorias">
+
+        <a href="{{ route('cliente.procedimento.index') }}"
+           class="categoria-btn {{ request('categoria') == null ? 'ativo' : '' }}">
+            TODOS
+        </a>
+
+        <a href="{{ route('cliente.procedimento.index', ['categoria' => 1]) }}"
+           class="categoria-btn {{ request('categoria') == 1 ? 'ativo' : '' }}">
+            FACE
+        </a>
+
+        <a href="{{ route('cliente.procedimento.index', ['categoria' => 2]) }}"
+           class="categoria-btn {{ request('categoria') == 2 ? 'ativo' : '' }}">
+            CORPO
+        </a>
+
+        <a href="{{ route('cliente.procedimento.index', ['categoria' => 3]) }}"
+           class="categoria-btn {{ request('categoria') == 3 ? 'ativo' : '' }}">
+            CABELO
+        </a>
+
+        <a href="{{ route('cliente.procedimento.index', ['categoria' => 4]) }}"
+           class="categoria-btn {{ request('categoria') == 4 ? 'ativo' : '' }}">
+            UNHAS
+        </a>
+
+        <a href="{{ route('cliente.procedimento.index', ['categoria' => 5]) }}"
+           class="categoria-btn {{ request('categoria') == 5 ? 'ativo' : '' }}">
+            MASSAGEM
+        </a>
+
+    </div>
+
+</div>
 </section>
 
-<!-- CARDS --><section class="cards">
+<!-- CARDS -->
+<section class="cards">
     @foreach($procedimentos as $procedimento)
 
 <div class="card">
