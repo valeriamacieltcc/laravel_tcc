@@ -99,7 +99,7 @@ Route::get('/blog/{post}', [BlogController::class, 'show'])
 
       
 // Procedimentos(admin)
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     
         
          Route::get('/home', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home.index');

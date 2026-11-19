@@ -497,12 +497,20 @@ body {
 }
 
 .titulo-agenda h1 {
-    color: var(--agenda-verde-escuro);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 5vw, 58px);
-    font-weight: 500;
-    line-height: 1;
     margin: 0;
+    padding: 0;
+
+    color: #3e746d;
+
+    font-family: "Playfair Display SC", serif;
+
+    font-size: 48px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    text-transform: uppercase;
 }
 
 .titulo-agenda p {
@@ -1248,4 +1256,210 @@ body {
     .botoes-cancelamento {
         grid-template-columns: 1fr;
     }
+}
+
+/* =========================================================
+   AJUSTES FINAIS — VISUAL MAIS LEVE E COMPACTO
+========================================================= */
+
+/* Mantém os textos em letras maiúsculas */
+.agenda-container,
+.agenda-container input,
+.agenda-container select,
+.agenda-container textarea,
+.agenda-container button,
+.modal-cancelamento,
+.modal-cancelamento button {
+    text-transform: uppercase;
+}
+
+/* CONTAINERS COM CANTOS ARREDONDADOS, SEM CONTORNO */
+
+.agenda-container {
+    border-radius: 16px !important;
+    border: none !important;
+}
+
+.calendario-area {
+    border-radius: 14px !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.calendario-topo {
+    border-radius: 10px !important;
+}
+
+.calendario-conteudo {
+    border-radius: 10px !important;
+}
+
+.novo-compromisso {
+    border-radius: 14px !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.caixa-cancelamento {
+    border-radius: 14px !important;
+}
+
+.informacoes-cancelamento {
+    border-radius: 10px !important;
+}
+/* Mantém as divisórias internas do calendário */
+#calendar table,
+#calendar td,
+#calendar th,
+#calendar .fc-scrollgrid,
+#calendar .fc-scrollgrid-section,
+#calendar .fc-scrollgrid-sync-table {
+    border-color: var(--agenda-borda) !important;
+}
+
+/* Botões do calendário: menores, retos e visualmente separados */
+#calendar .agenda-calendar-toolbar-section {
+    gap: 9px !important;
+}
+
+#calendar .agenda-calendar-button {
+    min-height: 31px !important;
+    padding: 5px 10px !important;
+    margin: 0 2px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: var(--agenda-verde) !important;
+    color: #f5f2e9 !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    box-shadow: none !important;
+    transition: background-color .18s ease, color .18s ease !important;
+}
+
+/* Separação sutil entre os botões, sem uni-los */
+#calendar .agenda-calendar-button + .agenda-calendar-button {
+    margin-left: 5px !important;
+}
+
+#calendar .agenda-calendar-button:hover {
+    background: var(--agenda-verde-escuro) !important;
+    color: #ffffff !important;
+}
+
+/* Botão de salvar: compacto e sem cantos arredondados */
+.btn-salvar,
+#btnVoltarCancelamento,
+.btn-voltar,
+#btnConfirmarCancelamento,
+.btn-confirmar-cancelamento {
+    min-height: 38px !important;
+    padding: 9px 12px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: 14px !important;
+    box-shadow: none !important;
+    transition: background-color .18s ease, color .18s ease !important;
+}
+
+.btn-salvar:hover,
+#btnVoltarCancelamento:hover,
+.btn-voltar:hover,
+#btnConfirmarCancelamento:hover,
+.btn-confirmar-cancelamento:hover {
+    background: var(--agenda-verde-escuro) !important;
+    color: #ffffff !important;
+}
+
+/* Formulário de novo compromisso: menos espaçamento */
+.novo-compromisso {
+    padding: 19px !important;
+}
+
+.formulario-topo {
+    margin: -19px -19px 16px !important;
+    padding: 13px 15px !important;
+    border-radius: 0 !important;
+}
+
+.formulario-icone {
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 20px !important;
+    border-radius: 0 !important;
+}
+
+.formulario-topo h2,
+.formulario-topo h3,
+.formulario-topo h4 {
+    font-size: 22px !important;
+}
+
+.formulario-descricao {
+    margin: 12px 0 15px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+.formulario-divisor {
+    margin-bottom: 16px !important;
+}
+
+/* Labels menores e mais discretas */
+.novo-compromisso .campo label,
+.novo-compromisso .campo label span,
+.novo-compromisso .campo label *,
+.campo label {
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+}
+
+/* Inputs menores, sem aparência exagerada */
+.novo-compromisso input,
+.novo-compromisso select,
+.novo-compromisso textarea,
+.novo-compromisso .campo input,
+.novo-compromisso .campo select,
+.novo-compromisso .campo textarea,
+.novo-compromisso .campo-horarios input {
+    min-height: 35px !important;
+    padding: 7px 9px !important;
+    border: 1px solid var(--agenda-borda) !important;
+    border-radius: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+}
+
+.novo-compromisso textarea {
+    min-height: 72px !important;
+}
+
+.novo-compromisso .campo {
+    gap: 5px !important;
+    margin-bottom: 12px !important;
+}
+
+.novo-compromisso .campo-horarios {
+    gap: 9px !important;
+}
+
+.novo-compromisso .formulario-nota {
+    padding: 9px !important;
+    margin-top: 14px !important;
+    font-size: 12px !important;
+}
+
+/* Eventos do calendário com cantos retos */
+#calendar .evento-cliente,
+#calendar .evento-compromisso {
+    border-radius: 0 !important;
+}
+
+/* LEGENDA — SEM CONTORNO E COM CANTOS ARREDONDADOS */
+
+.legenda-agenda {
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    background: var(--agenda-nevoa);
+    padding: 13px 18px;
 }

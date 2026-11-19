@@ -12,7 +12,7 @@
 
         <div class="chatbox-header">
             <div>
-                <strong>Valéria Maciel Estética</strong>
+                <strong>Valéria Maciel</strong>
                 <small>Assistente virtual</small>
             </div>
 
@@ -53,140 +53,363 @@
 </div>
 
 <style>
-    #chatbox-widget {
-        font-family: Arial, sans-serif;
+/* =========================================================
+   CHATBOT - VALÉRIA MACIEL ESTÉTICA
+   ELEGANTE | MODERNO | SOFISTICADO
+========================================================= */
+
+/* Fontes exclusivas do chatbot */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap');
+
+#chatbox-widget {
+    --chat-verde: #315f55;
+    --chat-verde-escuro: #25483f;
+    --chat-salvia: #e6ebe3;
+    --chat-bege: #f8f6ef;
+    --chat-dourado: #b49a6a;
+    --chat-texto: #34443b;
+    --chat-secundario: #849087;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================================
+   BOTÃO FLUTUANTE
+========================================================= */
+
+#chatbox-widget #chatbox-toggle {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--chat-verde);
+    color: #fff;
+
+    border: 1px solid rgba(180, 154, 106, .55);
+    border-radius: 50%;
+
+    font-size: 26px;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    box-shadow: 0 8px 25px rgba(37, 72, 63, .22);
+
+    transition: .3s ease;
+}
+
+#chatbox-widget #chatbox-toggle:hover {
+    background: var(--chat-verde-escuro);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(37, 72, 63, .28);
+}
+
+/* =========================================================
+   JANELA PRINCIPAL
+========================================================= */
+
+#chatbox-widget #chatbox-window {
+    position: fixed;
+    right: 30px;
+    bottom: 108px;
+
+    width: 380px;
+    max-width: calc(100vw - 30px);
+
+    height: 520px;
+    max-height: calc(100vh - 135px);
+
+    flex-direction: column;
+
+    background: var(--chat-bege);
+
+    border: 1px solid rgba(180, 154, 106, .35);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 18px 55px rgba(37, 72, 63, .20);
+
+    z-index: 9999;
+}
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+#chatbox-widget .chatbox-header {
+    min-height: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    background: var(--chat-verde);
+    color: #fff;
+    border-bottom: 2px solid var(--chat-dourado);
+}
+
+#chatbox-widget .chatbox-header strong {
+    display: block;
+    font-family: 'Parisienne', cursive;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2;
+}
+
+#chatbox-widget .chatbox-header small {
+    display: block;
+    margin-top: 5px;
+    color: #dce5dc;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/* Botão fechar */
+
+#chatbox-widget #chatbox-close {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 50%;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+#chatbox-widget #chatbox-close:hover {
+    background: rgba(255, 255, 255, .18);
+    transform: rotate(90deg);
+}
+
+/* =========================================================
+   ÁREA DAS MENSAGENS
+========================================================= */
+
+#chatbox-widget #chatbox-messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 22px 18px;
+    overflow-y: auto;
+    background:
+        radial-gradient(circle at top right, rgba(213, 222, 211, .38), transparent 45%),
+        var(--chat-bege);
+}
+
+#chatbox-widget .chat-message {
+    display: block;
+    width: fit-content;
+    max-width: 86%;
+    box-sizing: border-box;
+    padding: 13px 16px;
+    border-radius: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    text-align: left;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#chatbox-widget .chat-message.bot {
+    align-self: flex-start;
+    margin-right: auto;
+    background: #fff;
+    color: var(--chat-texto);
+    border: 1px solid #e8e7dc;
+    border-bottom-left-radius: 4px;
+}
+
+#chatbox-widget .chat-message.user {
+    align-self: flex-end;
+    margin-left: auto;
+    background: var(--chat-verde);
+    color: #fff;
+    border: 1px solid var(--chat-verde);
+    border-bottom-right-radius: 4px;
+}
+
+/* =========================================================
+   ÁREA DE DIGITAÇÃO
+========================================================= */
+
+#chatbox-widget #chatbox-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px;
+
+    background: #fff;
+
+    border-top: 1px solid #e8e7dc;
+}
+
+/* Campo de texto */
+
+#chatbox-widget #chatbox-input {
+    flex: 1;
+    min-width: 0;
+
+    height: 45px;
+
+    padding: 0 15px;
+
+    background: #f8f8f3;
+    color: var(--chat-texto);
+
+    border: 1px solid #e1e5dc;
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+
+    box-shadow: none;
+
+    transition: .25s ease;
+}
+
+#chatbox-widget #chatbox-input::placeholder {
+    color: #9ba49a;
+}
+
+#chatbox-widget #chatbox-input:focus {
+    background: #fff;
+    border-color: var(--chat-verde);
+    box-shadow: 0 0 0 3px rgba(49, 95, 85, .07);
+}
+
+#chatbox-widget #chatbox-input:disabled {
+    opacity: .6;
+}
+
+/* Botão enviar */
+
+#chatbox-widget #chatbox-send {
+    height: 45px;
+
+    padding: 0 17px;
+
+    background: var(--chat-verde);
+    color: #fff;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+#chatbox-widget #chatbox-send:hover {
+    background: var(--chat-verde-escuro);
+}
+
+#chatbox-widget #chatbox-send:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #chatbox-widget #chatbox-window {
+        right: 15px;
+        bottom: 85px;
+
+        width: calc(100vw - 30px);
+        height: 65vh;
+
+        border-radius: 16px;
     }
 
-    #chatbox-toggle {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        width: 60px;
-        height: 60px;
-        border: none;
-        border-radius: 50%;
-        background: #2c7771;
-        color: white;
-        font-size: 26px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,.2);
-        z-index: 9999;
+    #chatbox-widget #chatbox-toggle {
+        right: 17px;
+        bottom: 17px;
+
+        width: 56px;
+        height: 56px;
     }
 
-    #chatbox-window {
-        position: fixed;
-        bottom: 100px;
-        right: 25px;
-        width: 350px;
-        max-width: calc(100vw - 30px);
-        height: 450px;
-        max-height: calc(100vh - 130px);
-        background: #f6f5e5;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,.2);
-        z-index: 9999;
-        display: flex;
-        flex-direction: column;
+    #chatbox-widget .chatbox-header {
+        min-height: 82px;
+        padding: 16px;
     }
 
-    .chatbox-header {
-        background: #2c7771;
-        color: white;
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    #chatbox-widget .chatbox-header strong {
+        font-size: 21px;
     }
 
-    .chatbox-header small {
-        display: block;
-        margin-top: 4px;
+    #chatbox-widget #chatbox-messages {
+        padding: 18px 14px;
     }
 
-    #chatbox-close {
-        background: transparent;
-        color: white;
-        border: none;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    #chatbox-messages {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .chat-message {
-        padding: 10px 13px;
-        border-radius: 12px;
-        max-width: 85%;
-        font-size: 14px;
-        line-height: 1.5;
-        white-space: pre-wrap;
-        overflow-wrap: anywhere;
-    }
-
-    .chat-message.bot {
-        background: white;
-        color: #333;
-        align-self: flex-start;
-    }
-
-    .chat-message.user {
-        background: #2c7771;
-        color: white;
-        align-self: flex-end;
-    }
-
-    #chatbox-form {
-        display: flex;
+    #chatbox-widget #chatbox-form {
         padding: 12px;
-        gap: 8px;
-        background: white;
     }
 
-    #chatbox-input {
-        flex: 1;
-        min-width: 0;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        outline-color: #2c7771;
+    #chatbox-widget #chatbox-send {
+        padding: 0 13px;
     }
+}
 
-    #chatbox-send {
-        background: #2c7771;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 10px;
-        cursor: pointer;
-    }
+/* Correção da mensagem automática inicial */
+#chatbox-widget #chatbox-messages > .chat-message.bot:first-child {
+    align-self: flex-start !important;
+    margin: 0 auto 0 0 !important;
 
-    #chatbox-send:disabled {
-        opacity: .6;
-        cursor: wait;
-    }
+    width: fit-content;
+    max-width: 86%;
 
-    @media (max-width: 480px) {
-        #chatbox-window {
-            right: 15px;
-            bottom: 90px;
-            width: calc(100vw - 30px);
-            height: 65vh;
-        }
+    text-align: left !important;
+    line-height: 1.7;
 
-        #chatbox-toggle {
-            right: 15px;
-            bottom: 15px;
-        }
-    }
+    padding: 14px 16px;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
 </style>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -212,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     close.addEventListener('click', function () {
         windowChat.style.display = 'none';
-        toggle.style.display = 'block';
+        toggle.style.display = 'flex';
     });
 
     function adicionarMensagem(texto, tipo) {

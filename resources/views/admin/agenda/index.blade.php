@@ -36,20 +36,13 @@
     <header class="titulo-agenda">
 
         <div class="titulo-conteudo">
-            <span class="agenda-subtitulo">GESTÃO E ORGANIZAÇÃO</span>
+    
 
             <h1>Agenda</h1>
 
-            <p>
-                Acompanhe os agendamentos das clientes e organize seus compromissos.
-            </p>
+    
         </div>
-
-        <div class="agenda-identidade">
-            <span class="identidade-linha"></span>
-            <span>VALÉRIA MACIEL</span>
-            <small>ESTÉTICA</small>
-        </div>
+ 
 
     </header>
 
@@ -292,8 +285,6 @@
 
 
         <div class="icone-cancelamento">!</div>
-
-        <span class="modal-subtitulo">CONFIRMAÇÃO</span>
 
         <h2 id="modalTitulo">Cancelar agendamento</h2>
 
